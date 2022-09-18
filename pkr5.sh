@@ -184,9 +184,17 @@ function cmd_burpsuite(){
     printf "${RED}Caution!\n"
     printf "${WHITE}This is a GUI application. It can't be displayed on a remote console.${NC}\n"
     printf "(${PURPLE}$TITLE${NC})${RED}`whoami`@`hostname`${NC}:${BLUE}Kali-tools-top10${NC} > ${BLUE}$cmd${NC}\n"
-    read -e -p "Command? > $cmd &" arg
-    cmd+=$arg
-    eval $cmd
+    read -n 1 -p "Ready? y|n> " ans
+    case $ans in
+    Y|y)
+        cmd="$cmd &"
+        eval $cmd
+        ;;
+    n|N)
+        ;;
+    *)
+        ;;
+    esac
 }
 
 function cmd_crackmapexec(){
@@ -278,12 +286,19 @@ function cmd_hydra1(){
 	echo "  service                 the service to crack (see below for supported protocols)"
 	printf "${BLUE}usage${NC}: hydra ${WHITE}[[[-l LOGIN|-L FILE] [-p PASS|-P FILE]] | [-C FILE]] [-e nsr] [-o FILE] [-t TASKS] [-M FILE [-T TASKS]] [-w TIME] [-W TIME] [-f] [-s PORT] [-x MIN:MAX:CHARSET] [-c TIME] [-ISOuvVd46] [-m MODULE_OPT] [service://server[:PORT][/OPT]]${NC}\n"
 	printf "${RED}Example${NC}:   hydra -t 1 -l admin -P <PASSWORD_LIST_PATH> -v ftp://<IP_ADDRESS> ftp\n"
-    read -e -p "Command? > $cmd" arg
-    if [ $arg = "-h" ] || [ $arg = "--help" ];then
-            arg="-h|more"
+    read -p "usernsme: " USERNAME
+    read -p "password list path:" PASSWORD_LIST_PATH
+    read -p "IP Address:" IP_ADDRESS
+    read -p "service: " SERVICE
+    read -e -p "Command? > $cmd -t -l $USERNAME -P $PASSWORD_LIST_PATH -v $SERVICE://$IP_ADDRESS $SERVICE" arg
+    if [ $arg == "-h" ] || [ $arg == "--help" ];then
+        arg="-h|more"
+        cmd+=$arg
+        eval $cmd
+    elif [ $arg != "n" ];then
+        cmd="$cmd -t -l $USERNAME -P $PASSWORD_LIST_PATH -v $SERVICE://$IP_ADDRESS $SERVICE $arg"
+        eval $cmd
     fi
-    cmd+=$arg
-    eval $cmd
 }
 
 function cmd_hydra2(){
@@ -314,12 +329,19 @@ function cmd_hydra2(){
     echo "  service                 the service to crack (see below for supported protocols)"
     printf "${BLUE}usage${NC}: hydra ${WHITE}[[[-l LOGIN|-L FILE] [-p PASS|-P FILE]] | [-C FILE]] [-e nsr] [-o FILE] [-t TASKS] [-M FILE [-T TASKS]] [-w TIME] [-W TIME] [-f] [-s PORT] [-x MIN:MAX:CHARSET] [-c TIME] [-ISOuvVd46] [-m MODULE_OPT] [service://server[:PORT][/OPT]]${NC}\n"
     printf "${RED}Example${NC}:  hydra -v -u -L <USER_LIST_PATH> -P <PASSWORD_LIST_PATH> -t 1 ssh://<IP_ADDRESS>\n"
-    read -e -p "Command? > $cmd" arg
+    read -p "usernsme list path: " USER_LIST_PATH
+    read -p "password list path:" PASSWORD_LIST_PATH
+    read -p "IP Address:" IP_ADDRESS
+    read -p "service: " SERVICE
+    read -e -p "Command? > $cmd -v -u -L $USER_LIST_PATH -P $PASSWORD_LIST_PATH -t 1 $SERVICE://$IP_ADDRESS" arg
     if [ $arg = "-h" ] || [ $arg = "--help" ];then
-            arg="-h|more"
+        arg="-h|more"
+        cmd+=$arg
+        eval $cmd
+    elif [ $arg != "n" ];then
+        cmd="$cmd -v -u -L $USER_LIST_PATH -P $PASSWORD_LIST_PATH -t 1 $SERVICE://$IP_ADDRESS $arg"
+        eval $cmd
     fi
-    cmd+=$arg
-    eval $cmd
 }
 
 function menu_john(){
