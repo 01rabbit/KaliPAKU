@@ -65,7 +65,7 @@ function kalitoolstop10_menu1(){
         printf "%5s+---+\n"
     done
     printf "%5s+---+\n"
-    printf "%5s| N |%s\n" "" " Next"
+    printf "%5s| 0 |%s\n" "" " Next"
     printf "%5s+---+\n"
 	printf "${NC}"
 	read -n 1 -s NUM
@@ -85,7 +85,7 @@ function kalitoolstop10_menu1(){
 	5)
 		menu_john
 		;;
-    n|N)
+    0)
         kalitoolstop10_menu2
         ;;
 	*)
@@ -108,7 +108,7 @@ function kalitoolstop10_menu2(){
         printf "%5s+---+\n"
     done
     printf "%5s+---+\n"
-    printf "%5s| B |%s\n" "" " Back"
+    printf "%5s| 9 |%s\n" "" " Back"
     printf "%5s+---+\n"
 	printf "${NC}"
     read -n 1 -s NUM
@@ -128,7 +128,7 @@ function kalitoolstop10_menu2(){
 	5)
         cmd_wireshark
 		;;
-    b|B)
+    9)
         kalitoolstop10_menu1
         ;;
 	*)
