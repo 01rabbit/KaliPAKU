@@ -37,33 +37,33 @@ function banner(){
 }
 
 function num1(){
-    printf "${RED}%$1s  |  +---+\n"
-    printf "%$1s  +--| 1 |%s\n" "" " $2"
-    printf "%$1s  |  +---+%s${NC}\n" "" " $3"
+    printf "${WHITE}%$1s  |  ${RED}+---+\n"
+    printf "${WHITE}%$1s  +--${RED}| 1 |%s\n" "" " $2"
+    printf "${WHITE}%$1s  |  ${RED}+---+%s${NC}\n" "" " $3"
 }
 
 function num2(){
-    printf "${GREEN}%$1s  |  +---+\n"
-    printf "%$1s  +--| 2 |%s\n" "" " $2"
-    printf "%$1s  |  +---+%s${NC}\n" "" " $3"
+    printf "${WHITE}%$1s  |  ${GREEN}+---+\n"
+    printf "${WHITE}%$1s  +--${GREEN}| 2 |%s\n" "" " $2"
+    printf "${WHITE}%$1s  |  ${GREEN}+---+%s${NC}\n" "" " $3"
 }
 
 function num3(){
-    printf "${YELLOW}%$1s  |  +---+\n"
-    printf "%$1s  +--| 3 |%s\n" "" " $2"
-    printf "%$1s  |  +---+%s${NC}\n" "" " $3"
+    printf "${WHITE}%$1s  |  ${YELLOW}+---+\n"
+    printf "${WHITE}%$1s  +--${YELLOW}| 3 |%s\n" "" " $2"
+    printf "${WHITE}%$1s  |  ${YELLOW}+---+%s${NC}\n" "" " $3"
 }
 
 function num4(){
-    printf "${BLUE}%$1s  |  +---+\n"
-    printf "%$1s  +--| 4 |%s\n" "" " $2"
-    printf "%$1s  |  +---+%s${NC}\n" "" " $3"
+    printf "${WHITE}%$1s  |  ${BLUE}+---+\n"
+    printf "${WHITE}%$1s  +--${BLUE}| 4 |%s\n" "" " $2"
+    printf "${WHITE}%$1s  |  ${BLUE}+---+%s${NC}\n" "" " $3"
 }
 
 function num5(){
-    printf "${PURPLE}%$1s  |  +---+\n"
-    printf "%$1s  +--| 5 |%s\n" "" " $2"
-    printf "%$1s  |  +---+%s${NC}\n" "" " $3"
+    printf "${WHITE}%$1s  |  ${PURPLE}+---+\n"
+    printf "${WHITE}%$1s  +--${PURPLE}| 5 |%s\n" "" " $2"
+    printf "${WHITE}%$1s  |  ${PURPLE}+---+%s${NC}\n" "" " $3"
 }
 
 function mainmenu(){

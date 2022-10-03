@@ -45,10 +45,13 @@ function cmd_crackmapexec1(){
     printf "${BLUE}usage${NC}: crackmapexec smb [target ...]\n"
     read -e -p "Target: " $TARGET
     cmd="${cmd} $TARGET"
-    echo "└─Command? > $cmd"
-    read -n 1 -p "You ready? y|n > " ANS
+    echo "└─Command > $cmd"
     echo ""
-    if [ $ANS = "y" ] || [ $ANS = "y" ];then
+    echo "You ready?"
+    num1 0 "No"
+    num2 0 "Yes"
+    read -n 1 -s ANS
+    if [ $ANS = "2" ];then
         eval $cmd
     fi
 }
@@ -63,10 +66,13 @@ function cmd_crackmapexec2(){
     printf "${BLUE}usage${NC}: crackmapexec smb [target ...] -u "" up ""\n"
     read -e -p "Target: " TARGET
     cmd="${cmd} $TARGET -u \"\" up \"\""
-    echo "└─Command? > $cmd"
-    read -n 1 -p "You ready? y|n > " ANS
+    echo "└─Command > $cmd"
     echo ""
-    if [ $ANS = "y" ] || [ $ANS = "y" ];then
+    echo "You ready?"
+    num1 0 "No"
+    num2 0 "Yes"
+    read -n 1 -s ANS
+    if [ $ANS = "2" ];then
         eval $cmd
     fi
 }
@@ -89,10 +95,13 @@ function cmd_crackmapexec3(){
     read -e -p "Username: " USERNAME
     read -e -p "Password: " PASSWORD
     cmd="${cmd} $TARGET -u $USERNAME -p $PASSWORD --local-auth"
-    echo "└─Command? > $cmd"
-    read -n 1 -p "You ready? y|n > " ANS
+    echo "└─Command > $cmd"
     echo ""
-    if [ $ANS = "y" ] || [ $ANS = "y" ];then
+    echo "You ready?"
+    num1 0 "No"
+    num2 0 "Yes"
+    read -n 1 -s ANS
+    if [ $ANS = "2" ];then
         eval $cmd
     fi
 }
@@ -113,8 +122,8 @@ function cmd_crackmapexec4(){
     read -e -p "Target(subnet): " TARGET
     read -e -p "Hash(LMHASH:NTHASH|NTHASH): " HASH
     echo "Hash Type:"
-    echo "  1) LMHASH:NTHASH"
-    echo "  2) NTHASH"
+    num1 0 "LMHASH:NTHASH"
+    num2 0 "NTHASH"
     read -n 1 -s NUM
     case $NUM in
         1)
@@ -125,10 +134,13 @@ function cmd_crackmapexec4(){
             ;;
     esac
     cmd="${cmd} smb $TARGET -u $USERNAME -H '$HASH' $AUTH"
-    echo "└─Command? > $cmd"
-    read -n 1 -p "You ready? y|n > " ANS
+    echo "└─Command > $cmd"
     echo ""
-    if [ $ANS = "y" ] || [ $ANS = "y" ];then
+    echo "You ready?"
+    num1 0 "No"
+    num2 0 "Yes"
+    read -n 1 -s ANS
+    if [ $ANS = "2" ];then
         eval $cmd
     fi
 }
@@ -157,10 +169,13 @@ function cmd_crackmapexec5(){
         read -e -p "Hash(LMHASH:NTHASH|NTHASH): " HASH
         cmd="${cmd} smb $TARGET -u $USERNAME -H '$HASH'"
     fi
-    echo "└─Command? > $cmd"
-    read -n 1 -p "You ready? y|n > " ANS
+    echo "└─Command > $cmd"
     echo ""
-    if [ $ANS = "y" ] || [ $ANS = "y" ];then
+    echo "You ready?"
+    num1 0 "No"
+    num2 0 "Yes"
+    read -n 1 -s ANS
+    if [ $ANS = "2" ];then
         eval $cmd
     fi
 }

@@ -9,10 +9,10 @@ function cmd_wifite(){
     printf "┌─(${PURPLE}$TITLE${NC})${RED}`whoami`@`hostname`${NC}:${RED}[1]Kali-tools-top10${NC} > ${RED}[1]$cmd${NC}\n"
     printf "${BLUE}usage${NC}: wifite (${RED}Run as Root${NC})\n"
     printf "  wifite ${WHITE}[option|SETTINGS]${NC}\n"
-    echo "options:"
+    printf "${BLUE}options${NC}:\n"
 	echo "  -h, --help              show this help message and exit"
 	echo ""
-	echo "SETTINGS:"
+	printf "${BLUE}SETTINGS${NC}:\n"
 	echo "  -v, --verbose           Shows more options (-h -v). Prints commands and outputs."
 	echo "                           (default:quiet)"
 	echo "  -i [interface]          Wireless interface to use, e.g. wlan0mon (default: ask)"
@@ -23,11 +23,15 @@ function cmd_wifite(){
 	echo "  -inf, --infinite        Enable infinite attack mode. Modify scanning time with -p (default:off)"
 	echo "  -mac, --random-mac      Randomize wireless card MAC address (default: off)"
 	echo "  -p [scan_time]          Pillage: Attack all targets after scan_time (seconds)"
-    echo "└─Command? > $cmd"
-    read -n 1 -p "You ready? y|n > " ANS
+    echo "└─Command > $cmd"
+	echo ""
+	echo "You ready?"
+	num1 0 "No"
+	num2 0 "Yes"
+    read -n 1 -s ANS
     echo ""
-    if [ $ANS = "y" ] || [ $ANS = "y" ];then
-        cmd="$cmd &"
+    if [ $ANS = "2" ];then
+        cmd="$cmd"
         eval $cmd
     fi
 }
