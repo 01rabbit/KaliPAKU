@@ -5,27 +5,13 @@ source kp.conf
 function menu_nmap(){
 	clear
 	figlet Nmap
-    printf "${WHITE}+---+\n"
-    printf "| 1 |%s\n" " Kali-tools-top10"
-    printf "+---+\n"
-    printf "${BLUE}%5s+---+\n"
-    printf "%5s| 2 |%s\n" "" " nmap"
-    printf "%5s+---+\n"
-    printf "${WHITE}%10s+---+\n"
-    printf "%10s| 1 |%s\n" "" " Ping Scan"
-    printf "%10s+---+%s\n"
-    printf "%10s+---+\n"
-    printf "%10s| 2 |%s\n" "" " Intense Scan"
-    printf "%10s+---+%s\n"
-    printf "%10s+---+\n"
-    printf "%10s| 3 |%s\n" "" " Intense Scan + UDP"
-    printf "%10s+---+%s\n"
-    printf "%10s+---+\n"
-    printf "%10s| 4 |%s\n" "" " Intense Scan all TCP Port"
-    printf "%10s+---+%s\n"
-    printf "%10s+---+\n"
-    printf "%10s| 5 |%s\n" "" " Vuln Scan"
-    printf "%10s+---+%s${NC}\n"
+    num1 0 " Kali-tools-top10"
+    num2 5 " nmap"
+    num1 10 " Ping_Scan"
+    num2 10 " Intense_Scan"
+    num3 10 " Intense_Scan+UDP"
+    num4 10 " Intense_Scan_all_TCP_Port"
+    num5 10 " Vuln_Scan"
 	read -n 1 -s NUM
     case $NUM in
     1)
@@ -52,7 +38,7 @@ function cmd_nmap1(){
     clear
 	figlet Nmap
     cmd="nmap"
-    printf "┌─(${PURPLE}$TITLE${NC})${RED}`whoami`@`hostname`${NC}:${BLUE}[1]Kali-tools-top10${NC} > ${BLUE}[2]$cmd${NC} > ${BLUE}[1]Ping Scan${NC}\n"
+    printf "┌─(${PURPLE}$TITLE${NC})${RED}`whoami`@`hostname`${NC}:${RED}[1]Kali-tools-top10${NC} > ${GREEN}[2]$cmd${NC} > ${RED}[1]Ping Scan${NC}\n"
     printf "${BLUE}usage${NC}: nmap ${WHITE}[Scan Type...] [Options] {target specification}${NC}\n"
     printf "${BLUE}Options${NC}:\n"
     echo "  -sn:            Ping Scan - disable port scan"
@@ -71,6 +57,8 @@ function cmd_nmap1(){
 function cmd_nmap2(){
     clear
 	figlet Nmap
+    cmd="nmap"
+    printf "┌─(${PURPLE}$TITLE${NC})${RED}`whoami`@`hostname`${NC}:${RED}[1]Kali-tools-top10${NC} > ${GREEN}[2]$cmd${NC} > ${GREEN}[2]IntenseScan${NC}\n"
     printf "${BLUE}usage${NC}: nmap ${WHITE}[Scan Type...] [Options] {target specification}${NC}\n"
     printf "${BLUE}Options${NC}:\n"
     echo "  -Pn:            Treat all hosts as online -- skip host discovery"
@@ -79,8 +67,6 @@ function cmd_nmap2(){
     echo "  -oA <basename>: Output in the three major formats at once"
     echo "  -v:             Increase verbosity level (use -vv or more for greater effect)"
     read -p "Target IP: " TARGET
-    cmd="nmap"
-    printf "┌─(${PURPLE}$TITLE${NC})${RED}`whoami`@`hostname`${NC}:${BLUE}[1]Kali-tools-top10${NC} > ${BLUE}[2]$cmd${NC} > ${BLUE}[2]IntenseScan${NC}\n"
     cmd="${cmd} -Pn -T4 -A -v -oA IntenseScan_`date "+%Y%m%d-%H%M%S"` $TARGET" 
     echo "└─Command? > $cmd"
     read -n 1 -p "You ready? y|n > " ANS
@@ -93,6 +79,8 @@ function cmd_nmap2(){
 function cmd_nmap3(){
     clear
 	figlet Nmap
+    cmd="nmap"
+    printf "┌─(${PURPLE}$TITLE${NC})${RED}`whoami`@`hostname`${NC}:${RED}[1]Kali-tools-top10${NC} > ${GREEN}[2]$cmd${NC} > ${YELLOW}[3]IntenseScan+UDP${NC}\n"
     printf "${BLUE}usage${NC}: nmap ${WHITE}[Scan Type...] [Options] {target specification}${NC}\n"
     printf "${BLUE}Options${NC}:\n"
     echo "  -Pn:            Treat all hosts as online -- skip host discovery"
@@ -103,8 +91,6 @@ function cmd_nmap3(){
     echo "  -oA <basename>:  Output in the three major formats at once"
     echo "  -v:              Increase verbosity level (use -vv or more for greater effect)"
     read -p "Target IP: " TARGET
-    cmd="nmap"
-    printf "┌─(${PURPLE}$TITLE${NC})${RED}`whoami`@`hostname`${NC}:${BLUE}[1]Kali-tools-top10${NC} > ${BLUE}[2]$cmd${NC} > ${BLUE}[3]IntenseScan+UDP${NC}\n"
     cmd="${cmd} -Pn -sS -sU -T4 -A -v -oA IntenseScanUDP_`date "+%Y%m%d-%H%M%S"` $TARGET" 
     echo "└─Command? > $cmd"
     read -n 1 -p "You ready? y|n > " ANS
@@ -117,6 +103,8 @@ function cmd_nmap3(){
 function cmd_nmap4(){
     clear
 	figlet Nmap
+    cmd="nmap"
+    printf "┌─(${PURPLE}$TITLE${NC})${RED}`whoami`@`hostname`${NC}:${RED}[1]Kali-tools-top10${NC} > ${GREEN}[2]$cmd${NC} > ${BLUE}[4]IntenseScan_all_TCP${NC}\n"
     printf "${BLUE}usage${NC}: nmap ${WHITE}[Scan Type...] [Options] {target specification}${NC}\n"
     printf "${BLUE}Options${NC}:\n"
     echo "  -Pn:            Treat all hosts as online -- skip host discovery"
@@ -127,8 +115,6 @@ function cmd_nmap4(){
     echo "  -oA <basename>:   Output in the three major formats at once"
     echo "  -v:               Increase verbosity level (use -vv or more for greater effect)"
     read -p "Target IP: " TARGET
-    cmd="nmap"
-    printf "┌─(${PURPLE}$TITLE${NC})${RED}`whoami`@`hostname`${NC}:${BLUE}[1]Kali-tools-top10${NC} > ${BLUE}[2]$cmd${NC} > ${BLUE}[4]IntenseScan_all_TCP${NC}\n"
     cmd="${cmd} -Pn -p 1-65535 -T4 -A -v -oA IntenseScanAllTCP_`date "+%Y%m%d-%H%M%S"` $TARGET" 
     echo "└─Command? > $cmd"
     read -n 1 -p "You ready? y|n > " ANS
@@ -141,6 +127,8 @@ function cmd_nmap4(){
 function cmd_nmap5(){
     clear
 	figlet Nmap
+    cmd="nmap"
+    printf "┌─(${PURPLE}$TITLE${NC})${RED}`whoami`@`hostname`${NC}:${RED}[1]Kali-tools-top10${NC} > ${GREEN}[2]$cmd${NC} > ${PURPLE}[5]Vuln Scan${NC}\n"
     printf "${BLUE}usage${NC}: nmap ${WHITE}[Scan Type...] [Options] {target specification}${NC}\n"
     printf "${BLUE}Options${NC}:\n"
     echo "  -Pn:                    Treat all hosts as online -- skip host discovery"
@@ -149,8 +137,6 @@ function cmd_nmap5(){
     echo "  -oA <basename>:         Output in the three major formats at once"
     echo "  -v:                     Increase verbosity level (use -vv or more for greater effect)"
     read -p "Target IP: " TARGET
-    cmd="nmap"
-    printf "┌─(${PURPLE}$TITLE${NC})${RED}`whoami`@`hostname`${NC}:${BLUE}[1]Kali-tools-top10${NC} > ${BLUE}[2]$cmd${NC} > ${BLUE}[5]Vuln Scan${NC}\n"
     cmd="${cmd} -Pn --script vuln -v -oA ScriptScanVuln_`date "+%Y%m%d-%H%M%S"` $TARGET" 
     echo "└─Command? > $cmd"
     read -n 1 -p "You ready? y|n > " ANS

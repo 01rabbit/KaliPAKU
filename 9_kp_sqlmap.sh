@@ -5,27 +5,13 @@ source kp.conf
 function menu_sqlmap(){
 	clear
 	figlet sqlmap
-    printf "${WHITE}+---+\n"
-    printf "| 1 |%s\n" " Kali-tools-top10"
-    printf "+---+\n"
-    printf "${BLUE}%5s+---+\n"
-    printf "%5s| 4 |%s\n" "" " sqlmap"
-    printf "%5s+---+\n"
-    printf "${WHITE}%10s+---+\n"
-    printf "%10s| 1 |%s\n" "" " GET request"
-    printf "%10s+---+%s\n"
-    printf "%10s+---+\n"
-    printf "%10s| 2 |%s\n" "" " POST request" 
-    printf "%10s+---+%s\n" 
-    printf "%10s+---+\n"
-    printf "%10s| 3 |%s\n" "" " Find out what databases exist" 
-    printf "%10s+---+%s\n" "" " with SQL injection"
-    printf "%10s+---+\n"
-    printf "%10s| 4 |%s\n" "" " Find out what table exist" 
-    printf "%10s+---+%s\n" "" " with SQL injection"
-    printf "%10s+---+\n"
-    printf "%10s| 5 |%s\n" "" " Display table contents" 
-    printf "%10s+---+%s${NC}\n" "" " with SQL injection"
+    num1 0 " Kali-tools-top10"
+    num4 5 " sqlmap"
+    num1 10 " GET_request"
+    num2 10 " POST_request"
+    num3 10 " Find_out_what_databases_exist" " with_SQL_injection"
+    num4 10 " Find_out_what_table_exist" " with_SQL_injection"
+    num5 10 " Display_table_contents" " with_SQL_injection"
 	read -n 1 -s NUM
     case $NUM in
     1)
@@ -52,12 +38,12 @@ function menu_sqlmap(){
 function cmd_sqlmap1(){
 	clear
 	figlet sqlmap
+    cmd="sqlmap"
+    printf "┌─(${PURPLE}$TITLE${NC})${RED}`whoami`@`hostname`${NC}:${RED}[1]Kali-tools-top10${NC} > ${BLUE}[4]$cmd${NC} > ${RED}[1]GET request${NC}\n"
     printf "${BLUE}usage${NC} :sqlmap  ${WHITE}[options]${NC}\n"
     printf "${BLUE}Options${NC}:\n"
     echo "  -u URL, --url=URL   Target URL (e.g. \"http://www.site.com/vuln.php?id=1\")"
     read -p "Target URL: " URL
-    cmd="sqlmap"
-    printf "┌─(${PURPLE}$TITLE${NC})${RED}`whoami`@`hostname`${NC}:${BLUE}[1]Kali-tools-top10${NC} > ${BLUE}[4]$cmd${NC} > ${BLUE}[1]GET request${NC}\n"
     cmd="${cmd} -u \"$URL\"" 
     echo "└─Command? > $cmd"
     read -n 1 -p "You ready? y|n > " ANS
@@ -70,6 +56,7 @@ function cmd_sqlmap1(){
 function cmd_sqlmap2(){
 	clear
 	figlet sqlmap
+    printf "┌─(${PURPLE}$TITLE${NC})${RED}`whoami`@`hostname`${NC}:${RED}[1]Kali-tools-top10${NC} > ${BLUE}[4]sqlmap${NC} > ${GREEN}[2]POST request${NC}\n"
     printf "${BLUE}usage${NC} :sqlmap  ${WHITE}[options]${NC}\n"
     printf "${BLUE}Options${NC}:\n"
     echo "  -u URL, --url=URL   Target URL (e.g. \"http://www.site.com/vuln.php?id=1\")"
@@ -91,7 +78,6 @@ function cmd_sqlmap2(){
     if [ ! -z $RISK ];then
         cmd+=" --risk $RISK"
     fi
-    printf "┌─(${PURPLE}$TITLE${NC})${RED}`whoami`@`hostname`${NC}:${BLUE}[1]Kali-tools-top10${NC} > ${BLUE}[4]sqlmap${NC} > ${BLUE}[2]POST request${NC}\n"
     echo "└─Command? > $cmd"
     read -n 1 -p "You ready? y|n > " ANS
     echo ""
@@ -103,6 +89,7 @@ function cmd_sqlmap2(){
 function cmd_sqlmap3(){
 	clear
 	figlet sqlmap
+    printf "┌─(${PURPLE}$TITLE${NC})${RED}`whoami`@`hostname`${NC}:${RED}[1]Kali-tools-top10${NC} > ${BLUE}[4]sqlmap${NC} > ${YELLOW}[3]Find out what DB exist with SQLi${NC}\n"
     printf "${BLUE}usage${NC} :sqlmap  ${WHITE}[options]${NC}\n"
     printf "${BLUE}Options${NC}:\n"
     echo "  -u URL, --url=URL   Target URL (e.g. \"http://www.site.com/vuln.php?id=1\")"
@@ -132,7 +119,6 @@ function cmd_sqlmap3(){
     if [ $DBS = "y" ] || [ $DBS = "Y" ];then
         cmd+=" --dbs"
     fi
-    printf "┌─(${PURPLE}$TITLE${NC})${RED}`whoami`@`hostname`${NC}:${BLUE}[1]Kali-tools-top10${NC} > ${BLUE}[4]sqlmap${NC} > ${BLUE}[3]Find out what DB exist with SQLi${NC}\n"
     echo "└─Command? > $cmd"
     read -n 1 -p "You ready? y|n > " ANS
     echo ""
@@ -144,6 +130,7 @@ function cmd_sqlmap3(){
 function cmd_sqlmap4(){
 	clear
 	figlet sqlmap
+    printf "┌─(${PURPLE}$TITLE${NC})${RED}`whoami`@`hostname`${NC}:${RED}[1]Kali-tools-top10${NC} > ${BLUE}[4]sqlmap${NC} > ${BLUE}[4]Find out what table exist with SQLi${NC}\n"
     printf "${BLUE}usage${NC} :sqlmap  ${WHITE}[options]${NC}\n"
     printf "${BLUE}Options${NC}:\n"
     echo "  -u URL, --url=URL   Target URL (e.g. \"http://www.site.com/vuln.php?id=1\")"
@@ -176,7 +163,6 @@ function cmd_sqlmap4(){
     if [ $TABLE = "y" ] || [ $TABLE = "Y" ];then
         cmd+=" --tables"
     fi
-    printf "┌─(${PURPLE}$TITLE${NC})${RED}`whoami`@`hostname`${NC}:${BLUE}[1]Kali-tools-top10${NC} > ${BLUE}[4]sqlmap${NC} > ${BLUE}[4]Find out what table exist with SQLi${NC}\n"
     echo "└─Command? > $cmd"
     read -n 1 -p "You ready? y|n > " ANS
     echo ""
@@ -188,6 +174,7 @@ function cmd_sqlmap4(){
 function cmd_sqlmap5(){
 	clear
 	figlet sqlmap
+    printf "┌─(${PURPLE}$TITLE${NC})${RED}`whoami`@`hostname`${NC}:${RED}[1]Kali-tools-top10${NC} > ${BLUE}[4]sqlmap${NC} > ${PURPLE}[5]FDisplay table contents with SQLi${NC}\n"
     printf "${BLUE}usage${NC} :sqlmap  ${WHITE}[options]${NC}\n"
     printf "${BLUE}Options${NC}:\n"
     echo "  -u URL, --url=URL   Target URL (e.g. \"http://www.site.com/vuln.php?id=1\")"
@@ -223,7 +210,6 @@ function cmd_sqlmap5(){
     if [ $DUMP = "y" ] || [ $DUMP = "Y" ];then
         cmd+=" --dump"
     fi
-    printf "┌─(${PURPLE}$TITLE${NC})${RED}`whoami`@`hostname`${NC}:${BLUE}[1]Kali-tools-top10${NC} > ${BLUE}[4]sqlmap${NC} > ${BLUE}[5]FDisplay table contents with SQLi${NC}\n"
     echo "└─Command? > $cmd"
     read -n 1 -p "You ready? y|n > " ANS
     echo ""

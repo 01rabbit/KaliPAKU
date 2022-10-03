@@ -36,35 +36,55 @@ function banner(){
     printf "${WHITE}PAKURI Version 6                             ${BLUE}. ${NC}\n"
 }
 
+function num1(){
+    printf "${RED}%$1s  |  +---+\n"
+    printf "%$1s  +--| 1 |%s\n" "" " $2"
+    printf "%$1s  |  +---+%s${NC}\n" "" " $3"
+}
+
+function num2(){
+    printf "${GREEN}%$1s  |  +---+\n"
+    printf "%$1s  +--| 2 |%s\n" "" " $2"
+    printf "%$1s  |  +---+%s${NC}\n" "" " $3"
+}
+
+function num3(){
+    printf "${YELLOW}%$1s  |  +---+\n"
+    printf "%$1s  +--| 3 |%s\n" "" " $2"
+    printf "%$1s  |  +---+%s${NC}\n" "" " $3"
+}
+
+function num4(){
+    printf "${BLUE}%$1s  |  +---+\n"
+    printf "%$1s  +--| 4 |%s\n" "" " $2"
+    printf "%$1s  |  +---+%s${NC}\n" "" " $3"
+}
+
+function num5(){
+    printf "${PURPLE}%$1s  |  +---+\n"
+    printf "%$1s  +--| 5 |%s\n" "" " $2"
+    printf "%$1s  |  +---+%s${NC}\n" "" " $3"
+}
+
 function mainmenu(){
 	clear
 	figlet KaliPAKU
-    menu_title=("Kali-tools-top10" "Git-tools" "")
-    printf "${WHITE}"
-    for ((i=0;i<3;i++))
-    do
-        printf "+---+\n"
-        printf "| %s |%s\n" "$(($i+1))" " ${menu_title[$i]}"
-        printf "+---+\n"
-    done
-    printf "${NC}"
+    num1 0 $1
+    num2 0 $2
+    num3 0 $3
 }
 
 function kalitoolstop10_menu1(){
 	clear
 	figlet kali-tools-top10
-    printf "${BLUE}+---+\n"
-    printf "| 1 |%s\n" " Kali-tools-top10"
-    printf "+---+\n"
-    printf "${WHITE}"
+    num1 0 " Kali-tools-top10"
     menu_title=("wifite(aircrack-ng)" "burpsuite" "crackmapexec(SMB)" "hydra" "john")
-    for ((i=0;i<5;i++))
-    do
-        printf "%5s+---+\n"
-        printf "%5s| %s |%s\n" "" "$(($i+1))" " ${menu_title[$i]}"
-        printf "%5s+---+\n"
-    done
-    printf "%5s+---+\n"
+    num1 5 ${menu_title[0]}
+    num2 5 ${menu_title[1]}
+    num3 5 ${menu_title[2]}
+    num4 5 ${menu_title[3]}
+    num5 5 ${menu_title[4]}
+    printf "${WHITE}%5s+---+\n"
     printf "%5s| 0 |%s\n" "" " Next"
     printf "%5s+---+\n"
 	printf "${NC}"
@@ -96,21 +116,16 @@ function kalitoolstop10_menu1(){
 function kalitoolstop10_menu2(){
 	clear
 	figlet kali-tools-top10
-    printf "${BLUE}+---+\n"
-    printf "| 1 |%s\n" " Kali-tools-top10"
-    printf "+---+\n"
-    printf "${WHITE}"
+    num1 0 " Kali-tools-top10"
     menu_title=("metasploit-framework" "nmap" "responder" "sqlmap" "wireshark(tshark)")
-    for ((i=0;i<5;i++))
-    do
-        printf "%5s+---+\n"
-        printf "%5s| %s |%s\n" "" "$(($i+1))" " ${menu_title[$i]}"
-        printf "%5s+---+\n"
-    done
-    printf "%5s+---+\n"
+    num1 5 ${menu_title[0]}
+    num2 5 ${menu_title[1]}
+    num3 5 ${menu_title[2]}
+    num4 5 ${menu_title[3]}
+    num5 5 ${menu_title[4]}
+    printf "${BLACK}%5s+---+\n"
     printf "%5s| 9 |%s\n" "" " Back"
-    printf "%5s+---+\n"
-	printf "${NC}"
+    printf "%5s+---+${NC}\n"
     read -n 1 -s NUM
 	case $NUM in
 	1)
@@ -145,7 +160,7 @@ while :;do
 	read -e -p "└─Command? > " str
     case $str in
     "kp"|"k"|"pakuri"|"kalipakuri"|"menu")
-		mainmenu
+		mainmenu "Kali-tools-top10" "Git-tools" "" "" ""
 		read -n 1 -s NUM
             case $NUM in
             1)

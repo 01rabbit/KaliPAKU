@@ -5,24 +5,12 @@ source kp.conf
 function menu_responder(){
 	clear
 	figlet Responder
-    printf "${WHITE}+---+\n"
-    printf "| 1 |%s\n" " Kali-tools-top10"
-    printf "+---+\n"
-    printf "${BLUE}%5s+---+\n"
-    printf "%5s| 3 |%s\n" "" " responder"
-    printf "%5s+---+\n"
-    printf "${WHITE}%10s+---+\n"
-    printf "%10s| 1 |%s\n" "" " Basic Usage"
-    printf "%10s+---+%s\n"
-    printf "%10s+---+\n"
-    printf "%10s| 2 |%s\n" "" " Analyze mode" 
-    printf "%10s+---+%s\n" 
-    printf "%10s+---+\n"
-    printf "%10s| 3 |%s\n" "" " Poisoning with Responder" 
-    printf "%10s+---+%s\n" 
-    printf "%10s+---+\n"
-    printf "%10s| 4 |%s\n" "" " Basic Authentication & WPAD" 
-    printf "%10s+---+%s${NC}\n" 
+    num1 0 " Kali-tools-top10"
+    num3 5 " responder"
+    num1 10 " Basic_Usage"
+    num2 10 " Analyze_mode"
+    num3 10 " Poisoning_with_Responder"
+    num4 10 " Basic_Authentication_&_WPAD"
 	read -n 1 -s NUM
     case $NUM in
     1)
@@ -45,6 +33,8 @@ function menu_responder(){
 function cmd_responder1(){
 	clear
 	figlet Responder
+    cmd="responder"
+    printf "┌─(${PURPLE}$TITLE${NC})${RED}`whoami`@`hostname`${NC}:${RED}[1]Kali-tools-top10${NC} > ${YELLOW}[3]$cmd${NC} > ${RED}[1]Basic Usage${NC}\n"
     printf "${BLUE}usage${NC} :Usage: responder ${WHITE}[Options]${NC}\n"
     printf "${BLUE}Options${NC}:\n"
     echo "  -I eth0, --interface=eth0"
@@ -54,8 +44,6 @@ function cmd_responder1(){
     echo "  -d, --DHCP      Enable ANSwers for DHCP broadcast requests. This"
     echo "                  option will inject a WPAD server in the DHCP response."
     read -p "Network interface: " INTERFACE
-    cmd="responder"
-    printf "┌─(${PURPLE}$TITLE${NC})${RED}`whoami`@`hostname`${NC}:${BLUE}[1]Kali-tools-top10${NC} > ${BLUE}[3]$cmd${NC} > ${BLUE}[1]Basic Usage${NC}\n"
     cmd="${cmd} -I ${INTERFACE} -wd"
     echo "└─Command? > $cmd"
     read -n 1 -p "You ready? y|n > " ANS
@@ -68,6 +56,8 @@ function cmd_responder1(){
 function cmd_responder2(){
 	clear
 	figlet Responder
+    cmd="responder"
+    printf "┌─(${PURPLE}$TITLE${NC})${RED}`whoami`@`hostname`${NC}:${RED}[1]Kali-tools-top10${NC} > ${YELLOW}[3]$cmd${NC} > ${GREEN}[2]Analyze mode${NC}\n"
     printf "${BLUE}usage${NC} :Usage: responder ${WHITE}[Options]${NC}\n"
     printf "${BLUE}Options${NC}:\n"
     echo "  -I eth0, --interface=eth0"
@@ -76,8 +66,6 @@ function cmd_responder2(){
     echo "  -A, --analyze   Analyze mode. This option allows you to see NBT-NS,"
     echo "                  BROWSER, LLMNR requests without responding."
     read -p "Network interface: " INTERFACE
-    cmd="responder"
-    printf "┌─(${PURPLE}$TITLE${NC})${RED}`whoami`@`hostname`${NC}:${BLUE}[1]Kali-tools-top10${NC} > ${BLUE}[3]$cmd${NC} > ${BLUE}[2]Analyze mode${NC}\n"
     cmd="${cmd} -I ${INTERFACE} -A"
     echo "└─Command? > $cmd"
     read -n 1 -p "You ready? y|n > " ANS
@@ -90,14 +78,14 @@ function cmd_responder2(){
 function cmd_responder3(){
 	clear
 	figlet Responder
+    cmd="responder"
+    printf "┌─(${PURPLE}$TITLE${NC})${RED}`whoami`@`hostname`${NC}:${RED}[1]Kali-tools-top10${NC} > ${YELLOW}[3]$cmd${NC} > ${YELLOW}[3]Poisoning${NC}\n"
     printf "${BLUE}usage${NC} :Usage: responder ${WHITE}[Options]${NC}\n"
     printf "${BLUE}Options${NC}:\n"
     echo "  -I eth0, --interface=eth0"
     echo "                  Network interface to use, you can use 'ALL' as a"
     echo "                  wildcard for all interfaces"
     read -p "Network interface: " INTERFACE
-    cmd="responder"
-    printf "┌─(${PURPLE}$TITLE${NC})${RED}`whoami`@`hostname`${NC}:${BLUE}[1]Kali-tools-top10${NC} > ${BLUE}[3]$cmd${NC} > ${BLUE}[3]Poisoning${NC}\n"
     cmd="${cmd} -I ${INTERFACE}"
     echo "└─Command? > $cmd"
     read -n 1 -p "You ready? y|n > " ANS
@@ -110,6 +98,8 @@ function cmd_responder3(){
 function cmd_responder4(){
 	clear
 	figlet Responder
+    cmd="responder"
+    printf "┌─(${PURPLE}$TITLE${NC})${RED}`whoami`@`hostname`${NC}:${RED}[1]Kali-tools-top10${NC} > ${YELLOW}[3]$cmd${NC} > ${BLUE}[4]WPAD${NC}\n"
     printf "${BLUE}usage${NC} :Usage: responder ${WHITE}[Options]${NC}\n"
     printf "${BLUE}Options${NC}:\n"
     echo "  -I eth0, --interface=eth0"
@@ -119,8 +109,6 @@ function cmd_responder4(){
     echo "  -b, --basic           Return a Basic HTTP authentication. Default: NTLM"
     echo "  -F, --ForceWpadAuth   Force NTLM/Basic authentication on wpad.dat file"
     echo "                        retrieval. This may cause a login prompt. Default:"
-    cmd="responder"
-    printf "┌─(${PURPLE}$TITLE${NC})${RED}`whoami`@`hostname`${NC}:${BLUE}[1]Kali-tools-top10${NC} > ${BLUE}[3]$cmd${NC} > ${BLUE}[4]WPAD${NC}\n"
     read -p "Network interface: " INTERFACE
     cmd="${cmd} -I ${INTERFACE} -wbF"
     echo "└─Command? > $cmd"

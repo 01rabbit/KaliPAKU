@@ -5,21 +5,14 @@ source kp.conf
 function menu_crackmapexec(){
 	clear
 	figlet crackmapexec
-	printf "${WHITE}+---+\n"
-    printf "| 1 |%s\n" " Kali-tools-top10"
-    printf "+---+\n"
-    printf "${BLUE}%5s+---+\n"
-    printf "%5s| 3 |%s\n" "" " crackmapexec(SMB)"
-    printf "%5s+---+\n"
-    printf "${WHITE}"
-    menu_title=("Target format(Basic)" "Null session" "Connect to target using local account" "Path the hash against a subnet" "Brutefocing & Password Spraying")
-    for ((i=0;i<5;i++))
-    do
-        printf "%10s+---+\n"
-        printf "%10s| %s |%s\n" "" "$(($i+1))" " ${menu_title[$i]}"
-        printf "%10s+---+\n"
-    done
-	printf "${NC}"
+    num1 0 " Kali-tools-top10"
+    num3 5 " crackmapexec(SMB)"
+    menu_title=("Target_format(Basic)" "Null_session" "Connect_to_target_using_local_account" "Path_the_hash_against_a_subnet" "Brutefocing_&_Password_Spraying")
+    num1 10 ${menu_title[0]} ""
+    num2 10 ${menu_title[1]}
+    num3 10 ${menu_title[2]}
+    num4 10 ${menu_title[3]}
+    num5 10 ${menu_title[4]}
     read -n 1 -s NUM
     case $NUM in
     1)
@@ -46,7 +39,7 @@ function cmd_crackmapexec1(){
 	clear
 	figlet crackmapexec
     cmd="crackmapexec "
-    printf "┌─(${PURPLE}$TITLE${NC})${RED}`whoami`@`hostname`${NC}:${BLUE}[1]Kali-tools-top10${NC} > ${BLUE}[3]$cmd${NC} > ${BLUE}[1]Target format(Basic)${NC}\n"
+    printf "┌─(${PURPLE}$TITLE${NC})${RED}`whoami`@`hostname`${NC}:${RED}[1]Kali-tools-top10${NC} > ${YELLOW}[3]$cmd${NC} > ${RED}[1]Target format(Basic)${NC}\n"
     printf "${BLUE}positional arguments${NC}:\n"
     echo "  target                the target IP(s), range(s), CIDR(s), hostname(s), FQDN(s), file(s) containing a list of targets, NMap XML or .Nessus file(s)"
     printf "${BLUE}usage${NC}: crackmapexec smb [target ...]\n"
@@ -64,7 +57,7 @@ function cmd_crackmapexec2(){
 	clear
 	figlet crackmapexec
     cmd="crackmapexec "
-    printf "┌─(${PURPLE}$TITLE${NC})${RED}`whoami`@`hostname`${NC}:${BLUE}[1]Kali-tools-top10${NC} > ${BLUE}[3]$cmd${NC} > ${BLUE}[2]Null session${NC}\n"
+    printf "┌─(${PURPLE}$TITLE${NC})${RED}`whoami`@`hostname`${NC}:${RED}[1]Kali-tools-top10${NC} > ${YELLO}[3]$cmd${NC} > ${GREEN}[2]Null session${NC}\n"
     printf "${BLUE}positional arguments${NC}:\n"
     echo "  target                the target IP(s), range(s), CIDR(s), hostname(s), FQDN(s), file(s) containing a list of targets, NMap XML or .Nessus file(s)"
     printf "${BLUE}usage${NC}: crackmapexec smb [target ...] -u "" up ""\n"
@@ -82,7 +75,7 @@ function cmd_crackmapexec3(){
 	clear
 	figlet crackmapexec
     cmd="crackmapexec "
-    printf "┌─(${PURPLE}$TITLE${NC})${RED}`whoami`@`hostname`${NC}:${BLUE}[1]Kali-tools-top10${NC} > ${BLUE}[3]$cmd${NC} > ${BLUE}[3]Connect to target using local account${NC}\n"
+    printf "┌─(${PURPLE}$TITLE${NC})${RED}`whoami`@`hostname`${NC}:${RED}[1]Kali-tools-top10${NC} > ${YELLOW}[3]$cmd${NC} > ${YELLOW}[3]Connect to target using local account${NC}\n"
     printf "${BLUE}positional arguments${NC}:\n"
     echo "  target                the target IP(s), range(s), CIDR(s), hostname(s), FQDN(s), file(s) containing a list of targets, NMap XML or .Nessus file(s)"
     printf "${BLUE}options:#{NC}\n"
@@ -108,7 +101,7 @@ function cmd_crackmapexec4(){
 	clear
 	figlet crackmapexec
     cmd="crackmapexec "
-    printf "┌─(${PURPLE}$TITLE${NC})${RED}`whoami`@`hostname`${NC}:${BLUE}[1]Kali-tools-top10${NC} > ${BLUE}[3]$cmd${NC} > ${BLUE}[4]Path the hash against a subnet${NC}\n"
+    printf "┌─(${PURPLE}$TITLE${NC})${RED}`whoami`@`hostname`${NC}:${RED}[1]Kali-tools-top10${NC} > ${YELLOW}[3]$cmd${NC} > ${BLUE}[4]Path the hash against a subnet${NC}\n"
     printf "${BLUE}positional arguments${NC}:\n"
     echo "  target                the target IP(s), range(s), CIDR(s), hostname(s), FQDN(s), file(s) containing a list of targets, NMap XML or .Nessus file(s)"
     printf "${BLUE}options:#{NC}\n"
@@ -143,7 +136,7 @@ function cmd_crackmapexec4(){
 function cmd_crackmapexec5(){
 	clear
 	figlet crackmapexec
-    printf "┌─(${PURPLE}$TITLE${NC})${RED}`whoami`@`hostname`${NC}:${BLUE}[1]Kali-tools-top10${NC} > ${BLUE}[3]crackmapexec${NC} > ${BLUE}[5]Brutefocing & Password Spraying${NC}\n"
+    printf "┌─(${PURPLE}$TITLE${NC})${RED}`whoami`@`hostname`${NC}:${RED}[1]Kali-tools-top10${NC} > ${YELLOW}[3]crackmapexec${NC} > ${PURPLE}[5]Brutefocing & Password Spraying${NC}\n"
     printf "${BLUE}positional arguments${NC}:\n"
     echo "  target                the target IP(s), range(s), CIDR(s), hostname(s), FQDN(s), file(s) containing a list of targets, NMap XML or .Nessus file(s)"
     printf "${BLUE}options:#{NC}\n"

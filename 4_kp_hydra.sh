@@ -5,18 +5,10 @@ source kp.conf
 function menu_hydra(){
 	clear
 	figlet hydra
-    printf "${WHITE}+---+\n"
-    printf "| 1 |%s\n" " Kali-tools-top10"
-    printf "+---+\n"
-    printf "${BLUE}%5s+---+\n"
-    printf "%5s| 4 |%s\n" "" " hydra"
-    printf "%5s+---+\n"
-	printf "${WHITE}%10s+---+\n"
-	printf "%10s| 1 |%s\n" "" " Brute force the username admin "
-	printf "%10s+---+%s\n" "" " with the given password list"
-    printf "%10s+---+\n"
-    printf "%10s| 2 |%s\n" "" " Brute force SSH with user and password lists"
-    printf "%10s+---+%s\n${NC}" "" " against target IP address"
+    num1 0 " Kali-tools-top10"
+    num4 5 " hydra"
+    num1 10 " Bruteforce_the_username_admin " " with_the_given_password_list"
+    num2 10 " Bruteforce_SSH_with_user_and_password_lists" " against_targetIP_address"
     read -n 1 -s NUM
     case $NUM in
     1)
@@ -34,7 +26,7 @@ function cmd_hydra1(){
     clear
     figlet hydra
     cmd="hydra"
-    printf "┌─(${PURPLE}$TITLE${NC})${RED}`whoami`@`hostname`${NC}:${BLUE}[1]Kali-tools-top10${NC} > ${BLUE}[4]$cmd${NC} > ${BLUE}[1]Brute force${NC}\n"
+    printf "┌─(${PURPLE}$TITLE${NC})${RED}`whoami`@`hostname`${NC}:${RED}[1]Kali-tools-top10${NC} > ${BLUE}[4]$cmd${NC} > ${RED}[1]Brute force${NC}\n"
 	printf "${BLUE}Options${NC}:\n"
     echo "  -l LOGIN or -L FILE     login with LOGIN name, or load several logins from FILE"
     echo "  -p PASS  or -P FILE     try password PASS, or load several passwords from FILE"
@@ -61,7 +53,7 @@ function cmd_hydra2(){
     clear
     figlet hydra
     cmd="hydra "
-    printf "┌─(${PURPLE}$TITLE${NC})${RED}`whoami`@`hostname`${NC}:${BLUE}[1]Kali-tools-top10${NC} > ${BLUE}[4]$cmd${NC} > ${BLUE}[2]Brute force SSH${NC}\n"
+    printf "┌─(${PURPLE}$TITLE${NC})${RED}`whoami`@`hostname`${NC}:${RED}[1]Kali-tools-top10${NC} > ${BLUE}[4]$cmd${NC} > ${GREEN}[2]Brute force SSH${NC}\n"
     printf "${BLUE}Options:${NC}\n"
     printf "${BLUE}usage${NC}: hydra ${WHITE}[[[-l LOGIN|-L FILE] [-p PASS|-P FILE]] | [-C FILE]] [-e nsr] [-o FILE] [-t TASKS] [-M FILE [-T TASKS]] [-w TIME] [-W TIME] [-f] [-s PORT] [-x MIN:MAX:CHARSET] [-c TIME] [-ISOuvVd46] [-m MODULE_OPT] [service://server[:PORT][/OPT]]${NC}\n"
     echo "  -l LOGIN or -L FILE     login with LOGIN name, or load several logins from FILE"

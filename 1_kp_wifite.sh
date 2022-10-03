@@ -6,7 +6,7 @@ function cmd_wifite(){
 	clear
 	figlet wifite
     cmd="wifite "
-    printf "┌─(${PURPLE}$TITLE${NC})${RED}`whoami`@`hostname`${NC}:${BLUE}[1]Kali-tools-top10${NC} > ${BLUE}[1]$cmd${NC}\n"
+    printf "┌─(${PURPLE}$TITLE${NC})${RED}`whoami`@`hostname`${NC}:${RED}[1]Kali-tools-top10${NC} > ${RED}[1]$cmd${NC}\n"
     printf "${BLUE}usage${NC}: wifite (${RED}Run as Root${NC})\n"
     printf "  wifite ${WHITE}[option|SETTINGS]${NC}\n"
     echo "options:"
