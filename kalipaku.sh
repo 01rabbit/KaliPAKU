@@ -1,15 +1,16 @@
 #!/bin/bash
 
 source kp.conf
-source 1_kp_wifite.sh
-source 2_kp_burpsuite.sh
-source 3_kp_crackmapexec.sh
-source 4_kp_hydra.sh
-source 5_kp_john.sh
-source 6_kp_metasploit.sh
-source 7_kp_nmap.sh
-source 8_kp_responder.sh
-source 9_kp_sqlmap.sh
+source modules/1_kp_wifite.sh
+source modules/2_kp_burpsuite.sh
+source modules/3_kp_crackmapexec.sh
+source modules/4_kp_hydra.sh
+source modules/5_kp_john.sh
+source modules/6_kp_metasploit.sh
+source modules/7_kp_nmap.sh
+source modules/8_kp_responder.sh
+source modules/9_kp_sqlmap.sh
+source modules/10_kp_wireshark.sh
 
 
 function banner(){
@@ -36,6 +37,11 @@ function banner(){
     printf "${WHITE}PAKURI Version 6                             ${BLUE}. ${NC}\n"
 }
 
+function num0(){
+    printf "${WHITE}%$1s  |  ${WHITE}+---+\n"
+    printf "${WHITE}%$1s  +--${WHITE}| 0 |%s\n" "" " $2"
+    printf "${WHITE}%$1s  |  ${WHITE}+---+%s${NC}\n" "" " $3"
+}
 function num1(){
     printf "${WHITE}%$1s  |  ${RED}+---+\n"
     printf "${WHITE}%$1s  +--${RED}| 1 |%s\n" "" " $2"
@@ -66,6 +72,12 @@ function num5(){
     printf "${WHITE}%$1s  |  ${PURPLE}+---+%s${NC}\n" "" " $3"
 }
 
+function num9(){
+    printf "${WHITE}%$1s  |  ${BLACK}+---+\n"
+    printf "${WHITE}%$1s  +--${BLACK}| 9 |%s\n" "" " $2"
+    printf "${WHITE}%$1s  |  ${BLACK}+---+%s${NC}\n" "" " $3"
+}
+
 function mainmenu(){
 	clear
 	figlet KaliPAKU
@@ -84,9 +96,7 @@ function kalitoolstop10_menu1(){
     num3 5 ${menu_title[2]}
     num4 5 ${menu_title[3]}
     num5 5 ${menu_title[4]}
-    printf "${WHITE}%5s+---+\n"
-    printf "%5s| 0 |%s\n" "" " Next"
-    printf "%5s+---+\n"
+    num0 5 "Next"
 	printf "${NC}"
 	read -n 1 -s NUM
 	case $NUM in
@@ -123,9 +133,7 @@ function kalitoolstop10_menu2(){
     num3 5 ${menu_title[2]}
     num4 5 ${menu_title[3]}
     num5 5 ${menu_title[4]}
-    printf "${BLACK}%5s+---+\n"
-    printf "%5s| 9 |%s\n" "" " Back"
-    printf "%5s+---+${NC}\n"
+    num9 5 "Back"
     read -n 1 -s NUM
 	case $NUM in
 	1)
@@ -151,8 +159,15 @@ function kalitoolstop10_menu2(){
 	esac
 }
 
+# Rockyou Check
+FILE="rockyou.txt"
 
-
+if [ ! -e $FILE ];then
+    cp /usr/share/wordlists/rockyou.txt.gz .
+    if [ -e "rockyou.txt.gz" ];then
+        gunzip rockyou.txt.gz
+    fi
+fi
 
 clear
 while :;do
