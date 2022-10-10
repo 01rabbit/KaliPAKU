@@ -1,6 +1,7 @@
 #!/bin/bash
 
 source kp.conf
+source $MODULES_PATH/misc_module.sh
 
 function menu_hydra(){
 	clear
@@ -34,12 +35,12 @@ function cmd_hydra1(){
     num1 0 "Username"
     num2 0 "Username File"
     read -n 1 -s ANS
-    if [ $ANS = "1" ];then
+    if [ $ANS = 1 ];then
         read -p "> Input Username: " USERNAME
-        USERNAME = "-l ${USERNAME}"
+        USERNAME="-l ${USERNAME}"
     else
         read -p "> Input Username File path: " USERNAME
-        USERNAME = "-L ${USERNAME}"
+        USERNAME="-L ${USERNAME}"
     fi 
     echo "|"
     echo "|  -p PASS  or -P FILE     try password PASS, or load several passwords from FILE"
@@ -47,20 +48,20 @@ function cmd_hydra1(){
     num1 0 "Password"
     num2 0 "Password File"
     read -n 1 -s ANS
-    if [ $ANS = "1" ];then
+    if [ $ANS = 1 ];then
         read -p "> Input Password: " PASSWORD
-        PASSWORD = "-p ${PASSWORD}"
+        PASSWORD="-p ${PASSWORD}"
     else
         echo "> Original list or Default?"
         num1 0 "Original Password List"
         num2 0 "Default Password List"
         read -n 1 -s ANS
-        if [$ANS = 1 ];
+        if [$ANS = 1 ];then
             read -p "> Input Original Password File path: " USERNAME
-            USERNAME = "-P ${USERNAME}"
+            USERNAME="-P ${USERNAME}"
         else
             echo "> Use Default PAssword List."
-            USERNAME = "-P rockyou.txt"
+            USERNAME="-P rockyou.txt"
         fi
     fi
     echo "|"
@@ -116,10 +117,10 @@ function cmd_hydra2(){
     read -n 1 -s ANS
     if [ $ANS = "1" ];then
         read -p "> Input Username: " USERNAME
-        USERNAME = "-l ${USERNAME}"
+        USERNAME="-l ${USERNAME}"
     else
         read -p "> Input Username File path: " USERNAME
-        USERNAME = "-L ${USERNAME}"
+        USERNAME="-L ${USERNAME}"
     fi 
     echo "|"
     echo "|  -p PASS  or -P FILE     try password PASS, or load several passwords from FILE"
@@ -129,18 +130,18 @@ function cmd_hydra2(){
     read -n 1 -s ANS
     if [ $ANS = "1" ];then
         read -p "> Input Password: " PASSWORD
-        PASSWORD = "-p ${PASSWORD}"
+        PASSWORD="-p ${PASSWORD}"
     else
         echo "> Original list or Default?"
         num1 0 "Original Password List"
         num2 0 "Default Password List"
         read -n 1 -s ANS
-        if [$ANS = 1 ];
+        if [$ANS = 1 ];then
             read -p "> Input Original Password File path: " USERNAME
-            USERNAME = "-P ${USERNAME}"
+            USERNAME="-P ${USERNAME}"
         else
             echo "> Use Default PAssword List."
-            USERNAME = "-P rockyou.txt"
+            USERNAME="-P rockyou.txt"
         fi
     fi
     echo "|"

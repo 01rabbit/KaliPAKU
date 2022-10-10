@@ -1,0 +1,70 @@
+#!/bin/bash
+
+function banner(){
+    printf "${BLUE}..............\n"
+    printf "            ..,;:ccc,.\n"
+    printf "          ......''';lxO.\n"
+    printf ".....''''..........,:ld;\n"
+    printf "           .';;;:::;,,.x,\n"
+    printf "      ..'''.            0Xxoc:,.  ...\n"
+    printf "  ....                ,ONkc;,;cokOdc',.\n"
+    printf " .                   OMo           ':${GREEN}dd${BLUE}o.\n"
+    printf "                    dMc               :OO;\n"
+    printf "                    0M.                 .:o.\n"
+    printf "                    ;Wd\n"
+    printf "                     ;XO,\n"
+    printf "                       ,d0Odlc;,..\n"
+    printf "                           ..',;:cdOOd::,.\n"
+    printf "                                    .:d;.':;.\n"
+    printf "                                       'd,  .'\n"
+    printf "${PURPLE} _  ${GREEN}__     _ _ ${PURPLE}____   ${GREEN}_    _  ___   _  ${BLUE}    ;l   ..\n"
+    printf "${PURPLE}| |${GREEN}/ /__ _| (_)${PURPLE}  _ \ ${GREEN}/ \  | |/ / | | |  ${BLUE}  .o\n"
+    printf "${PURPLE}| ' ${GREEN}// _\` | | |${PURPLE} |_) ${GREEN}/ _ \ | ' /| | | | ${BLUE}     c\n"
+    printf "${PURPLE}| . ${GREEN}\ (_| | | |${PURPLE}  __${GREEN}/ ___ \| . \| |_| |  ${BLUE}    .'\n"
+    printf "${PURPLE}|_|${GREEN}\_\__,_|_|_|${PURPLE}_| ${GREEN}/_/   \_\_|\_\\\\\___/ ${BLUE}       . \n"
+    printf "${WHITE}                                       PAKUTI Version 5\n"
+    printf "${RED}010010101100000110110011010001010000100000010010101010101 ${NC}\n"
+
+}
+
+
+function num0(){
+    printf "${WHITE}%$1s  |  ${WHITE}+---+\n"
+    printf "${WHITE}%$1s  +--${WHITE}| 0 |%s\n" "" " $2"
+    printf "${WHITE}%$1s  |  ${WHITE}+---+%s${NC}\n" "" " $3"
+}
+function num1(){
+    printf "${WHITE}%$1s  |  ${RED}+---+\n"
+    printf "${WHITE}%$1s  +--${RED}| 1 |%s\n" "" " $2"
+    printf "${WHITE}%$1s  |  ${RED}+---+%s${NC}\n" "" " $3"
+}
+
+function num2(){
+    printf "${WHITE}%$1s  |  ${GREEN}+---+\n"
+    printf "${WHITE}%$1s  +--${GREEN}| 2 |%s\n" "" " $2"
+    printf "${WHITE}%$1s  |  ${GREEN}+---+%s${NC}\n" "" " $3"
+}
+
+function num3(){
+    printf "${WHITE}%$1s  |  ${YELLOW}+---+\n"
+    printf "${WHITE}%$1s  +--${YELLOW}| 3 |%s\n" "" " $2"
+    printf "${WHITE}%$1s  |  ${YELLOW}+---+%s${NC}\n" "" " $3"
+}
+
+function num4(){
+    printf "${WHITE}%$1s  |  ${BLUE}+---+\n"
+    printf "${WHITE}%$1s  +--${BLUE}| 4 |%s\n" "" " $2"
+    printf "${WHITE}%$1s  |  ${BLUE}+---+%s${NC}\n" "" " $3"
+}
+
+function num5(){
+    printf "${WHITE}%$1s  |  ${PURPLE}+---+\n"
+    printf "${WHITE}%$1s  +--${PURPLE}| 5 |%s\n" "" " $2"
+    printf "${WHITE}%$1s  |  ${PURPLE}+---+%s${NC}\n" "" " $3"
+}
+
+function num9(){
+    printf "${WHITE}%$1s  |  ${BLACK}+---+\n"
+    printf "${WHITE}%$1s  +--${BLACK}| 9 |%s\n" "" " $2"
+    printf "${WHITE}%$1s  |  ${BLACK}+---+%s${NC}\n" "" " $3"
+}

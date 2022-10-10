@@ -1,6 +1,7 @@
 #!/bin/bash
 
 source kp.conf
+source $MODULES_PATH/misc_module.sh
 
 function cmd_wireshark(){
     clear
@@ -33,6 +34,5 @@ function cmd_wireshark(){
 }
 
 
-tshark [ -i <capture interface>|- ] [ -f <capture filter> ] [ -2 ] [ -r <infile> ] [ -w <outfile>|- ] [ options ] [ <filter> ]
-
-       tshark -G [ <report type> ] [ --elastic-mapping-filter <protocols> ]
+# tshark [ -i <capture interface>|- ] [ -f <capture filter> ] [ -2 ] [ -r <infile> ] [ -w <outfile>|- ] [ options ] [ <filter> ]
+#    tshark -G [ <report type> ] [ --elastic-mapping-filter <protocols> ]

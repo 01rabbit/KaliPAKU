@@ -1,6 +1,7 @@
 #!/bin/bash
 
 source kp.conf
+source $MODULES_PATH/misc_module.sh
 
 function menu_john(){
 	clear
