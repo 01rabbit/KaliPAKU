@@ -40,23 +40,29 @@ function cmd_nmap1(){
     clear
 	figlet Nmap
     cmd="nmap"
-    printf "┌─(${PURPLE}$TITLE${NC})${RED}`whoami`@`hostname`${NC}:${RED}[1]Kali-tools-top10${NC} > ${GREEN}[2]$cmd${NC} > ${RED}[1]Ping Scan${NC}\n"
+    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${RED}[1]Kali-tools-top10${NC} > ${GREEN}[2]$cmd${NC} > ${RED}[1]Ping Scan${NC}\n"
     printf "+${BLUE}Options${NC}:\n"
-    echo "|  -sn:            Ping Scan - disable port scan"
-    echo "|  -oA <basename>: Output in the three major formats at once"
-    echo "|  -v:             Increase verbosity level (use -vv or more for greater effect)"
+    printf "|  ${YELLOW}-sn${NC}:            Ping Scan - disable port scan\n"
+    printf "|  ${YELLOW}-oA <basename>${NC}: Output in the three major formats at once\n"
+    printf "|  ${YELLOW}-v${NC}:             Increase verbosity level (use -vv or more for greater effect)\n"
     read -p "> Input Target IP: " TARGET
     echo "|"
     printf "+${BLUE}usage${NC}: nmap ${WHITE}[Scan Type...] [Options] {target specification}${NC}\n"
-    cmd="${cmd} -sn -v -oA pingscan_`date "+%Y%m%d-%H%M%S"` $TARGET" 
+    cmd="${cmd} -sn -v -oA result/$TARGET/PingScan_`date "+%Y%m%d-%H%M%S"` $TARGET" 
     echo "└─Command > $cmd"
     echo ""
     echo "> You ready?"
     num1 0 "No"
     num2 0 "Yes"
     read -n 1 -s ANS
-    if [ $ANS = "2" ];then
-        eval $cmd
+    if [ ! -z "$ANS" ];then
+        if [ $ANS = "2" ];then
+            eval $cmd
+        else
+            :
+        fi
+    else
+        :
     fi
 }
 
@@ -65,25 +71,31 @@ function cmd_nmap2(){
     clear
 	figlet Nmap
     cmd="nmap"
-    printf "┌─(${PURPLE}$TITLE${NC})${RED}`whoami`@`hostname`${NC}:${RED}[1]Kali-tools-top10${NC} > ${GREEN}[2]$cmd${NC} > ${GREEN}[2]IntenseScan${NC}\n"
+    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${RED}[1]Kali-tools-top10${NC} > ${GREEN}[2]$cmd${NC} > ${GREEN}[2]IntenseScan${NC}\n"
     printf "+${BLUE}Options${NC}:\n"
-    echo "|  -Pn:            Treat all hosts as online -- skip host discovery"
-    echo "|  -T<0-5>:        Set timing template (higher is faster)"
-    echo "|  -A:             Enable OS detection, version detection, script scanning, and traceroute"
-    echo "|  -oA <basename>: Output in the three major formats at once"
-    echo "|  -v:             Increase verbosity level (use -vv or more for greater effect)"
+    printf "|  ${YELLOW}-Pn${NC}:            Treat all hosts as online -- skip host discovery\n"
+    printf "|  ${YELLOW}-T<0-5>${NC}:        Set timing template (higher is faster)\n"
+    printf "|  ${YELLOW}-A${NC}:             Enable OS detection, version detection, script scanning, and traceroute\n"
+    printf "|  ${YELLOW}-oA <basename>${NC}: Output in the three major formats at once\n"
+    printf "|  ${YELLOW}-v${NC}:             Increase verbosity level (use -vv or more for greater effect)\n"
     read -p "> Input Target IP: " TARGET
     echo "|"
     printf "+${BLUE}usage${NC}: nmap ${WHITE}[Scan Type...] [Options] {target specification}${NC}\n"
-    cmd="${cmd} -Pn -T4 -A -v -oA IntenseScan_`date "+%Y%m%d-%H%M%S"` $TARGET" 
+    cmd="${cmd} -Pn -T4 -A -v -oA result/$TARGET/IntenseScan_`date "+%Y%m%d-%H%M%S"` $TARGET" 
     echo "└─Command > $cmd"
     echo ""
     echo "> You ready?"
     num1 0 "No"
     num2 0 "Yes"
     read -n 1 -s ANS
-    if [ $ANS = "2" ];then
-        eval $cmd
+    if [ ! -z "$ANS" ];then
+        if [ $ANS = "2" ];then
+            eval $cmd
+        else
+            :
+        fi
+    else
+        :
     fi
 }
 
@@ -92,27 +104,33 @@ function cmd_nmap3(){
     clear
 	figlet Nmap
     cmd="nmap"
-    printf "┌─(${PURPLE}$TITLE${NC})${RED}`whoami`@`hostname`${NC}:${RED}[1]Kali-tools-top10${NC} > ${GREEN}[2]$cmd${NC} > ${YELLOW}[3]IntenseScan+UDP${NC}\n"
+    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${RED}[1]Kali-tools-top10${NC} > ${GREEN}[2]$cmd${NC} > ${YELLOW}[3]IntenseScan+UDP${NC}\n"
     printf "+${BLUE}Options${NC}:\n"
-    echo "|  -Pn:            Treat all hosts as online -- skip host discovery"
-    echo "|  -sS/sT/sA/sW/sM: TCP SYN/Connect()/ACK/Window/Maimon scANS"
-    echo "|  -sU:             UDP Scan"
-    echo "|  -T<0-5>:         Set timing template (higher is faster)"
-    echo "|  -A:              Enable OS detection, version detection, script scanning, and traceroute"
-    echo "|  -oA <basename>:  Output in the three major formats at once"
-    echo "|  -v:              Increase verbosity level (use -vv or more for greater effect)"
+    printf "|  ${YELLOW}-Pn${NC}:            Treat all hosts as online -- skip host discovery\n"
+    printf "|  ${YELLOW}-sS/sT/sA/sW/sM${NC}: TCP SYN/Connect()/ACK/Window/Maimon scANS\n"
+    printf "|  ${YELLOW}-sU${NC}:             UDP Scan\n"
+    printf "|  ${YELLOW}-T<0-5>${NC}:         Set timing template (higher is faster)\n"
+    printf "|  ${YELLOW}-A${NC}:              Enable OS detection, version detection, script scanning, and traceroute\n"
+    printf "|  ${YELLOW}-oA <basename>${NC}:  Output in the three major formats at once\n"
+    printf "|  ${YELLOW}-v${NC}:              Increase verbosity level (use -vv or more for greater effect)\n"
     read -p "> Input Target IP: " TARGET
     echo "|"
     printf "+${BLUE}usage${NC}: nmap ${WHITE}[Scan Type...] [Options] {target specification}${NC}\n"
-    cmd="${cmd} -Pn -sS -sU -T4 -A -v -oA IntenseScanUDP_`date "+%Y%m%d-%H%M%S"` $TARGET" 
+    cmd="${cmd} -Pn -sS -sU -T4 -A -v -oA result/$TARGET/IntenseScanUDP_`date "+%Y%m%d-%H%M%S"` $TARGET" 
     echo "└─Command > $cmd"
     echo ""
     echo "> You ready?"
     num1 0 "No"
     num2 0 "Yes"
     read -n 1 -s ANS
-    if [ $ANS = "2" ];then
-        eval $cmd
+    if [ ! -z "$ANS" ];then
+        if [ $ANS = "2" ];then
+            eval $cmd
+        else
+            :
+        fi
+    else
+        :
     fi
 }
 
@@ -121,27 +139,33 @@ function cmd_nmap4(){
     clear
 	figlet Nmap
     cmd="nmap"
-    printf "┌─(${PURPLE}$TITLE${NC})${RED}`whoami`@`hostname`${NC}:${RED}[1]Kali-tools-top10${NC} > ${GREEN}[2]$cmd${NC} > ${BLUE}[4]IntenseScan_all_TCP${NC}\n"
+    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${RED}[1]Kali-tools-top10${NC} > ${GREEN}[2]$cmd${NC} > ${BLUE}[4]IntenseScan_all_TCP${NC}\n"
     printf "+${BLUE}Options${NC}:\n"
-    echo "|  -Pn:            Treat all hosts as online -- skip host discovery"
-    echo "|  -p <port ranges>: Only scan specified ports"
-    echo "|         Ex: -p22; -p1-65535; -p U:53,111,137,T:21-25,80,139,8080,S:9"
-    echo "|  -T<0-5>:          Set timing template (higher is faster)"
-    echo "|  -A:               Enable OS detection, version detection, script scanning, and traceroute"
-    echo "|  -oA <basename>:   Output in the three major formats at once"
-    echo "|  -v:               Increase verbosity level (use -vv or more for greater effect)"
+    printf "|  ${YELLOW}-Pn${NC}:            Treat all hosts as online -- skip host discovery\n"
+    printf "|  ${YELLOW}-p <port ranges>${NC}: Only scan specified ports\n"
+    printf "|         ${YELLOW}Ex${NC}: -p22; -p1-65535; -p U:53,111,137,T:21-25,80,139,8080,S:9\n"
+    printf "|  ${YELLOW}-T<0-5>${NC}:          Set timing template (higher is faster)\n"
+    printf "|  ${YELLOW}-A${NC}:               Enable OS detection, version detection, script scanning, and traceroute\n"
+    printf "|  ${YELLOW}-oA <basename>${NC}:   Output in the three major formats at once\n"
+    printf "|  ${YELLOW}-v${NC}:               Increase verbosity level (use -vv or more for greater effect)\n"
     read -p "> Input Target IP: " TARGET
     echo "|"
     printf "+${BLUE}usage${NC}: nmap ${WHITE}[Scan Type...] [Options] {target specification}${NC}\n"
-    cmd="${cmd} -Pn -p 1-65535 -T4 -A -v -oA IntenseScanAllTCP_`date "+%Y%m%d-%H%M%S"` $TARGET" 
+    cmd="${cmd} -Pn -p 1-65535 -T4 -A -v -oA result/$TARGET/IntenseScanAllTCP_`date "+%Y%m%d-%H%M%S"` $TARGET" 
     echo "└─Command > $cmd"
     echo ""
     echo "> You ready?"
     num1 0 "No"
     num2 0 "Yes"
     read -n 1 -s ANS
-    if [ $ANS = "2" ];then
-        eval $cmd
+    if [ ! -z "$ANS" ];then
+        if [ $ANS = "2" ];then
+            eval $cmd
+        else
+            :
+        fi
+    else
+        :
     fi
 }
 
@@ -150,24 +174,30 @@ function cmd_nmap5(){
     clear
 	figlet Nmap
     cmd="nmap"
-    printf "┌─(${PURPLE}$TITLE${NC})${RED}`whoami`@`hostname`${NC}:${RED}[1]Kali-tools-top10${NC} > ${GREEN}[2]$cmd${NC} > ${PURPLE}[5]Vuln Scan${NC}\n"
+    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${RED}[1]Kali-tools-top10${NC} > ${GREEN}[2]$cmd${NC} > ${PURPLE}[5]Vuln Scan${NC}\n"
     printf "+${BLUE}Options${NC}:\n"
-    echo "|  -Pn:                    Treat all hosts as online -- skip host discovery"
-    echo "|  --script=<Lua scripts>: <Lua scripts> is a comma separated list of"
-    echo "|                          directories, script-files or script-categories"
-    echo "|  -oA <basename>:         Output in the three major formats at once"
-    echo "|  -v:                     Increase verbosity level (use -vv or more for greater effect)"
+    printf "|  ${YELLOW}-Pn${NC}:                    Treat all hosts as online -- skip host discovery\n"
+    printf "|  ${YELLOW}--script=<Lua scripts>${NC}: <Lua scripts> is a comma separated list of\n"
+    printf "|                          directories, script-files or script-categories\n"
+    printf "|  ${YELLOW}-oA <basename>${NC}:         Output in the three major formats at once\n"
+    printf "|  ${YELLOW}-v${NC}:                     Increase verbosity level (use -vv or more for greater effect)\n"
     read -p "> Input Target IP: " TARGET
     echo "|"
     printf "+${BLUE}usage${NC}: nmap ${WHITE}[Scan Type...] [Options] {target specification}${NC}\n"
-    cmd="${cmd} -Pn --script vuln -v -oA ScriptScanVuln_`date "+%Y%m%d-%H%M%S"` $TARGET" 
+    cmd="${cmd} -Pn --script vuln -v -oA result/$TARGET/ScriptScanVuln_`date "+%Y%m%d-%H%M%S"` $TARGET" 
     echo "└─Command > $cmd"
     echo ""
     echo "> You ready?"
     num1 0 "No"
     num2 0 "Yes"
     read -n 1 -s ANS
-    if [ $ANS = "2" ];then
-        eval $cmd
+    if [ ! -z "$ANS" ];then
+        if [ $ANS = "2" ];then
+            eval $cmd
+        else
+            :
+        fi
+    else
+        :
     fi
 }

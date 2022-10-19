@@ -7,7 +7,7 @@ function cmd_wireshark(){
     clear
 	figlet Wireshark
     cmd="wireshark"
-    printf "┌─(${PURPLE}$TITLE${NC})${RED}`whoami`@`hostname`${NC}:${RED}[1]Kali-tools-top10${NC} > ${PURPLE}[5]$cmd${NC}\n"
+    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${RED}[1]Kali-tools-top10${NC} > ${PURPLE}[5]$cmd${NC}\n"
     printf "|${RED}  ####  Caution!  ####${NC}\n"
     printf "|${RED}  Wireshark ${WHITE}is a GUI application. It can't be displayed on a remote console.\n"
     printf "|  If you want to continue with CUI, you can choose ${RED}tshark.${NC}\n"
@@ -26,11 +26,16 @@ function cmd_wireshark(){
 	num2 0 "Yes"
     read -n 1 -s ANS
     echo ""
-    if [ $ANS = "2" ];then
+    if [ ! -z "$ANS" ];then
+        if [ $ANS = "2" ];then
         cmd="$cmd"
         eval $cmd
+        else
+            :
+        fi
+    else
+        :
     fi
-
 }
 
 

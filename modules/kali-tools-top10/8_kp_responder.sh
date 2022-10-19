@@ -36,15 +36,15 @@ function cmd_responder1(){
 	clear
 	figlet Responder
     cmd="responder"
-    printf "┌─(${PURPLE}$TITLE${NC})${RED}`whoami`@`hostname`${NC}:${RED}[1]Kali-tools-top10${NC} > ${YELLOW}[3]$cmd${NC} > ${RED}[1]Basic Usage${NC}\n"
+    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${RED}[1]Kali-tools-top10${NC} > ${YELLOW}[3]$cmd${NC} > ${RED}[1]Basic Usage${NC}\n"
     printf "+${BLUE}Options${NC}:\n"
-    echo "|  -I eth0, --interface=eth0"
+    printf "|  ${YELLOW}-I eth0, --interface=eth0${NC}\n"
     echo "|                  Network interface to use, you can use 'ALL' as a"
     echo "|                  wildcard for all interfaces"
     read -p "> Input Network interface: " INTERFACE
     echo "|"
-    echo "|  -w, --wpad      Start the WPAD rogue proxy server. Default value is False"
-    echo "|  -d, --DHCP      Enable ANSwers for DHCP broadcast requests. This"
+    printf "|  ${YELLOW}-w, --wpad${NC}      Start the WPAD rogue proxy server. Default value is False\n"
+    printf "|  ${YELLOW}-d, --DHCP${NC}      Enable ANSwers for DHCP broadcast requests. This\n"
     echo "|                  option will inject a WPAD server in the DHCP response."
     echo "|"
     printf "+${BLUE}usage${NC} :Usage: responder ${WHITE}[Options]${NC}\n"
@@ -55,8 +55,14 @@ function cmd_responder1(){
     num1 0 "No"
     num2 0 "Yes"
     read -n 1 -s ANS
-    if [ $ANS = "2" ];then
-        eval $cmd
+    if [ ! -z "$ANS" ];then
+        if [ $ANS = "2" ];then
+            eval $cmd
+        else
+            :
+        fi
+    else
+        :
     fi
 }
 
@@ -65,14 +71,14 @@ function cmd_responder2(){
 	clear
 	figlet Responder
     cmd="responder"
-    printf "┌─(${PURPLE}$TITLE${NC})${RED}`whoami`@`hostname`${NC}:${RED}[1]Kali-tools-top10${NC} > ${YELLOW}[3]$cmd${NC} > ${GREEN}[2]Analyze mode${NC}\n"
+    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${RED}[1]Kali-tools-top10${NC} > ${YELLOW}[3]$cmd${NC} > ${GREEN}[2]Analyze mode${NC}\n"
     printf "+${BLUE}Options${NC}:\n"
-    echo "|  -I eth0, --interface=eth0"
+    printf "|  ${YELLOW}-I eth0, --interface=eth0${NC}\n"
     echo "|                  Network interface to use, you can use 'ALL' as a"
     echo "|                  wildcard for all interfaces"
     read -p "> Input Network interface: " INTERFACE
     echo "|"
-    echo "|  -A, --analyze   Analyze mode. This option allows you to see NBT-NS,"
+    printf "|  ${YELLOW}-A, --analyze${NC}   Analyze mode. This option allows you to see NBT-NS,\n"
     echo "|                  BROWSER, LLMNR requests without responding."
     echo "|"
     printf "+${BLUE}usage${NC} :Usage: responder ${WHITE}[Options]${NC}\n"
@@ -83,8 +89,14 @@ function cmd_responder2(){
     num1 0 "No"
     num2 0 "Yes"
     read -n 1 -s ANS
-    if [ $ANS = "2" ];then
-        eval $cmd
+    if [ ! -z "$ANS" ];then
+        if [ $ANS = "2" ];then
+            eval $cmd
+        else
+            :
+        fi
+    else
+        :
     fi
 }
 
@@ -93,9 +105,9 @@ function cmd_responder3(){
 	clear
 	figlet Responder
     cmd="responder"
-    printf "┌─(${PURPLE}$TITLE${NC})${RED}`whoami`@`hostname`${NC}:${RED}[1]Kali-tools-top10${NC} > ${YELLOW}[3]$cmd${NC} > ${YELLOW}[3]Poisoning${NC}\n"
+    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${RED}[1]Kali-tools-top10${NC} > ${YELLOW}[3]$cmd${NC} > ${YELLOW}[3]Poisoning${NC}\n"
     printf "+${BLUE}Options${NC}:\n"
-    echo "|  -I eth0, --interface=eth0"
+    printf "|  ${YELLOW}-I eth0, --interface=eth0${NC}\n"
     echo "|                  Network interface to use, you can use 'ALL' as a"
     echo "|                  wildcard for all interfaces"
     read -p "> Input Network interface: " INTERFACE
@@ -108,8 +120,14 @@ function cmd_responder3(){
     num1 0 "No"
     num2 0 "Yes"
     read -n 1 -s ANS
-    if [ $ANS = "2" ];then
-        eval $cmd
+    if [ ! -z "$ANS" ];then
+        if [ $ANS = "2" ];then
+            eval $cmd
+        else
+            :
+        fi
+    else
+        :
     fi
 }
 
@@ -118,16 +136,16 @@ function cmd_responder4(){
 	clear
 	figlet Responder
     cmd="responder"
-    printf "┌─(${PURPLE}$TITLE${NC})${RED}`whoami`@`hostname`${NC}:${RED}[1]Kali-tools-top10${NC} > ${YELLOW}[3]$cmd${NC} > ${BLUE}[4]WPAD${NC}\n"
+    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${RED}[1]Kali-tools-top10${NC} > ${YELLOW}[3]$cmd${NC} > ${BLUE}[4]WPAD${NC}\n"
     printf "+${BLUE}Options${NC}:\n"
-    echo "|  -I eth0, --interface=eth0"
+    printf "|  ${YELLOW}-I eth0, --interface=eth0${NC}\n"
     echo "|                        Network interface to use, you can use 'ALL' as a"
     echo "|                        wildcard for all interfaces"
     read -p "Network interface: " INTERFACE
     echo "|"
-    echo "|  -w, --wpad            Start the WPAD rogue proxy server. Default value is False"
-    echo "|  -b, --basic           Return a Basic HTTP authentication. Default: NTLM"
-    echo "|  -F, --ForceWpadAuth   Force NTLM/Basic authentication on wpad.dat file"
+    printf "|  ${YELLOW}-w, --wpad${NC}            Start the WPAD rogue proxy server. Default value is False\n"
+    printf "|  ${YELLOW}-b, --basic${NC}           Return a Basic HTTP authentication. Default: NTLM\n"
+    printf "|  ${YELLOW}-F, --ForceWpadAuth${NC}   Force NTLM/Basic authentication on wpad.dat file\n"
     echo "|                        retrieval. This may cause a login prompt. Default:"
     printf "+${BLUE}usage${NC} :Usage: responder ${WHITE}[Options]${NC}\n"
     cmd="${cmd} -I ${INTERFACE} -wbF"
@@ -137,7 +155,13 @@ function cmd_responder4(){
     num1 0 "No"
     num2 0 "Yes"
     read -n 1 -s ANS
-    if [ $ANS = "2" ];then
-        eval $cmd
+    if [ ! -z "$ANS" ];then
+        if [ $ANS = "2" ];then
+            eval $cmd
+        else
+            :
+        fi
+    else
+        :
     fi
 }

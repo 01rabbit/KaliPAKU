@@ -36,10 +36,10 @@ function cmd_john1(){
     clear
     figlet john
     cmd="john "
-    printf "┌─(${PURPLE}$TITLE${NC})${RED}`whoami`@`hostname`${NC}:${RED}[1]Kali-tools-top10${NC} > ${PURPLE}[5]$cmd${NC} > ${RED}[1]Cracking with a wordlist${NC}\n"
+    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${RED}[1]Kali-tools-top10${NC} > ${PURPLE}[5]$cmd${NC} > ${RED}[1]Cracking with a wordlist${NC}\n"
     printf "+${BLUE}Options${NC}:\n"
-	echo "|  --wordlist[=FILE] --stdin  Wordlist mode, read words from FILE or stdin"
-	echo "|                    --pipe   like --stdin, but bulk reads, and allows rules"
+	printf "|  ${YELLOW}--wordlist[=FILE] --stdin${NC}  Wordlist mode, read words from FILE or stdin\n"
+	printf "|                    ${YELLOW}--pipe${NC}   like --stdin, but bulk reads, and allows rules\n"
     echo "> Original Wordlist or Default?"
     num1 0 "Original"
     num2 0 "Default"
@@ -62,8 +62,14 @@ function cmd_john1(){
     num1 0 "No"
     num2 0 "Yes"
     read -n 1 -s ANS
-    if [ $ANS = "2" ];then
-        eval $cmd
+    if [ ! -z "$ANS" ];then
+        if [ $ANS = "2" ];then
+            eval $cmd
+        else
+            :
+        fi
+    else
+        :
     fi
 }
 
@@ -72,9 +78,9 @@ function cmd_john2(){
     clear
     figlet john
     cmd="john "
-    printf "┌─(${PURPLE}$TITLE${NC})${RED}`whoami`@`hostname`${NC}:${RED}[1]Kali-tools-top10${NC} > ${PURPLE}[5]$cmd${NC} > ${GREEN}[2]Hash Crack(using previously cracked passwords)${NC}\n"
+    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${RED}[1]Kali-tools-top10${NC} > ${PURPLE}[5]$cmd${NC} > ${GREEN}[2]Hash Crack(using previously cracked passwords)${NC}\n"
     printf "+${BLUE}Options${NC}:\n"
-	echo "|  --loopback[=FILE]   Like --wordlist, but extract words from a .pot file"
+	printf "|  ${YELLOW}--loopback[=FILE]${NC}   Like --wordlist, but extract words from a .pot file\n"
     read -e -p "> Input HASH list path:" HASH_LIST_PATH
     echo "|"
     # printf "${RED}Example${NC}:  john --loopback <HASH_LIST_FILE>\n"
@@ -86,8 +92,14 @@ function cmd_john2(){
     num1 0 "No"
     num2 0 "Yes"
     read -n 1 -s ANS
-    if [ $ANS = "2" ];then
-        eval $cmd
+    if [ ! -z "$ANS" ];then
+        if [ $ANS = "2" ];then
+            eval $cmd
+        else
+            :
+        fi
+    else
+        :
     fi
 }
 
@@ -96,9 +108,9 @@ function cmd_john3(){
     clear
     figlet john
     cmd="john "
-    printf "┌─(${PURPLE}$TITLE${NC})${RED}`whoami`@`hostname`${NC}:${RED}[1]Kali-tools-top10${NC} > ${PURPLE}[5]$cmd${NC} > ${YELLOW}[3]Show cracked passwords${NC}\n"
+    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${RED}[1]Kali-tools-top10${NC} > ${PURPLE}[5]$cmd${NC} > ${YELLOW}[3]Show cracked passwords${NC}\n"
     printf "+${BLUE}Options${NC}:\n"
-	echo "|  --show[=left]              Show cracked passwords [if =left, then uncracked]"
+	printf "|  ${YELLOW}--show[=left]${NC}              Show cracked passwords [if =left, then uncracked]\n"
     read -e -p "Input HASH list path:" HASH_LIST_PATH
     echo "|"
     # printf "${RED}Example${NC}:  john --show <HASH_LIST_FILE>\n"
@@ -110,8 +122,14 @@ function cmd_john3(){
     num1 0 "No"
     num2 0 "Yes"
     read -n 1 -s ANS
-    if [ $ANS = "2" ];then
-        eval $cmd
+    if [ ! -z "$ANS" ];then
+        if [ $ANS = "2" ];then
+            eval $cmd
+        else
+            :
+        fi
+    else
+        :
     fi
 }
 
@@ -120,9 +138,9 @@ function cmd_john4(){
     clear
     figlet john
     cmd="john "
-    printf "┌─(${PURPLE}$TITLE${NC})${RED}`whoami`@`hostname`${NC}:${RED}[1]Kali-tools-top10${NC} > ${PURPLE}[5]$cmd${NC} > ${BLUE}[4]Hash crack using incremental mode${NC}\n"
+    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${RED}[1]Kali-tools-top10${NC} > ${PURPLE}[5]$cmd${NC} > ${BLUE}[4]Hash crack using incremental mode${NC}\n"
     printf "+${BLUE}Options${NC}:\n"
-	echo "|  --incremental[=MODE]       \"Incremental\" mode [using section MODE]"
+	printf "|  ${YELLOW}--incremental[=MODE]${NC}       \"Incremental\" mode [using section MODE]\n"
     read -e -p "Input HASH list path:" HASH_LIST_PATH
     # printf "${RED}Example${NC}:  john --incremental <HASH_LIST_FILE>\n"
     printf "+${BLUE}usage${NC}: john ${WHITE}--incremental [PASSWORD-FILES]${NC}\n"
@@ -133,8 +151,14 @@ function cmd_john4(){
     num1 0 "No"
     num2 0 "Yes"
     read -n 1 -s ANS
-    if [ $ANS = "2" ];then
-        eval $cmd
+    if [ ! -z "$ANS" ];then
+        if [ $ANS = "2" ];then
+            eval $cmd
+        else
+            :
+        fi
+    else
+        :
     fi
 }
 

@@ -40,9 +40,9 @@ function cmd_sqlmap1(){
 	clear
 	figlet sqlmap
     cmd="sqlmap"
-    printf "┌─(${PURPLE}$TITLE${NC})${RED}`whoami`@`hostname`${NC}:${RED}[1]Kali-tools-top10${NC} > ${BLUE}[4]$cmd${NC} > ${RED}[1]GET request${NC}\n"
+    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${RED}[1]Kali-tools-top10${NC} > ${BLUE}[4]$cmd${NC} > ${RED}[1]GET request${NC}\n"
     printf "+${BLUE}Options${NC}:\n"
-    echo "|  -u URL, --url=URL   Target URL (e.g. \"http://www.site.com/vuln.php?id=1\")"
+    printf "|  ${YELLOW}-u URL, --url=URL${NC}   Target URL (e.g. \"http://www.site.com/vuln.php?id=1\")\n"
     read -p "> Input Target URL: " URL
     echo "|"
     printf "+${BLUE}usage${NC} :sqlmap  ${WHITE}[options]${NC}\n"
@@ -53,8 +53,14 @@ function cmd_sqlmap1(){
     num1 0 "No"
     num2 0 "Yes"
     read -n 1 -s ANS
-    if [ $ANS = "2" ];then
-        eval $cmd
+    if [ ! -z "$ANS" ];then
+        if [ $ANS = "2" ];then
+            eval $cmd
+        else
+            :
+        fi
+    else
+        :
     fi
 }
 
@@ -62,20 +68,20 @@ function cmd_sqlmap2(){
 	clear
 	figlet sqlmap
     cmd="sqlmap"
-    printf "┌─(${PURPLE}$TITLE${NC})${RED}`whoami`@`hostname`${NC}:${RED}[1]Kali-tools-top10${NC} > ${BLUE}[4]sqlmap${NC} > ${GREEN}[2]POST request${NC}\n"
+    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${RED}[1]Kali-tools-top10${NC} > ${BLUE}[4]sqlmap${NC} > ${GREEN}[2]POST request${NC}\n"
     printf "+${BLUE}Options${NC}:\n"
-    echo "|  -u URL, --url=URL   Target URL (e.g. \"http://www.site.com/vuln.php?id=1\")"
+    printf "|  ${YELLOW}-u URL, --url=URL${NC}   Target URL (e.g. \"http://www.site.com/vuln.php?id=1\")\n"
     read -p "> Input Target URL: " URL
     echo "|"
     printf "+${BLUE}Request${NC}:\n"
     echo "|  These options can be used to specify how to connect to the target URL"
-    echo "|  --data=DATA         Data string to be sent through POST (e.g. \"id=1\")"
+    printf "|  ${YELLOW}--data=DATA${NC}         Data string to be sent through POST (e.g. \"id=1\")\n"
     read -p "> Input POST parameter:" POST
     echo "|"
     cmd="${cmd} -u \"$URL\" --data $POST" 
     printf "+${BLUE}Detection${NC}:\n"
     echo "|  These options can be used to customize the detection phase"
-    echo "|  --level=LEVEL       Level of tests to perform (1-5, default 1)"
+    printf "|  ${YELLOW}--level=LEVEL${NC}       Level of tests to perform (1-5, default 1)\n"
     read -p "> Input Level(1-5, default 1): " LEVEL
     if [ ! -z $LEVEL ] && [ $LEVEL -le 5 ];then
         cmd+=" --level $LEVEL"
@@ -83,7 +89,7 @@ function cmd_sqlmap2(){
         cmd+=" --level 1"
     fi
     echo "|"
-    echo "|  --risk=RISK         Risk of tests to perform (1-3, default 1)"
+    printf "|  ${YELLOW}--risk=RISK${NC}         Risk of tests to perform (1-3, default 1)\n"
     read -p "> Input Risk(1-3, default 1): " RISK
     if [ ! -z $RISK ] && [ $RISK -le 3 ];then
         cmd+=" --risk $RISK"
@@ -97,8 +103,14 @@ function cmd_sqlmap2(){
     num1 0 "No"
     num2 0 "Yes"
     read -n 1 -s ANS
-    if [ $ANS = "2" ];then
-        eval $cmd
+    if [ ! -z "$ANS" ];then
+        if [ $ANS = "2" ];then
+            eval $cmd
+        else
+            :
+        fi
+    else
+        :
     fi
 }
 
@@ -106,19 +118,19 @@ function cmd_sqlmap3(){
 	clear
 	figlet sqlmap
     cmd="sqlmap"
-    printf "┌─(${PURPLE}$TITLE${NC})${RED}`whoami`@`hostname`${NC}:${RED}[1]Kali-tools-top10${NC} > ${BLUE}[4]sqlmap${NC} > ${YELLOW}[3]Find out what DB exist with SQLi${NC}\n"
+    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${RED}[1]Kali-tools-top10${NC} > ${BLUE}[4]sqlmap${NC} > ${YELLOW}[3]Find out what DB exist with SQLi${NC}\n"
     printf "+${BLUE}Options${NC}:\n"
-    echo "|  -u URL, --url=URL   Target URL (e.g. \"http://www.site.com/vuln.php?id=1\")"
+    printf "|  ${YELLOW}-u URL, --url=URL${NC}   Target URL (e.g. \"http://www.site.com/vuln.php?id=1\")\n"
     read -p "> Input Target URL: " URL
     echo "|"
     printf "+${BLUE}Request${NC}:\n"
     echo "|  These options can be used to specify how to connect to the target URL"
-    echo "|  --data=DATA         Data string to be sent through POST (e.g. \"id=1\")"
+    printf "|  ${YELLOW}--data=DATA${NC}         Data string to be sent through POST (e.g. \"id=1\")\n"
     read -p "> Input POST parameter:" POST
     echo "|"
     printf "+${BLUE}Detection${NC}:\n"
     echo "|  These options can be used to customize the detection phase"
-    echo "|  --level=LEVEL       Level of tests to perform (1-5, default 1)"
+    printf "|  ${YELLOW}--level=LEVEL${NC}       Level of tests to perform (1-5, default 1)\n"
     cmd="${cmd} -u \"$URL\" --data $POST" 
     read -p "> Input Level(1-5, default 1): " LEVEL
     if [ ! -z $LEVEL ] && [ $LEVEL -le 5 ];then
@@ -127,7 +139,7 @@ function cmd_sqlmap3(){
         cmd+=" --level 1"
     fi
     echo "|"
-    echo "|  --risk=RISK         Risk of tests to perform (1-3, default 1)"
+    printf "|  ${YELLOW}--risk=RISK${NC}         Risk of tests to perform (1-3, default 1)\n"
     read -p "> Input Risk(1-3, default 1): " RISK
     if [ ! -z $RISK ] && [ $RISK -le 3 ];then
         cmd+=" --risk $RISK"
@@ -138,7 +150,7 @@ function cmd_sqlmap3(){
     printf "+${BLUE}Enumeration${NC}:\n"
     echo "|  These options can be used to enumerate the back-end database"
     echo "|  management system information, structure and data contained in the tables"
-    echo "|  --dbs               Enumerate DBMS databases"
+    printf "|  ${YELLOW}--dbs${NC}               Enumerate DBMS databases\n"
     echo "> Enumerate DBMS databases? "
     num1 0 "No"
     num2 0 "Yes"
@@ -154,8 +166,14 @@ function cmd_sqlmap3(){
     num1 0 "No"
     num2 0 "Yes"
     read -n 1 -s ANS
-    if [ $ANS = "2" ];then
-        eval $cmd
+    if [ ! -z "$ANS" ];then
+        if [ $ANS = "2" ];then
+            eval $cmd
+        else
+            :
+        fi
+    else
+        :
     fi
 }
 
@@ -163,19 +181,19 @@ function cmd_sqlmap4(){
 	clear
 	figlet sqlmap
     cmd="sqlmap"
-    printf "┌─(${PURPLE}$TITLE${NC})${RED}`whoami`@`hostname`${NC}:${RED}[1]Kali-tools-top10${NC} > ${BLUE}[4]sqlmap${NC} > ${BLUE}[4]Find out what table exist with SQLi${NC}\n"
+    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${RED}[1]Kali-tools-top10${NC} > ${BLUE}[4]sqlmap${NC} > ${BLUE}[4]Find out what table exist with SQLi${NC}\n"
     printf "+${BLUE}Options${NC}:\n"
-    echo "|  -u URL, --url=URL   Target URL (e.g. \"http://www.site.com/vuln.php?id=1\")"
+    printf "|  ${YELLOW}-u URL, --url=URL${NC}   Target URL (e.g. \"http://www.site.com/vuln.php?id=1\")\n"
     read -p "> Input Target URL: " URL
     echo "|"
     printf "+${BLUE}Request${NC}:\n"
     echo "|  These options can be used to specify how to connect to the target URL"
-    echo "|  --data=DATA         Data string to be sent through POST (e.g. \"id=1\")"
+    printf "|  ${YELLOW}--data=DATA${NC}         Data string to be sent through POST (e.g. \"id=1\")\n"
     read -p "> Input POST parameter:" POST
     echo "|"
     printf "+${BLUE}Detection${NC}:\n"
     echo "|  These options can be used to customize the detection phase"
-    echo "|  --level=LEVEL       Level of tests to perform (1-5, default 1)"
+    printf "|  ${YELLOW}--level=LEVEL${NC}       Level of tests to perform (1-5, default 1)\n"
     cmd="${cmd} -u \"$URL\" --data $POST" 
     read -p "> Input Level(1-5, default 1): " LEVEL
     if [ ! -z $LEVEL ] && [ $LEVEL -le 5 ];then
@@ -184,7 +202,7 @@ function cmd_sqlmap4(){
         cmd+=" --level 1"
     fi
     echo "|"
-    echo "|  --risk=RISK         Risk of tests to perform (1-3, default 1)"
+    printf "|  ${YELLOW}--risk=RISK${NC}         Risk of tests to perform (1-3, default 1)\n"
     read -p "> Input Risk(1-3, default 1): " RISK
     if [ ! -z $RISK ] && [ $RISK -le 3 ];then
         cmd+=" --risk $RISK"
@@ -195,11 +213,11 @@ function cmd_sqlmap4(){
     printf "+${BLUE}Enumeration${NC}:\n"
     echo "|  These options can be used to enumerate the back-end database"
     echo "|  management system information, structure and data contained in the tables"
-    echo "|  -D DB               DBMS database to enumerate"
+    printf "|  ${YELLOW}-D DB${NC}               DBMS database to enumerate\n"
     read -p "> Input Database Name: "DATABASE_NAME
     cmd+=" -D \"$DATABASE_NAME\""
     echo "|"
-    echo "|  --tables            Enumerate DBMS database tables"
+    printf "|  ${YELLOW}--tables${NC}            Enumerate DBMS database tables\n"
     echo "> Enumerate DBMS database tables?"
     num1 0 "No"
     num2 0 "Yes"
@@ -215,8 +233,14 @@ function cmd_sqlmap4(){
     num1 0 "No"
     num2 0 "Yes"
     read -n 1 -s ANS
-    if [ $ANS = "2" ];then
-        eval $cmd
+    if [ ! -z "$ANS" ];then
+        if [ $ANS = "2" ];then
+            eval $cmd
+        else
+            :
+        fi
+    else
+        :
     fi
 }
 
@@ -224,19 +248,19 @@ function cmd_sqlmap5(){
 	clear
 	figlet sqlmap
     cmd="sqlmap"
-    printf "┌─(${PURPLE}$TITLE${NC})${RED}`whoami`@`hostname`${NC}:${RED}[1]Kali-tools-top10${NC} > ${BLUE}[4]sqlmap${NC} > ${PURPLE}[5]FDisplay table contents with SQLi${NC}\n"
+    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${RED}[1]Kali-tools-top10${NC} > ${BLUE}[4]sqlmap${NC} > ${PURPLE}[5]FDisplay table contents with SQLi${NC}\n"
     printf "+${BLUE}Options${NC}:\n"
-    echo "|  -u URL, --url=URL   Target URL (e.g. \"http://www.site.com/vuln.php?id=1\")"
+    printf "|  ${YELLOW}-u URL, --url=URL${NC}   Target URL (e.g. \"http://www.site.com/vuln.php?id=1\")\n"
     read -p "> Input Target URL: " URL
     echo "|"
     printf "+${BLUE}Request${NC}:\n"
     echo "|  These options can be used to specify how to connect to the target URL"
-    echo "|  --data=DATA         Data string to be sent through POST (e.g. \"id=1\")"
+    printf "|  ${YELLOW}--data=DATA${NC}         Data string to be sent through POST (e.g. \"id=1\")\n"
     read -p "> Input POST parameter:" POST
     echo "|"
     printf "+${BLUE}Detection${NC}:\n"
     echo "|  These options can be used to customize the detection phase"
-    echo "|  --level=LEVEL       Level of tests to perform (1-5, default 1)"
+    printf "|  ${YELLOW}--level=LEVEL${NC}       Level of tests to perform (1-5, default 1)\n"
     cmd="${cmd} -u \"$URL\" --data $POST" 
     read -p "> Input Level(1-5, default 1): " LEVEL
     if [ ! -z $LEVEL ] && [ $LEVEL -le 5 ];then
@@ -245,7 +269,7 @@ function cmd_sqlmap5(){
         cmd+=" --level 1"
     fi
     echo "|"
-    echo "|  --risk=RISK         Risk of tests to perform (1-3, default 1)"
+    printf "|  ${YELLOW}--risk=RISK${NC}         Risk of tests to perform (1-3, default 1)\n"
     read -p "> Input Risk(1-3, default 1): " RISK
     if [ ! -z $RISK ] && [ $RISK -le 3 ];then
         cmd+=" --risk $RISK"
@@ -255,15 +279,15 @@ function cmd_sqlmap5(){
     printf "+${BLUE}Enumeration${NC}:\n"
     echo "|  These options can be used to enumerate the back-end database"
     echo "|  management system information, structure and data contained in the tables"
-    echo "|  -D DB               DBMS database to enumerate"
+    printf "|  ${YELLOW}-D DB${NC}               DBMS database to enumerate\n"
     read -p "> Input Database Name: " DATABASE_NAME
     cmd+=" -D \"$DATABASE_NAME\""
     echo "|"
-    echo "|  -T TBL              DBMS database table(s) to enumerate"
+    printf "|  ${YELLOW}-T TBL${NC}              DBMS database table(s) to enumerate\n"
     read -p "Input Tables: " TABLE_NAME
     cmd+=" -T \"$TABLE_NAME\""
     echo "|"
-    echo "|  --dump              Dump DBMS database table entries"
+    printf "|  ${YELLOW}--dump${NC}              Dump DBMS database table entries\n"
     echo "> Dump DBMS database table entries? "
     num1 0 "No"
     num2 0 "Yes"
@@ -279,7 +303,13 @@ function cmd_sqlmap5(){
     num1 0 "No"
     num2 0 "Yes"
     read -n 1 -s ANS
-    if [ $ANS = "2" ];then
-        eval $cmd
+    if [ ! -z "$ANS" ];then
+        if [ $ANS = "2" ];then
+            eval $cmd
+        else
+            :
+        fi
+    else
+        :
     fi
 }

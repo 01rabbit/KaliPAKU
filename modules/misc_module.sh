@@ -1,6 +1,7 @@
 #!/bin/bash
 
 function banner(){
+    printf "${RED}010010101100000110110011010001010000100000010010101010101 ${NC}\n"
     printf "${BLUE}..............\n"
     printf "            ..,;:ccc,.\n"
     printf "          ......''';lxO.\n"
@@ -66,5 +67,5 @@ function num5(){
 function num9(){
     printf "${WHITE}%$1s  |  ${BLACK}+---+\n"
     printf "${WHITE}%$1s  +--${BLACK}| 9 |%s\n" "" " $2"
-    printf "${WHITE}%$1s  |  ${BLACK}+---+%s${NC}\n" "" " $3"
+    printf "${WHITE}%$1s     ${BLACK}+---+%s${NC}\n" "" " $3"
 }

