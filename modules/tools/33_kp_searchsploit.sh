@@ -40,23 +40,23 @@ function cmd_search(){
     echo "|"
     read -p  "> Input Search Word: " WORD
     cmd="${cmd} -t ${WORD}"
-    # echo "└─Command > $cmd"
-    # echo ""
-    # echo "> You ready?"
-    # num1 0 "No"
-    # num2 0 "Yes"
-    # echo ""
-    # read -n 1 -s ANS
-    # if [ ! -z "$ANS" ];then
-    #     if [ $ANS = "2" ];then
+    echo "└─Command > $cmd"
+    echo ""
+    echo "> You ready?"
+    num1 0 "No"
+    num2 0 "Yes"
+    echo ""
+    read -n 1 -s ANS
+    if [ ! -z "$ANS" ];then
+        if [ $ANS = "2" ];then
             eval $cmd
             cmd_copypaste
-    #     else
-    #         :
-    #     fi
-    # else
-    #     :
-    # fi
+        else
+            :
+        fi
+    else
+        :
+    fi
 }
 
 function cmd_copypaste(){
