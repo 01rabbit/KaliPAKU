@@ -64,6 +64,12 @@ function num5(){
     printf "${WHITE}%$1s  |  ${PURPLE}+---+%s${NC}\n" "" " $3"
 }
 
+function num6(){
+    printf "${WHITE}%$1s  |  ${LIGHTBLUE}+---+\n"
+    printf "${WHITE}%$1s  +--${LIGHTBLUE}| 6 |%s\n" "" " $2"
+    printf "${WHITE}%$1s  |  ${LIGHTBLUE}+---+%s${NC}\n" "" " $3"
+}
+
 function num9(){
     printf "${WHITE}%$1s  |  ${BLACK}+---+\n"
     printf "${WHITE}%$1s  +--${BLACK}| 9 |%s\n" "" " $2"
