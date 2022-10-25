@@ -3,6 +3,27 @@
 source kp.conf
 source $MODULES_PATH/misc_module.sh
 
+function menu_burpsuite(){
+	clear
+	figlet Burpsuite
+	num1 0 "Kali-tools-top10"
+	num2 5 "burpsuite"
+	num1 10 "Execute"
+	num9 10 "Back"
+    read -n 1 -s NUM
+	case $NUM in
+    1)
+        cmd_burpsuite
+        ;;
+    9)
+        kalitoolstop10_menu1
+        ;;
+    *)
+        ;;
+    esac
+
+}
+
 function cmd_burpsuite(){
     local cmd ="" ANS=""
 	clear

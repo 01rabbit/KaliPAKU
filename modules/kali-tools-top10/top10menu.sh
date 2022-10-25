@@ -13,28 +13,27 @@ source $TOP10_PATH/9_kp_sqlmap.sh
 source $TOP10_PATH/10_kp_wireshark.sh
 source $MODULES_PATH/misc_module.sh
 
-local NUM=""
 
 function kalitoolstop10_menu1(){
+	local NUM=""
 	clear
 	figlet kali-tools-top10
-    num1 0 " Kali-tools-top10"
-    menu_title=("wifite(aircrack-ng)" "burpsuite" "crackmapexec(SMB)" "hydra" "john")
-    num1 5 ${menu_title[0]}
-    num2 5 ${menu_title[1]}
-    num3 5 ${menu_title[2]}
-    num4 5 ${menu_title[3]}
-    num5 5 ${menu_title[4]}
+    num1 0 "Kali-tools-top10"
+    num1 5 "wifite(aircrack-ng)"
+    num2 5 "burpsuite"
+    num3 5 "crackmapexec(SMB)"
+    num4 5 "hydra"
+    num5 5 "john"
     num0 5 "Next"
 	num9 5 "Main"
 	printf "${NC}"
-	read -n 1 -s n
-	case $n in
+	read -n 1 -s NUM
+	case $NUM in
 	1)
-		cmd_wifite
+		menu_wifite
 		;;
     2)
-        cmd_burpsuite
+        menu_burpsuite
         ;;
 	3)
 		menu_crackmapexec
@@ -58,19 +57,19 @@ function kalitoolstop10_menu1(){
 }
 
 function kalitoolstop10_menu2(){
+	local NUM=""
 	clear
 	figlet kali-tools-top10
-    num1 0 " Kali-tools-top10"
-    menu_title=("metasploit-framework" "nmap" "responder" "sqlmap" "wireshark(tshark)")
-    num1 5 ${menu_title[0]}
-    num2 5 ${menu_title[1]}
-    num3 5 ${menu_title[2]}
-    num4 5 ${menu_title[3]}
-    num5 5 ${menu_title[4]}
+    num1 0 "Kali-tools-top10"
+    num1 5 "metasploit-framework"
+    num2 5 "nmap"
+    num3 5 "responder"
+    num4 5 "sqlmap"
+    num5 5 "wireshark(tshark)"
     num0 5 "Back"
 	num9 5 "Main"
-    read -n 1 -s n
-	case $n in
+    read -n 1 -s NUM
+	case $NUM in
 	1)
 		menu_metasploit
 		;;
@@ -84,7 +83,7 @@ function kalitoolstop10_menu2(){
 		menu_sqlmap
 		;;
 	5)
-        cmd_wireshark
+        menu_wireshark
 		;;
 	0)
 		kalitoolstop10_menu1

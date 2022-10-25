@@ -6,12 +6,14 @@ source $MODULES_PATH/misc_module.sh
 function menu_john(){
 	clear
 	figlet john
-    num1 0 " Kali-tools-top10"
-    num5 5 " john"
-    num1 10 " Cracking_with_a_wordlist"
-    num2 10 " Attempt_to_crack_hash_file" " using_previously_cracked_passwords"
-    num3 10 " Show_cracked_passwords"
-    num4 10 " Attempt_to_crack_hash_using_incremental_mode" " (May_take_a_long_time)"
+    num1 0 "Kali-tools-top10"
+    num5 5 "john"
+    num1 10 "Cracking_with_a_wordlist"
+    num2 10 "Attempt_to_crack_hash_file" " using_previously_cracked_passwords"
+    num3 10 "Show_cracked_passwords"
+    num4 10 "Attempt_to_crack_hash_using_incremental_mode" " (May_take_a_long_time)"
+    num5 10 "Manual"
+    num9 10 "Back"
 	read -n 1 -s NUM
     case $NUM in
     1)
@@ -26,6 +28,12 @@ function menu_john(){
 	4)
 		cmd_john4
 		;;
+    5)
+        cmd_john5
+        ;;
+    9)
+        kalitoolstop10_menu1
+        ;;
     *)
         ;;
     esac
@@ -162,3 +170,19 @@ function cmd_john4(){
     fi
 }
 
+function cmd_john5(){
+    local cmd=""
+    clear
+    figlet john
+    cmd="john "
+    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${RED}[1]Kali-tools-top10${NC} > ${PURPLE}[5]$cmd${NC} > ${PURPLE}[5]Manual${NC}\n"
+    printf "+${BLUE}Options${NC}:\n"
+	printf "|  ${YELLOW}--wordlist[=FILE] --stdin${NC}  Wordlist mode, read words from FILE or stdin\n"
+	printf "|                    ${YELLOW}--pipe${NC}   like --stdin, but bulk reads, and allows rules\n"
+	printf "|  ${YELLOW}--loopback[=FILE]${NC}   Like --wordlist, but extract words from a .pot file\n"
+	printf "|  ${YELLOW}--show[=left]${NC}              Show cracked passwords [if =left, then uncracked]\n"
+	printf "|  ${YELLOW}--incremental[=MODE]${NC}       \"Incremental\" mode [using section MODE]\n"
+    printf "+${BLUE}usage${NC}: john ${WHITE} [OPTIONS] [PASSWORD-FILES]\n"
+    read -e -p "└─Command > " cmd
+    eval $cmd
+}

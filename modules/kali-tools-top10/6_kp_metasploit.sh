@@ -12,6 +12,7 @@ function menu_metasploit(){
     num1 10 " Normal_Boot"
     num2 10 " Create_Multi_handler" " (windows/meterpreter/reverse_tcp)"
     num3 10 " Create_Payload" " (msfpc)"
+    num9 10 " Back"
 	read -n 1 -s NUM
     echo ""
     case $NUM in
@@ -24,6 +25,9 @@ function menu_metasploit(){
 	3)
 		cmd_msfpc
 		;;
+    9)
+        kalitoolstop10_menu1
+        ;;
     *)
         ;;
     esac
@@ -53,7 +57,7 @@ function cmd_metasploit1(){
         cmd="msfconsole -q"
         ;;
     3)
-        read -e -p "Input resource file path: " RESOURCE
+        read -e -p "> Input resource file path: " RESOURCE
         cmd="msfconsole -r ${RESOURCE}"
         ;;
     4)

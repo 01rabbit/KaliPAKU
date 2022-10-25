@@ -6,13 +6,15 @@ source $MODULES_PATH/misc_module.sh
 function menu_sqlmap(){
 	clear
 	figlet sqlmap
-    num1 0 " Kali-tools-top10"
-    num4 5 " sqlmap"
-    num1 10 " GET_request"
-    num2 10 " POST_request"
-    num3 10 " Find_out_what_databases_exist" " with_SQL_injection"
-    num4 10 " Find_out_what_table_exist" " with_SQL_injection"
-    num5 10 " Display_table_contents" " with_SQL_injection"
+    num1 0 "Kali-tools-top10"
+    num4 5 "sqlmap"
+    num1 10 "GET_request"
+    num2 10 "POST_request"
+    num3 10 "Find_out_what_databases_exist" " with_SQL_injection"
+    num4 10 "Find_out_what_table_exist" " with_SQL_injection"
+    num5 10 "Display_table_contents" " with_SQL_injection"
+    num6 10 "Manual"
+    num9 10 "Back"
 	read -n 1 -s NUM
     case $NUM in
     1)
@@ -29,6 +31,12 @@ function menu_sqlmap(){
         ;;
     5)
         cmd_sqlmap5
+        ;;
+    6)
+        cmd_sqlmap6
+        ;;
+    9)
+        kalitoolstop10_menu1
         ;;
     *)
         ;;
@@ -312,4 +320,35 @@ function cmd_sqlmap5(){
     else
         :
     fi
+}
+
+function cmd_sqlmap6(){
+	clear
+	figlet sqlmap
+    cmd="sqlmap"
+    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${RED}[1]Kali-tools-top10${NC} > ${BLUE}[4]sqlmap${NC} > ${LIGHTBLUE}[6]Manual${NC}\n"
+    printf "+${BLUE}Options${NC}:\n"
+    printf "|  ${YELLOW}-u URL, --url=URL${NC}   Target URL (e.g. \"http://www.site.com/vuln.php?id=1\")\n"
+    echo "|"
+    printf "+${BLUE}Request${NC}:\n"
+    echo "|  These options can be used to specify how to connect to the target URL"
+    printf "|  ${YELLOW}--data=DATA${NC}         Data string to be sent through POST (e.g. \"id=1\")\n"
+    echo "|"
+    printf "+${BLUE}Detection${NC}:\n"
+    echo "|  These options can be used to customize the detection phase"
+    printf "|  ${YELLOW}--level=LEVEL${NC}       Level of tests to perform (1-5, default 1)\n"
+    printf "|  ${YELLOW}--risk=RISK${NC}         Risk of tests to perform (1-3, default 1)\n"
+    echo "|"
+    printf "+${BLUE}Enumeration${NC}:\n"
+    echo "|  These options can be used to enumerate the back-end database"
+    echo "|  management system information, structure and data contained in the tables"
+    printf "|  ${YELLOW}--dbs${NC}               Enumerate DBMS databases\n"
+    printf "|  ${YELLOW}-D DB${NC}               DBMS database to enumerate\n"
+    printf "|  ${YELLOW}--tables${NC}            Enumerate DBMS database tables\n"
+    printf "|  ${YELLOW}-T TBL${NC}              DBMS database table(s) to enumerate\n"
+    printf "|  ${YELLOW}--dump${NC}              Dump DBMS database table entries\n"
+    echo "|"
+    printf "+${BLUE}usage: sqlmap [options]\n"
+    read -e -p "└─Command > " cmd
+    eval $cmd
 }
