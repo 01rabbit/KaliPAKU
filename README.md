@@ -57,18 +57,18 @@ KaliPAKU was created to support the initial stages of penetration testing. These
     └─$ ./kalipaku.sh
     ```
 
-2. KaliPAKU Terminal will be activated.
-    ![KaliPAKU Terminal](https://user-images.githubusercontent.com/16553787/200162688-e8f11bce-890b-4af2-b58b-a284145ac24b.png)
+2. KaliPAKU Terminal will be activated.  
+    ![KaliPAKU Terminal](https://user-images.githubusercontent.com/16553787/200162688-e8f11bce-890b-4af2-b58b-a284145ac24b.png)  
 3. KaliPAKU Terminal
 Enter "5963" or "kp" or "kalipaku" in the kalipaku terminal to activate the KaliPAKU menu.  
-    ![スクリーンショット 2022-11-06 18 04 41](https://user-images.githubusercontent.com/16553787/200162695-00673373-877b-423d-9121-0aa2fb5fd6f2.png)  
-    ![スクリーンショット 2022-11-06 18 04 50](https://user-images.githubusercontent.com/16553787/200162700-e34f1a4d-14f3-4b47-8cf4-0fd454158026.png)  
-4. KaliPAKU Smart menu
+    ![KaliPAKU Terminal2](https://user-images.githubusercontent.com/16553787/200162695-00673373-877b-423d-9121-0aa2fb5fd6f2.png)  
+    ![KaliPAKU menu](https://user-images.githubusercontent.com/16553787/200162700-e34f1a4d-14f3-4b47-8cf4-0fd454158026.png)  
+4. KaliPAKU Smart menu  
 Entering the numeric key corresponding to the command to be used will build and execute the command. Also, press tab. The "Smart Menu" will open.  
-    ![スクリーンショット 2022-11-06 18 05 08](https://user-images.githubusercontent.com/16553787/200162705-aa160b18-2f7c-4bc3-aa2c-4c6d361d1ab1.png)  
-5. KaliPAKU Cheatsheet
+    ![KaliPAKU smart menu](https://user-images.githubusercontent.com/16553787/200162705-aa160b18-2f7c-4bc3-aa2c-4c6d361d1ab1.png)  
+5. KaliPAKU Cheatsheet  
 Here is a partial cheat sheet of commands that can be called up in the KaliPAKU menu. To check the cheat sheet, use "cs", "cheat", or "cheatsheet". You can also use the magic number "4649".  
-    ![スクリーンショット 2022-11-06 18 05 23](https://user-images.githubusercontent.com/16553787/200162706-4f6231c5-d96e-4788-8d64-786f949c2ff1.png)
+    ![cheatsheet](https://user-images.githubusercontent.com/16553787/200162706-4f6231c5-d96e-4788-8d64-786f949c2ff1.png)
 
 ---
 
@@ -103,15 +103,15 @@ Here is a partial cheat sheet of commands that can be called up in the KaliPAKU 
 
 ## How to use
 
-1. If you want to scan using Nmap, start KaliPAKU and activate the KaliPAKU menu.
-    ![スクリーンショット 2022-11-06 18 04 50](https://user-images.githubusercontent.com/16553787/200162700-e34f1a4d-14f3-4b47-8cf4-0fd454158026.png)  
-2. Then enter the magic number "1022" if you want to perform an Intense Scan of Nmap(It takes only about 0.5 seconds to transition to this screen)
-   ![スクリーンショット 2022-11-06 18 37 54](https://user-images.githubusercontent.com/16553787/200163893-d712c21e-da9c-460c-91d3-1f39a363e5f0.png)
+1. If you want to scan using Nmap, start KaliPAKU and activate the KaliPAKU menu.  
+    ![KaliPAKU Menu](https://user-images.githubusercontent.com/16553787/200162700-e34f1a4d-14f3-4b47-8cf4-0fd454158026.png)  
+2. Then enter the magic number "1022" if you want to perform an Intense Scan of Nmap(It takes only about 0.5 seconds to transition to this screen)  
+   ![nmap](https://user-images.githubusercontent.com/16553787/200163893-d712c21e-da9c-460c-91d3-1f39a363e5f0.png)  
 
-3. You will then be asked for the IP address of the target and enter it.
-    ![スクリーンショット 2022-11-06 18 38 19](https://user-images.githubusercontent.com/16553787/200163894-cb256bf1-1ddf-46ca-a3b0-acfd83a120fb.png)
-4. Then, press "2" for "Yes" after the final confirmation if it is OK.
-This completes the process. Now wait for the result.
+3. You will then be asked for the IP address of the target and enter it.  
+    ![nmap2](https://user-images.githubusercontent.com/16553787/200163894-cb256bf1-1ddf-46ca-a3b0-acfd83a120fb.png)  
+4. Then, press "2" for "Yes" after the final confirmation if it is OK.  
+This completes the process. Now wait for the result.  
 
 ## Cheatsheet
 
