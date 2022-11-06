@@ -87,9 +87,11 @@ Here is a partial cheat sheet of commands that can be called up in the KaliPAKU 
   8. [responder](https://www.kali.org/tools/responder/)
   9. [sqlmap](https://www.kali.org/tools/sqlmap/)
   10. [wireshark](https://www.kali.org/tools/wireshark/)
-  11. [set](https://www.kali.org/tools/set/#setoolkit)
-  12. [msfpc](https://www.kali.org/tools/msfpc/)
-  13. [searchsploit](https://www.kali.org/tools/exploitdb/#searchsploit)
+
+- Other Kali Tools
+  1. [set](https://www.kali.org/tools/set/#setoolkit)
+  2. [msfpc](https://www.kali.org/tools/msfpc/)
+  3. [searchsploit](https://www.kali.org/tools/exploitdb/#searchsploit)
 
 ### Added tools
 
