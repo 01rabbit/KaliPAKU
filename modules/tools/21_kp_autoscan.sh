@@ -73,6 +73,7 @@ function cmd_autoscan1(){
     num3 0 "Script"
     num4 0 "Full"
     num0 0 "Next"
+    num9 0 "Back"
     read -n 1 -s NUM
     case $NUM in
     1)
@@ -89,6 +90,9 @@ function cmd_autoscan1(){
         ;;
     0)
         cmd_autoscan2
+        ;;
+    9)
+        menu_autoscan
         ;;
     *)
         ;;
@@ -132,6 +136,7 @@ function cmd_autoscan2(){
     num2 0 "Vulns"
     num3 0 "Recon"
     num4 0 "All"
+    num0 0 "Next"
     num9 0 "Back"
     read -n 1 -s NUM
     case $NUM in
@@ -147,8 +152,11 @@ function cmd_autoscan2(){
     4)
         cmd="$AUTOSCAN_PATH/nmapAutomator.sh -t All"
         ;;
-    9)
+    0)
         cmd_autoscan1
+        ;;
+    9)
+        menu_autoscan
         ;;
     *)
         ;;

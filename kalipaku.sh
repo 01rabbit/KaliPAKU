@@ -18,6 +18,7 @@ source $TOOL_PATH/32_kp_msfpc.sh
 source $TOOL_PATH/33_kp_searchsploit.sh
 source $TOP10_PATH/top10menu.sh
 source $MODULES_PATH/misc_module.sh
+source $MODULES_PATH/cheatsheet.sh
 source $TOOL_PATH/toolsmenu.sh
 source $TOOL_PATH/attackmenu.sh
 
@@ -51,6 +52,7 @@ function mainmenu(){
 
 function whiptail_menu(){
     var=$(whiptail --title "SmartMenu" --backtitle "${TITLE}" --menu "Simple Smart Menu" 0 0 0 \
+    0 "CeatSheet" \
     1 "kp_wifite        Wi-Fi Attack" \
     2 "kp_burpsuite     Local Web Proxy"\
     3 "kp_crackmapexec  Post Exploitation Tool"\
@@ -68,6 +70,7 @@ function whiptail_menu(){
     15 "kp_searchsploit  Search Exploit Code" \
     3>&1 1>&2 2>&3 )
     case $var in
+    0) cheatsheet ;;
     1) menu_wifite ;;
     2) cmd_burpsuite ;;
     3) menu_crackmapexec ;;
@@ -110,6 +113,9 @@ while :;do
     case $str in
     "kp"|"k"|"pakuri"|"kalipakuri"|"menu"|5963)
 		mainmenu
+        ;;
+    "cs"|"cheat"|"cheatsheet"|4649)
+        cheatsheet
         ;;
 	"exit"|"q"|"quit")
 		exit 0

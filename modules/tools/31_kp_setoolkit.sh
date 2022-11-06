@@ -5,7 +5,7 @@ source $MODULES_PATH/misc_module.sh
 
 function menu_setoolkit(){
     clear
-    figlet setools
+    figlet setoolkit
     num3 0 "Attack"
     num2 5 "Social-Engineering" "(setoolkit)"
     num1 10 "Website_Attack_Vectors" "(Credential_Harvester_Attack)"
