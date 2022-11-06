@@ -8,7 +8,7 @@
 
 ## Overview
 
-It is a tool that allows novice penetration testers and script kiddies to learn while using Kali linux, using commands, simple investigations, enumerations and attacks with keypad operations implemented in PAKURI.
+The KaliPAKU is a tool that allows novice penetration testers and script kiddies to use the tools provided with Kali linux to improve their penetration testing skills by learning simple investigation, enumeration, and exploits on the keypad.
 
 ### What's KaliPAKU
 
@@ -35,17 +35,16 @@ The last step is actual practice. KaliPAKU also supports manual command input. C
 
 ## Your benefits
 
-By using our KaliPAKU, you will benefit from the following.
+The benefits of using our KaliPAKU include
 
-For redteam:
-(a) Red Teams can easily perform operations such as information enumeration and vulnerability scanning.
-(b) Visualizing the survey results is possible only with the numeric keypad.
+- For the Red Team
+For Red Teams, you can easily perform information enumeration, vulnerability scanning, and simple exploitation.
 
-For blueteam:
-(c) The Blue Team can experience a dummy attack by simply operating the numeric keypad even they do not have any penetration testing skill.
+- For the Blue Team
+Blue Team allows users without penetration testing skills to experience a simulated cyber attack simply by operating a numeric keypad based on a cheat sheet.
 
-For beginner:
-(d) KaliPAKU has been created to support the early stages of penetration testing. These can be achieved with what is included in Kali-Tools. It can be useful for training the entry level pentesters.
+- For beginners & Scriptkiddy
+KaliPAKU was created to support the initial stages of penetration testing. These are useful for training beginner pen testers as they are based on Kali-Tools-top10. They can also dramatically improve the results of on-the-job training.
 
 ---
 
@@ -53,64 +52,66 @@ For beginner:
 
 1. Just start kalipaku.sh. Installation is not required in principle.  
 
-``` shell
-┌──(kali㉿kali)-[~/KaliPAKU]
-└─$ ./kalipaku.sh
-```
+    ``` shell
+    ┌──(kali㉿kali)-[~/KaliPAKU]
+    └─$ ./kalipaku.sh
+    ```
 
 2. KaliPAKU Terminal will be activated.
-
-```shell
-┌─(KaliPAKU)kali@kali:/home/kali/KaliPAKU
-└─Command? > 
-
-```
-
+    ![KaliPAKU Terminal](https://user-images.githubusercontent.com/16553787/200162688-e8f11bce-890b-4af2-b58b-a284145ac24b.png)
 3. KaliPAKU Terminal
+Enter "5963" or "kp" or "kalipaku" in the kalipaku terminal to activate the KaliPAKU menu.  
+    ![スクリーンショット 2022-11-06 18 04 41](https://user-images.githubusercontent.com/16553787/200162695-00673373-877b-423d-9121-0aa2fb5fd6f2.png)  
+    ![スクリーンショット 2022-11-06 18 04 50](https://user-images.githubusercontent.com/16553787/200162700-e34f1a4d-14f3-4b47-8cf4-0fd454158026.png)  
+4. KaliPAKU Smart menu
+Entering the numeric key corresponding to the command to be used will build and execute the command. Also, press tab. The "Smart Menu" will open.  
+    ![スクリーンショット 2022-11-06 18 05 08](https://user-images.githubusercontent.com/16553787/200162705-aa160b18-2f7c-4bc3-aa2c-4c6d361d1ab1.png)  
+5. KaliPAKU Cheatsheet
+Here is a partial cheat sheet of commands that can be called up in the KaliPAKU menu. To check the cheat sheet, use "cs", "cheat", or "cheatsheet". You can also use the magic number "4649".  
+    ![スクリーンショット 2022-11-06 18 05 23](https://user-images.githubusercontent.com/16553787/200162706-4f6231c5-d96e-4788-8d64-786f949c2ff1.png)
 
-Enter "5963" or "kp" or "kalipaku" in the kalipaku terminal to activate the KaliPAKU menu.
+---
 
-``` shell
- _  __     _ _ ____   _    _  ___   _ 
-| |/ /__ _| (_)  _ \ / \  | |/ / | | |
-| ' // _` | | | |_) / _ \ | ' /| | | |
-| . \ (_| | | |  __/ ___ \| . \| |_| |
-|_|\_\__,_|_|_|_| /_/   \_\_|\_\\___/ 
-                                      
-  |  +---+
-  +--| 1 | Kali-tools-top10
-  |  +---+ 
-  |  +---+
-  +--| 2 | Tools
-  |  +---+ 
-  |  +---+
-  +--| 3 | Attack
-  |  +---+ 
-  |  +---+
-  +--| 9 | Exit
-     +---+ 
-```
+## Tools used
 
-Entering the numeric key corresponding to the command to be used will build and execute the command. Also, press tab. The "Smart Menu" will open.
-
-## Feature
+### Installed on kali linux
 
 - kali-tools-top10
-    1. [wifite](https://www.kali.org/tools/wifite/)
-    2. [burpsuite](https://www.kali.org/tools/burpsuite/)
-    3. [crackmapexec](https://www.kali.org/tools/crackmapexec/)
-    4. [hydra](https://www.kali.org/tools/hydra/)
-    5. [john](https://www.kali.org/tools/john/)
-    6. [metasploit-framework](https://www.kali.org/tools/metasploit-framework/)
-    7. [nmap](https://www.kali.org/tools/nmap/)
-    8. [responder](https://www.kali.org/tools/responder/)
-    9. [sqlmap](https://www.kali.org/tools/sqlmap/)
-    10. [wireshark](https://www.kali.org/tools/wireshark/)
-- tools
-    1. [nmapAutorecon](https://github.com/21y4d/nmapAutomator)
-    2. [set](https://www.kali.org/tools/set/#setoolkit)
-    3. [msfpc](https://www.kali.org/tools/msfpc/)
-    4. [searchsploit](https://www.kali.org/tools/exploitdb/#searchsploit)
+  1. [wifite](https://www.kali.org/tools/wifite/)
+  2. [burpsuite](https://www.kali.org/tools/burpsuite/)
+  3. [crackmapexec](https://www.kali.org/tools/crackmapexec/)
+  4. [hydra](https://www.kali.org/tools/hydra/)
+  5. [john](https://www.kali.org/tools/john/)
+  6. [metasploit-framework](https://www.kali.org/tools/metasploit-framework/)
+  7. [nmap](https://www.kali.org/tools/nmap/)
+  8. [responder](https://www.kali.org/tools/responder/)
+  9. [sqlmap](https://www.kali.org/tools/sqlmap/)
+  10. [wireshark](https://www.kali.org/tools/wireshark/)
+  11. [set](https://www.kali.org/tools/set/#setoolkit)
+  12. [msfpc](https://www.kali.org/tools/msfpc/)
+  13. [searchsploit](https://www.kali.org/tools/exploitdb/#searchsploit)
+
+### Added tools
+
+- Github tools
+  1. [nmapAutorecon](https://github.com/21y4d/nmapAutomator)
+
+- Original
+  1. vulncheck
+
+---
+
+## How to use
+
+1. If you want to scan using Nmap, start KaliPAKU and activate the KaliPAKU menu.
+    ![スクリーンショット 2022-11-06 18 04 50](https://user-images.githubusercontent.com/16553787/200162700-e34f1a4d-14f3-4b47-8cf4-0fd454158026.png)  
+2. Then enter the magic number "1022" if you want to perform an Intense Scan of Nmap(It takes only about 0.5 seconds to transition to this screen)
+   ![スクリーンショット 2022-11-06 18 37 54](https://user-images.githubusercontent.com/16553787/200163893-d712c21e-da9c-460c-91d3-1f39a363e5f0.png)
+
+3. You will then be asked for the IP address of the target and enter it.
+    ![スクリーンショット 2022-11-06 18 38 19](https://user-images.githubusercontent.com/16553787/200163894-cb256bf1-1ddf-46ca-a3b0-acfd83a120fb.png)
+4. Then, press "2" for "Yes" after the final confirmation if it is OK.
+This completes the process. Now wait for the result.
 
 ## Cheatsheet
 
@@ -187,4 +188,5 @@ Entering the numeric key corresponding to the command to be used will build and 
 - Memory: 8.0GB
 
 ## Contributors
+
 If you have some new idea about this project, issue, feedback or found some valuable tool feel free to open an issue for just DM me via [@Mr.Rabbit](https://twitter.com/01ra66it) or [@PAKURI](https://twitter.com/PAKURI9).
