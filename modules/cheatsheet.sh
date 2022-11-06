@@ -61,4 +61,5 @@ function cheatsheet(){
     printf "${WHITE}341     ${BLUE}MSFvenom_Payload_Creator(msfpc)	Create_Payload\n"
     printf "${WHITE}351     ${PURPLE}Search_Exploit(searchsploit)	Search\n"
     printf "${WHITE}351     ${PURPLE}Search_Exploit(searchsploit)	Automatic_Search(Miscellaneous_Automation)\n"
+    printf "${NC}"
 }
