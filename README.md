@@ -37,13 +37,13 @@ The last step is actual practice. KaliPAKU also supports manual command input. C
 
 The benefits of using our KaliPAKU include
 
-- For the Red Team
+- For the Red Team  
 For Red Teams, you can easily perform information enumeration, vulnerability scanning, and simple exploitation.
 
-- For the Blue Team
+- For the Blue Team  
 Blue Team allows users without penetration testing skills to experience a simulated cyber attack simply by operating a numeric keypad based on a cheat sheet.
 
-- For beginners & Scriptkiddy
+- For beginners & Scriptkiddy  
 KaliPAKU was created to support the initial stages of penetration testing. These are useful for training beginner pen testers as they are based on Kali-Tools-top10. They can also dramatically improve the results of on-the-job training.
 
 ---
@@ -87,11 +87,9 @@ Here is a partial cheat sheet of commands that can be called up in the KaliPAKU 
   8. [responder](https://www.kali.org/tools/responder/)
   9. [sqlmap](https://www.kali.org/tools/sqlmap/)
   10. [wireshark](https://www.kali.org/tools/wireshark/)
-
-- Other Kali Tools
-  1. [set](https://www.kali.org/tools/set/#setoolkit)
-  2. [msfpc](https://www.kali.org/tools/msfpc/)
-  3. [searchsploit](https://www.kali.org/tools/exploitdb/#searchsploit)
+  11. [set](https://www.kali.org/tools/set/#setoolkit)
+  12. [msfpc](https://www.kali.org/tools/msfpc/)
+  13. [searchsploit](https://www.kali.org/tools/exploitdb/#searchsploit)
 
 ### Added tools
 
