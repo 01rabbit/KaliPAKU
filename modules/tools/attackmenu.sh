@@ -41,5 +41,4 @@ function menu_attack(){
     *)
         ;;
     esac
-    exit
 }

@@ -53,7 +53,6 @@ function kalitoolstop10_menu1(){
 	*)
 		;;
 	esac
-	exit
 }
 
 function kalitoolstop10_menu2(){
@@ -94,5 +93,4 @@ function kalitoolstop10_menu2(){
 	*)
 		;;
 	esac
-	exit
 }

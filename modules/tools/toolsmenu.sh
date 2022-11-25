@@ -15,17 +15,9 @@ function menu_tools(){
     num9 5 " Main"
     read -n 1 -s NUM
 	case $NUM in
-	1)
-		menu_autoscan
-		;;
-    2)
-        menu_vulncheck
-        ;;
-    9)
-        mainmenu
-        ;;
-    *)
-        ;;
+	1) menu_autoscan ;;
+    2) menu_vulncheck ;;
+    9) mainmenu ;;
+    *) ;;
     esac
-    exit
 }

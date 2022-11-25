@@ -17,29 +17,14 @@ function menu_nmap(){
     num9 10 "Back"
 	read -n 1 -s NUM
     case $NUM in
-    1)
-        cmd_nmap1
-        ;;
-    2)
-        cmd_nmap2
-        ;;
-	3)
-        cmd_nmap3
-		;;
-    4)
-        cmd_nmap4
-        ;;
-    5)
-        cmd_nmap5
-        ;;
-    6)
-        cmd_nmap6
-        ;;
-    9)
-        kalitoolstop10_menu1
-        ;;
-    *)
-        ;;
+    1) cmd_nmap1 ;;
+    2) cmd_nmap2 ;;
+	3) cmd_nmap3 ;;
+    4) cmd_nmap4 ;;
+    5) cmd_nmap5 ;;
+    6) cmd_nmap6 ;;
+    9) kalitoolstop10_menu1 ;;
+    *) ;;
     esac
 }
 
@@ -65,6 +50,9 @@ function cmd_nmap1(){
     read -n 1 -s ANS
     if [ ! -z "$ANS" ];then
         if [ $ANS = "2" ];then
+            if [ ! -d result/$TARGET ];then
+                mkdir result/$TARGET
+            fi
             eval $cmd
         else
             :
@@ -98,6 +86,9 @@ function cmd_nmap2(){
     read -n 1 -s ANS
     if [ ! -z "$ANS" ];then
         if [ $ANS = "2" ];then
+            if [ ! -d result/$TARGET ];then
+                mkdir result/$TARGET
+            fi
             eval $cmd
         else
             :
@@ -133,6 +124,9 @@ function cmd_nmap3(){
     read -n 1 -s ANS
     if [ ! -z "$ANS" ];then
         if [ $ANS = "2" ];then
+            if [ ! -d result/$TARGET ];then
+                mkdir result/$TARGET
+            fi
             eval $cmd
         else
             :
@@ -168,6 +162,9 @@ function cmd_nmap4(){
     read -n 1 -s ANS
     if [ ! -z "$ANS" ];then
         if [ $ANS = "2" ];then
+            if [ ! -d result/$TARGET ];then
+                mkdir result/$TARGET
+            fi
             eval $cmd
         else
             :
@@ -201,6 +198,9 @@ function cmd_nmap5(){
     read -n 1 -s ANS
     if [ ! -z "$ANS" ];then
         if [ $ANS = "2" ];then
+            if [ ! -d result/$TARGET ];then
+                mkdir result/$TARGET
+            fi
             eval $cmd
         else
             :

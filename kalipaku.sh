@@ -21,6 +21,7 @@ source $MODULES_PATH/misc_module.sh
 source $MODULES_PATH/cheatsheet.sh
 source $TOOL_PATH/toolsmenu.sh
 source $TOOL_PATH/attackmenu.sh
+source $TOOL_PATH/23_kp_result.sh
 
 
 function mainmenu(){
@@ -29,6 +30,7 @@ function mainmenu(){
     num1 0 "Kali-tools-top10"
     num2 0 "Tools"
     num3 0 "Attack"
+    num4 0 "Result"
     num9 0 "Exit"
     read -n 1 -s n
     case $n in
@@ -41,8 +43,11 @@ function mainmenu(){
     3)
         menu_attack
         ;;
+    4)
+        menu_result
+        ;;
     9)
-        exit 0
+        # exit 0
         ;;
     *)
         ;;
@@ -115,9 +120,10 @@ while :;do
 		mainmenu
         ;;
     "cs"|"cheat"|"cheatsheet"|4649)
-        cheatsheet
+        more cheatsheet.txt
         ;;
 	"exit"|"q"|"quit")
+        figlet See you!
 		exit 0
         ;;
 	*)

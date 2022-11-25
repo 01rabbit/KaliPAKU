@@ -182,6 +182,7 @@ This completes the process. Now wait for the result.
     | 341 | Attack | MSFvenom_Payload_Creator(msfpc) | Create_Payload |
     | 351 | Attack | Search_Exploit(searchsploit) |  Search |
     | 351 | Attack | Search_Exploit(searchsploit) | Automatic_Search(Miscellaneous_Automation)|
+    | 41  | Result | Result | Check Scan Result |
 
 ## Operation check environment
 

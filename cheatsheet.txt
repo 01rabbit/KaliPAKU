@@ -1,0 +1,61 @@
+    [1;37mCommand	Description[0m
+    [1;37m5963	[0mShow KaliPAKU Menu[0m
+    [1;37m4649	[0mShow Cheatsheet[0m
+    [0m
+    [1;37mNumber   Command               Description[0m
+    [1;37m111      [1;31mwifite                Execute[0m
+    [1;37m112      [1;31mwifite                Manual[0m
+    [1;37m112      [1;32mburpsuite             Execute[0m
+    [1;37m131      [1;33mcrackmapexec(SMB)     Target_format(Basic)[0m
+    [1;37m132      [1;33mcrackmapexec(SMB)     Null_session[0m
+    [1;37m133      [1;33mcrackmapexec(SMB)     Connect_to_target_using_local_account[0m
+    [1;37m134      [1;33mcrackmapexec(SMB)     Path_the_hash_against_a_subnet[0m
+    [1;37m135      [1;33mcrackmapexec(SMB)     Brutefocing_&_Password_Sprayin[0m
+    [1;37m136      [1;33mcrackmapexec          Manual[0m
+    [1;37m141      [1;34mhydra                 Bruteforce_the_username_admin with_the_given_password_list[0m
+    [1;37m142      [1;34mhydre                 Bruteforce_SSH_with_user_and_password_lists against_target_IP_address[0m
+    [1;37m143      [1;34mhydra                 Manual[0m
+    [1;37m151      [1;35mjohn                  Cracking_with_a_wordlist[0m
+    [1;37m152      [1;35mjohn                  Attempt_to_crack_hash_file using_previously_cracked_passwords[0m
+    [1;37m153      [1;35mjohn                  Show_cracked_passwords[0m
+    [1;37m154      [1;35mjohn                  Attempt_to_crack_hash_using_incremental_mode(May_take_a_long_time)[0m
+    [1;37m155      [1;35mjohn                  Manual[0m
+    [1;37m101      [1;31mmetasploit-framework  Normal_Boot[0m
+    [1;37m1012     [1;31mmetasploit-framework  Create_Multi_handler (windows/meterpreter/reverse_tcp)[0m
+    [1;37m1013     [1;31mmetasploit-framework  Create_Payload (msfpc)[0m
+    [1;37m1021     [1;32mnmap                  Ping_Scan[0m
+    [1;37m1022     [1;32mnmap                  Intense_Scan[0m
+    [1;37m1023     [1;32mnmap                  Intense_Scan+UDP[0m
+    [1;37m1024     [1;32mnmap                  Intense_Scan_all_TCP_Port[0m
+    [1;37m1025     [1;32mnmap                  Vuln_Scan[0m
+    [1;37m1026     [1;32mnmap                  Manual[0m
+    [1;37m1031     [1;33mresponder             Basic_Usage[0m
+    [1;37m1032     [1;33mresponder             Analyze_mode[0m
+    [1;37m1033     [1;33mresponder             Poisoning_with_Responder[0m
+    [1;37m1034     [1;33mresponder             Basic_Authentication_&_WPAD[0m
+    [1;37m1035     [1;33mresponder             Manual[0m
+    [1;37m1041     [1;34msqlmap                GET_request[0m
+    [1;37m1042     [1;34msqlmap                POST_request[0m
+    [1;37m1043     [1;34msqlmap                Find_out_what_databases_exist with_SQL_injection[0m
+    [1;37m1044     [1;34msqlmap                Find_out_what_table_exist with_SQL_injection[0m
+    [1;37m1045     [1;34msqlmap                Display_table_contents with_SQL_injection[0m
+    [1;37m1046     [1;34msqlmap                Manual[0m
+    [1;37m1051     [1;35mwireshark(tshark)     wireshark[0m
+    [1;37m1051     [1;35mwireshark(tshark)     tshark[0m
+    [1;37m211      [1;31mAutoScan              Install[0m
+    [1;37m2121     [1;31mAutoscan              Scanning the network with nmapAutomator[0m
+    [1;37m2122     [1;31mAutoscan              Port scan with nmapAutomator[0m
+    [1;37m2123     [1;31mAutoscan              Scan Script with nmapAutomotr[0m
+    [1;37m2124     [1;31mAutoscan              Full port scan with nmapAutomator[0m
+    [1;37m21201    [1;31mAutoscan              UDP scan with nmapPutomator[0m
+    [1;37m21202    [1;31mAutoscan              Vulnerability Scanning with nmapAutomator[0m
+    [1;37m21203    [1;31mAutoscan              Reconnaissance scan with nmapAutomator[0m
+    [1;37m21204    [1;31mAutoscan              All scan with nmapAutomator[0m
+    [1;37m221      [1;32mVulnCheck             Check Vulnerability[0m
+    [1;37m31       [1;31mExploit(Metasploit)	  [0m
+    [1;37m321      [1;32mSocial-Engineering    Website__Vectors(Credential_Harvester_)[0m
+    [1;37m33       [1;33mBrute-force	[0m
+    [1;37m341      [1;34mMSFvenom_Payload_Creator(msfpc)  Create_Payload[0m
+    [1;37m351      [1;35mSearch_Exploit(searchsploit)     Search[0m
+    [1;37m351      [1;35mSearch_Exploit(searchsploit)     Automatic_Search(Miscellaneous_Automation)[0m
+    [1;37m41       [1;34mRssult                Check Scan Result[0m

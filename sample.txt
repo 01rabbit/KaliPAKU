@@ -1,0 +1,7 @@
+[1;31m Red [0m
+[1;32m Green [0m
+[1;33m Yellow [0m
+[1;34m Blue [0m
+[1;35m Purple [0m
+[1;36m Lightgreen [0m
+[1;37m White [0m

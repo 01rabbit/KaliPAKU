@@ -7,7 +7,7 @@ function menu_wifite(){
 	clear
 	figlet wifite
 	num1 0 "Kali-tools-top10"
-	num1 5 "wifite(aircrack-ng)"
+	num1 5 "wifite"
 	num1 10 "Execute"
 	num2 10 "Manual"
 	num9 10 "Back"
@@ -36,7 +36,7 @@ function cmd_wifite1(){
     printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${RED}[1]Kali-tools-top10${NC} > ${RED}[1]$cmd${NC} > ${RED}Execute${NC}\n"
     echo "|"
     printf "|${RED}  ########  Caution!  ########${NC}\n"
-	printf "|${RED}  Root plivileges are required.\n"
+	printf "|${RED}  Root plivileges are required.${NC}\n"
     echo "|"
     printf "+${BLUE}usage${NC}: wifite\n"
 	if [ ! ${EUID:-${UID}} = 0 ];then
