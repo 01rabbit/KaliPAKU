@@ -30,7 +30,7 @@ The last step is actual practice. KaliPAKU also supports manual command input. C
 
 |CAUTION|
 |:--- |
-|If you are interested, please use them in an environment under your control and at your own risk. And, if you execute the KaliPAKU on systems that are not under your control, it may be considered an attack and you may have legally liabillity for your action.|
+|If you are interested, please use them in an environment under your control and at your own risk. And, if you execute the KaliPAKU on systems that are not under your control, it may be considered an attack and you may have legally liability for your action.|
 ---
 
 ## Your benefits
