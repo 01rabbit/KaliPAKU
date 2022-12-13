@@ -75,3 +75,16 @@ function num9(){
     printf "${WHITE}%$1s  +--${BLACK}| 9 |%s\n" "" " $2"
     printf "${WHITE}%$1s     ${BLACK}+---+%s${NC}\n" "" " $3"
 }
+
+function show_number()
+{
+    echo $1 | fold -w 1 | while read c; do
+        INPUT_NUMBER+=$c
+        clear
+        figlet $INPUT_NUMBER
+        sleep 0.5
+    done
+    figlet $2
+    sleep 1.5
+    clear
+}

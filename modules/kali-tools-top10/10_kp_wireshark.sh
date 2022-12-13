@@ -45,6 +45,7 @@ function cmd_wireshark(){
     echo ""
     if [ ! -z "$ANS" ];then
         if [ $ANS = "2" ];then
+        show_number 1051 "wireshark(tshark) wireshark"
         eval $cmd
         else
             :
@@ -82,5 +83,6 @@ function cmd_tshark(){
     printf "+${BLUE}usage${NC}: tshark [ -i <capture interface>|- ] [ -f <capture filter> ] [ -2 ] [ -r <infile> ] [ -w <outfile>|- ] [ options ] [ <filter> ]\n"
     printf "+${BLUE}usage${NC}: tshark -G [ <report type> ] [ --elastic-mapping-filter <protocols> ]\n"
     read -e -p "└─Command > " cmd
+    show_number 1052 "wireshark(tshark) tshark"
     eval $cmd
 }

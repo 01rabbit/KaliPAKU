@@ -60,18 +60,23 @@ function cmd_crackmapexec1(){
     num3 0 "winrm"
     num4 0 "ldap"
     num5 0 "mssql"
-    read -n 1 -s NUM
-    case $NUM in
+    read -n 1 -s SERV_NUM
+    case $SERV_NUM in
     1)
-        SERVICE="smb" ;;
+        SERVICE="smb"
+        ;;
     2)
-        SERVICE="ssh" ;;
+        SERVICE="ssh"
+        ;;
     3)
-        SERVICE="winrm" ;;
+        SERVICE="winrm"
+        ;;
     4)
-        SERVICE="ldap" ;;
+        SERVICE="ldap"
+        ;;
     5)
-        SERVICE="mssql" ;;
+        SERVICE="mssql"
+        ;;
     *)
         ;;
     esac
@@ -85,15 +90,18 @@ function cmd_crackmapexec1(){
     read -n 1 -s ANS
     if [ ! -z "$ANS" ];then
         if [ $ANS = "2" ];then
-            eval $cmd
+            show_number 131 "crackmapexec Target_format"
+            tmux split-window -v -p 30
+            tmux send-keys "${cmd};read;exit" C-m
+            tmux select-pane -t "${TITLE}".0
+            # eval $cmd
+            # read
         else
             :
         fi
     else
         :
     fi
-    NUM=""
-    ANS=""
 }
 
 function cmd_crackmapexec2(){
@@ -118,7 +126,12 @@ function cmd_crackmapexec2(){
     read -n 1 -s ANS
     if [ ! -z "$ANS" ];then
         if [ $ANS = "2" ];then
-            eval $cmd
+            show_number 132 "crackmapexec(SMB) Null_session"
+            tmux split-window -v -p 30
+            tmux send-keys "${cmd};read;exit" C-m
+            tmux select-pane -t "${TITLE}".0
+            # eval $cmd
+            # read
         else
             :
         fi
@@ -178,7 +191,12 @@ function cmd_crackmapexec3(){
     read -n 1 -s ANS
     if [ ! -z "$ANS" ];then
         if [ $ANS = "2" ];then
-            eval $cmd
+            show_number 133 "CME(SMB) Connect_to_target"
+            tmux split-window -v -p 30
+            tmux send-keys "${cmd};read;exit" C-m
+            tmux select-pane -t "${TITLE}".0
+            # eval $cmd
+            # read
         else
             :
         fi
@@ -250,7 +268,12 @@ function cmd_crackmapexec4(){
     read -n 1 -s ANS
     if [ ! -z "$ANS" ];then
         if [ $ANS = "2" ];then
-            eval $cmd
+            show_number 134 "CME(SMB) Path_the_hash"
+            tmux split-window -v -p 30
+            tmux send-keys "${cmd};read;exit" C-m
+            tmux select-pane -t "${TITLE}".0
+            # eval $cmd
+            # read
         else
             :
         fi
@@ -321,7 +344,12 @@ function cmd_crackmapexec5(){
     read -n 1 -s ANS
     if [ ! -z "$ANS" ];then
         if [ $ANS = "2" ];then
-            eval $cmd
+            show_number 135 "crackmapexec(SMB) Bf_&_PS"
+            tmux split-window -v -p 30
+            tmux send-keys "${cmd};read;exit" C-m
+            tmux select-pane -t "${TITLE}".0
+            # eval $cmd
+            # read
         else
             :
         fi
@@ -333,8 +361,7 @@ function cmd_crackmapexec5(){
 function cmd_crackmapexec6(){
     local cmd="" 
 	clear
-	figlet crackmapexec
-    cmd="crackmapexec "
+    show_number 136 "crackmapexec Manual"
     printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${RED}[1]Kali-tools-top10${NC} > ${YELLOW}[3]crackmapexec${NC} > ${LIGHTBLUE}[6]Manual${NC}\n"
     printf "+${BLUE}positional arguments${NC}:\n"
     printf "|  ${YELLOW}target${NC}      the target IP(s), range(s), CIDR(s), hostname(s), FQDN(s),\n"
@@ -365,5 +392,12 @@ function cmd_crackmapexec6(){
     printf "        [--gfail-limit LIMIT | --ufail-limit LIMIT | --fail-limit LIMIT] [-M MODULE] [-o MODULE_OPTION [MODULE_OPTION ...]] [-L] [--options] [--server {http,https}] [--server-host HOST] [--server-port PORT]\n"
     printf "        [--connectback-host CHOST] [-H HASH [HASH ...]] [--no-bruteforce] [--continue-on-success] [--port PORT] [-d DOMAIN | --local-auth]\n"
     read -e -p "└─Command > " cmd
-    eval $cmd
+    tmux split-window -v -p 30
+    tmux send-keys "${cmd};read;exit" C-m
+    tmux select-pane -t "${TITLE}".0
+
+    # eval $cmd
 }
+
+
+# cmd_crackmapexec1

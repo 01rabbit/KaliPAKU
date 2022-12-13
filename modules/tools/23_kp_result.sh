@@ -11,7 +11,7 @@ function menu_result(){
     num9 5 "Back"
     read -n 1 -s NUM
 	case $NUM in
-    1)  show_result ;;
+    1) show_result ;;
     9) mainmenu ;;
     *) ;;
     esac
@@ -26,14 +26,15 @@ function show_result(){
     echo "|"
     while :;do
         PS3="└─Please Select one > "
-        select FILE in * ;do
+        select FILE in * "Exit" ;do
         echo ""
         break
         done
         printf "└─You selected was : ${YELLOW}${FILE}${NC}\n"
         echo "|"
-
-        if [ -d ${FILE} ];then
+        if [ ${FILE} = "Exit" ];then
+            break
+        elif [ -d ${FILE} ];then
             cd ${FILE}
         elif [ -f ${FILE} ];then
             more ${FILE}

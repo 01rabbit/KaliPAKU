@@ -41,6 +41,7 @@ function cmd_wifite1(){
     printf "+${BLUE}usage${NC}: wifite\n"
 	if [ ! ${EUID:-${UID}} = 0 ];then
 		echo "└─Command > Back"
+		read
 	else
 		echo "└─Command > $cmd"
 		echo ""
@@ -51,6 +52,7 @@ function cmd_wifite1(){
 		echo ""
 		if [ ! -z "$ANS" ];then
 			if [ $ANS = "2" ];then
+				# show_number 111 "wifite Execute"
 				eval $cmd
 			else
 				:
@@ -73,6 +75,7 @@ function cmd_wifite2(){
     echo "|"
 	if [ ! ${EUID:-${UID}} = 0 ];then
 		echo "└─Command > Back"
+		read
 	else
 		printf "+${BLUE}options${NC}:\n"
 		printf "|  ${YELLOW}-h, --help${NC}              show this help message and exit"
@@ -90,6 +93,7 @@ function cmd_wifite2(){
 		printf "|  ${YELLOW}-p [scan_time]${NC}          Pillage: Attack all targets after scan_time (seconds)\n"
 		printf "+${BLUE}usage${NC}: wifite ${WHITE}[option|SETTINGS]${NC}\n"
 		read -e -p "└─Command > " cmd
+		show_number 112 "wifite Manual"
 		eval $cmd
 	fi
 }

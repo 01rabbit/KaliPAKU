@@ -5,8 +5,8 @@
     [1;37mNumber   Command               Description[0m
     [1;37m111      [1;31mwifite                Execute[0m
     [1;37m112      [1;31mwifite                Manual[0m
-    [1;37m112      [1;32mburpsuite             Execute[0m
-    [1;37m131      [1;33mcrackmapexec(SMB)     Target_format(Basic)[0m
+    [1;37m121      [1;32mburpsuite             Execute[0m
+    [1;37m131      [1;33mcrackmapexec          Target_format(Basic)[0m
     [1;37m132      [1;33mcrackmapexec(SMB)     Null_session[0m
     [1;37m133      [1;33mcrackmapexec(SMB)     Connect_to_target_using_local_account[0m
     [1;37m134      [1;33mcrackmapexec(SMB)     Path_the_hash_against_a_subnet[0m
@@ -34,14 +34,12 @@
     [1;37m1033     [1;33mresponder             Poisoning_with_Responder[0m
     [1;37m1034     [1;33mresponder             Basic_Authentication_&_WPAD[0m
     [1;37m1035     [1;33mresponder             Manual[0m
-    [1;37m1041     [1;34msqlmap                GET_request[0m
-    [1;37m1042     [1;34msqlmap                POST_request[0m
-    [1;37m1043     [1;34msqlmap                Find_out_what_databases_exist with_SQL_injection[0m
-    [1;37m1044     [1;34msqlmap                Find_out_what_table_exist with_SQL_injection[0m
-    [1;37m1045     [1;34msqlmap                Display_table_contents with_SQL_injection[0m
+    [1;37m1041     [1;34msqlmap                Enume_all_dbs[0m
+    [1;37m1042     [1;34msqlmap                Enume_all_tables[0m
+    [1;37m1043     [1;34msqlmap                Dump_table_entries[0m
     [1;37m1046     [1;34msqlmap                Manual[0m
     [1;37m1051     [1;35mwireshark(tshark)     wireshark[0m
-    [1;37m1051     [1;35mwireshark(tshark)     tshark[0m
+    [1;37m1052     [1;35mwireshark(tshark)     tshark[0m
     [1;37m211      [1;31mAutoScan              Install[0m
     [1;37m2121     [1;31mAutoscan              Scanning the network with nmapAutomator[0m
     [1;37m2122     [1;31mAutoscan              Port scan with nmapAutomator[0m
@@ -51,11 +49,11 @@
     [1;37m21202    [1;31mAutoscan              Vulnerability Scanning with nmapAutomator[0m
     [1;37m21203    [1;31mAutoscan              Reconnaissance scan with nmapAutomator[0m
     [1;37m21204    [1;31mAutoscan              All scan with nmapAutomator[0m
-    [1;37m221      [1;32mVulnCheck             Check Vulnerability[0m
+    [1;37m221      [1;32mCheck                 Check Vulnerability[0m
+    [1;37m222      [1;32mCheck                 Check Results[0m
     [1;37m31       [1;31mExploit(Metasploit)	  [0m
     [1;37m321      [1;32mSocial-Engineering    Website__Vectors(Credential_Harvester_)[0m
     [1;37m33       [1;33mBrute-force	[0m
     [1;37m341      [1;34mMSFvenom_Payload_Creator(msfpc)  Create_Payload[0m
     [1;37m351      [1;35mSearch_Exploit(searchsploit)     Search[0m
-    [1;37m351      [1;35mSearch_Exploit(searchsploit)     Automatic_Search(Miscellaneous_Automation)[0m
-    [1;37m41       [1;34mRssult                Check Scan Result[0m
+    [1;37m352      [1;35mSearch_Exploit(searchsploit)     Automatic_Search(Miscellaneous_Automation)[0m

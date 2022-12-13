@@ -30,7 +30,7 @@ The last step is actual practice. KaliPAKU also supports manual command input. C
 
 |CAUTION|
 |:--- |
-|If you are interested, please use them in an environment under your control and at your own risk. And, if you execute the KaliPAKU on systems that are not under your control, it may be considered an attack and you may have legally liability for your action.|
+|If you are interested, please use them in an environment under your control and at your own risk. And, if you execute the KaliPAKU on systems that are not under your control, it may be considered an attack and you may have legally liabillity for your action.|
 ---
 
 ## Your benefits
@@ -60,14 +60,14 @@ KaliPAKU was created to support the initial stages of penetration testing. These
 2. KaliPAKU Terminal will be activated.  
     ![KaliPAKU Terminal](https://user-images.githubusercontent.com/16553787/200162688-e8f11bce-890b-4af2-b58b-a284145ac24b.png)  
 3. KaliPAKU Terminal
-Enter "5963" or "kp" or "kalipaku" in the kalipaku terminal to activate the KaliPAKU menu.  
+Enter "kp" or "kalipaku" at the KaliPAKU terminal or enter the magic number "4649" to activate the KaliPAKU menu.  
     ![KaliPAKU Terminal2](https://user-images.githubusercontent.com/16553787/200162695-00673373-877b-423d-9121-0aa2fb5fd6f2.png)  
     ![KaliPAKU menu](https://user-images.githubusercontent.com/16553787/200162700-e34f1a4d-14f3-4b47-8cf4-0fd454158026.png)  
 4. KaliPAKU Smart menu  
 Entering the numeric key corresponding to the command to be used will build and execute the command. Also, press tab. The "Smart Menu" will open.  
     ![KaliPAKU smart menu](https://user-images.githubusercontent.com/16553787/200162705-aa160b18-2f7c-4bc3-aa2c-4c6d361d1ab1.png)  
 5. KaliPAKU Cheatsheet  
-Here is a partial cheat sheet of commands that can be called up in the KaliPAKU menu. To check the cheat sheet, use "cs", "cheat", or "cheatsheet". You can also use the magic number "4649".  
+Here is a partial cheat sheet of commands that can be called up in the KaliPAKU menu. To check the cheat sheet, use "cs", "cheat", or "cheatsheet". You can also use the magic number "4936".  
     ![cheatsheet](https://user-images.githubusercontent.com/16553787/200162706-4f6231c5-d96e-4788-8d64-786f949c2ff1.png)
 
 ---
@@ -120,22 +120,23 @@ This completes the process. Now wait for the result.
 
     | Command | Description |
     | --- | --- |
-    | 5963 | Show KaliPAKU Menu |
-    | 4649 | Show Cheatsheet |
+    | 4649 | Show KaliPAKU Menu |
+    | 4936 | Show Cheatsheet |
+    | 3470 | Exit KaliPAKU |
 
 - KaliPAKU Menu
 
     | Number | Category | Command | Description |
     | --- | --- | --- | --- |
-    | 111 | Kali-tools-top10 | wifite(aircrack-ng) | Execute |
-    | 112 | Kali-tools-top10 | wifite(aircrack-ng) | Manual |
-    | 112 | Kali-tools-top10 | burpsuite | Execute |
-    | 131 | Kali-tools-top10 | crackmapexec(SMB) | Target_format(Basic) |
+    | 111 | Kali-tools-top10 | wifite | Execute |
+    | 112 | Kali-tools-top10 | wifite | Manual |
+    | 121 | Kali-tools-top10 | burpsuite | Execute |
+    | 131 | Kali-tools-top10 | crackmapexec | Target_format(Basic) |
     | 132 | Kali-tools-top10 | crackmapexec(SMB) | Null_session |
     | 133 | Kali-tools-top10 | crackmapexec(SMB) | Connect_to_target_using_local_account |
     | 134 | Kali-tools-top10 | crackmapexec(SMB) | Path_the_hash_against_a_subnet |
     | 135 | Kali-tools-top10 | crackmapexec(SMB) | Brutefocing_&_Password_Sprayin |
-    | 136 | Kali-tools-top10 | crackmapexec(SMB) | Manual |
+    | 136 | Kali-tools-top10 | crackmapexec | Manual |
     | 141 | Kali-tools-top10 | hydra | Bruteforce_the_username_admin with_the_given_password_list |
     | 142 | Kali-tools-top10 | hydra | Bruteforce_SSH_with_user_and_password_lists against_target_IP_address |
     | 143 | Kali-tools-top10 | hydra | Manual |
@@ -158,14 +159,12 @@ This completes the process. Now wait for the result.
     | 1033 | Kali-tools-top10 | responder | Poisoning_with_Responder |
     | 1034 | Kali-tools-top10 | responder | Basic_Authentication_&_WPAD |
     | 1035 | Kali-tools-top10 | responder | Manual |
-    | 1041 | Kali-tools-top10 | sqlmap | GET_request |
-    | 1042 | Kali-tools-top10 | sqlmap | POST_request |
-    | 1043 | Kali-tools-top10 | sqlmap | Find_out_what_databases_exist with_SQL_injection |
-    | 1044 | Kali-tools-top10 | sqlmap | Find_out_what_table_exist with_SQL_injection |
-    | 1045 | Kali-tools-top10 | sqlmap | Display_table_contents with_SQL_injection |
+    | 1041 | Kali-tools-top10 | sqlmap | Enume_all_dbs |
+    | 1042 | Kali-tools-top10 | sqlmap | Enume_all_tables |
+    | 1043 | Kali-tools-top10 | sqlmap | Dump_table_entries |
     | 1046 | Kali-tools-top10 | sqlmap | Manual |
     | 1051 | Kali-tools-top10 | wireshark(tshark) | wireshark |
-    | 1051 | Kali-tools-top10 | wireshark(tshark) | tshark |
+    | 1052 | Kali-tools-top10 | wireshark(tshark) | tshark |
     | 211 | Tools | AutoScan | Install |
     | 2121 | Tools | Autoscan | Scanning the network with nmapAutomator |
     | 2122 | Tools | Autoscan | Port scan with nmapAutomator |
@@ -175,14 +174,14 @@ This completes the process. Now wait for the result.
     | 21202 | Tools | Autoscan | Vulnerability Scanning with nmapAutomator|
     | 21203 | Tools | Autoscan | Reconnaissance scan with nmapAutomator |
     | 21204 | Tools | Autoscan | All scan with nmapAutomator |
-    | 221 | Tools | VuknCheck |Check |
+    | 221 | Tools | Check | Vulns |
+    | 222 | Tools | Check | Results |
     | 31  | Attack | Exploit(Metasploit) | |
     | 321 | Attack | Social-Engineering | Website_Attack_Vectors(Credential_Harvester_Attack)|
     | 33 | Attack | Brute-force |
     | 341 | Attack | MSFvenom_Payload_Creator(msfpc) | Create_Payload |
     | 351 | Attack | Search_Exploit(searchsploit) |  Search |
-    | 351 | Attack | Search_Exploit(searchsploit) | Automatic_Search(Miscellaneous_Automation)|
-    | 41  | Result | Result | Check Scan Result |
+    | 352 | Attack | Search_Exploit(searchsploit) | Automatic_Search(Miscellaneous_Automation)|
 
 ## Operation check environment
 

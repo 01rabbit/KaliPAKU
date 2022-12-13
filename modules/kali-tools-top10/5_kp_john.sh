@@ -72,6 +72,7 @@ function cmd_john1(){
     read -n 1 -s ANS
     if [ ! -z "$ANS" ];then
         if [ $ANS = "2" ];then
+            show_number 151 "john with_wordlist"
             eval $cmd
         else
             :
@@ -102,6 +103,7 @@ function cmd_john2(){
     read -n 1 -s ANS
     if [ ! -z "$ANS" ];then
         if [ $ANS = "2" ];then
+            show_number 152 "john crack_hash"
             eval $cmd
         else
             :
@@ -132,6 +134,7 @@ function cmd_john3(){
     read -n 1 -s ANS
     if [ ! -z "$ANS" ];then
         if [ $ANS = "2" ];then
+            show_number 153 "john Show_passwords"
             eval $cmd
         else
             :
@@ -161,6 +164,7 @@ function cmd_john4(){
     read -n 1 -s ANS
     if [ ! -z "$ANS" ];then
         if [ $ANS = "2" ];then
+            show_number 154 "john incremental_mode"
             eval $cmd
         else
             :
@@ -184,5 +188,6 @@ function cmd_john5(){
 	printf "|  ${YELLOW}--incremental[=MODE]${NC}       \"Incremental\" mode [using section MODE]\n"
     printf "+${BLUE}usage${NC}: john ${WHITE} [OPTIONS] [PASSWORD-FILES]\n"
     read -e -p "└─Command > " cmd
+    show_number 155 "john Manual"
     eval $cmd
 }

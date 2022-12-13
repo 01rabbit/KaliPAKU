@@ -65,6 +65,7 @@ function cmd_responder1(){
     read -n 1 -s ANS
     if [ ! -z "$ANS" ];then
         if [ $ANS = "2" ];then
+            show_number 1031 "responder Basic_Usage"
             eval $cmd
         else
             :
@@ -99,6 +100,7 @@ function cmd_responder2(){
     read -n 1 -s ANS
     if [ ! -z "$ANS" ];then
         if [ $ANS = "2" ];then
+            show_number 1032 "responder Analyze"
             eval $cmd
         else
             :
@@ -130,6 +132,7 @@ function cmd_responder3(){
     read -n 1 -s ANS
     if [ ! -z "$ANS" ];then
         if [ $ANS = "2" ];then
+            show_number 1033 "responder Poisoning"
             eval $cmd
         else
             :
@@ -165,6 +168,7 @@ function cmd_responder4(){
     read -n 1 -s ANS
     if [ ! -z "$ANS" ];then
         if [ $ANS = "2" ];then
+            show_number 1034 "responder Basic_Auth_&_WPAD"
             eval $cmd
         else
             :
@@ -193,5 +197,6 @@ function cmd_responder5(){
     echo "|"
     printf "+${BLUE}usage${NC} : responder ${WHITE}[Options]${NC}\n"
     read -e -p "└─Command > " cmd
+    show_number 1035 "responder Manual"
     eval $cmd
 }

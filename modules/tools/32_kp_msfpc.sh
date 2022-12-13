@@ -92,6 +92,7 @@ function cmd_msfpc(){
         read -n 1 -s ANS
         if [ ! -z "$ANS" ];then
             if [ $ANS = "2" ];then
+                show_number 341 "msfpc Create_Payload"
                 eval $cmd
             else
                 :

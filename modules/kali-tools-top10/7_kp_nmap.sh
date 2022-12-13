@@ -53,6 +53,7 @@ function cmd_nmap1(){
             if [ ! -d result/$TARGET ];then
                 mkdir result/$TARGET
             fi
+            show_number 1021 "nmap Ping_Scan"
             eval $cmd
         else
             :
@@ -89,6 +90,7 @@ function cmd_nmap2(){
             if [ ! -d result/$TARGET ];then
                 mkdir result/$TARGET
             fi
+            show_number 1022 "nmap Intense_Scan"
             eval $cmd
         else
             :
@@ -127,6 +129,7 @@ function cmd_nmap3(){
             if [ ! -d result/$TARGET ];then
                 mkdir result/$TARGET
             fi
+            show_number 1023 "nmap Intense_Scan+UDP"
             eval $cmd
         else
             :
@@ -165,6 +168,7 @@ function cmd_nmap4(){
             if [ ! -d result/$TARGET ];then
                 mkdir result/$TARGET
             fi
+            show_number 1024 "nmap Intense_Scan_all_TCP"
             eval $cmd
         else
             :
@@ -201,6 +205,7 @@ function cmd_nmap5(){
             if [ ! -d result/$TARGET ];then
                 mkdir result/$TARGET
             fi
+            show_number 1025 "nmap Vuln_Scan"
             eval $cmd
         else
             :
@@ -230,5 +235,6 @@ function cmd_nmap6(){
     echo "|"
     printf "+${BLUE}Usage${NC}: nmap [Scan Type(s)] [Options] {target specification}\n"
     read -e -p "└─Command > " cmd
+    show_number 1026 "nmap Manual"
     eval $cmd
 }

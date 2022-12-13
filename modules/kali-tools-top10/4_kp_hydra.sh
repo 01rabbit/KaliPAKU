@@ -106,6 +106,7 @@ function cmd_hydra1(){
     read -n 1 -s ANS
     if [ ! -z "$ANS" ];then
         if [ $ANS = "2" ];then
+            show_number 141 "hydra Bruteforce"
             eval $cmd
         else
             :
@@ -174,6 +175,7 @@ function cmd_hydra2(){
     read -n 1 -s ANS
     if [ ! -z "$ANS" ];then
         if [ $ANS = "2" ];then
+            show_number 142 "hydra Bruteforce_SSH"
             eval $cmd
         else
             :
@@ -228,5 +230,6 @@ function cmd_hydra3(){
     echo "|"
     printf "+${BLUE}usage${NC}: hydra [[[-l LOGIN|-L FILE] [-p PASS|-P FILE]] | [-C FILE]] [-e nsr] [-o FILE] [-t TASKS] [-M FILE [-T TASKS]] [-w TIME] [-W TIME] [-f] [-s PORT] [-x MIN:MAX:CHARSET] [-c TIME] [-ISOuvVd46] [-m MODULE_OPT] [service://server[:PORT][/OPT]]\n"
     read -e -p "└─Command > " cmd
+    show_number 143 "hydra Manual"
     eval $cmd
 }

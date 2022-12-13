@@ -42,6 +42,7 @@ function cmd_burpsuite(){
     read -n 1 -s ANS
     if [ ! -z "$ANS" ];then
         if [ $ANS = "2" ];then
+            show_number 121 "burpsuite Execute"
             eval $cmd
         else
             :

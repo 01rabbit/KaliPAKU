@@ -73,6 +73,7 @@ function cmd_metasploit1(){
     read -n 1 -s ANS
     if [ ! -z "$ANS" ];then
         if [ $ANS = "2" ];then
+            show_number 1011 "metasploit Normal_Boot"
             eval $cmd
         else
             :
@@ -112,6 +113,7 @@ EOF
     read -n 1 -s ANS
     if [ ! -z "$ANS" ];then
         if [ $ANS = "2" ];then
+            show_number 1012 "metasploit Create_Multi_handler"
             eval $cmd
         else
             :
