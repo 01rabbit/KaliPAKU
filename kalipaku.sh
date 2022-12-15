@@ -135,6 +135,7 @@ else
             ;;
         "exit"|"q"|"quit"|3470)
             figlet See you!
+            sleep 1
             tmux kill-session -t ${TITLE}
             tmux kill-server
             clear

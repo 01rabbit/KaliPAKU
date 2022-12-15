@@ -1,5 +1,0 @@
-# Nmap 7.92 scan initiated Wed Nov 23 19:50:55 2022 as: nmap -sn -v -oA result/172.16.2.202/PingScan_20221123-195054 172.16.2.202
-Nmap scan report for 172.16.2.202
-Host is up (0.071s latency).
-Read data files from: /usr/bin/../share/nmap
-# Nmap done at Wed Nov 23 19:51:08 2022 -- 1 IP address (1 host up) scanned in 13.20 seconds
