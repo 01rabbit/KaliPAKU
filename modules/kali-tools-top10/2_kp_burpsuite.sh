@@ -43,7 +43,10 @@ function cmd_burpsuite(){
     if [ ! -z "$ANS" ];then
         if [ $ANS = "2" ];then
             show_number 121 "burpsuite Execute"
-            eval $cmd
+            tmux split-window -v -p 30
+            tmux send-keys "${cmd};read;exit" C-m
+            tmux select-pane -t "${TITLE}".0
+            # eval $cmd
         else
             :
         fi

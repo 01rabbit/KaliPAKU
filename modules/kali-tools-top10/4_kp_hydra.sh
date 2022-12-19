@@ -107,7 +107,10 @@ function cmd_hydra1(){
     if [ ! -z "$ANS" ];then
         if [ $ANS = "2" ];then
             show_number 141 "hydra Bruteforce"
-            eval $cmd
+            tmux split-window -v
+            tmux send-keys "${cmd};read;exit" C-m
+            tmux select-pane -t "${TITLE}".0
+            # eval $cmd
         else
             :
         fi
@@ -176,7 +179,10 @@ function cmd_hydra2(){
     if [ ! -z "$ANS" ];then
         if [ $ANS = "2" ];then
             show_number 142 "hydra Bruteforce_SSH"
-            eval $cmd
+            tmux split-window -v
+            tmux send-keys "${cmd};read;exit" C-m
+            tmux select-pane -t "${TITLE}".0
+            # eval $cmd
         else
             :
         fi
@@ -188,6 +194,7 @@ function cmd_hydra2(){
 function cmd_hydra3(){
     local cmd="" 
     clear
+    show_number 143 "hydra Manual"
     figlet hydra
     cmd="hydra "
     printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${RED}[1]Kali-tools-top10${NC} > ${BLUE}[4]$cmd${NC} > ${YELLOW}[3]Manual${NC}\n"
@@ -230,6 +237,8 @@ function cmd_hydra3(){
     echo "|"
     printf "+${BLUE}usage${NC}: hydra [[[-l LOGIN|-L FILE] [-p PASS|-P FILE]] | [-C FILE]] [-e nsr] [-o FILE] [-t TASKS] [-M FILE [-T TASKS]] [-w TIME] [-W TIME] [-f] [-s PORT] [-x MIN:MAX:CHARSET] [-c TIME] [-ISOuvVd46] [-m MODULE_OPT] [service://server[:PORT][/OPT]]\n"
     read -e -p "└─Command > " cmd
-    show_number 143 "hydra Manual"
-    eval $cmd
+    tmux split-window -v
+    tmux send-keys "${cmd};read;exit" C-m
+    tmux select-pane -t "${TITLE}".0
+    # eval $cmd
 }

@@ -52,8 +52,11 @@ function cmd_wifite1(){
 		echo ""
 		if [ ! -z "$ANS" ];then
 			if [ $ANS = "2" ];then
-				# show_number 111 "wifite Execute"
-				eval $cmd
+				show_number 111 "wifite Execute"
+				tmux split-window -v -p 30
+				tmux send-keys "${cmd};read;exit" C-m
+				tmux select-pane -t "${TITLE}".0
+				# eval $cmd
 			else
 				:
 			fi
@@ -66,6 +69,7 @@ function cmd_wifite1(){
 function cmd_wifite2(){
 	local cmd="" ANS=""
 	clear
+	show_number 112 "wifite Manual"
 	figlet wifite
     cmd="wifite "
     printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${RED}[1]Kali-tools-top10${NC} > ${RED}[1]$cmd${NC} > ${GREEN}Manual${NC}\n"
@@ -93,8 +97,10 @@ function cmd_wifite2(){
 		printf "|  ${YELLOW}-p [scan_time]${NC}          Pillage: Attack all targets after scan_time (seconds)\n"
 		printf "+${BLUE}usage${NC}: wifite ${WHITE}[option|SETTINGS]${NC}\n"
 		read -e -p "└─Command > " cmd
-		show_number 112 "wifite Manual"
-		eval $cmd
+		tmux split-window -v -p 30
+		tmux send-keys "${cmd};read;exit" C-m
+		tmux select-pane -t "${TITLE}".0
+		# eval $cmd
 	fi
 }
 

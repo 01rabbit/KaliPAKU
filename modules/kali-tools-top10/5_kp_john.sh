@@ -73,7 +73,10 @@ function cmd_john1(){
     if [ ! -z "$ANS" ];then
         if [ $ANS = "2" ];then
             show_number 151 "john with_wordlist"
-            eval $cmd
+            tmux split-window -v
+            tmux send-keys "${cmd};read;exit" C-m
+            tmux select-pane -t "${TITLE}".0
+            # eval $cmd
         else
             :
         fi
@@ -104,7 +107,10 @@ function cmd_john2(){
     if [ ! -z "$ANS" ];then
         if [ $ANS = "2" ];then
             show_number 152 "john crack_hash"
-            eval $cmd
+            tmux split-window -v
+            tmux send-keys "${cmd};read;exit" C-m
+            tmux select-pane -t "${TITLE}".0
+            # eval $cmd
         else
             :
         fi
@@ -135,7 +141,10 @@ function cmd_john3(){
     if [ ! -z "$ANS" ];then
         if [ $ANS = "2" ];then
             show_number 153 "john Show_passwords"
-            eval $cmd
+            tmux split-window -v
+            tmux send-keys "${cmd};read;exit" C-m
+            tmux select-pane -t "${TITLE}".0
+            # eval $cmd
         else
             :
         fi
@@ -165,7 +174,10 @@ function cmd_john4(){
     if [ ! -z "$ANS" ];then
         if [ $ANS = "2" ];then
             show_number 154 "john incremental_mode"
-            eval $cmd
+            tmux split-window -v
+            tmux send-keys "${cmd};read;exit" C-m
+            tmux select-pane -t "${TITLE}".0
+            # eval $cmd
         else
             :
         fi
@@ -177,6 +189,7 @@ function cmd_john4(){
 function cmd_john5(){
     local cmd=""
     clear
+    show_number 155 "john Manual"
     figlet john
     cmd="john "
     printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${RED}[1]Kali-tools-top10${NC} > ${PURPLE}[5]$cmd${NC} > ${PURPLE}[5]Manual${NC}\n"
@@ -188,6 +201,8 @@ function cmd_john5(){
 	printf "|  ${YELLOW}--incremental[=MODE]${NC}       \"Incremental\" mode [using section MODE]\n"
     printf "+${BLUE}usage${NC}: john ${WHITE} [OPTIONS] [PASSWORD-FILES]\n"
     read -e -p "└─Command > " cmd
-    show_number 155 "john Manual"
-    eval $cmd
+    tmux split-window -v
+    tmux send-keys "${cmd};read;exit" C-m
+    tmux select-pane -t "${TITLE}".0
+    # eval $cmd
 }

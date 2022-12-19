@@ -61,10 +61,9 @@ KaliPAKU was created to support the initial stages of penetration testing. These
     ![KaliPAKU Terminal](https://user-images.githubusercontent.com/16553787/200162688-e8f11bce-890b-4af2-b58b-a284145ac24b.png)  
 3. KaliPAKU Terminal
 Enter "kp" or "kalipaku" at the KaliPAKU terminal or enter the magic number "4649" to activate the KaliPAKU menu.  
-    ![KaliPAKU Terminal2](https://user-images.githubusercontent.com/16553787/200162695-00673373-877b-423d-9121-0aa2fb5fd6f2.png)  
     ![KaliPAKU menu](https://user-images.githubusercontent.com/16553787/200162700-e34f1a4d-14f3-4b47-8cf4-0fd454158026.png)  
 4. KaliPAKU Smart menu  
-Entering the numeric key corresponding to the command to be used will build and execute the command. Also, press tab. The "Smart Menu" will open.  
+From the "KaliPAKU Terminal", press the Tab key to call up the "KaliPAKU Smart Menu", which is a simplified version of the "KaliPAKU Menu".  
     ![KaliPAKU smart menu](https://user-images.githubusercontent.com/16553787/200162705-aa160b18-2f7c-4bc3-aa2c-4c6d361d1ab1.png)  
 5. KaliPAKU Cheatsheet  
 Here is a partial cheat sheet of commands that can be called up in the KaliPAKU menu. To check the cheat sheet, use "cs", "cheat", or "cheatsheet". You can also use the magic number "4936".  
