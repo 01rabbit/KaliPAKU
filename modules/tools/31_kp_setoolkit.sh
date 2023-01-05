@@ -65,7 +65,10 @@ EOF
         if [ ! -z "$ANS" ];then
             if [ $ANS = "2" ];then
                 show_number 321 "SET Website_Attack_Vectors"
-                eval $cmd
+                tmux split-window -v
+                tmux send-keys "${cmd};read;exit" C-m
+                tmux select-pane -t "${TITLE}".0
+                # eval $cmd
             else
                 :
             fi

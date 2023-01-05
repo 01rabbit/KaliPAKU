@@ -10,4 +10,3 @@
     tmux send-keys -t 1 "${cmd};read;exit" C-m
     tmux set-option -g mouse on
     tmux attach -t kp
-    echo test

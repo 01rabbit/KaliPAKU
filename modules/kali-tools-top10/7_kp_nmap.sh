@@ -54,7 +54,10 @@ function cmd_nmap1(){
                 mkdir result/$TARGET
             fi
             show_number 1021 "nmap Ping_Scan"
-            eval $cmd
+            tmux split-window -v
+            tmux send-keys "${cmd};read;exit" C-m
+            tmux select-pane -t "${TITLE}".0
+            # eval $cmd
         else
             :
         fi
@@ -91,7 +94,11 @@ function cmd_nmap2(){
                 mkdir result/$TARGET
             fi
             show_number 1022 "nmap Intense_Scan"
-            eval $cmd
+            tmux split-window -v
+            tmux send-keys "${cmd};read;exit" C-m
+            tmux select-pane -t "${TITLE}".0
+
+            # eval $cmd
         else
             :
         fi
@@ -130,7 +137,11 @@ function cmd_nmap3(){
                 mkdir result/$TARGET
             fi
             show_number 1023 "nmap Intense_Scan+UDP"
-            eval $cmd
+            tmux split-window -v
+            tmux send-keys "${cmd};read;exit" C-m
+            tmux select-pane -t "${TITLE}".0
+
+            # eval $cmd
         else
             :
         fi
@@ -169,7 +180,11 @@ function cmd_nmap4(){
                 mkdir result/$TARGET
             fi
             show_number 1024 "nmap Intense_Scan_all_TCP"
-            eval $cmd
+            tmux split-window -v
+            tmux send-keys "${cmd};read;exit" C-m
+            tmux select-pane -t "${TITLE}".0
+
+            # eval $cmd
         else
             :
         fi
@@ -206,7 +221,11 @@ function cmd_nmap5(){
                 mkdir result/$TARGET
             fi
             show_number 1025 "nmap Vuln_Scan"
-            eval $cmd
+            tmux split-window -v
+            tmux send-keys "${cmd};read;exit" C-m
+            tmux select-pane -t "${TITLE}".0
+
+            # eval $cmd
         else
             :
         fi
@@ -218,7 +237,7 @@ function cmd_nmap5(){
 function cmd_nmap6(){
     local cmd=""
     clear
-	figlet Nmap
+    show_number 1026 "nmap Manual"
     cmd="nmap"
     printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${RED}[1]Kali-tools-top10${NC} > ${GREEN}[2]$cmd${NC} > ${LIGHTBLUE}[6]Manual${NC}\n"
     printf "+${BLUE}Options${NC}:\n"
@@ -235,6 +254,5 @@ function cmd_nmap6(){
     echo "|"
     printf "+${BLUE}Usage${NC}: nmap [Scan Type(s)] [Options] {target specification}\n"
     read -e -p "└─Command > " cmd
-    show_number 1026 "nmap Manual"
     eval $cmd
 }

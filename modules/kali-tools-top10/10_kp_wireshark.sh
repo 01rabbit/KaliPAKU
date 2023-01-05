@@ -29,7 +29,7 @@ function menu_wireshark(){
 
 function cmd_wireshark(){
     clear
-	figlet Wireshark
+    show_number 1051 "wireshark(tshark) wireshark"
     cmd="wireshark"
     printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${RED}[1]Kali-tools-top10${NC} > ${PURPLE}[5]wireshark(tshark)${NC} > ${RED}[1]wireshark${NC}\n"
     printf "|${RED}  ####  Caution!  ####${NC}\n"
@@ -45,7 +45,6 @@ function cmd_wireshark(){
     echo ""
     if [ ! -z "$ANS" ];then
         if [ $ANS = "2" ];then
-        show_number 1051 "wireshark(tshark) wireshark"
         eval $cmd
         else
             :
@@ -57,7 +56,7 @@ function cmd_wireshark(){
 
 function cmd_tshark(){
     clear
-	figlet tshark
+    show_number 1052 "wireshark(tshark) tshark"
     cmd="tshark"
     printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${RED}[1]Kali-tools-top10${NC} > ${PURPLE}[5]wireshark(tshark)${NC} > ${GREEN}[2]tshark${NC}\n"
     printf "+${BLUE}Capture interface${NC}:\n"
@@ -83,6 +82,5 @@ function cmd_tshark(){
     printf "+${BLUE}usage${NC}: tshark [ -i <capture interface>|- ] [ -f <capture filter> ] [ -2 ] [ -r <infile> ] [ -w <outfile>|- ] [ options ] [ <filter> ]\n"
     printf "+${BLUE}usage${NC}: tshark -G [ <report type> ] [ --elastic-mapping-filter <protocols> ]\n"
     read -e -p "└─Command > " cmd
-    show_number 1052 "wireshark(tshark) tshark"
     eval $cmd
 }

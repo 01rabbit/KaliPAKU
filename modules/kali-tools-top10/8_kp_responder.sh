@@ -66,7 +66,10 @@ function cmd_responder1(){
     if [ ! -z "$ANS" ];then
         if [ $ANS = "2" ];then
             show_number 1031 "responder Basic_Usage"
-            eval $cmd
+            tmux split-window -v
+            tmux send-keys "${cmd};read;exit" C-m
+            tmux select-pane -t "${TITLE}".0
+            # eval $cmd
         else
             :
         fi
@@ -101,7 +104,10 @@ function cmd_responder2(){
     if [ ! -z "$ANS" ];then
         if [ $ANS = "2" ];then
             show_number 1032 "responder Analyze"
-            eval $cmd
+            tmux split-window -v
+            tmux send-keys "${cmd};read;exit" C-m
+            tmux select-pane -t "${TITLE}".0
+            # eval $cmd
         else
             :
         fi
@@ -133,7 +139,10 @@ function cmd_responder3(){
     if [ ! -z "$ANS" ];then
         if [ $ANS = "2" ];then
             show_number 1033 "responder Poisoning"
-            eval $cmd
+            tmux split-window -v
+            tmux send-keys "${cmd};read;exit" C-m
+            tmux select-pane -t "${TITLE}".0
+            # eval $cmd
         else
             :
         fi
@@ -169,7 +178,11 @@ function cmd_responder4(){
     if [ ! -z "$ANS" ];then
         if [ $ANS = "2" ];then
             show_number 1034 "responder Basic_Auth_&_WPAD"
-            eval $cmd
+            tmux split-window -v
+            tmux send-keys "${cmd};read;exit" C-m
+            tmux select-pane -t "${TITLE}".0
+
+            # eval $cmd
         else
             :
         fi
@@ -181,7 +194,7 @@ function cmd_responder4(){
 function cmd_responder5(){
     local INTERFACE="" cmd="" ANS=""
 	clear
-	figlet Responder
+    show_number 1035 "responder Manual"
     cmd="responder"
     printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${RED}[1]Kali-tools-top10${NC} > ${YELLOW}[3]$cmd${NC} > ${PURPLE}[5]Manual${NC}\n"
     printf "+${BLUE}Options${NC}:\n"
@@ -197,6 +210,5 @@ function cmd_responder5(){
     echo "|"
     printf "+${BLUE}usage${NC} : responder ${WHITE}[Options]${NC}\n"
     read -e -p "└─Command > " cmd
-    show_number 1035 "responder Manual"
     eval $cmd
 }

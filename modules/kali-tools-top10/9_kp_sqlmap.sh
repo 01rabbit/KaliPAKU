@@ -91,7 +91,11 @@ function cmd_sqlmap1(){
     if [ ! -z "$ANS" ];then
         if [ $ANS = "2" ];then
             show_number 1041 "sqlmap Enume_all_dbs"
-            eval $cmd
+            tmux split-window -v
+            tmux send-keys "${cmd};read;exit" C-m
+            tmux select-pane -t "${TITLE}".0
+
+            # eval $cmd
             read
         else
             :
@@ -156,8 +160,12 @@ function cmd_sqlmap2(){
     if [ ! -z "$ANS" ];then
         if [ $ANS = "2" ];then
             show_number 1042 "sqlmap Enume_all_tables"
-            eval $cmd
-            read
+            tmux split-window -v
+            tmux send-keys "${cmd};read;exit" C-m
+            tmux select-pane -t "${TITLE}".0
+
+            # eval $cmd
+            # read
         else
             :
         fi
@@ -224,8 +232,12 @@ function cmd_sqlmap3(){
     if [ ! -z "$ANS" ];then
         if [ $ANS = "2" ];then
             show_number 1043 "sqlmap Enume_table_columns"
-            eval $cmd
-            read
+            tmux split-window -v
+            tmux send-keys "${cmd};read;exit" C-m
+            tmux select-pane -t "${TITLE}".0
+
+            # eval $cmd
+            # read
         else
             :
         fi
@@ -293,8 +305,12 @@ function cmd_sqlmap4(){
     if [ ! -z "$ANS" ];then
         if [ $ANS = "2" ];then
             show_number 1044 "sqlmap Table_columns_dump"
-            eval $cmd
-            read
+            tmux split-window -v
+            tmux send-keys "${cmd};read;exit" C-m
+            tmux select-pane -t "${TITLE}".0
+
+            # eval $cmd
+            # read
         else
             :
         fi

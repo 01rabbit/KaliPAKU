@@ -138,7 +138,10 @@ function cmd_autoscan1(){
         if [ ! -z "$ANS" ];then
             if [ $ANS = "2" ];then
                 show_number ${SET_NUMBER} "${TOOL} ${OPTION}"
-                eval $cmd
+                tmux split-window -v
+                tmux send-keys "${cmd};read;exit" C-m
+                tmux select-pane -t "${TITLE}".0
+                # eval $cmd
             else
                 :
             fi
@@ -217,7 +220,10 @@ function cmd_autoscan2(){
         if [ ! -z "$ANS" ];then
             if [ $ANS = "2" ];then
                 show_number ${SET_NUMBER} "${TOOL} ${OPTION}"
-                eval $cmd
+                tmux split-window -v
+                tmux send-keys "${cmd};read;exit" C-m
+                tmux select-pane -t "${TITLE}".0
+                # eval $cmd
             else
                 :
             fi
