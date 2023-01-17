@@ -1,6 +1,6 @@
 # KaliPAKU:Kali linux with PAKURI
 
-![KaliPAKU_logo](img/KaliPAKU.png)
+![KaliPAKU_logo](img/KaliPAKU_logo.png)
 ![Mark](https://img.shields.io/badge/PAKURI-Mark%20V-green)
 ![License](https://img.shields.io/github/license/01rabbit/KaliPAKU)
 ![release-date](https://img.shields.io/github/release-date/01rabbit/KaliPAKU)
@@ -8,7 +8,7 @@
 
 ## Overview
 
-The KaliPAKU is a tool that allows novice penetration testers and script kiddies to use the tools provided with Kali linux to improve their penetration testing skills by learning simple investigation, enumeration, and exploits on the keypad.
+KaliPAKU allows novice penetration testers and script kiddies to use the tools included with Kali linux to investigate networks, enumerate hosts and services, search for vulnerabilities, and execute exploits with a simple keypad entry of numbers. At the same time, the tool is used to learn a series of operations and improve penetration testing skills.
 
 ### What's KaliPAKU
 
@@ -22,11 +22,14 @@ Incidentally, "karipaku" in Japanese slang indicates embezzling something borrow
 
 ## Description
 
-KaliPAKU is a semi-automated, user-friendly framework for penetration testing tools. Using only the keypad, you can use the penetration test tool like a game.  
-It's also a great introductory tool for beginners. Learn the flow of penetration testing with KaliPAKU without having to wrestle with confusing command lines and tools.  
-The first step is to get used to it. Experience and learn penetration testing by executing commands with combinations of numbers.  
-The next step is to understand. KaliPAKU displays help for the commands and options to be executed. By learning its contents little by little, players can improve their own skills. KaliPAKU also has a simplified menu called the "Smart Menu". Combine that menu with number input to increase the learning effect.  
-The last step is actual practice. KaliPAKU also supports manual command input. Check the help for the commands you have used so far and perform a penetration test by actually entering the commands manually.
+This tool is a Bash shell script.  
+Beginners can use the tools included in "kali-tools-top10" without typing commands so that they do not have trouble using Kali linux.  
+The feature of this tool is to execute commands only by entering numbers using the numeric keypad. The commands are executed by number, just like the finger numbers you first learn when learning a musical instrument such as the piano. By simply looking at the cheat sheet and entering the numbers corresponding to the command you want to execute, you can assemble the command in the background and advance it to the execution stage.  
+Players who start using the tool will be able to perform simple operations in Kalil inux by simply entering numbers. The tool also has a training aspect. Whenever a command is used, a description of the option to be used is always displayed. This means that the player is constantly being lectured by the tool on the commands and options.  
+Once the player is familiar with the tool, he/she can actually enter the commands manually. They will be able to demonstrate the skills they have acquired in their previous training.  
+In addition to helping with Kali Linux, this tool will also assist beginners with penetration testing. It scans, checks the results, and helps find vulnerabilities. I found a great tool on Github for network scanning. You can even accomplish the penetration test by entering numbers on a numeric keypad.  
+This tool is a very simple mechanism. Anyone could have made it. But nobody did, so I made it. The result is a tool that gives players the opportunity to learn by using it. Also, this tool is easy to use, so it can be used by people of any background, gender, or age. The same is true for people with physical handicaps. The tool is so easy to use that even those with limited mobility can use it.  
+This tool makes penetration testing easy and fun.  
 
 |CAUTION|
 |:--- |
@@ -165,14 +168,14 @@ This completes the process. Now wait for the result.
     | 1051 | Kali-tools-top10 | wireshark(tshark) | wireshark |
     | 1052 | Kali-tools-top10 | wireshark(tshark) | tshark |
     | 211 | Tools | AutoScan | Install |
-    | 2121 | Tools | Autoscan | Scanning the network with nmapAutomator |
-    | 2122 | Tools | Autoscan | Port scan with nmapAutomator |
-    | 2123 | Tools | Autoscan | Scan Script with nmapAutomotr|
-    | 2124 | Tools | Autoscan | Full port scan with nmapAutomator |
-    | 21201 | Tools | Autoscan | UDP scan with nmapPutomator |
-    | 21202 | Tools | Autoscan | Vulnerability Scanning with nmapAutomator|
-    | 21203 | Tools | Autoscan | Reconnaissance scan with nmapAutomator |
-    | 21204 | Tools | Autoscan | All scan with nmapAutomator |
+    | 2121 | Tools | AutoScan | Scanning the network with nmapAutomator |
+    | 2122 | Tools | AutoScan | Port scan with nmapAutomator |
+    | 2123 | Tools | AutoScan | Scan Script with nmapAutomotr|
+    | 2124 | Tools | AutoScan | Full port scan with nmapAutomator |
+    | 21201 | Tools | AutoScan | UDP scan with nmapPutomator |
+    | 21202 | Tools | AutoScan | Vulnerability Scanning with nmapAutomator|
+    | 21203 | Tools | AutoScan | Reconnaissance scan with nmapAutomator |
+    | 21204 | Tools | AutoScan | All scan with nmapAutomator |
     | 221 | Tools | Check | Vulns |
     | 222 | Tools | Check | Results |
     | 31  | Attack | Exploit(Metasploit) | |
