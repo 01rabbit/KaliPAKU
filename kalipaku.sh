@@ -52,7 +52,7 @@ function mainmenu(){
 }
 
 function whiptail_menu(){
-    var=$(whiptail --title "SmartMenu" --backtitle "${TITLE}" --menu "Simple Smart Menu" 0 0 0 \
+    var=$(whiptail --title "SmartMenu" --backtitle "${TITLE}" --menu "Simple Smart Menu" 25 70 0 \
     0 "CeatSheet" \
     1 "kp_wifite         Wi-Fi Attack" \
     2 "kp_burpsuite      Local Web Proxy"\
@@ -72,7 +72,7 @@ function whiptail_menu(){
     16 "kp_result        Show Result " \
     3>&1 1>&2 2>&3 )
     case $var in
-    0) cheatsheet ;;
+    0) more cheatsheet.txt ;;
     1) menu_wifite ;;
     2) cmd_burpsuite ;;
     3) menu_crackmapexec ;;

@@ -1,6 +1,7 @@
     [1;37mCommand	Description[0m
-    [1;37m5963	[0mShow KaliPAKU Menu[0m
-    [1;37m4649	[0mShow Cheatsheet[0m
+    [1;37m4649	[0mShow KaliPAKU Menu[0m
+    [1;37m4936	[0mShow Cheatsheet[0m
+    [1;37m3470	[0mExit KaliPAKU[0m
     [0m
     [1;37mNumber   Command               Description[0m
     [1;37m111      [1;31mwifite                Execute[0m
