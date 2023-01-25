@@ -3,26 +3,33 @@
 source kp.conf
 source $MODULES_PATH/misc_module.sh
 
-function menu_result(){
+function menu_results(){
     clear
-	figlet Result
-    num4 0 "Result"
-    num1 5 "Show Result"
-    num9 5 "Back"
+    figlet Reports
+    num4 0 "Reports"
+    num1 5 "results"
+    num1 10 "Show Result"
+    num9 10 "Back"
     read -n 1 -s NUM
-	case $NUM in
-    1) show_result ;;
-    9) mainmenu ;;
-    *) ;;
+    case $NUM in
+    1)
+        cmd_results
+        ;;
+    9)
+        menu_reports
+        ;;
+    *)
+        ;;
     esac
 
 }
-function show_result(){
+
+function cmd_results(){
     clear
-    figlet Result
+    show_number 411 "Check Results"
     BASE=`pwd`
     cd result
-    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${BLUE}[4]Result${NC} > ${RED}Show Result${NC}\n"
+    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${BLUE}[4]Reports${NC} > ${RED}[1]results${NC} > ${RED}[1]Show Result${NC}\n"
     echo "|"
     while :;do
         PS3="└─Please Select one > "

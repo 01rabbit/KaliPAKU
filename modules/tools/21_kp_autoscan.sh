@@ -47,14 +47,17 @@ function install_autoscan(){
             else
                 printf "+${BLUE}Install${NC}\n"
                 echo "|  Clone nmapAutomator..."
-                git clone https://github.com/21y4d/nmapAutomator.git
+                git clone https://github.com/21y4d/nmapAutomator.git nmapAutomator
+                sleep 1
                 if ! which ffuf ;then
                     sudo apt update
                     sudo apt install ffuf -y
+                    sleep 1
                 fi
                 if ! which gobuster ;then
                     sudo apt update-alternatives
                     sudo apt install gobuster -y
+                    sleep 1
                 fi
                 echo "└─Command > Complete"
             fi

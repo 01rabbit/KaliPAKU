@@ -12,14 +12,16 @@ source $TOP10_PATH/8_kp_responder.sh
 source $TOP10_PATH/9_kp_sqlmap.sh
 source $TOP10_PATH/10_kp_wireshark.sh
 source $TOOL_PATH/21_kp_autoscan.sh
-source $TOOL_PATH/22_kp_check.sh
+source $TOOL_PATH/22_kp_vulncheck.sh
 source $TOOL_PATH/31_kp_setoolkit.sh
 source $TOOL_PATH/32_kp_msfpc.sh
 source $TOOL_PATH/33_kp_searchsploit.sh
+source $TOOL_PATH/41_kp_results.sh
 source $TOP10_PATH/top10menu.sh
 source $MODULES_PATH/misc_module.sh
 source $TOOL_PATH/toolsmenu.sh
 source $TOOL_PATH/attackmenu.sh
+source $TOOL_PATH/reportmenu.sh
 
 function mainmenu(){
     while :; do
@@ -28,6 +30,7 @@ function mainmenu(){
         num1 0 "Kali-tools-top10"
         num2 0 "Tools"
         num3 0 "Attack"
+        num4 0 "Reports"
         num9 0 "Exit"
         read -n 1 -s NUM
         case $NUM in
@@ -40,8 +43,10 @@ function mainmenu(){
         3)
             menu_attack
             ;;
+        4)
+            menu_reports
+            ;;
         9)
-            clear
             break
             ;;
         *)
@@ -49,6 +54,7 @@ function mainmenu(){
         esac
         unset NUM
     done
+    clear
 }
 
 function whiptail_menu(){
@@ -65,11 +71,11 @@ function whiptail_menu(){
     9 "kp_sqlmap         Automatic SQL injection tool"\
     10 "kp_wireshark     Packet Scanner" \
     11 "kp_autoscan      nmapAutomator" \
-    12 "kp_check         Vulnerability & Results Check" \
+    12 "kp_vulncheck     Vulnerability Check" \
     13 "kp_setoolkit     Social Engineering Tool" \
     14 "kp_msfpc         Payload Creator" \
     15 "kp_searchsploit  Search Exploit Code" \
-    16 "kp_result        Show Result " \
+    16 "kp_results       Show Result " \
     3>&1 1>&2 2>&3 )
     case $var in
     0) more cheatsheet.txt ;;
@@ -84,11 +90,11 @@ function whiptail_menu(){
     9) menu_sqlmap ;;
     10) cmd_wireshark ;;
     11) menu_autoscan ;;
-    12) menu_check ;;
+    12) menu_vulncheck ;;
     13) menu_setoolkit ;;
     14) menu_msfpc ;;
     15) menu_searchsploit ;;
-    16 ) menu_result ;;
+    16 ) menu_results ;;
     esac
 }
 

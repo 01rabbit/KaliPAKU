@@ -26,7 +26,7 @@ function menu_vulncheck(){
 
 function cmd_vulncheck(){
     clear
-    figlet VulnCheck
+    figlet Check Vulns
     printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${GREEN}[2]Tools${NC} > ${GREEN}[2]VulnCheck${NC} > ${RED}[1]Check${NC}\n"
     printf "+${RED}Command${NC}:\n"
     printf "|  ${WHITE}vuln.sh${NC}  Auther:${WHITE}01rabbit${NC}\n"
@@ -45,7 +45,12 @@ function cmd_vulncheck(){
     num2 0 "Yes"
     read -n 1 -s ANS
     if [ $ANS = "2" ];then
-        eval $cmd
+        show_number 221 "Check Vulns"
+        tmux split-window -v
+        tmux send-keys "${cmd};read;exit" C-m
+        tmux select-pane -t "${TITLE}".0
+        # eval $cmd
+        # read
     else
         :
     fi
