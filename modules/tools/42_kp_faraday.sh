@@ -130,9 +130,8 @@ function menu_faraday-cli(){
     num4 10 "faraday-cli"
     num1 15 "auth"
     num2 15 "workspace"
-    num3 15 "Host list"
-    num4 15 "Service list"
-    num5 15 "Vuln list"
+    num3 15 "List"
+    num4 15 "Import"
     num6 15 "Stats"
     num9 15 "Back"
     read -n 1 -s NUM
@@ -293,21 +292,46 @@ function cmd_faraday-cli3(){
     clear
     figlet Faraday
     cmd="faraday-cli"
-    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${BLUE}[4]Reports${NC} > ${GREEN}[2]Faraday${NC} > ${BLUE}[4]faraday-cli${NC} > ${YELLOW}[3]Host list${NC}\n"
+    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${BLUE}[4]Reports${NC} > ${GREEN}[2]Faraday${NC} > ${BLUE}[4]faraday-cli${NC} > ${YELLOW}[3]List${NC}\n"
     printf "+${BLUE}Objects${NC}\n"
     printf "|  ----------------------------------------------------------------------------------------------------\n"
     printf "|  host                  host actions                                                                    \n"
+    printf "|  ${YELLOW}usage${NC}: host ${WHITE}[-h] {list}${NC} ...\n"
     echo "|"
-    printf "|  ${YELLOW}usage${NC}: host [-h] {create,delete,get,list} ...\n"
+    printf "|  service               service actions                                                                 \n"
+    printf "|  ${YELLOW}usage${NC}: service ${WHITE}[-h] {list}${NC} ...\n"
     echo "|"
-    printf "+${BLUE}host actions${NC}\n"
+    printf "|  vuln                  vulnerabilities actions                                                         \n"
+    printf "|  ${YELLOW}usage${NC}: vuln ${WHITE}[-h] {add-evidence,list}${NC} ...\n"
     echo "|"
     printf "+${BLUE}options${NC}:\n"
     printf "|  -h, --help            show this help message and exit\n"
     echo "|"
     printf "+${BLUE}action${NC}:\n"
-    printf "|  ${YELLOW}list${NC}                list hosts\n"
-    cmd="$cmd host list"
+    printf "|  ${YELLOW}[1] host${NC}                list hosts\n"
+    printf "|  ${YELLOW}[2] service${NC}             list service\n"
+    printf "|  ${YELLOW}[3] vuln${NC}                list vulnerabilities\n"
+    num1 0 "host"
+    num2 0 "service"
+    num3 0 "vuln"
+    read -n 1 -s NUM
+    case $NUM in
+    1)
+        OPTION="host list"
+        SET_NUMBER=42431
+        ;;
+    2)
+        OPTION="service list"
+        SET_NUMBER=42432
+        ;;
+    3)
+        OPTION="vuln list"
+        SET_NUMBER=42433
+        ;;
+    *)
+        ;;
+    esac
+    cmd="$cmd $OPTION"
     echo "└─Command > $cmd"
     echo ""
     echo "> You ready?"
@@ -316,7 +340,7 @@ function cmd_faraday-cli3(){
     read -n 1 -s ANS
     if [ ! -z "$ANS" ];then
         if [ $ANS = "2" ];then
-            show_number 4243 "faraday-cli Host-List"
+            show_number $SET_NUMBER "faraday-cli $OPTION"
             tmux split-window -v
             tmux send-keys "${cmd};read;exit" C-m
             tmux select-pane -t "${TITLE}".0
@@ -333,21 +357,41 @@ function cmd_faraday-cli4(){
     clear
     figlet Faraday
     cmd="faraday-cli"
-    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${BLUE}[4]Reports${NC} > ${GREEN}[2]Faraday${NC} > ${BLUE}[4]faraday-cli${NC} > ${BLUE}[4]Service list${NC}\n"
+    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${BLUE}[4]Reports${NC} > ${GREEN}[2]Faraday${NC} > ${BLUE}[4]faraday-cli${NC} > ${BLUE}[4]Import${NC}\n"
     printf "+${BLUE}Objects${NC}\n"
     printf "|  ----------------------------------------------------------------------------------------------------\n"
-    printf "|  service               service actions                                                                 \n"
-    echo "|"
-    printf "|  ${YELLOW}usage${NC}: service ${WHITE}[-h] {list}${NC} ...\n"
-    echo "|"
-    printf "+${BLUE}service actions${NC}\n"
+    printf "|  tool                  tool actions                                                                    \n"
+    printf "|  ${YELLOW}usage${NC}: tool ${WHITE}[-h] {report}${NC} ...\n"
     echo "|"
     printf "+${BLUE}options${NC}:\n"
-    printf "|  -h, --help  show this help message and exit\n"
+    printf "|  -h, --help            show this help message and exit\n"
     echo "|"
     printf "+${BLUE}action${NC}:\n"
-    printf "  ${YELLOW}list${NC}      list services\n"
-    cmd="$cmd service list"
+    printf "|  report      process a report from a tool\n"
+    echo ""
+    BASE=`pwd`
+    cd result
+    REPORT_FILE=""
+    while :;do
+        PS3="└─Please Select report file > "
+        select FILE in * "Exit" ;do
+        echo ""
+        break
+        done
+        printf "+You selected was : ${YELLOW}${FILE}${NC}\n"
+        echo "|"
+        if [ ${FILE} = "Exit" ];then
+            break
+        elif [ -d ${FILE} ];then
+            cd ${FILE}
+        elif [ -f ${FILE} ];then
+            DIR_PATH=`pwd`
+            REPORT_FILE="${DIR_PATH}/${FILE}"
+            cd $BASE
+            break
+        fi
+    done
+    cmd="$cmd tool report $REPORT_FILE"
     echo "└─Command > $cmd"
     echo ""
     echo "> You ready?"
@@ -356,7 +400,7 @@ function cmd_faraday-cli4(){
     read -n 1 -s ANS
     if [ ! -z "$ANS" ];then
         if [ $ANS = "2" ];then
-            show_number 4244 "faraday-cli Service-List"
+            show_number 4244 "faraday-cli Import Report"
             tmux split-window -v
             tmux send-keys "${cmd};read;exit" C-m
             tmux select-pane -t "${TITLE}".0
@@ -367,46 +411,6 @@ function cmd_faraday-cli4(){
     else
         :
     fi
-}
-
-function cmd_faraday-cli5(){
-    clear
-    figlet Faraday
-    cmd="faraday-cli"
-    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${BLUE}[4]Reports${NC} > ${GREEN}[2]Faraday${NC} > ${BLUE}[4]faraday-cli${NC} > ${PURPLE}[5]workspace${NC}\n"
-    printf "+${BLUE}Objects${NC}\n"
-    printf "|  ----------------------------------------------------------------------------------------------------\n"
-    printf "|  vuln                  vulnerabilities actions                                                         \n"
-    printf "|  ${YELLOW}usage${NC}: vuln [-h] {add-evidence,list} ...\n"
-    echo "|"
-    printf "+${BLUE}vulnerabilities actions${NC}\n"
-    echo "|"
-    printf "+${BLUE}options${NC}:\n"
-    printf "|  -h, --help           show this help message and exit\n"
-    echo "|"
-    printf "+${BLUE}action${NC}:\n"
-    printf "|  ${YELLOW}list${NC}               list vulnerabilities\n"
-    cmd="$cmd vuln list"
-    echo "└─Command > $cmd"
-    echo ""
-    echo "> You ready?"
-    num1 0 "No"
-    num2 0 "Yes"
-    read -n 1 -s ANS
-    if [ ! -z "$ANS" ];then
-        if [ $ANS = "2" ];then
-            show_number 4245 "faraday-cli Vuln-List"
-            tmux split-window -v
-            tmux send-keys "${cmd};read;exit" C-m
-            tmux select-pane -t "${TITLE}".0
-            # eval $cmd
-        else
-            :
-        fi
-    else
-        :
-    fi
-
 }
 
 function cmd_faraday-cli6(){
@@ -440,7 +444,7 @@ function cmd_faraday-cli6(){
     *)
         ;;
     esac
-    cmd="$cmd stats $OPTION"
+    cmd="$cmd stats --type $OPTION"
     echo "└─Command > $cmd"
     echo ""
     echo "> You ready?"

@@ -194,9 +194,10 @@ This completes the process. Now wait for the result.
     | 42424 | Reports | enable | enable a workspace |
     | 42425 | Reports | select | select active workspace |
     | 42426 | Reports | dashborad | workspaces dashboard |
-    | 4243 | Reports | Host List | host actions |
-    | 4244 | Reports | Service List | service actions |
-    | 4245 | Reports | Vuln List | vulnerabilities actions |
+    | 42431 | Reports | Host List | host actions |
+    | 42432 | Reports | Service List | service actions |
+    | 42433 | Reports | Vuln List | vulnerabilities actions |
+    | 4244 | Reports | Import | Importing reports |
     | 42461 | Reports | Stats | severity |
     | 42462 | Reports | Stats | vulns |
 

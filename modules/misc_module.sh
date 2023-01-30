@@ -18,12 +18,12 @@ function banner(){
     printf "                           ..',;:cdOOd::,.\n"
     printf "                                    .:d;.':;.\n"
     printf "                                       'd,  .'\n"
-    printf "${PURPLE} _  ${GREEN}__     _ _ ${PURPLE}____   ${GREEN}_    _  ___   _  ${BLUE}    ;l   ..\n"
-    printf "${PURPLE}| |${GREEN}/ /__ _| (_)${PURPLE}  _ \ ${GREEN}/ \  | |/ / | | |  ${BLUE}  .o\n"
-    printf "${PURPLE}| ' ${GREEN}// _\` | | |${PURPLE} |_) ${GREEN}/ _ \ | ' /| | | | ${BLUE}     c\n"
-    printf "${PURPLE}| . ${GREEN}\ (_| | | |${PURPLE}  __${GREEN}/ ___ \| . \| |_| |  ${BLUE}    .'\n"
-    printf "${PURPLE}|_|${GREEN}\_\__,_|_|_|${PURPLE}_| ${GREEN}/_/   \_\_|\_\\\\\___/ ${BLUE}       . \n"
-    printf "${WHITE}                                       PAKUTI Version 5\n"
+    printf "${GREEN} _  __${WHITE}     _ _ ${GREEN}____   ${WHITE}_    _  ___   _  ${BLUE}    ;l   ..\n"
+    printf "${GREEN}| |/ /${WHITE}__ _| (_${GREEN})  _ \ ${WHITE}/ \  | |/ / | | |  ${BLUE}  .o\n"
+    printf "${GREEN}| ' /${WHITE}/ _\`   | ${GREEN}| |_) /${WHITE} _ \ | ' /| | | | ${BLUE}     c\n"
+    printf "${GREEN}| . \ ${WHITE}(_| | | ${GREEN}|  __/${WHITE} ___ \| . \| |_| |  ${BLUE}    .'\n"
+    printf "${GREEN}|_|\_\ ${WHITE}_,_|_|_${GREEN}|_| ${WHITE}/_/   \_\_|\_\\\\\___/ ${BLUE}       . \n"
+    printf "${WHITE}                                       PAKURI Version 5\n"
     printf "${RED}010010101100000110110011010001010000100000010010101010101 ${NC}\n"
 
 }

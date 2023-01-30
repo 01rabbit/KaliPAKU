@@ -68,8 +68,9 @@
     [1;37m42424    [1;34mFaraday-cli           enable a workspace[0m
     [1;37m42425    [1;34mFaraday-cli           select active workspace[0m
     [1;37m42426    [1;34mFaraday-cli           workspaces dashboard[0m
-    [1;37m4243     [1;34mFaraday-cli           Host List[0m
-    [1;37m4244     [1;34mFaraday-cli           Service List [0m
-    [1;37m4245     [1;34mFaraday-cli           Vuln List[0m
+    [1;37m42431     [1;34mFaraday-cli           Host List[0m
+    [1;37m42432     [1;34mFaraday-cli           Service List [0m
+    [1;37m42433     [1;34mFaraday-cli           Vuln List[0m
+    [1;37m4244     [1;34mFaraday-cli           Importing reports[0m
     [1;37m42461    [1;34mFaraday-cli           severity[0m
     [1;37m42462    [1;34mFaraday-cli           vulns[0m
