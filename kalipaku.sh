@@ -17,6 +17,7 @@ source $TOOL_PATH/31_kp_setoolkit.sh
 source $TOOL_PATH/32_kp_msfpc.sh
 source $TOOL_PATH/33_kp_searchsploit.sh
 source $TOOL_PATH/41_kp_results.sh
+source $TOOL_PATH/42_kp_faraday.sh
 source $TOP10_PATH/top10menu.sh
 source $MODULES_PATH/misc_module.sh
 source $TOOL_PATH/toolsmenu.sh
@@ -76,6 +77,7 @@ function whiptail_menu(){
     14 "kp_msfpc         Payload Creator" \
     15 "kp_searchsploit  Search Exploit Code" \
     16 "kp_results       Show Result " \
+    17 "kp_faraday       faraday "\
     3>&1 1>&2 2>&3 )
     case $var in
     0) more cheatsheet.txt ;;
@@ -95,6 +97,7 @@ function whiptail_menu(){
     14) menu_msfpc ;;
     15) menu_searchsploit ;;
     16 ) menu_results ;;
+    17 ) menu_faraday ;;
     esac
 }
 

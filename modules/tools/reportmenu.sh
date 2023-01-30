@@ -3,6 +3,7 @@
 source kp.conf
 source $MODULES_PATH/misc_module.sh
 source $TOOL_PATH/41_kp_results.sh
+source $TOOL_PATH/42_kp_faraday.sh
 
 
 function menu_reports(){
@@ -14,9 +15,16 @@ function menu_reports(){
     num9 5 "Main"
     read -n 1 -s NUM
 	case $NUM in
-	1) menu_results ;;
-    2) menu_check ;;
-    9) mainmenu ;;
-    *) ;;
+	1) 
+        menu_results
+        ;;
+    2) 
+        menu_faraday
+        ;;
+    9) 
+        mainmenu
+        ;;
+    *) 
+        ;;
     esac
 }

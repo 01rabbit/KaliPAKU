@@ -50,11 +50,26 @@
     [1;37m21202    [1;31mAutoscan              Vulnerability Scanning with nmapAutomator[0m
     [1;37m21203    [1;31mAutoscan              Reconnaissance scan with nmapAutomator[0m
     [1;37m21204    [1;31mAutoscan              All scan with nmapAutomator[0m
-    [1;37m221      [1;32mCheck                 Check Vulnerability[0m
-    [1;37m222      [1;32mCheck                 Check Results[0m
+    [1;37m221      [1;32mVulnCheck                 Check Vulnerability[0m
     [1;37m31       [1;31mExploit(Metasploit)	  [0m
     [1;37m321      [1;32mSocial-Engineering    Website__Vectors(Credential_Harvester_)[0m
     [1;37m33       [1;33mBrute-force	[0m
     [1;37m341      [1;34mMSFvenom_Payload_Creator(msfpc)  Create_Payload[0m
     [1;37m351      [1;35mSearch_Exploit(searchsploit)     Search[0m
     [1;37m352      [1;35mSearch_Exploit(searchsploit)     Automatic_Search(Miscellaneous_Automation)[0m
+    [1;37m411      [1;31mresults               Check Results[0m
+    [1;37m421      [1;31mFaraday               Start Faraday[0m
+    [1;37m422      [1;32mFaraday               Stop Faraday[0m
+    [1;37m423      [1;33mFaraday               Open Faraday(Web)[0m
+    [1;37m4241     [1;34mFaraday-cli           Authenticate with a faraday server[0m 
+    [1;37m42421    [1;34mFaraday-cli           create a workspace[0m
+    [1;37m42422    [1;34mFaraday-cli           delete a workspace[0m
+    [1;37m42423    [1;34mFaraday-cli           disable a workspace [0m
+    [1;37m42424    [1;34mFaraday-cli           enable a workspace[0m
+    [1;37m42425    [1;34mFaraday-cli           select active workspace[0m
+    [1;37m42426    [1;34mFaraday-cli           workspaces dashboard[0m
+    [1;37m4243     [1;34mFaraday-cli           Host List[0m
+    [1;37m4244     [1;34mFaraday-cli           Service List [0m
+    [1;37m4245     [1;34mFaraday-cli           Vuln List[0m
+    [1;37m42461    [1;34mFaraday-cli           severity[0m
+    [1;37m42462    [1;34mFaraday-cli           vulns[0m

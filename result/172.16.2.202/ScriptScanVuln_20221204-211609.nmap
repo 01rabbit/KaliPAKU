@@ -1,0 +1,390 @@
+# Nmap 7.92 scan initiated Sun Dec  4 21:16:12 2022 as: nmap -Pn --script vuln -v -oA result/172.16.2.202/ScriptScanVuln_20221204-211609 172.16.2.202
+Pre-scan script results:
+| broadcast-avahi-dos: 
+|   Discovered hosts:
+|     224.0.0.251
+|   After NULL UDP avahi packet DoS (CVE-2011-1002).
+|_  Hosts are all up (not vulnerable).
+Nmap scan report for 172.16.2.202
+Host is up (0.0019s latency).
+Not shown: 977 closed tcp ports (conn-refused)
+PORT     STATE SERVICE
+21/tcp   open  ftp
+| ftp-vsftpd-backdoor: 
+|   VULNERABLE:
+|   vsFTPd version 2.3.4 backdoor
+|     State: VULNERABLE (Exploitable)
+|     IDs:  BID:48539  CVE:CVE-2011-2523
+|       vsFTPd version 2.3.4 backdoor, this was reported on 2011-07-04.
+|     Disclosure date: 2011-07-03
+|     Exploit results:
+|       Shell command: id
+|       Results: uid=0(root) gid=0(root)
+|     References:
+|       https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/unix/ftp/vsftpd_234_backdoor.rb
+|       https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-2523
+|       https://www.securityfocus.com/bid/48539
+|_      http://scarybeastsecurity.blogspot.com/2011/07/alert-vsftpd-download-backdoored.html
+22/tcp   open  ssh
+23/tcp   open  telnet
+25/tcp   open  smtp
+53/tcp   open  domain
+80/tcp   open  http
+|_http-trace: TRACE is enabled
+|_http-vuln-cve2017-1001000: ERROR: Script execution failed (use -d to debug)
+|_http-stored-xss: Couldn't find any stored XSS vulnerabilities.
+| http-enum: 
+|   /tikiwiki/: Tikiwiki
+|   /test/: Test page
+|   /phpinfo.php: Possible information file
+|   /phpMyAdmin/: phpMyAdmin
+|   /doc/: Potentially interesting directory w/ listing on 'apache/2.2.8 (ubuntu) dav/2'
+|   /icons/: Potentially interesting folder w/ directory listing
+|_  /index/: Potentially interesting folder
+| http-fileupload-exploiter: 
+|   
+|_    Couldn't find a file-type field.
+| http-sql-injection: 
+|   Possible sqli for queries:
+|     http://172.16.2.202:80/dav/?C=D%3BO%3DA%27%20OR%20sqlspider
+|     http://172.16.2.202:80/dav/?C=S%3BO%3DA%27%20OR%20sqlspider
+|     http://172.16.2.202:80/dav/?C=N%3BO%3DD%27%20OR%20sqlspider
+|     http://172.16.2.202:80/dav/?C=M%3BO%3DA%27%20OR%20sqlspider
+|     http://172.16.2.202:80/mutillidae/?page=view-someones-blog.php%27%20OR%20sqlspider
+|     http://172.16.2.202:80/mutillidae/index.php?page=credits.php%27%20OR%20sqlspider
+|     http://172.16.2.202:80/mutillidae/?page=add-to-your-blog.php%27%20OR%20sqlspider
+|     http://172.16.2.202:80/mutillidae/index.php?page=user-info.php%27%20OR%20sqlspider
+|     http://172.16.2.202:80/mutillidae/index.php?do=toggle-hints%27%20OR%20sqlspider&page=home.php
+|     http://172.16.2.202:80/mutillidae/index.php?page=set-background-color.php%27%20OR%20sqlspider
+|     http://172.16.2.202:80/mutillidae/index.php?page=documentation%2Fvulnerabilities.php%27%20OR%20sqlspider
+|     http://172.16.2.202:80/mutillidae/index.php?page=register.php%27%20OR%20sqlspider
+|     http://172.16.2.202:80/mutillidae/index.php?page=html5-storage.php%27%20OR%20sqlspider
+|     http://172.16.2.202:80/mutillidae/index.php?page=browser-info.php%27%20OR%20sqlspider
+|     http://172.16.2.202:80/mutillidae/index.php?page=home.php%27%20OR%20sqlspider
+|     http://172.16.2.202:80/mutillidae/index.php?page=login.php%27%20OR%20sqlspider
+|     http://172.16.2.202:80/mutillidae/index.php?page=source-viewer.php%27%20OR%20sqlspider
+|     http://172.16.2.202:80/mutillidae/?page=show-log.php%27%20OR%20sqlspider
+|     http://172.16.2.202:80/mutillidae/index.php?page=php-errors.php%27%20OR%20sqlspider
+|     http://172.16.2.202:80/mutillidae/index.php?page=installation.php%27%20OR%20sqlspider
+|     http://172.16.2.202:80/mutillidae/index.php?do=toggle-security%27%20OR%20sqlspider&page=home.php
+|     http://172.16.2.202:80/mutillidae/index.php?page=arbitrary-file-inclusion.php%27%20OR%20sqlspider
+|     http://172.16.2.202:80/mutillidae/index.php?page=usage-instructions.php%27%20OR%20sqlspider
+|     http://172.16.2.202:80/mutillidae/index.php?page=documentation%2Fhow-to-access-Mutillidae-over-Virtual-Box-network.php%27%20OR%20sqlspider
+|     http://172.16.2.202:80/mutillidae/index.php?page=capture-data.php%27%20OR%20sqlspider
+|     http://172.16.2.202:80/mutillidae/index.php?page=framing.php%27%20OR%20sqlspider
+|     http://172.16.2.202:80/mutillidae/index.php?page=show-log.php%27%20OR%20sqlspider
+|     http://172.16.2.202:80/mutillidae/index.php?username=anonymous&page=password-generator.php%27%20OR%20sqlspider
+|     http://172.16.2.202:80/mutillidae/?page=user-info.php%27%20OR%20sqlspider
+|     http://172.16.2.202:80/mutillidae/index.php?page=secret-administrative-pages.php%27%20OR%20sqlspider
+|     http://172.16.2.202:80/mutillidae/index.php?page=site-footer-xss-discussion.php%27%20OR%20sqlspider
+|     http://172.16.2.202:80/mutillidae/index.php?page=add-to-your-blog.php%27%20OR%20sqlspider
+|     http://172.16.2.202:80/mutillidae/index.php?page=dns-lookup.php%27%20OR%20sqlspider
+|     http://172.16.2.202:80/mutillidae/?page=login.php%27%20OR%20sqlspider
+|     http://172.16.2.202:80/mutillidae/index.php?page=change-log.htm%27%20OR%20sqlspider
+|     http://172.16.2.202:80/mutillidae/?page=credits.php%27%20OR%20sqlspider
+|     http://172.16.2.202:80/mutillidae/index.php?page=view-someones-blog.php%27%20OR%20sqlspider
+|     http://172.16.2.202:80/mutillidae/?page=text-file-viewer.php%27%20OR%20sqlspider
+|     http://172.16.2.202:80/mutillidae/index.php?page=notes.php%27%20OR%20sqlspider
+|     http://172.16.2.202:80/mutillidae/index.php?page=text-file-viewer.php%27%20OR%20sqlspider
+|     http://172.16.2.202:80/mutillidae/index.php?page=user-poll.php%27%20OR%20sqlspider
+|     http://172.16.2.202:80/mutillidae/index.php?page=pen-test-tool-lookup.php%27%20OR%20sqlspider
+|     http://172.16.2.202:80/mutillidae/?page=source-viewer.php%27%20OR%20sqlspider
+|     http://172.16.2.202:80/mutillidae/index.php?page=captured-data.php%27%20OR%20sqlspider
+|     http://172.16.2.202:80/view/TWiki/TWikiHistory?rev=1.8%27%20OR%20sqlspider
+|     http://172.16.2.202:80/view/TWiki/TWikiHistory?rev=1.7%27%20OR%20sqlspider
+|     http://172.16.2.202:80/view/TWiki/TWikiHistory?rev=1.9%27%20OR%20sqlspider
+|     http://172.16.2.202:80/rdiff/TWiki/TWikiHistory?rev2=1.8%27%20OR%20sqlspider&rev1=1.9
+|     http://172.16.2.202:80/rdiff/TWiki/TWikiHistory?rev2=1.8&rev1=1.9%27%20OR%20sqlspider
+|     http://172.16.2.202:80/oops/TWiki/TWikiHistory?param1=1.10%27%20OR%20sqlspider&template=oopsrev
+|     http://172.16.2.202:80/oops/TWiki/TWikiHistory?param1=1.10&template=oopsrev%27%20OR%20sqlspider
+|     http://172.16.2.202:80/rdiff/TWiki/TWikiHistory?rev2=1.9%27%20OR%20sqlspider&rev1=1.10
+|     http://172.16.2.202:80/rdiff/TWiki/TWikiHistory?rev2=1.9&rev1=1.10%27%20OR%20sqlspider
+|     http://172.16.2.202:80/rdiff/TWiki/TWikiHistory?rev2=1.7%27%20OR%20sqlspider&rev1=1.8
+|     http://172.16.2.202:80/rdiff/TWiki/TWikiHistory?rev2=1.7&rev1=1.8%27%20OR%20sqlspider
+|     http://172.16.2.202:80/rdiff/TWiki/TWikiHistory?rev2=1.9%27%20OR%20sqlspider&rev1=1.10
+|     http://172.16.2.202:80/rdiff/TWiki/TWikiHistory?rev2=1.9&rev1=1.10%27%20OR%20sqlspider
+|     http://172.16.2.202:80/view/TWiki/TWikiHistory?rev=1.8%27%20OR%20sqlspider
+|     http://172.16.2.202:80/view/TWiki/TWikiHistory?rev=1.7%27%20OR%20sqlspider
+|     http://172.16.2.202:80/view/TWiki/TWikiHistory?rev=1.9%27%20OR%20sqlspider
+|     http://172.16.2.202:80/oops/TWiki/TWikiHistory?param1=1.10%27%20OR%20sqlspider&template=oopsrev
+|     http://172.16.2.202:80/oops/TWiki/TWikiHistory?param1=1.10&template=oopsrev%27%20OR%20sqlspider
+|     http://172.16.2.202:80/rdiff/TWiki/TWikiHistory?rev2=1.7%27%20OR%20sqlspider&rev1=1.8
+|     http://172.16.2.202:80/rdiff/TWiki/TWikiHistory?rev2=1.7&rev1=1.8%27%20OR%20sqlspider
+|     http://172.16.2.202:80/rdiff/TWiki/TWikiHistory?rev2=1.8%27%20OR%20sqlspider&rev1=1.9
+|     http://172.16.2.202:80/rdiff/TWiki/TWikiHistory?rev2=1.8&rev1=1.9%27%20OR%20sqlspider
+|     http://172.16.2.202:80/dav/?C=S%3BO%3DA%27%20OR%20sqlspider
+|     http://172.16.2.202:80/dav/?C=N%3BO%3DA%27%20OR%20sqlspider
+|     http://172.16.2.202:80/dav/?C=D%3BO%3DD%27%20OR%20sqlspider
+|     http://172.16.2.202:80/dav/?C=M%3BO%3DA%27%20OR%20sqlspider
+|     http://172.16.2.202:80/dav/?C=S%3BO%3DD%27%20OR%20sqlspider
+|     http://172.16.2.202:80/dav/?C=D%3BO%3DA%27%20OR%20sqlspider
+|     http://172.16.2.202:80/dav/?C=N%3BO%3DA%27%20OR%20sqlspider
+|     http://172.16.2.202:80/dav/?C=M%3BO%3DA%27%20OR%20sqlspider
+|     http://172.16.2.202:80/dav/?C=D%3BO%3DA%27%20OR%20sqlspider
+|     http://172.16.2.202:80/dav/?C=S%3BO%3DA%27%20OR%20sqlspider
+|     http://172.16.2.202:80/dav/?C=N%3BO%3DA%27%20OR%20sqlspider
+|     http://172.16.2.202:80/dav/?C=M%3BO%3DA%27%20OR%20sqlspider
+|     http://172.16.2.202:80/dav/?C=D%3BO%3DA%27%20OR%20sqlspider
+|     http://172.16.2.202:80/dav/?C=S%3BO%3DA%27%20OR%20sqlspider
+|     http://172.16.2.202:80/dav/?C=N%3BO%3DA%27%20OR%20sqlspider
+|     http://172.16.2.202:80/dav/?C=M%3BO%3DD%27%20OR%20sqlspider
+|     http://172.16.2.202:80/mutillidae/?page=view-someones-blog.php%27%20OR%20sqlspider
+|     http://172.16.2.202:80/mutillidae/index.php?page=credits.php%27%20OR%20sqlspider
+|     http://172.16.2.202:80/mutillidae/?page=add-to-your-blog.php%27%20OR%20sqlspider
+|     http://172.16.2.202:80/mutillidae/index.php?page=user-info.php%27%20OR%20sqlspider
+|     http://172.16.2.202:80/mutillidae/?page=text-file-viewer.php%27%20OR%20sqlspider
+|     http://172.16.2.202:80/mutillidae/index.php?page=set-background-color.php%27%20OR%20sqlspider
+|     http://172.16.2.202:80/mutillidae/index.php?page=capture-data.php%27%20OR%20sqlspider
+|     http://172.16.2.202:80/mutillidae/index.php?page=register.php%27%20OR%20sqlspider
+|     http://172.16.2.202:80/mutillidae/index.php?page=html5-storage.php%27%20OR%20sqlspider
+|     http://172.16.2.202:80/mutillidae/index.php?page=home.php%27%20OR%20sqlspider
+|     http://172.16.2.202:80/mutillidae/index.php?page=login.php%27%20OR%20sqlspider
+|     http://172.16.2.202:80/mutillidae/index.php?page=source-viewer.php%27%20OR%20sqlspider
+|     http://172.16.2.202:80/mutillidae/?page=show-log.php%27%20OR%20sqlspider
+|     http://172.16.2.202:80/mutillidae/index.php?page=installation.php%27%20OR%20sqlspider
+|     http://172.16.2.202:80/mutillidae/index.php?page=arbitrary-file-inclusion.php%27%20OR%20sqlspider
+|     http://172.16.2.202:80/mutillidae/index.php?page=documentation%2Fhow-to-access-Mutillidae-over-Virtual-Box-network.php%27%20OR%20sqlspider
+|     http://172.16.2.202:80/mutillidae/index.php?page=documentation%2Fvulnerabilities.php%27%20OR%20sqlspider
+|     http://172.16.2.202:80/mutillidae/?page=login.php%27%20OR%20sqlspider
+|     http://172.16.2.202:80/mutillidae/index.php?page=framing.php%27%20OR%20sqlspider
+|     http://172.16.2.202:80/mutillidae/index.php?username=anonymous&page=password-generator.php%27%20OR%20sqlspider
+|     http://172.16.2.202:80/mutillidae/index.php?page=show-log.php%27%20OR%20sqlspider
+|     http://172.16.2.202:80/mutillidae/index.php?page=browser-info.php%27%20OR%20sqlspider
+|     http://172.16.2.202:80/mutillidae/index.php?page=site-footer-xss-discussion.php%27%20OR%20sqlspider
+|     http://172.16.2.202:80/mutillidae/index.php?page=secret-administrative-pages.php%27%20OR%20sqlspider
+|     http://172.16.2.202:80/mutillidae/index.php?page=dns-lookup.php%27%20OR%20sqlspider
+|     http://172.16.2.202:80/mutillidae/index.php?page=add-to-your-blog.php%27%20OR%20sqlspider
+|     http://172.16.2.202:80/mutillidae/index.php?page=change-log.htm%27%20OR%20sqlspider
+|     http://172.16.2.202:80/mutillidae/?page=credits.php%27%20OR%20sqlspider
+|     http://172.16.2.202:80/mutillidae/?page=user-info.php%27%20OR%20sqlspider
+|     http://172.16.2.202:80/mutillidae/index.php?page=view-someones-blog.php%27%20OR%20sqlspider
+|     http://172.16.2.202:80/mutillidae/index.php?page=text-file-viewer.php%27%20OR%20sqlspider
+|     http://172.16.2.202:80/mutillidae/index.php?page=user-poll.php%27%20OR%20sqlspider
+|     http://172.16.2.202:80/mutillidae/index.php?page=pen-test-tool-lookup.php%27%20OR%20sqlspider
+|     http://172.16.2.202:80/mutillidae/?page=source-viewer.php%27%20OR%20sqlspider
+|_    http://172.16.2.202:80/mutillidae/index.php?page=captured-data.php%27%20OR%20sqlspider
+| http-csrf: 
+| Spidering limited to: maxdepth=3; maxpagecount=20; withinhost=172.16.2.202
+|   Found the following possible CSRF vulnerabilities: 
+|     
+|     Path: http://172.16.2.202:80/dvwa/
+|     Form id: 
+|     Form action: login.php
+|     
+|     Path: http://172.16.2.202:80/twiki/TWikiDocumentation.html
+|     Form id: 
+|     Form action: http://TWiki.org/cgi-bin/passwd/TWiki/WebHome
+|     
+|     Path: http://172.16.2.202:80/twiki/TWikiDocumentation.html
+|     Form id: 
+|     Form action: http://TWiki.org/cgi-bin/passwd/Main/WebHome
+|     
+|     Path: http://172.16.2.202:80/twiki/TWikiDocumentation.html
+|     Form id: 
+|     Form action: http://TWiki.org/cgi-bin/edit/TWiki/
+|     
+|     Path: http://172.16.2.202:80/twiki/TWikiDocumentation.html
+|     Form id: 
+|     Form action: http://TWiki.org/cgi-bin/view/TWiki/TWikiSkins
+|     
+|     Path: http://172.16.2.202:80/twiki/TWikiDocumentation.html
+|     Form id: 
+|     Form action: http://TWiki.org/cgi-bin/manage/TWiki/ManagingWebs
+|     
+|     Path: http://172.16.2.202:80/mutillidae/?page=view-someones-blog.php
+|     Form id: id-bad-blog-entry-tr
+|_    Form action: index.php?page=view-someones-blog.php
+|_http-dombased-xss: Couldn't find any DOM based XSS.
+111/tcp  open  rpcbind
+139/tcp  open  netbios-ssn
+445/tcp  open  microsoft-ds
+512/tcp  open  exec
+513/tcp  open  login
+514/tcp  open  shell
+1099/tcp open  rmiregistry
+| rmi-vuln-classloader: 
+|   VULNERABLE:
+|   RMI registry default configuration remote code execution vulnerability
+|     State: VULNERABLE
+|       Default configuration of RMI registry allows loading classes from remote URLs which can lead to remote code execution.
+|       
+|     References:
+|_      https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/multi/misc/java_rmi_server.rb
+1524/tcp open  ingreslock
+2049/tcp open  nfs
+2121/tcp open  ccproxy-ftp
+3306/tcp open  mysql
+|_ssl-ccs-injection: ERROR: Script execution failed (use -d to debug)
+|_ssl-heartbleed: ERROR: Script execution failed (use -d to debug)
+|_ssl-poodle: ERROR: Script execution failed (use -d to debug)
+|_sslv2-drown: ERROR: Script execution failed (use -d to debug)
+|_rsa-vuln-roca: ERROR: Script execution failed (use -d to debug)
+|_mysql-vuln-cve2012-2122: ERROR: Script execution failed (use -d to debug)
+|_ssl-dh-params: ERROR: Script execution failed (use -d to debug)
+5432/tcp open  postgresql
+| ssl-poodle: 
+|   VULNERABLE:
+|   SSL POODLE information leak
+|     State: VULNERABLE
+|     IDs:  BID:70574  CVE:CVE-2014-3566
+|           The SSL protocol 3.0, as used in OpenSSL through 1.0.1i and other
+|           products, uses nondeterministic CBC padding, which makes it easier
+|           for man-in-the-middle attackers to obtain cleartext data via a
+|           padding-oracle attack, aka the "POODLE" issue.
+|     Disclosure date: 2014-10-14
+|     Check results:
+|       TLS_RSA_WITH_AES_128_CBC_SHA
+|     References:
+|       https://www.openssl.org/~bodo/ssl-poodle.pdf
+|       https://www.imperialviolet.org/2014/10/14/poodle.html
+|       https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-3566
+|_      https://www.securityfocus.com/bid/70574
+| ssl-dh-params: 
+|   VULNERABLE:
+|   Diffie-Hellman Key Exchange Insufficient Group Strength
+|     State: VULNERABLE
+|       Transport Layer Security (TLS) services that use Diffie-Hellman groups
+|       of insufficient strength, especially those using one of a few commonly
+|       shared groups, may be susceptible to passive eavesdropping attacks.
+|     Check results:
+|       WEAK DH GROUP 1
+|             Cipher Suite: TLS_DHE_RSA_WITH_3DES_EDE_CBC_SHA
+|             Modulus Type: Safe prime
+|             Modulus Source: Unknown/Custom-generated
+|             Modulus Length: 1024
+|             Generator Length: 8
+|             Public Key Length: 1024
+|     References:
+|_      https://weakdh.org
+| ssl-ccs-injection: 
+|   VULNERABLE:
+|   SSL/TLS MITM vulnerability (CCS Injection)
+|     State: VULNERABLE
+|     Risk factor: High
+|       OpenSSL before 0.9.8za, 1.0.0 before 1.0.0m, and 1.0.1 before 1.0.1h
+|       does not properly restrict processing of ChangeCipherSpec messages,
+|       which allows man-in-the-middle attackers to trigger use of a zero
+|       length master key in certain OpenSSL-to-OpenSSL communications, and
+|       consequently hijack sessions or obtain sensitive information, via
+|       a crafted TLS handshake, aka the "CCS Injection" vulnerability.
+|           
+|     References:
+|       http://www.cvedetails.com/cve/2014-0224
+|       https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-0224
+|_      http://www.openssl.org/news/secadv_20140605.txt
+5900/tcp open  vnc
+6000/tcp open  X11
+6667/tcp open  irc
+|_irc-unrealircd-backdoor: Looks like trojaned version of unrealircd. See http://seclists.org/fulldisclosure/2010/Jun/277
+8009/tcp open  ajp13
+8180/tcp open  unknown
+| http-cookie-flags: 
+|   /admin/: 
+|     JSESSIONID: 
+|       httponly flag not set
+|   /admin/index.html: 
+|     JSESSIONID: 
+|       httponly flag not set
+|   /admin/login.html: 
+|     JSESSIONID: 
+|       httponly flag not set
+|   /admin/admin.html: 
+|     JSESSIONID: 
+|       httponly flag not set
+|   /admin/account.html: 
+|     JSESSIONID: 
+|       httponly flag not set
+|   /admin/admin_login.html: 
+|     JSESSIONID: 
+|       httponly flag not set
+|   /admin/home.html: 
+|     JSESSIONID: 
+|       httponly flag not set
+|   /admin/admin-login.html: 
+|     JSESSIONID: 
+|       httponly flag not set
+|   /admin/adminLogin.html: 
+|     JSESSIONID: 
+|       httponly flag not set
+|   /admin/controlpanel.html: 
+|     JSESSIONID: 
+|       httponly flag not set
+|   /admin/cp.html: 
+|     JSESSIONID: 
+|       httponly flag not set
+|   /admin/index.jsp: 
+|     JSESSIONID: 
+|       httponly flag not set
+|   /admin/login.jsp: 
+|     JSESSIONID: 
+|       httponly flag not set
+|   /admin/admin.jsp: 
+|     JSESSIONID: 
+|       httponly flag not set
+|   /admin/home.jsp: 
+|     JSESSIONID: 
+|       httponly flag not set
+|   /admin/controlpanel.jsp: 
+|     JSESSIONID: 
+|       httponly flag not set
+|   /admin/admin-login.jsp: 
+|     JSESSIONID: 
+|       httponly flag not set
+|   /admin/cp.jsp: 
+|     JSESSIONID: 
+|       httponly flag not set
+|   /admin/account.jsp: 
+|     JSESSIONID: 
+|       httponly flag not set
+|   /admin/admin_login.jsp: 
+|     JSESSIONID: 
+|       httponly flag not set
+|   /admin/adminLogin.jsp: 
+|     JSESSIONID: 
+|       httponly flag not set
+|   /admin/view/javascript/fckeditor/editor/filemanager/connectors/test.html: 
+|     JSESSIONID: 
+|       httponly flag not set
+|   /admin/includes/FCKeditor/editor/filemanager/upload/test.html: 
+|     JSESSIONID: 
+|       httponly flag not set
+|   /admin/jscript/upload.html: 
+|     JSESSIONID: 
+|_      httponly flag not set
+| http-enum: 
+|   /admin/: Possible admin folder
+|   /admin/index.html: Possible admin folder
+|   /admin/login.html: Possible admin folder
+|   /admin/admin.html: Possible admin folder
+|   /admin/account.html: Possible admin folder
+|   /admin/admin_login.html: Possible admin folder
+|   /admin/home.html: Possible admin folder
+|   /admin/admin-login.html: Possible admin folder
+|   /admin/adminLogin.html: Possible admin folder
+|   /admin/controlpanel.html: Possible admin folder
+|   /admin/cp.html: Possible admin folder
+|   /admin/index.jsp: Possible admin folder
+|   /admin/login.jsp: Possible admin folder
+|   /admin/admin.jsp: Possible admin folder
+|   /admin/home.jsp: Possible admin folder
+|   /admin/controlpanel.jsp: Possible admin folder
+|   /admin/admin-login.jsp: Possible admin folder
+|   /admin/cp.jsp: Possible admin folder
+|   /admin/account.jsp: Possible admin folder
+|   /admin/admin_login.jsp: Possible admin folder
+|   /admin/adminLogin.jsp: Possible admin folder
+|   /manager/html/upload: Apache Tomcat (401 Unauthorized)
+|   /manager/html: Apache Tomcat (401 Unauthorized)
+|   /admin/view/javascript/fckeditor/editor/filemanager/connectors/test.html: OpenCart/FCKeditor File upload
+|   /admin/includes/FCKeditor/editor/filemanager/upload/test.html: ASP Simple Blog / FCKeditor File Upload
+|   /admin/jscript/upload.html: Lizard Cart/Remote File upload
+|_  /webdav/: Potentially interesting folder
+|_http-vuln-cve2014-3704: ERROR: Script execution failed (use -d to debug)
+
+Host script results:
+|_smb-vuln-regsvc-dos: ERROR: Script execution failed (use -d to debug)
+|_smb-vuln-ms10-061: false
+|_smb-vuln-ms10-054: false
+
+Read data files from: /usr/bin/../share/nmap
+# Nmap done at Sun Dec  4 21:22:44 2022 -- 1 IP address (1 host up) scanned in 392.29 seconds

@@ -1,0 +1,5 @@
+172.16.2.202,1099/tcp open  rmiregistry,rmi-vuln-classloader,VULNERABLE
+172.16.2.202,21/tcp   open  ftp,ftp-vsftpd-backdoor,VULNERABLE (Exploitable)
+172.16.2.202,5432/tcp open  postgresql,ssl-ccs-injection,VULNERABLE
+172.16.2.202,5432/tcp open  postgresql,ssl-dh-params,VULNERABLE
+172.16.2.202,5432/tcp open  postgresql,ssl-poodle,VULNERABLE

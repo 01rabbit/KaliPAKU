@@ -65,10 +65,7 @@ KaliPAKU was created to support the initial stages of penetration testing. These
 3. KaliPAKU Terminal
 Enter "kp" or "kalipaku" at the KaliPAKU terminal or enter the magic number "4649" to activate the KaliPAKU menu.  
     ![KaliPAKU menu](https://user-images.githubusercontent.com/16553787/200162700-e34f1a4d-14f3-4b47-8cf4-0fd454158026.png)  
-4. KaliPAKU Smart menu  
-From the "KaliPAKU Terminal", press the Tab key to call up the "KaliPAKU Smart Menu", which is a simplified version of the "KaliPAKU Menu".  
-    ![KaliPAKU smart menu](https://user-images.githubusercontent.com/16553787/200162705-aa160b18-2f7c-4bc3-aa2c-4c6d361d1ab1.png)  
-5. KaliPAKU Cheatsheet  
+4. KaliPAKU Cheatsheet  
 Here is a partial cheat sheet of commands that can be called up in the KaliPAKU menu. To check the cheat sheet, use "cs", "cheat", or "cheatsheet". You can also use the magic number "4936".  
     ![cheatsheet](https://user-images.githubusercontent.com/16553787/200162706-4f6231c5-d96e-4788-8d64-786f949c2ff1.png)
 
@@ -90,9 +87,11 @@ Here is a partial cheat sheet of commands that can be called up in the KaliPAKU 
   9. [sqlmap](https://www.kali.org/tools/sqlmap/)
   10. [wireshark](https://www.kali.org/tools/wireshark/)
 - Other Kali tools
-  1. [set](https://www.kali.org/tools/set/#setoolkit)
-  2. [msfpc](https://www.kali.org/tools/msfpc/)
-  3. [searchsploit](https://www.kali.org/tools/exploitdb/#searchsploit)
+  1. [tshark](https://www.kali.org/tools/wireshark/#tshark)
+  2. [set](https://www.kali.org/tools/set/#setoolkit)
+  3. [msfpc](https://www.kali.org/tools/msfpc/)
+  4. [searchsploit](https://www.kali.org/tools/exploitdb/#searchsploit)
+  5. [python-faraday](https://www.kali.org/tools/python-faraday)
 
 ### Added tools
 
@@ -184,6 +183,22 @@ This completes the process. Now wait for the result.
     | 341 | Attack | MSFvenom_Payload_Creator(msfpc) | Create_Payload |
     | 351 | Attack | Search_Exploit(searchsploit) |  Search |
     | 352 | Attack | Search_Exploit(searchsploit) | Automatic_Search(Miscellaneous_Automation)|
+    | 411 | Reports | Check Results |
+    | 421 | Reports | Start Faraday |
+    | 422 | Reports | Stop Faraday |
+    | 423 | Reports | Open Faraday(Web) |
+    | 4241 | Reports | auth | Authenticate with a faraday server |
+    | 42421 | Reports | create | create a workspace |
+    | 42422 | Reports | delete | delete a workspace |
+    | 42423 | Reports | disable | disable a workspace |
+    | 42424 | Reports | enable | enable a workspace |
+    | 42425 | Reports | select | select active workspace |
+    | 42426 | Reports | dashborad | workspaces dashboard |
+    | 4243 | Reports | Host List | host actions |
+    | 4244 | Reports | Service List | service actions |
+    | 4245 | Reports | Vuln List | vulnerabilities actions |
+    | 42461 | Reports | Stats | severity |
+    | 42462 | Reports | Stats | vulns |
 
 ## Operation check environment
 
