@@ -51,16 +51,24 @@ function cmd_metasploit1(){
     read -n 1 -s ANS
     case $ANS in
     1)
+        SET_NUMBER=10111
+        OPTION="Normal Boot"
         cmd="msfconsole"
         ;;
     2)
+        SET_NUMBER=10112
+        OPTION="Quiet Boot"
         cmd="msfconsole -q"
         ;;
     3)
+        SET_NUMBER=10113
+        OPTION="Resource"
         read -e -p "> Input resource file path: " RESOURCE
         cmd="msfconsole -r ${RESOURCE}"
         ;;
     4)
+        SET_NUMBER=10114
+        OPTION="Help"
         cmd="msfconsole -h"
         ;;
     esac
@@ -73,7 +81,7 @@ function cmd_metasploit1(){
     read -n 1 -s ANS
     if [ ! -z "$ANS" ];then
         if [ $ANS = "2" ];then
-            show_number 1011 "metasploit Normal_Boot"
+            show_number $SET_NUMBER "metasploit $OPTION"
             eval $cmd
         else
             :

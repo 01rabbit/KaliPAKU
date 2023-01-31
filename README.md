@@ -146,7 +146,10 @@ This completes the process. Now wait for the result.
     | 153 | Kali-tools-top10 | john  | Show_cracked_passwords |
     | 154 | Kali-tools-top10 | john  | Attempt_to_crack_hash_using_incremental_mode(May_take_a_long_time) |
     | 155 | Kali-tools-top10 | john  | Manual |
-    | 1011 | Kali-tools-top10 | metasploit-framework | Normal_Boot |
+    | 10111 | Kali-tools-top10 | metasploit-framework | Normal_Boot |
+    | 10112 | Kali-tools-top10 | metasploit-framework | Quiet_Boot |
+    | 10113 | Kali-tools-top10 | metasploit-framework | Resource |
+    | 10114 | Kali-tools-top10 | metasploit-framework | Help |
     | 1012 | Kali-tools-top10 | metasploit-framework | Create_Multi_handler (windows/meterpreter/reverse_tcp) |
     | 1013 | Kali-tools-top10 | metasploit-framework | Create_Payload (msfpc)|
     | 1021 | Kali-tools-top10 | nmap | Ping_Scan |
@@ -194,10 +197,9 @@ This completes the process. Now wait for the result.
     | 42424 | Reports | enable | enable a workspace |
     | 42425 | Reports | select | select active workspace |
     | 42426 | Reports | dashborad | workspaces dashboard |
-    | 42431 | Reports | Host List | host actions |
-    | 42432 | Reports | Service List | service actions |
-    | 42433 | Reports | Vuln List | vulnerabilities actions |
-    | 4244 | Reports | Import | Importing reports |
+    | 4243 | Reports | Host List | host actions |
+    | 4244 | Reports | Service List | service actions |
+    | 4245 | Reports | Vuln List | vulnerabilities actions |
     | 42461 | Reports | Stats | severity |
     | 42462 | Reports | Stats | vulns |
 

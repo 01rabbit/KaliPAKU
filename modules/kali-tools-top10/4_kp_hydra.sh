@@ -64,12 +64,12 @@ function cmd_hydra1(){
         num1 0 "Original Password List"
         num2 0 "Default Password List"
         read -n 1 -s ANS
-        if [$ANS = 1 ];then
-            read -p "> Input Original Password File path: " USERNAME
-            USERNAME="-P ${USERNAME}"
+        if [ $ANS = 1 ];then
+            read -p "> Input Original Password File path: " PASSWORD
+            PASSWORD="-P ${PASSWORD}"
         else
             echo "> Use Default PAssword List."
-            USERNAME="-P rockyou.txt"
+            PASSWORD="-P rockyou.txt"
         fi
     fi
     echo "|"
@@ -97,7 +97,7 @@ function cmd_hydra1(){
     esac
     echo "|"
 	printf "+${BLUE}usage${NC}: hydra ${WHITE}[[[-l LOGIN|-L FILE] [-p PASS|-P FILE]] | [-C FILE]] [-e nsr] [-o FILE] [-t TASKS] [-M FILE [-T TASKS]] [-w TIME] [-W TIME] [-f] [-s PORT] [-x MIN:MAX:CHARSET] [-c TIME] [-ISOuvVd46] [-m MODULE_OPT] [service://server[:PORT][/OPT]]${NC}\n"
-    cmd="$cmd -t 1 $USERNAME $PASSWORD -v $SERVER $SERVICE"
+    cmd="$cmd -t 4 $USERNAME $PASSWORD -v $SERVER $SERVICE"
     echo "└─Command > $cmd"
     echo ""
     echo "> You ready?"
