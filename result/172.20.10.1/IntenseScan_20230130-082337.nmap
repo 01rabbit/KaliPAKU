@@ -1,1 +1,0 @@
-# Nmap 7.93 scan initiated Mon Jan 30 08:23:55 2023 as: nmap -Pn -T4 -A -v -oA result/172.20.10.1/IntenseScan_20230130-082337 172.20.10.1
