@@ -23,13 +23,13 @@ Incidentally, "karipaku" in Japanese slang indicates embezzling something borrow
 ## Description
 
 This tool is a Bash shell script.  
-Beginners can use the tools included in "kali-tools-top10" without typing commands so that they do not have trouble using Kali linux.  
-The feature of this tool is to execute commands only by entering numbers using the numeric keypad. The commands are executed by number, just like the finger numbers you first learn when learning a musical instrument such as the piano. By simply looking at the cheat sheet and entering the numbers corresponding to the command you want to execute, you can assemble the command in the background and advance it to the execution stage.  
-Players who start using the tool will be able to perform simple operations in Kalil inux by simply entering numbers. The tool also has a training aspect. Whenever a command is used, a description of the option to be used is always displayed. This means that the player is constantly being lectured by the tool on the commands and options.  
-Once the player is familiar with the tool, he/she can actually enter the commands manually. They will be able to demonstrate the skills they have acquired in their previous training.  
-In addition to helping with Kali Linux, this tool will also assist beginners with penetration testing. It scans, checks the results, and helps find vulnerabilities. I found a great tool on Github for network scanning. You can even accomplish the penetration test by entering numbers on a numeric keypad.  
-This tool is a very simple mechanism. Anyone could have made it. But nobody did, so I made it. The result is a tool that gives players the opportunity to learn by using it. Also, this tool is easy to use, so it can be used by people of any background, gender, or age. The same is true for people with physical handicaps. The tool is so easy to use that even those with limited mobility can use it.  
-This tool makes penetration testing easy and fun.  
+The tools included in kali-tools-top10 can be used without typing commands, so beginners will not have trouble using Kali Linux.  
+The unique feature of this tool is that you can execute commands by simply typing numbers on the numeric keypad. The commands are executed by number, just like the finger numbers you first learn when learning to play a piano or other musical instrument. By simply looking at the cheat sheet and typing in the numbers corresponding to the command you want to execute, you can assemble the command in the background and proceed to the execution phase. We call this the Ten-Key Numbering System.  
+Players who start using this tool will be able to perform simple operations in Kali linux by simply entering numbers on the Ten-Key Numbering System. The tool also has an educational aspect. When a command is used, an explanation of the options to be used is always displayed. In other words, the tool is constantly teaching the player about the commands and options.  
+Once the player becomes familiar with the tool, he/she can actually enter the commands manually. They will be able to demonstrate the skills they have acquired in their training so far.  
+In addition to Kali Linux, the tool also assists novice penetration testers. It scans, checks the results, and helps find vulnerabilities. A simple penetration test can also be performed by typing in numbers on the number system of the numeric keypad.  
+This tool has a very simple mechanism. Anyone could have made it. But no one did, so I made it. The result is a tool that gives players the opportunity to learn by using it. Also, this tool is easy to use and can be used by people of all backgrounds, genders, and ages. Even people with physical disabilities can use it without any inconvenience.  
+KaliPAKU makes penetration testing easy and fun.  
 
 |CAUTION|
 |:--- |
@@ -105,12 +105,12 @@ Here is a partial cheat sheet of commands that can be called up in the KaliPAKU 
 
 ## How to use
 
-1. If you want to scan using Nmap, start KaliPAKU and activate the KaliPAKU menu.  
+1. To scan with Nmap, start KaliPAKU and activate the KaliPAKU menu. The magic number to type is "4649". The magic number is "4649", which means "greetings" in Japanese.  
     ![KaliPAKU Menu](https://user-images.githubusercontent.com/16553787/200162700-e34f1a4d-14f3-4b47-8cf4-0fd454158026.png)  
 2. Then enter the magic number "1022" if you want to perform an Intense Scan of Nmap(It takes only about 0.5 seconds to transition to this screen)  
    ![nmap](https://user-images.githubusercontent.com/16553787/200163893-d712c21e-da9c-460c-91d3-1f39a363e5f0.png)  
 
-3. You will then be asked for the IP address of the target and enter it.  
+3. You will then be prompted to enter the IP address of the destination.  
     ![nmap2](https://user-images.githubusercontent.com/16553787/200163894-cb256bf1-1ddf-46ca-a3b0-acfd83a120fb.png)  
 4. Then, press "2" for "Yes" after the final confirmation if it is OK.  
 This completes the process. Now wait for the result.  
