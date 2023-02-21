@@ -115,97 +115,35 @@ Here is a partial cheat sheet of commands that can be called up in the KaliPAKU 
 4. Then, press "2" for "Yes" after the final confirmation if it is OK.  
 This completes the process. Now wait for the result.  
 
-## Cheatsheet
+## Demo
 
-- KaliPAKU Terminal
+### Demo1 From Recon to Exploit
 
-    | Command | Description |
-    | --- | --- |
-    | 4649 | Show KaliPAKU Menu |
-    | 4936 | Show Cheatsheet |
-    | 3470 | Exit KaliPAKU |
+1. port scan
+2. vulnerability scan
+3. vulnerability enumeration
+4. Exploit code investigation
+5. Exploit Execution
 
-- KaliPAKU Menu
+Perform the above steps against metasploitable2 using KaliPAKU. Notice how concise and intuitive the behavior is using the ten-key numbering system!
 
-    | Number | Category | Command | Description |
-    | --- | --- | --- | --- |
-    | 111 | Kali-tools-top10 | wifite | Execute |
-    | 112 | Kali-tools-top10 | wifite | Manual |
-    | 121 | Kali-tools-top10 | burpsuite | Execute |
-    | 131 | Kali-tools-top10 | crackmapexec | Target_format(Basic) |
-    | 132 | Kali-tools-top10 | crackmapexec(SMB) | Null_session |
-    | 133 | Kali-tools-top10 | crackmapexec(SMB) | Connect_to_target_using_local_account |
-    | 134 | Kali-tools-top10 | crackmapexec(SMB) | Path_the_hash_against_a_subnet |
-    | 135 | Kali-tools-top10 | crackmapexec(SMB) | Brutefocing_&_Password_Sprayin |
-    | 136 | Kali-tools-top10 | crackmapexec | Manual |
-    | 141 | Kali-tools-top10 | hydra | Bruteforce_the_username_admin with_the_given_password_list |
-    | 142 | Kali-tools-top10 | hydra | Bruteforce_SSH_with_user_and_password_lists against_target_IP_address |
-    | 143 | Kali-tools-top10 | hydra | Manual |
-    | 151 | Kali-tools-top10 | john  | Cracking_with_a_wordlist |
-    | 152 | Kali-tools-top10 | john  | Attempt_to_crack_hash_file using_previously_cracked_passwords |
-    | 153 | Kali-tools-top10 | john  | Show_cracked_passwords |
-    | 154 | Kali-tools-top10 | john  | Attempt_to_crack_hash_using_incremental_mode(May_take_a_long_time) |
-    | 155 | Kali-tools-top10 | john  | Manual |
-    | 10111 | Kali-tools-top10 | metasploit-framework | Normal_Boot |
-    | 10112 | Kali-tools-top10 | metasploit-framework | Quiet_Boot |
-    | 10113 | Kali-tools-top10 | metasploit-framework | Resource |
-    | 10114 | Kali-tools-top10 | metasploit-framework | Help |
-    | 1012 | Kali-tools-top10 | metasploit-framework | Create_Multi_handler (windows/meterpreter/reverse_tcp) |
-    | 1013 | Kali-tools-top10 | metasploit-framework | Create_Payload (msfpc)|
-    | 1021 | Kali-tools-top10 | nmap | Ping_Scan |
-    | 1022 | Kali-tools-top10 | nmap | Intense_Scan |
-    | 1023 | Kali-tools-top10 | nmap | Intense_Scan+UDP |
-    | 1024 | Kali-tools-top10 | nmap | Intense_Scan_all_TCP_Port |
-    | 1025 | Kali-tools-top10 | nmap | Vuln_Scan |
-    | 1026 | Kali-tools-top10 | nmap | Manual |
-    | 1031 | Kali-tools-top10 | responder | Basic_Usage |
-    | 1032 | Kali-tools-top10 | responder | Analyze_mode |
-    | 1033 | Kali-tools-top10 | responder | Poisoning_with_Responder |
-    | 1034 | Kali-tools-top10 | responder | Basic_Authentication_&_WPAD |
-    | 1035 | Kali-tools-top10 | responder | Manual |
-    | 1041 | Kali-tools-top10 | sqlmap | Enume_all_dbs |
-    | 1042 | Kali-tools-top10 | sqlmap | Enume_all_tables |
-    | 1043 | Kali-tools-top10 | sqlmap | Dump_table_entries |
-    | 1046 | Kali-tools-top10 | sqlmap | Manual |
-    | 1051 | Kali-tools-top10 | wireshark(tshark) | wireshark |
-    | 1052 | Kali-tools-top10 | wireshark(tshark) | tshark |
-    | 211 | Tools | AutoScan | Install |
-    | 2121 | Tools | AutoScan | Scanning the network with nmapAutomator |
-    | 2122 | Tools | AutoScan | Port scan with nmapAutomator |
-    | 2123 | Tools | AutoScan | Scan Script with nmapAutomotr|
-    | 2124 | Tools | AutoScan | Full port scan with nmapAutomator |
-    | 21201 | Tools | AutoScan | UDP scan with nmapPutomator |
-    | 21202 | Tools | AutoScan | Vulnerability Scanning with nmapAutomator|
-    | 21203 | Tools | AutoScan | Reconnaissance scan with nmapAutomator |
-    | 21204 | Tools | AutoScan | All scan with nmapAutomator |
-    | 221 | Tools | Check | Vulns |
-    | 222 | Tools | Check | Results |
-    | 31  | Attack | Exploit(Metasploit) | |
-    | 321 | Attack | Social-Engineering | Website_Attack_Vectors(Credential_Harvester_Attack)|
-    | 33 | Attack | Brute-force |
-    | 341 | Attack | MSFvenom_Payload_Creator(msfpc) | Create_Payload |
-    | 351 | Attack | Search_Exploit(searchsploit) |  Search |
-    | 352 | Attack | Search_Exploit(searchsploit) | Automatic_Search(Miscellaneous_Automation)|
-    | 411 | Reports | Check Results |
-    | 421 | Reports | Start Faraday |
-    | 422 | Reports | Stop Faraday |
-    | 423 | Reports | Open Faraday(Web) |
-    | 4241 | Reports | auth | Authenticate with a faraday server |
-    | 42421 | Reports | create | create a workspace |
-    | 42422 | Reports | delete | delete a workspace |
-    | 42423 | Reports | disable | disable a workspace |
-    | 42424 | Reports | enable | enable a workspace |
-    | 42425 | Reports | select | select active workspace |
-    | 42426 | Reports | dashborad | workspaces dashboard |
-    | 4243 | Reports | Host List | host actions |
-    | 4244 | Reports | Service List | service actions |
-    | 4245 | Reports | Vuln List | vulnerabilities actions |
-    | 42461 | Reports | Stats | severity |
-    | 42462 | Reports | Stats | vulns |
+[![demo1](https://user-images.githubusercontent.com/16553787/220332167-1b802cd4-0b19-4cab-b812-fa5c68104c87.png)
+](https://youtu.be/da9q_re48XM)
+
+### Demo2 Password List Attack
+
+1. Using Faraday to Aggregate Information
+2. Service Enumeration
+3. Password List Attack
+
+Use Faraday to effectively use the reconnaissance information collected in Demo1. See the procedure for starting Faraday and importing data using a ten-key numbering system.
+
+[![demo2](https://user-images.githubusercontent.com/16553787/220333705-847f55eb-9171-4bec-809b-9ac69c364240.png)
+](https://youtu.be/F5w3mfQElBk)
 
 ## Operation check environment
 
-- OS: Kali Linux 2022.2
+- OS: Kali Linux 2022.4
 - Memory: 8.0GB
 
 ## Contributors
