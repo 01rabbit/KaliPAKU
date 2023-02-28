@@ -15,6 +15,7 @@ function mainmenu(){
         num2 0 "Tools"
         num3 0 "Attack"
         num4 0 "Reports"
+        num5 0 "Assist"
         num9 0 "Exit"
         read -n 1 -s NUM
         case $NUM in
@@ -30,6 +31,9 @@ function mainmenu(){
         4)
             menu_reports
             ;;
+        5)
+            assist_mode
+            ;;
         9)
             break
             ;;
@@ -41,8 +45,24 @@ function mainmenu(){
     clear
 }
 
-KP=$0
+function assist_mode(){
+    clear
+    show_number 5 "Assist NIST SP 800-115"
+    tmux split-window -v -p 25
+    tmux send-keys "./assist.sh message;exit" C-m
 
+    tmux select-pane -t 0
+    tmux split-window -h -p 25
+    tmux send-keys "./assist.sh menu;exit" C-m
+
+    tmux select-pane -t 1
+    sleep 1
+    tmux send-keys "S1" C-m
+
+    tmux select-pane -t 2
+}
+
+KP=$0
 
 # Rockyou Check
 FILE="rockyou.txt"
