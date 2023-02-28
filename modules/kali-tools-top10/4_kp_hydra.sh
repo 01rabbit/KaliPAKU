@@ -8,8 +8,8 @@ function menu_hydra(){
 	figlet hydra
     num1 0 "Kali-tools-top10"
     num4 5 "hydra"
-    num1 10 "Bruteforce_the_username_admin " " with_the_given_password_list"
-    num2 10 "Bruteforce_SSH_with_user_and_password_lists" " against_target_IP_address"
+    num1 10 "Dictionary_Attack"
+    num2 10 "Password_Spray_Attack"
     num3 10 "Manual"
 	num9 10 "Back"
     read -n 1 -s NUM
@@ -36,41 +36,23 @@ function cmd_hydra1(){
     clear
     figlet hydra
     cmd="hydra"
-    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${RED}[1]Kali-tools-top10${NC} > ${BLUE}[4]$cmd${NC} > ${RED}[1]Brute force${NC}\n"
+    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${RED}[1]Kali-tools-top10${NC} > ${BLUE}[4]$cmd${NC} > ${RED}[1]Dictionary Attack${NC}\n"
 	printf "+${BLUE}Options${NC}:\n"
     printf "|  ${YELLOW}-l LOGIN or -L FILE${NC}     login with LOGIN name, or load several logins from FILE\n"
-    echo "> Username or Username File?"
-    num1 0 "Username"
-    num2 0 "Username File"
-    read -n 1 -s ANS
-    if [ $ANS = 1 ];then
-        read -p "> Input Username: " USERNAME
-        USERNAME="-l ${USERNAME}"
-    else
-        read -p "> Input Username File path: " USERNAME
-        USERNAME="-L ${USERNAME}"
-    fi 
+    read -p "> Input Username: " USERNAME
+    USERNAME="-l ${USERNAME}"
     echo "|"
     printf "|  ${YELLOW}-p PASS  or -P FILE${NC}     try password PASS, or load several passwords from FILE\n"
-    echo "> Password or Password File?"
-    num1 0 "Password"
-    num2 0 "Password File"
+    echo "> Original list or Default?"
+    num1 0 "Original Password List"
+    num2 0 "Default Password List(rockyou)"
     read -n 1 -s ANS
     if [ $ANS = 1 ];then
-        read -p "> Input Password: " PASSWORD
-        PASSWORD="-p ${PASSWORD}"
+        read -p "> Input Original Password File path: " PASSWORD
+        PASSWORD="-P ${PASSWORD}"
     else
-        echo "> Original list or Default?"
-        num1 0 "Original Password List"
-        num2 0 "Default Password List"
-        read -n 1 -s ANS
-        if [ $ANS = 1 ];then
-            read -p "> Input Original Password File path: " PASSWORD
-            PASSWORD="-P ${PASSWORD}"
-        else
-            echo "> Use Default PAssword List."
-            PASSWORD="-P rockyou.txt"
-        fi
+        echo "> Use Default PAssword List."
+        PASSWORD="-P rockyou.txt"
     fi
     echo "|"
     printf "|  ${YELLOW}-t TASKS${NC}                run TASKS number of connects in parallel per target (default: 16)\n"
@@ -106,7 +88,7 @@ function cmd_hydra1(){
     read -n 1 -s ANS
     if [ ! -z "$ANS" ];then
         if [ $ANS = "2" ];then
-            show_number 141 "hydra Bruteforce"
+            show_number 141 "hydra Dictionary Attack"
             tmux split-window -v
             tmux send-keys "${cmd};read;exit" C-m
             tmux select-pane -t "${TITLE}".0
@@ -124,52 +106,43 @@ function cmd_hydra2(){
     clear
     figlet hydra
     cmd="hydra "
-    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${RED}[1]Kali-tools-top10${NC} > ${BLUE}[4]$cmd${NC} > ${GREEN}[2]Brute force SSH${NC}\n"
+    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${RED}[1]Kali-tools-top10${NC} > ${BLUE}[4]$cmd${NC} > ${GREEN}[2]Password Spray Attack${NC}\n"
     printf "+${BLUE}Options:${NC}\n"
     printf "|  ${YELLOW}-l LOGIN or -L FILE${NC}     login with LOGIN name, or load several logins from FILE\n"
-    echo "> Username or Username File?"
-    num1 0 "Username"
-    num2 0 "Username File"
-    read -n 1 -s ANS
-    if [ $ANS = "1" ];then
-        read -p "> Input Username: " USERNAME
-        USERNAME="-l ${USERNAME}"
-    else
-        read -p "> Input Username File path: " USERNAME
-        USERNAME="-L ${USERNAME}"
-    fi 
+    read -p "> Input Username File path: " USERNAME
+    USERNAME="-L ${USERNAME}"
     echo "|"
     printf "|  ${YELLOW}-p PASS  or -P FILE${NC}     try password PASS, or load several passwords from FILE\n"
-    echo "> Password or Password File?"
-    num1 0 "Password"
-    num2 0 "Password File"
-    read -n 1 -s ANS
-    if [ $ANS = "1" ];then
-        read -p "> Input Password: " PASSWORD
-        PASSWORD="-p ${PASSWORD}"
-    else
-        echo "> Original list or Default?"
-        num1 0 "Original Password List"
-        num2 0 "Default Password List"
-        read -n 1 -s ANS
-        if [$ANS = 1 ];then
-            read -p "> Input Original Password File path: " USERNAME
-            USERNAME="-P ${USERNAME}"
-        else
-            echo "> Use Default PAssword List."
-            USERNAME="-P rockyou.txt"
-        fi
-    fi
+    read -p "> Input Password: " PASSWORD
+    PASSWORD="-p ${PASSWORD}"
     echo "|"
 	printf "|  ${YELLOW}-u${NC}                      loop around users, not passwords (effective! implied with -x)\n"
 	printf "|  ${YELLOW}-t TASKS${NC}                run TASKS number of connects in parallel per target (default: 16)\n"
 	printf "|  ${YELLOW}-v / -V / -d${NC}            verbose mode / show login+pass for each attempt / debug mode\n"
     printf "|  ${YELLOW}server${NC}                  the target: DNS, IP or 192.168.0.0/24 (this OR the -M option)\n"
-    read -p "> Input Target: " SERVER
+    read -p "> Input Target:" SERVER
+    echo "|"
+	printf "|  service                 the service to crack (see below for supported protocols)"
+    echo "> Which Service?"
+    num1 0 "SSH"
+    num2 0 "FTP"
+    num3 0 "TELNET"
+    read -n 1 -s ANS
+    case $ANS in
+    1)
+        SERVICE="ssh"
+        ;;
+    2)
+        SERVICE="ftp"
+        ;;
+    3)
+        SERVICE="telnet"
+        ;;
+    esac
     echo "|"
     #printf "${RED}Example${NC}:  hydra -v -u -L <USER_LIST_PATH> -P <PASSWORD_LIST_PATH> -t 1 ssh://<SERVER>\n"
     printf "+${BLUE}usage${NC}: hydra ${WHITE}[[[-l LOGIN|-L FILE] [-p PASS|-P FILE]] | [-C FILE]] [-e nsr] [-o FILE] [-t TASKS] [-M FILE [-T TASKS]] [-w TIME] [-W TIME] [-f] [-s PORT] [-x MIN:MAX:CHARSET] [-c TIME] [-ISOuvVd46] [-m MODULE_OPT] [service://server[:PORT][/OPT]]${NC}\n"
-    cmd="$cmd $USERNAME $PASSWORD -u -t 1 -v ssh://$SERVER"
+    cmd="$cmd $USERNAME $PASSWORD -u -t 1 -v $SERVER $SERVICE"
     echo "└─Command > $cmd"
     echo ""
     echo "> You ready?"
@@ -178,7 +151,7 @@ function cmd_hydra2(){
     read -n 1 -s ANS
     if [ ! -z "$ANS" ];then
         if [ $ANS = "2" ];then
-            show_number 142 "hydra Bruteforce_SSH"
+            show_number 142 "hydra Password Spray Attack"
             tmux split-window -v
             tmux send-keys "${cmd};read;exit" C-m
             tmux select-pane -t "${TITLE}".0
