@@ -22,14 +22,12 @@ Incidentally, "karipaku" in Japanese slang indicates embezzling something borrow
 
 ## Description
 
-This tool is a Bash shell script.  
-The tools included in kali-tools-top10 can be used without typing commands, so beginners will not have trouble using Kali Linux.  
-The unique feature of this tool is that you can execute commands by simply typing numbers on the numeric keypad. The commands are executed by number, just like the finger numbers you first learn when learning to play a piano or other musical instrument. By simply looking at the cheat sheet and typing in the numbers corresponding to the command you want to execute, you can assemble the command in the background and proceed to the execution phase. We call this the Ten-Key Numbering System.  
-Players who start using this tool will be able to perform simple operations in Kali linux by simply entering numbers on the Ten-Key Numbering System. The tool also has an educational aspect. When a command is used, an explanation of the options to be used is always displayed. In other words, the tool is constantly teaching the player about the commands and options.  
-Once the player becomes familiar with the tool, he/she can actually enter the commands manually. They will be able to demonstrate the skills they have acquired in their training so far.  
-In addition to Kali Linux, the tool also assists novice penetration testers. It scans, checks the results, and helps find vulnerabilities. A simple penetration test can also be performed by typing in numbers on the number system of the numeric keypad.  
-This tool has a very simple mechanism. Anyone could have made it. But no one did, so I made it. The result is a tool that gives players the opportunity to learn by using it. Also, this tool is easy to use and can be used by people of all backgrounds, genders, and ages. Even people with physical disabilities can use it without any inconvenience.  
-KaliPAKU makes penetration testing easy and fun.  
+KaliPAKU is a Bash shell script that allows users to easily access the Kali Linux tools included in the kali-tools-top10 package. One of its unique features is the Ten-Key Numbering System, which allows users to execute commands by simply typing numbers on the numeric keypad. This system is similar to the finger numbers used when learning to play a musical instrument, and is designed to make it easier for beginners to use Kali Linux.  
+In addition to its easy-to-use interface, KaliPAKU also includes an educational aspect. Whenever a command is executed, an explanation of the options used is displayed, helping users to learn more about the commands and options available.  
+KaliPAKU is based on the guidelines provided in NIST SP 800-115, which outlines the process and procedures for conducting penetration testing. As such, it includes the necessary Kali Linux tools to facilitate penetration testing, and assists users by providing step-by-step guidance.  
+To use KaliPAKU, simply download and run the script in the terminal. From there, users can select the desired Kali Linux tool from the numbered list and enter any necessary options. The tool will then execute and display the results.  
+KaliPAKU is a powerful tool for anyone looking to improve their penetration testing skills, and its user-friendly interface makes it accessible to people of all backgrounds and skill levels. 
+
 
 |CAUTION|
 |:--- |
@@ -40,14 +38,20 @@ KaliPAKU makes penetration testing easy and fun.
 
 The benefits of using our KaliPAKU include
 
-- For the Red Team  
-For Red Teams, you can easily perform information enumeration, vulnerability scanning, and simple exploitation.
+- Red Team  
+1. Efficiency: With the Ten-Key Numbering System, Red Team members can quickly execute commands without the need to remember complex syntax.
+2. Education: KaliPAKU includes explanations of the commands and options used, which can help Red Team members to better understand the tools they are using.
+3. Consistency: By using KaliPAKU, Red Team members can ensure that they are consistently using the same set of tools and commands, which can help to reduce errors and improve their overall effectiveness.
 
-- For the Blue Team  
-Blue Team allows users without penetration testing skills to experience a simulated cyber attack simply by operating a numeric keypad based on a cheat sheet.
+- Blue Team  
+1. Monitoring: The assisting features provided by KaliPAKU help them understand the tools and procedures an attacker might use. This allows Blue Teams to detect and respond to signs of an attack earlier.
+2. Reverse Investigations: Blue Teams can use KaliPAKU to perform reverse investigations. This allows them to identify and remediate potential vulnerabilities and attack vectors.
+3. Training: KaliPAKU allows blue team members to perform validation procedures similar to those used by attackers. This allows the blue team to better assess the risk of an attack from a different perspective.
 
-- For beginners & Scriptkiddy  
-KaliPAKU was created to support the initial stages of penetration testing. These are useful for training beginner pen testers as they are based on Kali-Tools-top10. They can also dramatically improve the results of on-the-job training.
+- Beginners & Scriptkiddy  
+1. Ease of use: By using the Ten-Key Numbering System, beginners do not need to learn complicated commands.
+2. Learning: KaliPAKU includes explanations of commands and options so that beginners can better understand the tools they are using.
+3. Motivation: KaliPAKU makes it easy for beginners to perform tasks. This allows them to take the next step with confidence and increases their motivation to learn.
 
 ---
 
