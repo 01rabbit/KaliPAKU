@@ -8,7 +8,9 @@
 
 ## Overview
 
-KaliPAKU allows novice penetration testers and script kiddies to use the tools included with Kali linux to investigate networks, enumerate hosts and services, search for vulnerabilities, and execute exploits with a simple keypad entry of numbers. At the same time, the tool is used to learn a series of operations and improve penetration testing skills.
+KaliPAKU is a command-line tool for Kali Linux that provides an easy-to-use menu-driven interface to run various security tools. The tool is designed to simplify the process of running popular security tools and includes the top 10 tools from the Kali Linux distribution.
+One of the unique features of KaliPAKU is its intuitive menu system, which is based on the Ten-Key Numbering System. This allows users to quickly select the tool they want to run by typing the corresponding number on the keypad. This menu system is designed to be easy to use and can be quickly mastered even by those who are new to Kali Linux.
+Overall, KaliPAKU is a powerful and easy-to-use tool for anyone looking to simplify the process of running popular security tools on Kali Linux.
 
 ### What's KaliPAKU
 
