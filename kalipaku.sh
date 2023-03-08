@@ -4,8 +4,9 @@ source kp.conf
 source $TOP10_PATH/top10menu.sh
 source $MODULES_PATH/misc_module.sh
 source $TOOL_PATH/toolsmenu.sh
-source $TOOL_PATH/attackmenu.sh
-source $TOOL_PATH/reportmenu.sh
+source $ATTACK_PATH/attackmenu.sh
+source $REPORTS_PATH/reportmenu.sh
+source $ASSIST_PATH/assistmenu.sh
 
 function mainmenu(){
     while :; do
@@ -15,7 +16,8 @@ function mainmenu(){
         num2 0 "Tools"
         num3 0 "Attack"
         num4 0 "Reports"
-        num5 0 "Assist"
+        num5 0 "Auxiliary"
+        num6 0 "Assist"
         num9 0 "Exit"
         read -n 1 -s NUM
         case $NUM in
@@ -32,7 +34,9 @@ function mainmenu(){
             menu_reports
             ;;
         5)
-            assist_mode
+            ;;
+        6)
+            menu_assist
             ;;
         9)
             break
@@ -43,23 +47,6 @@ function mainmenu(){
         unset NUM
     done
     clear
-}
-
-function assist_mode(){
-    clear
-    show_number 5 "Assist NIST SP 800-115"
-    tmux split-window -v -p 25
-    tmux send-keys "./assist.sh message;exit" C-m
-
-    tmux select-pane -t 0
-    tmux split-window -h -p 25
-    tmux send-keys "./assist.sh menu;exit" C-m
-
-    tmux select-pane -t 1
-    sleep 1
-    tmux send-keys "S1" C-m
-
-    tmux select-pane -t 2
 }
 
 KP=$0
@@ -98,7 +85,7 @@ else
             mainmenu
             ;;
         "cs"|"cheat"|"cheatsheet"|4936)
-            more cheatsheet.txt
+            more $ASSIST_PATH/cheatsheet.txt
             ;;
         "exit"|"q"|"quit"|3470)
             figlet See you!

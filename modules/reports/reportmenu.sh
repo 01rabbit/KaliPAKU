@@ -2,8 +2,8 @@
 
 source kp.conf
 source $MODULES_PATH/misc_module.sh
-source $TOOL_PATH/41_kp_results.sh
-source $TOOL_PATH/42_kp_faraday.sh
+source $REPORTS_PATH/41_kp_results.sh
+source $REPORTS_PATH/42_kp_faraday.sh
 
 
 function menu_reports(){

@@ -4,9 +4,9 @@ source kp.conf
 source $MODULES_PATH/misc_module.sh
 source $TOP10_PATH/3_kp_crackmapexec.sh
 source $TOP10_PATH/6_kp_metasploit.sh
-source $TOOL_PATH/31_kp_setoolkit.sh
-source $TOOL_PATH/32_kp_msfpc.sh
-source $TOOL_PATH/33_kp_searchsploit.sh
+source $ATTACK_PATH/31_kp_setoolkit.sh
+source $ATTACK_PATH/32_kp_msfpc.sh
+source $ATTACK_PATH/33_kp_searchsploit.sh
 
 function menu_attack(){
     clear

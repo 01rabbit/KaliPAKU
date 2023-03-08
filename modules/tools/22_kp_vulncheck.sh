@@ -37,7 +37,7 @@ function cmd_vulncheck(){
     printf "|   ${YELLOW}-h${NC} : Shows usage.\n"
     printf "|   ${YELLOW}-d DIR${NC} : Examines nmap files in the specified directory.\n"
     printf "|   ${YELLOW}-f FILE${NC} : Examines the specified nmap file.\n"
-    cmd="$TOOL_PATH/vuln.sh -d result"
+    cmd="bash $TOOL_PATH/vuln.sh -d result"
     echo "└─Command > $cmd"
     echo ""
     echo "> You ready?"

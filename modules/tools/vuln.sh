@@ -50,11 +50,21 @@ while getopts :d:f:h OPT; do
     d) # Dir
         FLAG_D=1
         DIR=${OPTARG}
-        for i in $(find ${DIR}/ -name "*.nmap" -type f); do cat $i >>${tmpFile}; done
+        if [ -e "$DIR".* ];then
+            for i in $(find ${DIR}/ -name "*.nmap" -type f); do cat $i >>${tmpFile}; done
+        else
+            echo "No files exist in directory."
+            exit 1
+        fi
         ;;
     f) # File
         FLAG_F=1
         FILE=${OPTARG}
+        if [ ! -e "$FILE" ];then
+            echo "No File exist."
+            exit 1
+        fi
+        
         ;;
     h) # Help
         usage_exit
