@@ -7,6 +7,7 @@ source $TOOL_PATH/toolsmenu.sh
 source $ATTACK_PATH/attackmenu.sh
 source $REPORTS_PATH/reportmenu.sh
 source $ASSIST_PATH/assistmenu.sh
+source $AUXILIARY_PATH/auxiliarymenu.sh
 
 function mainmenu(){
     while :; do
@@ -34,6 +35,7 @@ function mainmenu(){
             menu_reports
             ;;
         5)
+            menu_auxiliary
             ;;
         6)
             menu_assist
