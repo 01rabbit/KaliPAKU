@@ -21,7 +21,6 @@ function menu_results(){
     *)
         ;;
     esac
-
 }
 
 function cmd_results(){
