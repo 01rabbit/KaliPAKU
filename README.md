@@ -28,8 +28,7 @@ KaliPAKU is a Bash shell script that allows users to easily access the Kali Linu
 In addition to its easy-to-use interface, KaliPAKU also includes an educational aspect. Whenever a command is executed, an explanation of the options used is displayed, helping users to learn more about the commands and options available.  
 KaliPAKU is based on the guidelines provided in NIST SP 800-115, which outlines the process and procedures for conducting penetration testing. As such, it includes the necessary Kali Linux tools to facilitate penetration testing, and assists users by providing step-by-step guidance.  
 To use KaliPAKU, simply download and run the script in the terminal. From there, users can select the desired Kali Linux tool from the numbered list and enter any necessary options. The tool will then execute and display the results.  
-KaliPAKU is a powerful tool for anyone looking to improve their penetration testing skills, and its user-friendly interface makes it accessible to people of all backgrounds and skill levels. 
-
+KaliPAKU is a powerful tool for anyone looking to improve their penetration testing skills, and its user-friendly interface makes it accessible to people of all backgrounds and skill levels.  
 
 |CAUTION|
 |:--- |
@@ -41,19 +40,19 @@ KaliPAKU is a powerful tool for anyone looking to improve their penetration test
 The benefits of using our KaliPAKU include
 
 - Red Team  
-1. Efficiency: With the Ten-Key Numbering System, Red Team members can quickly execute commands without the need to remember complex syntax.
-2. Education: KaliPAKU includes explanations of the commands and options used, which can help Red Team members to better understand the tools they are using.
-3. Consistency: By using KaliPAKU, Red Team members can ensure that they are consistently using the same set of tools and commands, which can help to reduce errors and improve their overall effectiveness.
+  1. Efficiency: With the Ten-Key Numbering System, Red Team members can quickly execute commands without the need to remember complex syntax.
+  2. Education: KaliPAKU includes explanations of the commands and options used, which can help Red Team members to better understand the tools they are using.
+  3. Consistency: By using KaliPAKU, Red Team members can ensure that they are consistently using the same set of tools and commands, which can help to reduce errors and improve their overall effectiveness.
 
 - Blue Team  
-1. Monitoring: The assisting features provided by KaliPAKU help them understand the tools and procedures an attacker might use. This allows Blue Teams to detect and respond to signs of an attack earlier.
-2. Reverse Investigations: Blue Teams can use KaliPAKU to perform reverse investigations. This allows them to identify and remediate potential vulnerabilities and attack vectors.
-3. Training: KaliPAKU allows blue team members to perform validation procedures similar to those used by attackers. This allows the blue team to better assess the risk of an attack from a different perspective.
+  1. Monitoring: The assisting features provided by KaliPAKU help them understand the tools and procedures an attacker might use. This allows Blue Teams to detect and respond to signs of an attack earlier.
+  2. Reverse Investigations: Blue Teams can use KaliPAKU to perform reverse investigations. This allows them to identify and remediate potential vulnerabilities and attack vectors.
+  3. Training: KaliPAKU allows blue team members to perform validation procedures similar to those used by attackers. This allows the blue team to better assess the risk of an attack from a different perspective.
 
 - Beginners & Scriptkiddy  
-1. Ease of use: By using the Ten-Key Numbering System, beginners do not need to learn complicated commands.
-2. Learning: KaliPAKU includes explanations of commands and options so that beginners can better understand the tools they are using.
-3. Motivation: KaliPAKU makes it easy for beginners to perform tasks. This allows them to take the next step with confidence and increases their motivation to learn.
+  1. Ease of use: By using the Ten-Key Numbering System, beginners do not need to learn complicated commands.
+  2. Learning: KaliPAKU includes explanations of commands and options so that beginners can better understand the tools they are using.
+  3. Motivation: KaliPAKU makes it easy for beginners to perform tasks. This allows them to take the next step with confidence and increases their motivation to learn.
 
 ---
 
@@ -70,7 +69,7 @@ The benefits of using our KaliPAKU include
     ![KaliPAKU Terminal](https://user-images.githubusercontent.com/16553787/200162688-e8f11bce-890b-4af2-b58b-a284145ac24b.png)  
 3. KaliPAKU Terminal
 Enter "kp" or "kalipaku" at the KaliPAKU terminal or enter the magic number "4649" to activate the KaliPAKU menu.  
-    ![KaliPAKU menu](https://user-images.githubusercontent.com/16553787/200162700-e34f1a4d-14f3-4b47-8cf4-0fd454158026.png)  
+    ![KaliPAKU menu](https://user-images.githubusercontent.com/16553787/223942455-f3cb9060-34b3-4b0a-b1c7-9e270925da6f.png)  
 4. KaliPAKU Cheatsheet  
 Here is a partial cheat sheet of commands that can be called up in the KaliPAKU menu. To check the cheat sheet, use "cs", "cheat", or "cheatsheet". You can also use the magic number "4936".  
     ![cheatsheet](https://user-images.githubusercontent.com/16553787/200162706-4f6231c5-d96e-4788-8d64-786f949c2ff1.png)
@@ -98,6 +97,7 @@ Here is a partial cheat sheet of commands that can be called up in the KaliPAKU 
   3. [msfpc](https://www.kali.org/tools/msfpc/)
   4. [searchsploit](https://www.kali.org/tools/exploitdb/#searchsploit)
   5. [python-faraday](https://www.kali.org/tools/python-faraday)
+  6. [Kali Undercover](https://www.kali.org/docs/introduction/kali-undercover/)
 
 ### Added tools
 
@@ -112,7 +112,7 @@ Here is a partial cheat sheet of commands that can be called up in the KaliPAKU 
 ## How to use
 
 1. To scan with Nmap, start KaliPAKU and activate the KaliPAKU menu. The magic number to type is "4649". The magic number is "4649", which means "greetings" in Japanese.  
-    ![KaliPAKU Menu](https://user-images.githubusercontent.com/16553787/200162700-e34f1a4d-14f3-4b47-8cf4-0fd454158026.png)  
+    ![KaliPAKU Menu](https://user-images.githubusercontent.com/16553787/223942455-f3cb9060-34b3-4b0a-b1c7-9e270925da6f.png)  
 2. Then enter the magic number "1022" if you want to perform an Intense Scan of Nmap(It takes only about 0.5 seconds to transition to this screen)  
    ![nmap](https://user-images.githubusercontent.com/16553787/200163893-d712c21e-da9c-460c-91d3-1f39a363e5f0.png)  
 
