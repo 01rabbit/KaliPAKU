@@ -52,7 +52,7 @@ function cmd_crackmapexec1(){
     printf "+${BLUE}positional arguments${NC}:\n"
     printf "|  ${YELLOW}target${NC}      the target IP(s), range(s), CIDR(s), hostname(s), FQDN(s),\n"
     echo "|              file(s) containing a list of targets, NMap XML or .Nessus file(s)"
-    read -e -p "> Input Target: " TARGET
+    read -e -p "> Enter target IP address: " TARGET
     echo "|"
     echo "> Use which Service?"
     num1 0 "smb"
@@ -113,7 +113,7 @@ function cmd_crackmapexec2(){
     printf "+${BLUE}positional arguments${NC}:\n"
     printf "|  ${YELLOW}target${NC}      the target IP(s), range(s), CIDR(s), hostname(s), FQDN(s),\n"
     echo "|              file(s) containing a list of targets, NMap XML or .Nessus file(s)"
-    read -e -p "> Input Target: " TARGET
+    read -e -p "> Enter target IP address: " TARGET
     echo "|"
     SERVICE="smb"
     printf "+${BLUE}usage${NC}: crackmapexec smb [target ...] -u "" up ""\n"
@@ -149,7 +149,7 @@ function cmd_crackmapexec3(){
     printf "+${BLUE}positional arguments${NC}:\n"
     printf "|  ${YELLOW}target${NC}      the target IP(s), range(s), CIDR(s), hostname(s), FQDN(s),\n"
     echo "|              file(s) containing a list of targets, NMap XML or .Nessus file(s)"
-    read -e -p "> Input Target: " TARGET
+    read -e -p "> Enter target IP address: " TARGET
     echo "|"
     echo "> Use which Service?"
     num1 0 "smb"
@@ -173,11 +173,11 @@ function cmd_crackmapexec3(){
     printf "+${BLUE}options:${NC}\n"
     printf "|  ${YELLOW}-u USERNAME [USERNAME ...]${NC}\n"
     echo "|              username(s) or file(s) containing usernames"
-    read -e -p "> Input Username: " USERNAME
+    read -e -p "> Enter Username: " USERNAME
     echo "|"
     printf "|  ${YELLOW}-p PASSWORD [PASSWORD ...]${NC}\n"
     echo "|              password(s) or file(s) containing passwords"
-    read -e -p "> Input Password: " PASSWORD
+    read -e -p "> Enter Password: " PASSWORD
     echo "|"
     printf "|  ${YELLOW}--local-auth${NC}          authenticate locally to each target\n"
     echo "|"
@@ -214,7 +214,7 @@ function cmd_crackmapexec4(){
     printf "+${BLUE}positional arguments${NC}:\n"
     printf "|  ${YELLOW}target${NC}      the target IP(s), range(s), CIDR(s), hostname(s), FQDN(s),\n"
     echo "|              file(s) containing a list of targets, NMap XML or .Nessus file(s)"
-    read -e -p "> Input Target(subnet): " TARGET
+    read -e -p "> Enter target IP address: " TARGET
     echo "|"
     echo "> Use which Service?"
     num1 0 "smb"
@@ -240,11 +240,11 @@ function cmd_crackmapexec4(){
     printf "+${BLUE}options:${NC}\n"
     printf "|  ${YELLOW}-u USERNAME [USERNAME ...]${NC}\n"
     echo "|              username(s) or file(s) containing usernames"
-    read -e -p "> Input Username: " USERNAME
+    read -e -p "> Enter Username: " USERNAME
     echo "|"
     printf "|  ${YELLOW}-H HASH [HASH ...], --hash HASH [HASH ...]${NC}\n"
     echo "|              NTLM hash(es) or file(s) containing NTLM hashes"
-    read -e -p "> Input HASH(LMHASH:NTHASH|NTHASH): " HASH
+    read -e -p "> Enter HASH(LMHASH:NTHASH|NTHASH): " HASH
     echo "> Which HASH Type was used?"
     num1 0 "LMHASH:NTHASH"
     num2 0 "NTHASH"
@@ -291,7 +291,7 @@ function cmd_crackmapexec5(){
     printf "+${BLUE}positional arguments${NC}:\n"
     printf "|  ${YELLOW}target${NC}      the target IP(s), range(s), CIDR(s), hostname(s), FQDN(s),\n"
     echo "|              file(s) containing a list of targets, NMap XML or .Nessus file(s)"
-    read -e -p "> Input Target(subnet): " TARGET
+    read -e -p "> Enter target IP address: " TARGET
     echo "|"
     echo "> Use which Service?"
     num1 0 "smb"
@@ -317,7 +317,7 @@ function cmd_crackmapexec5(){
     printf "+${BLUE}options:${NC}\n"
     printf "|  ${YELLOW}-u USERNAME [USERNAME ...]${NC}\n"
     echo "|                        username(s) or file(s) containing usernames"
-    read -e -p "> Input Username: " USERNAME
+    read -e -p "> Enter Username: " USERNAME
     echo "|"
     printf "|  ${YELLOW}-p PASSWORD [PASSWORD ...]${NC}\n"
     echo "|                        password(s) or file(s) containing passwords"
@@ -328,10 +328,10 @@ function cmd_crackmapexec5(){
     num2 0 "Hash"
     read -n 1 -s PASS_HASH
     if [ $PASS_HASH = 1 ];then
-        read -e -p "> Input Password: " PASSWORD
+        read -e -p "> Enter Password: " PASSWORD
         cmd="${cmd} $SERVICE $TARGET -u $USERNAME -p $PASSWORD"
     else
-        read -e -p "> Input HASH(LMHASH:NTHASH|NTHASH): " HASH
+        read -e -p "> Enter HASH(LMHASH:NTHASH|NTHASH): " HASH
         cmd="${cmd} $SERVICE $TARGET -u $USERNAME -H '$HASH'"
     fi
     echo "|"

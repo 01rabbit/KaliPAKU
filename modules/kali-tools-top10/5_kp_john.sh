@@ -53,13 +53,13 @@ function cmd_john1(){
     num2 0 "Default"
     read -n 1 -s ANS
     if [ $ANS = 1 ];then
-        read -e -p "> Input Original Wordlist Path: " WORD_LIST_PATH
+        read -e -p "> Enter the path to the original word list: " WORD_LIST_PATH
     else
         echo "> Use Default Wordlist Path"
         WORD_LIST_PATH="rockyou.txt"
     fi
     echo "|"
-    read -e -p "> Input HASH list path:" HASH_LIST_PATH
+    read -e -p "> Enter the HASH list path:" HASH_LIST_PATH
     echo "|"
     # printf "${RED}Example${NC}:  john --wordlist=<WORD_LIST_PATH> <HASH_LIST_FILE>\n"
     printf "+${BLUE}usage${NC} :john ${WHITE}[OPTIONS] [PASSWORD-FILES]${NC}\n"
@@ -93,7 +93,7 @@ function cmd_john2(){
     printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${RED}[1]Kali-tools-top10${NC} > ${PURPLE}[5]$cmd${NC} > ${GREEN}[2]Hash Crack(using previously cracked passwords)${NC}\n"
     printf "+${BLUE}Options${NC}:\n"
 	printf "|  ${YELLOW}--loopback[=FILE]${NC}   Like --wordlist, but extract words from a .pot file\n"
-    read -e -p "> Input HASH list path:" HASH_LIST_PATH
+    read -e -p "> Enter the HASH list path:" HASH_LIST_PATH
     echo "|"
     # printf "${RED}Example${NC}:  john --loopback <HASH_LIST_FILE>\n"
     printf "+${BLUE}usage${NC}: john ${WHITE}--loopback [PASSWORD-FILES]${NC}\n"
@@ -127,7 +127,7 @@ function cmd_john3(){
     printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${RED}[1]Kali-tools-top10${NC} > ${PURPLE}[5]$cmd${NC} > ${YELLOW}[3]Show cracked passwords${NC}\n"
     printf "+${BLUE}Options${NC}:\n"
 	printf "|  ${YELLOW}--show[=left]${NC}              Show cracked passwords [if =left, then uncracked]\n"
-    read -e -p "Input HASH list path:" HASH_LIST_PATH
+    read -e -p "Enter the HASH list path:" HASH_LIST_PATH
     echo "|"
     # printf "${RED}Example${NC}:  john --show <HASH_LIST_FILE>\n"
     printf "+${BLUE}usage${NC}: john ${WHITE}--show [PASSWORD-FILES]${NC}\n"
@@ -161,7 +161,7 @@ function cmd_john4(){
     printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${RED}[1]Kali-tools-top10${NC} > ${PURPLE}[5]$cmd${NC} > ${BLUE}[4]Hash crack using incremental mode${NC}\n"
     printf "+${BLUE}Options${NC}:\n"
 	printf "|  ${YELLOW}--incremental[=MODE]${NC}       \"Incremental\" mode [using section MODE]\n"
-    read -e -p "Input HASH list path:" HASH_LIST_PATH
+    read -e -p "Enter the HASH list path:" HASH_LIST_PATH
     # printf "${RED}Example${NC}:  john --incremental <HASH_LIST_FILE>\n"
     printf "+${BLUE}usage${NC}: john ${WHITE}--incremental [PASSWORD-FILES]${NC}\n"
     cmd="${cmd} --incremental ${HASH_LIST_PATH}"

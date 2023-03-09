@@ -38,7 +38,7 @@ function cmd_search(){
     printf "+${RED}Example${NC}:\n"
     echo "|  searchsploit afd windows local"
     echo "|"
-    read -p  "> Input Search Word: " WORD
+    read -p  "> Enter Search Word: " WORD
     cmd="${cmd} -t ${WORD}"
     echo "└─Command > $cmd"
     echo ""
@@ -75,12 +75,12 @@ function cmd_copypaste(){
         if [ $ANS = "1" ];then
             echo "> === Copy Exploit Code ==="
             printf "> ${YELLOW}Copy and paste${NC} the path shown next to the exploit title.\n"
-            read -e -p "> Input path: " EXPLOITPATH
+            read -e -p "> Enter path: " EXPLOITPATH
             cmd="${cmd} -m ${EXPLOITPATH}"
         else
             echo "> === Open Exploit Code ==="
             printf "> ${YELLOW}Copy and paste${NC} the path shown next to the exploit title.\n"
-            read -e -p "> Input path: " EXPLOITPATH
+            read -e -p "> Enter path: " EXPLOITPATH
             cmd="${cmd} -x ${EXPLOITPATH}"
         fi
     fi
@@ -110,7 +110,7 @@ function cmd_autosearch(){
     printf "+${BLUE}Options${NC}:\n"
     printf "|  ${YELLOW}--nmap${NC}     [file.xml]  Checks all results in Nmap's XML output with service version\n"
     echo "|"
-    read -e -p "> Input Nmap's XML output file path: " EXPLOITPATH
+    read -e -p "> Enter the path to Nmap's XML output file: " EXPLOITPATH
     cmd="${cmd} --nmap ${EXPLOITPATH}"
     echo "└─Command > $cmd"
     echo ""

@@ -49,7 +49,7 @@ function cmd_responder1(){
     printf "|  ${YELLOW}-I eth0, --interface=eth0${NC}\n"
     echo "|                  Network interface to use, you can use 'ALL' as a"
     echo "|                  wildcard for all interfaces"
-    read -p "> Input Network interface: " INTERFACE
+    read -p "> Enter network interface name: " INTERFACE
     echo "|"
     printf "|  ${YELLOW}-w, --wpad${NC}      Start the WPAD rogue proxy server. Default value is False\n"
     printf "|  ${YELLOW}-d, --DHCP${NC}      Enable ANSwers for DHCP broadcast requests. This\n"
@@ -88,7 +88,7 @@ function cmd_responder2(){
     printf "|  ${YELLOW}-I eth0, --interface=eth0${NC}\n"
     echo "|                  Network interface to use, you can use 'ALL' as a"
     echo "|                  wildcard for all interfaces"
-    read -p "> Input Network interface: " INTERFACE
+    read -p "> Enter network interface name: " INTERFACE
     echo "|"
     printf "|  ${YELLOW}-A, --analyze${NC}   Analyze mode. This option allows you to see NBT-NS,\n"
     echo "|                  BROWSER, LLMNR requests without responding."
@@ -126,7 +126,7 @@ function cmd_responder3(){
     printf "|  ${YELLOW}-I eth0, --interface=eth0${NC}\n"
     echo "|                  Network interface to use, you can use 'ALL' as a"
     echo "|                  wildcard for all interfaces"
-    read -p "> Input Network interface: " INTERFACE
+    read -p "> Enter network interface name: " INTERFACE
     echo "|"
     printf "+${BLUE}usage${NC} : responder ${WHITE}[Options]${NC}\n"
     cmd="${cmd} -I ${INTERFACE}"

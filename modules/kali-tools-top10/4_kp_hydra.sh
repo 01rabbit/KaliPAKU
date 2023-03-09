@@ -39,7 +39,7 @@ function cmd_hydra1(){
     printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${RED}[1]Kali-tools-top10${NC} > ${BLUE}[4]$cmd${NC} > ${RED}[1]Dictionary Attack${NC}\n"
 	printf "+${BLUE}Options${NC}:\n"
     printf "|  ${YELLOW}-l LOGIN or -L FILE${NC}     login with LOGIN name, or load several logins from FILE\n"
-    read -p "> Input Username: " USERNAME
+    read -p "> Enter Username: " USERNAME
     USERNAME="-l ${USERNAME}"
     echo "|"
     printf "|  ${YELLOW}-p PASS  or -P FILE${NC}     try password PASS, or load several passwords from FILE\n"
@@ -48,7 +48,7 @@ function cmd_hydra1(){
     num2 0 "Default Password List(rockyou)"
     read -n 1 -s ANS
     if [ $ANS = 1 ];then
-        read -p "> Input Original Password File path: " PASSWORD
+        read -p "> Enter the path to the original password file: " PASSWORD
         PASSWORD="-P ${PASSWORD}"
     else
         echo "> Use Default PAssword List."
@@ -58,7 +58,7 @@ function cmd_hydra1(){
     printf "|  ${YELLOW}-t TASKS${NC}                run TASKS number of connects in parallel per target (default: 16)\n"
     printf "|  ${YELLOW}-v / -V / -d${NC}            verbose mode / show login+pass for each attempt / debug mode\n"
 	printf "|  ${YELLOW}server${NC}                  the target: DNS, IP or 192.168.0.0/24 (this OR the -M option)\n"
-    read -p "> Input Target:" SERVER
+    read -p "> Enter Target:" SERVER
     echo "|"
 	printf "|  service                 the service to crack (see below for supported protocols)"
     echo "> Which Service?"
@@ -109,18 +109,18 @@ function cmd_hydra2(){
     printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${RED}[1]Kali-tools-top10${NC} > ${BLUE}[4]$cmd${NC} > ${GREEN}[2]Password Spray Attack${NC}\n"
     printf "+${BLUE}Options:${NC}\n"
     printf "|  ${YELLOW}-l LOGIN or -L FILE${NC}     login with LOGIN name, or load several logins from FILE\n"
-    read -p "> Input Username File path: " USERNAME
+    read -p "> Enter the path to the username file: " USERNAME
     USERNAME="-L ${USERNAME}"
     echo "|"
     printf "|  ${YELLOW}-p PASS  or -P FILE${NC}     try password PASS, or load several passwords from FILE\n"
-    read -p "> Input Password: " PASSWORD
+    read -p "> Enter Password: " PASSWORD
     PASSWORD="-p ${PASSWORD}"
     echo "|"
 	printf "|  ${YELLOW}-u${NC}                      loop around users, not passwords (effective! implied with -x)\n"
 	printf "|  ${YELLOW}-t TASKS${NC}                run TASKS number of connects in parallel per target (default: 16)\n"
 	printf "|  ${YELLOW}-v / -V / -d${NC}            verbose mode / show login+pass for each attempt / debug mode\n"
     printf "|  ${YELLOW}server${NC}                  the target: DNS, IP or 192.168.0.0/24 (this OR the -M option)\n"
-    read -p "> Input Target:" SERVER
+    read -p "> Enter Target:" SERVER
     echo "|"
 	printf "|  service                 the service to crack (see below for supported protocols)"
     echo "> Which Service?"

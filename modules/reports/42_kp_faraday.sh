@@ -173,14 +173,14 @@ function cmd_faraday-cli1(){
     printf "|  auth                  Authenticate with a faraday server                                              \n"
     echo "|"
     printf "|  ${YELLOW}usage${NC}: auth ${WHITE}[-h] [-f FARADAY_URL] [-i] [-u USER] [-p PASSWORD]${NC}\n"
-    read -e -p "> Input FARADAY_URL (default)127.0.0.1:5985 :" TARGET
+    read -e -p "> Enter FARADAY_URL (default)127.0.0.1:5985 :" TARGET
     if [ ! -n "$TARGET" ];then
         TARGET="http://127.0.0.1:5985"
     fi
     echo "|"
-    read -e -p "> Input USER: " USER
+    read -e -p "> Enter your username: " USER
     echo "|"
-    read -e -p "> Input PASSWORD: " PASSWORD
+    read -e -p "> Enter your password.: " PASSWORD
     echo "|"
     cmd="$cmd auth -f $TARGET -u $USER -p $PASSWORD"
     echo "└─Command > $cmd"
@@ -262,7 +262,7 @@ function cmd_faraday-cli2(){
         ;;
     esac
     cmd="$cmd workspace $OPTION"
-    read -e -p "> Input Workspace name: " WSNAME
+    read -e -p "> Enter Workspace name: " WSNAME
     echo "|"
     cmd="$cmd $WSNAME"
     echo "└─Command > $cmd"

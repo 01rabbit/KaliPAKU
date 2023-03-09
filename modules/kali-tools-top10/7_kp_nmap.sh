@@ -38,7 +38,7 @@ function cmd_nmap1(){
     printf "|  ${YELLOW}-sn${NC}:            Ping Scan - disable port scan\n"
     printf "|  ${YELLOW}-oA <basename>${NC}: Output in the three major formats at once\n"
     printf "|  ${YELLOW}-v${NC}:             Increase verbosity level (use -vv or more for greater effect)\n"
-    read -p "> Input Target IP: " TARGET
+    read -p "> Enter Target IP: " TARGET
     echo "|"
     printf "+${BLUE}usage${NC}: nmap ${WHITE}[Scan Type...] [Options] {target specification}${NC}\n"
     cmd="${cmd} -sn -v -oA result/$TARGET/PingScan_`date "+%Y%m%d-%H%M%S"` $TARGET" 
@@ -80,7 +80,7 @@ function cmd_nmap2(){
     printf "|  ${YELLOW}-A${NC}:             Enable OS detection, version detection, script scanning, and traceroute\n"
     printf "|  ${YELLOW}-oA <basename>${NC}: Output in the three major formats at once\n"
     printf "|  ${YELLOW}-v${NC}:             Increase verbosity level (use -vv or more for greater effect)\n"
-    read -p "> Input Target IP: " TARGET
+    read -p "> Enter Target IP: " TARGET
     echo "|"
     echo "> Here, we run a port scan beforehand and perform an Intense Scan of the open ports."
     echo "> Running port scan on all ports..."
@@ -133,7 +133,7 @@ function cmd_nmap3(){
     printf "|  ${YELLOW}-A${NC}:              Enable OS detection, version detection, script scanning, and traceroute\n"
     printf "|  ${YELLOW}-oA <basename>${NC}:  Output in the three major formats at once\n"
     printf "|  ${YELLOW}-v${NC}:              Increase verbosity level (use -vv or more for greater effect)\n"
-    read -p "> Input Target IP: " TARGET
+    read -p "> Enter Target IP: " TARGET
     echo "|"
     echo "> Here, we run a port scan beforehand and perform an Intense Scan of the open ports."
     echo "> Running port scan on all ports..."
@@ -186,7 +186,7 @@ function cmd_nmap4(){
     printf "|  ${YELLOW}-A${NC}:               Enable OS detection, version detection, script scanning, and traceroute\n"
     printf "|  ${YELLOW}-oA <basename>${NC}:   Output in the three major formats at once\n"
     printf "|  ${YELLOW}-v${NC}:               Increase verbosity level (use -vv or more for greater effect)\n"
-    read -p "> Input Target IP: " TARGET
+    read -p "> Enter Target IP: " TARGET
     echo "|"
     echo "> Here, we run a port scan beforehand and perform an Intense Scan of the open ports."
     echo "> Running port scan on all ports..."
@@ -239,7 +239,7 @@ function cmd_nmap5(){
     printf "|                          directories, script-files or script-categories\n"
     printf "|  ${YELLOW}-oA <basename>${NC}:         Output in the three major formats at once\n"
     printf "|  ${YELLOW}-v${NC}:                     Increase verbosity level (use -vv or more for greater effect)\n"
-    read -p "> Input Target IP: " TARGET
+    read -p "> Enter Target IP: " TARGET
     echo "|"
     echo "> Here, we run a port scan beforehand and perform an Intense Scan of the open ports."
     echo "> Running port scan on all ports..."

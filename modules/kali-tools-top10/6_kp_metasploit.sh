@@ -63,7 +63,7 @@ function cmd_metasploit1(){
     3)
         SET_NUMBER=10113
         OPTION="Resource"
-        read -e -p "> Input resource file path: " RESOURCE
+        read -e -p "> Enter the resource file path: " RESOURCE
         cmd="msfconsole -r ${RESOURCE}"
         ;;
     4)
@@ -98,9 +98,9 @@ function cmd_metasploit2(){
     cmd="msfconsole"
     printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${RED}[1]Kali-tools-top10${NC} > ${RED}[1]metasploit-framework${NC} > ${GREEN}[2]Create Multi Handler${NC}\n"
     echo "> Create handler..."
-    read -p "> Input Local host <IP Address>: " LHOST
+    read -p "> Enter Local host <IP Address>: " LHOST
     echo "|"
-    read -p "> Input Local Port: " LPORT
+    read -p "> Enter Local Port: " LPORT
     cat <<EOF >> resouce.rc
 use exploit/multi/handler
 set PAYLOAD windows/meterpreter/reverse_tcp
