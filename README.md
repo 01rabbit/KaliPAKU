@@ -1,4 +1,4 @@
-# KaliPAKU:Kali linux with PAKURI
+# KaliPAKU: Training Tool for Penetration Testing Using Kali Linux
 
 ![KaliPAKU_logo](img/KaliPAKU_logo.png)
 ![Mark](https://img.shields.io/badge/PAKURI-Mark%20V-green)
