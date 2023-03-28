@@ -7,10 +7,10 @@ function menu_wireshark(){
 	clear
 	figlet wireshark
 	num1 0 "Kali-tools-top10"
-	num5 5 "wireshark(tshark)"
-	num1 10 "wireshark"
-    num2 10 "tshark"
-	num9 10 "Back"
+	num5 3 "wireshark(tshark)"
+	num1 6 "wireshark"
+    num2 6 "tshark"
+	num9 6 "Back"
     read -n 1 -s NUM
 	case $NUM in
     1)

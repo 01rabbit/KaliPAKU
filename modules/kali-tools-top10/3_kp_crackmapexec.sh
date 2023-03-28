@@ -7,14 +7,14 @@ function menu_crackmapexec(){
 	clear
 	figlet crackmapexec
     num1 0 "Kali-tools-top10"
-    num3 5 "crackmapexec(SMB)"
-    num1 10 "Target_format(Basic)"
-    num2 10 "Null_session"
-    num3 10 "Connect_to_target_using_local_account"
-    num4 10 "Path_the_hash_against_a_subnet"
-    num5 10 "Brutefocing_&_Password_Spraying"
-    num6 10 "Manual"
-	num9 10 "Back"
+    num3 3 "crackmapexec(SMB)"
+    num1 6 "Target_format(Basic)"
+    num2 6 "Null_session"
+    num3 6 "Connect_to_target_using_local_account"
+    num4 6 "Path_the_hash_against_a_subnet"
+    num5 6 "Brutefocing_&_Password_Spraying"
+    num6 6 "Manual"
+	num9 6 "Back"
     read -n 1 -s NUM
     case $NUM in
     1)

@@ -30,50 +30,42 @@ function banner(){
 
 
 function num0(){
-    printf "${WHITE}%$1s  |  ${WHITE}+---+\n"
-    printf "${WHITE}%$1s  +--${WHITE}| 0 |%s\n" "" " $2"
-    printf "${WHITE}%$1s  |  ${WHITE}+---+%s${NC}\n" "" " $3"
+    printf "${WHITE}%$1s  |  \n"
+    printf "${WHITE}%$1s  +-${WHITE}[0]%s\n" "" " $2 $3"
 }
 function num1(){
-    printf "${WHITE}%$1s  |  ${RED}+---+\n"
-    printf "${WHITE}%$1s  +--${RED}| 1 |%s\n" "" " $2"
-    printf "${WHITE}%$1s  |  ${RED}+---+%s${NC}\n" "" " $3"
+    printf "${WHITE}%$1s  |  \n"
+    printf "${WHITE}%$1s  +-${RED}[1]%s${NC}\n" "" " $2 $3"
 }
 
 function num2(){
-    printf "${WHITE}%$1s  |  ${GREEN}+---+\n"
-    printf "${WHITE}%$1s  +--${GREEN}| 2 |%s\n" "" " $2"
-    printf "${WHITE}%$1s  |  ${GREEN}+---+%s${NC}\n" "" " $3"
+    printf "${WHITE}%$1s  |  \n"
+    printf "${WHITE}%$1s  +-${GREEN}[2]%s${NC}\n" "" " $2 $3"
 }
 
 function num3(){
-    printf "${WHITE}%$1s  |  ${YELLOW}+---+\n"
-    printf "${WHITE}%$1s  +--${YELLOW}| 3 |%s\n" "" " $2"
-    printf "${WHITE}%$1s  |  ${YELLOW}+---+%s${NC}\n" "" " $3"
+    printf "${WHITE}%$1s  |  \n"
+    printf "${WHITE}%$1s  +-${YELLOW}[3]%s${NC}\n" "" " $2 $3"
 }
 
 function num4(){
-    printf "${WHITE}%$1s  |  ${BLUE}+---+\n"
-    printf "${WHITE}%$1s  +--${BLUE}| 4 |%s\n" "" " $2"
-    printf "${WHITE}%$1s  |  ${BLUE}+---+%s${NC}\n" "" " $3"
+    printf "${WHITE}%$1s  |  \n"
+    printf "${WHITE}%$1s  +-${BLUE}[4]%s${NC}\n" "" " $2 $3"
 }
 
 function num5(){
-    printf "${WHITE}%$1s  |  ${PURPLE}+---+\n"
-    printf "${WHITE}%$1s  +--${PURPLE}| 5 |%s\n" "" " $2"
-    printf "${WHITE}%$1s  |  ${PURPLE}+---+%s${NC}\n" "" " $3"
+    printf "${WHITE}%$1s  |  \n"
+    printf "${WHITE}%$1s  +-${PURPLE}[5]%s${NC}\n" "" " $2 $3"
 }
 
 function num6(){
-    printf "${WHITE}%$1s  |  ${LIGHTBLUE}+---+\n"
-    printf "${WHITE}%$1s  +--${LIGHTBLUE}| 6 |%s\n" "" " $2"
-    printf "${WHITE}%$1s  |  ${LIGHTBLUE}+---+%s${NC}\n" "" " $3"
+    printf "${WHITE}%$1s  |  \n"
+    printf "${WHITE}%$1s  +-${LIGHTBLUE}[6]%s${NC}\n" "" " $2 $3"
 }
 
 function num9(){
-    printf "${WHITE}%$1s  |  ${BLACK}+---+\n"
-    printf "${WHITE}%$1s  +--${BLACK}| 9 |%s\n" "" " $2"
-    printf "${WHITE}%$1s     ${BLACK}+---+%s${NC}\n" "" " $3"
+    printf "${WHITE}%$1s  |  \n"
+    printf "${WHITE}%$1s  +-${BLACK}[9]%s${NC}\n" "" " $2 $3"
 }
 
 function show_number()
@@ -87,4 +79,8 @@ function show_number()
     figlet $2
     sleep 1.5
     clear
+}
+
+function main_banner() {
+    figlet KaliPAKU
 }

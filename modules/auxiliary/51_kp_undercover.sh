@@ -7,9 +7,9 @@ function menu_undercover(){
     clear
 	figlet Undercover
 	num5 0 "Auxiliary"
-	num1 5 "kali-undercover"
-	num1 10 "Execute"
-	num9 10 "Back"
+	num1 3 "kali-undercover"
+	num1 6 "Execute"
+	num9 6 "Back"
     read -n 1 -s NUM
 	case $NUM in
     1)

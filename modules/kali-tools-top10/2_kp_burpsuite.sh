@@ -7,9 +7,9 @@ function menu_burpsuite(){
 	clear
 	figlet Burpsuite
 	num1 0 "Kali-tools-top10"
-	num2 5 "burpsuite"
-	num1 10 "Execute"
-	num9 10 "Back"
+	num2 3 "burpsuite"
+	num1 6 "Execute"
+	num9 6 "Back"
     read -n 1 -s NUM
 	case $NUM in
     1)

@@ -6,13 +6,13 @@ function menu_netcat(){
 	clear
 	figlet Netcat
 	num5 0 "Auxiliary"
-	num2 5 "Netcat"
-	num1 10 "Connect"
-	num2 10 "Reverse Connect"
-    num3 10 "Send File"
-    num4 10 "Receiving File"
-    num5 10 "Manual"
-	num9 10 "Back"
+	num2 3 "Netcat"
+	num1 6 "Connect"
+	num2 6 "Reverse Connect"
+    num3 6 "Send File"
+    num4 6 "Receiving File"
+    num5 6 "Manual"
+	num9 6 "Back"
     read -n 1 -s NUM
 	case $NUM in
     1)

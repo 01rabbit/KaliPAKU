@@ -7,10 +7,10 @@ function menu_wifite(){
 	clear
 	figlet wifite
 	num1 0 "Kali-tools-top10"
-	num1 5 "wifite"
-	num1 10 "Execute"
-	num2 10 "Manual"
-	num9 10 "Back"
+	num1 3 "wifite"
+	num1 6 "Execute"
+	num2 6 "Manual"
+	num9 6 "Back"
     read -n 1 -s NUM
 	case $NUM in
     1)

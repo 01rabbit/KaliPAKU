@@ -7,12 +7,12 @@ function menu_faraday(){
     clear
     figlet Faraday
     num4 0 "Reports"
-    num2 5 "Faraday"
-    num1 10 "Start Faraday"
-    num2 10 "Stop Faraday"
-    num3 10 "Open Faraday(Web)"
-    num4 10 "faraday-cli"
-    num9 10 "Back"
+    num2 3 "Faraday"
+    num1 6 "Start Faraday"
+    num2 6 "Stop Faraday"
+    num3 6 "Open Faraday(Web)"
+    num4 6 "faraday-cli"
+    num9 6 "Back"
     read -n 1 -s NUM
     case $NUM in
     1)
@@ -126,14 +126,14 @@ function menu_faraday-cli(){
     clear
     figlet Faraday
     num4 0 "Reports"
-    num2 5 "Faraday"
-    num4 10 "faraday-cli"
-    num1 15 "auth"
-    num2 15 "workspace"
-    num3 15 "List"
-    num4 15 "Import"
-    num6 15 "Stats"
-    num9 15 "Back"
+    num2 3 "Faraday"
+    num4 6 "faraday-cli"
+    num1 9 "auth"
+    num2 9 "workspace"
+    num3 9 "List"
+    num4 9 "Import"
+    num6 9 "Stats"
+    num9 9 "Back"
     read -n 1 -s NUM
     case $NUM in
     1)

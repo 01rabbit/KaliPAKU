@@ -7,13 +7,13 @@ function menu_sqlmap(){
 	clear
 	figlet sqlmap
     num1 0 "Kali-tools-top10"
-    num4 5 "sqlmap"
-    num1 10 "Enume_all_dbs"
-    num2 10 "Enume_all_tables"
-    num3 10 "Enume_table_columns"
-    num4 10 "Table_columns_dump"
-    num6 10 "Manual"
-    num9 10 "Back"
+    num4 3 "sqlmap"
+    num1 6 "Enume_all_dbs"
+    num2 6 "Enume_all_tables"
+    num3 6 "Enume_table_columns"
+    num4 6 "Table_columns_dump"
+    num6 6 "Manual"
+    num9 6 "Back"
 	read -n 1 -s NUM
     case $NUM in
     1)

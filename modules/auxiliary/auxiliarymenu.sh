@@ -10,10 +10,10 @@ function menu_auxiliary(){
     clear
     figlet Auxiliary
     num5 0 "Auxiliary"
-    num1 5 "kali-undercover"
-    num2 5 "Netcat"
-    num3 5 "Python HTTP Server"
-    num9 5 "Main"
+    num1 3 "kali-undercover"
+    num2 3 "Netcat"
+    num3 3 "Python HTTP Server"
+    num9 3 "Main"
     read -n 1 -s NUM
 	case $NUM in
 	1)

@@ -7,9 +7,9 @@ function menu_results(){
     clear
     figlet Reports
     num4 0 "Reports"
-    num1 5 "results"
-    num1 10 "Show Result"
-    num9 10 "Back"
+    num1 3 "results"
+    num1 6 "Show Result"
+    num9 6 "Back"
     read -n 1 -s NUM
     case $NUM in
     1)

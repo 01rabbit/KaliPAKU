@@ -7,9 +7,9 @@ function menu_httpserver(){
     clear
 	figlet Python HTTP Server
 	num5 0 "Auxiliary"
-	num3 5 "Python HTTP Server"
-	num1 10 "Execute"
-	num9 10 "Back"
+	num3 3 "Python HTTP Server"
+	num1 6 "Execute"
+	num9 6 "Back"
     read -n 1 -s NUM
 	case $NUM in
     1)

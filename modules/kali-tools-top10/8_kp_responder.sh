@@ -7,13 +7,13 @@ function menu_responder(){
 	clear
 	figlet Responder
     num1 0 "Kali-tools-top10"
-    num3 5 "responder"
-    num1 10 "Basic_Usage"
-    num2 10 "Analyze_mode"
-    num3 10 "Poisoning_with_Responder"
-    num4 10 "Basic_Authentication_&_WPAD"
-    num5 10 "Manual"
-    num9 10 "Back"
+    num3 3 "responder"
+    num1 6 "Basic_Usage"
+    num2 6 "Analyze_mode"
+    num3 6 "Poisoning_with_Responder"
+    num4 6 "Basic_Authentication_&_WPAD"
+    num5 6 "Manual"
+    num9 6 "Back"
 	read -n 1 -s NUM
     case $NUM in
     1)
