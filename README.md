@@ -164,6 +164,10 @@ Use Faraday to effectively use the reconnaissance information collected in Demo1
 - OS: Kali Linux 2023.1
 - Memory: 2048MB
 
+## Presentation
+
+- February 12th,2023: [SECCON 2022 ](https://www.seccon.jp/2022/ep230211.html)
+
 ## Contributors
 
 If you have some new idea about this project, issue, feedback or found some valuable tool feel free to open an issue for just DM me via [@Mr.Rabbit](https://twitter.com/01ra66it) or [@PAKURI](https://twitter.com/PAKURI9).
