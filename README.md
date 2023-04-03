@@ -6,14 +6,7 @@
 ![release-date](https://img.shields.io/github/release-date/01rabbit/KaliPAKU)
 ![sns](https://img.shields.io/twitter/follow/PAKURI9?label=PAKURI&style=social)
 
-## Overview
-
-![overview](https://user-images.githubusercontent.com/16553787/229039110-d749063f-e245-48a4-b5c2-e94d8d2db760.png)
-KaliPAKU is a command-line tool for Kali Linux that provides an easy-to-use menu-driven interface to run various security tools. The tool is designed to simplify the process of running popular security tools and includes the top 10 tools from the Kali Linux distribution.
-One of the unique features of KaliPAKU is its intuitive menu system, which is based on the Ten-Key Numbering System. This allows users to quickly select the tool they want to run by typing the corresponding number on the keypad. This menu system is designed to be easy to use and can be quickly mastered even by those who are new to Kali Linux.
-Overall, KaliPAKU is a powerful and easy-to-use tool for anyone looking to simplify the process of running popular security tools on Kali Linux.
-
-### What's KaliPAKU
+## What's KaliPAKU
 
 I call it "KaliPAKU" with a hint of irony, since it looks like a tool I made myself, using tools included in Kali Linux and adding a little PAKURI control.
 Incidentally, "karipaku" in Japanese slang indicates embezzling something borrowed.
@@ -22,6 +15,22 @@ Incidentally, "karipaku" in Japanese slang indicates embezzling something borrow
 > [Wikitonary:かりぱく](https://en.wiktionary.org/wiki/%E3%81%8B%E3%82%8A%E3%81%B1%E3%81%8F "かりぱく")
 
 ---
+
+## Overview
+
+![overview](https://user-images.githubusercontent.com/16553787/229039110-d749063f-e245-48a4-b5c2-e94d8d2db760.png)
+KaliPAKU is a command-line tool for Kali Linux that provides an easy-to-use menu-driven interface to run various security tools. The tool is designed to simplify the process of running popular security tools and includes the top 10 tools from the Kali Linux distribution.
+One of the unique features of KaliPAKU is its intuitive menu system, which is based on the Ten-Key Numbering System. This allows users to quickly select the tool they want to run by typing the corresponding number on the keypad. This menu system is designed to be easy to use and can be quickly mastered even by those who are new to Kali Linux.
+Overall, KaliPAKU is a powerful and easy-to-use tool for anyone looking to simplify the process of running popular security tools on Kali Linux.
+
+### What's Ten-key Numbering System
+
+The Ten-key Numbering System enables even beginners to execute Kali Linux commands without typing them out. It is also useful for simplifying commands, even for experienced users. Key features include:
+
+1. Commands can be executed by inputting 3 to 5 digit numbers.
+2. It reduces input errors when typing out commands.
+3. By using numbers to execute commands, instructions within a team become more concise.
+4. It enables people with physical disabilities to participate in penetration testing if they can operate the ten-key pad.
 
 ## Description
 
