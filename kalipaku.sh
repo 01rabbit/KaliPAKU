@@ -46,7 +46,6 @@ function mainmenu(){
         *)
             ;;
         esac
-        unset NUM
     done
     clear
 }

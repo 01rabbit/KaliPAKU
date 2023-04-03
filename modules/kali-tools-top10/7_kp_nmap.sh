@@ -7,14 +7,14 @@ function menu_nmap(){
 	clear
 	figlet Nmap
     num1 0 "Kali-tools-top10"
-    num2 5 "nmap"
-    num1 10 "Ping_Scan"
-    num2 10 "Intense_Scan"
-    num3 10 "Intense_Scan_UDP"
-    num4 10 "Intense_Scan_all_TCP"
-    num5 10 "Vuln_Scan"
-    num6 10 "Manual"
-    num9 10 "Back"
+    num2 3 "nmap"
+    num1 6 "Ping_Scan"
+    num2 6 "Intense_Scan"
+    num3 6 "Intense_Scan_UDP"
+    num4 6 "Intense_Scan_all_TCP"
+    num5 6 "Vuln_Scan"
+    num6 6 "Manual"
+    num9 6 "Back"
 	read -n 1 -s NUM
     case $NUM in
     1) cmd_nmap1 ;;

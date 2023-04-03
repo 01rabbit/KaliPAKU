@@ -10,9 +10,9 @@ function menu_reports(){
     clear
     figlet Reports
     num4 0 "Reports"
-    num1 5 "results"
-    num2 5 "Faraday"
-    num9 5 "Main"
+    num1 3 "results"
+    num2 3 "Faraday"
+    num9 3 "Main"
     read -n 1 -s NUM
 	case $NUM in
 	1) 

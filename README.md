@@ -6,13 +6,7 @@
 ![release-date](https://img.shields.io/github/release-date/01rabbit/KaliPAKU)
 ![sns](https://img.shields.io/twitter/follow/PAKURI9?label=PAKURI&style=social)
 
-## Overview
-
-KaliPAKU is a command-line tool for Kali Linux that provides an easy-to-use menu-driven interface to run various security tools. The tool is designed to simplify the process of running popular security tools and includes the top 10 tools from the Kali Linux distribution.
-One of the unique features of KaliPAKU is its intuitive menu system, which is based on the Ten-Key Numbering System. This allows users to quickly select the tool they want to run by typing the corresponding number on the keypad. This menu system is designed to be easy to use and can be quickly mastered even by those who are new to Kali Linux.
-Overall, KaliPAKU is a powerful and easy-to-use tool for anyone looking to simplify the process of running popular security tools on Kali Linux.
-
-### What's KaliPAKU
+## What's KaliPAKU
 
 I call it "KaliPAKU" with a hint of irony, since it looks like a tool I made myself, using tools included in Kali Linux and adding a little PAKURI control.
 Incidentally, "karipaku" in Japanese slang indicates embezzling something borrowed.
@@ -21,6 +15,22 @@ Incidentally, "karipaku" in Japanese slang indicates embezzling something borrow
 > [Wikitonary:かりぱく](https://en.wiktionary.org/wiki/%E3%81%8B%E3%82%8A%E3%81%B1%E3%81%8F "かりぱく")
 
 ---
+
+## Overview
+
+![overview](https://user-images.githubusercontent.com/16553787/229039110-d749063f-e245-48a4-b5c2-e94d8d2db760.png)
+KaliPAKU is a command-line tool for Kali Linux that provides an easy-to-use menu-driven interface to run various security tools. The tool is designed to simplify the process of running popular security tools and includes the top 10 tools from the Kali Linux distribution.
+One of the unique features of KaliPAKU is its intuitive menu system, which is based on the Ten-Key Numbering System. This allows users to quickly select the tool they want to run by typing the corresponding number on the keypad. This menu system is designed to be easy to use and can be quickly mastered even by those who are new to Kali Linux.
+Overall, KaliPAKU is a powerful and easy-to-use tool for anyone looking to simplify the process of running popular security tools on Kali Linux.
+
+### What's Ten-key Numbering System
+
+The Ten-key Numbering System enables even beginners to execute Kali Linux commands without typing them out. It is also useful for simplifying commands, even for experienced users. Key features include:
+
+1. Commands can be executed by inputting 3 to 5 digit numbers.
+2. It reduces input errors when typing out commands.
+3. By using numbers to execute commands, instructions within a team become more concise.
+4. It enables people with physical disabilities to participate in penetration testing if they can operate the ten-key pad.
 
 ## Description
 
@@ -69,7 +79,7 @@ The benefits of using our KaliPAKU include
     ![KaliPAKU Terminal](https://user-images.githubusercontent.com/16553787/200162688-e8f11bce-890b-4af2-b58b-a284145ac24b.png)  
 3. KaliPAKU Terminal
 Enter "kp" or "kalipaku" at the KaliPAKU terminal or enter the magic number "4649" to activate the KaliPAKU menu.  
-    ![KaliPAKU menu](https://user-images.githubusercontent.com/16553787/223942455-f3cb9060-34b3-4b0a-b1c7-9e270925da6f.png)  
+    ![KaliPAKU menu](https://user-images.githubusercontent.com/16553787/229037118-80dd7e8e-0a5d-4040-99c5-fd9c54a93048.png)  
 4. KaliPAKU Cheatsheet  
 Here is a partial cheat sheet of commands that can be called up in the KaliPAKU menu. To check the cheat sheet, use "cs", "cheat", or "cheatsheet". You can also use the magic number "4936".  
     ![cheatsheet](https://user-images.githubusercontent.com/16553787/200162706-4f6231c5-d96e-4788-8d64-786f949c2ff1.png)
@@ -112,7 +122,7 @@ Here is a partial cheat sheet of commands that can be called up in the KaliPAKU 
 ## How to use
 
 1. To scan with Nmap, start KaliPAKU and activate the KaliPAKU menu. The magic number to type is "4649". The magic number is "4649", which means "greetings" in Japanese.  
-    ![KaliPAKU Menu](https://user-images.githubusercontent.com/16553787/223942455-f3cb9060-34b3-4b0a-b1c7-9e270925da6f.png)  
+    ![KaliPAKU Menu](https://user-images.githubusercontent.com/16553787/229037118-80dd7e8e-0a5d-4040-99c5-fd9c54a93048.png)  
 2. Then enter the magic number "1022" if you want to perform an Intense Scan of Nmap(It takes only about 0.5 seconds to transition to this screen)  
    ![nmap](https://user-images.githubusercontent.com/16553787/200163893-d712c21e-da9c-460c-91d3-1f39a363e5f0.png)  
 
@@ -149,8 +159,8 @@ Use Faraday to effectively use the reconnaissance information collected in Demo1
 
 ## Operation check environment
 
-- OS: Kali Linux 2022.4
-- Memory: 8.0GB
+- OS: Kali Linux 2023.1
+- Memory: 2048MB
 
 ## Contributors
 

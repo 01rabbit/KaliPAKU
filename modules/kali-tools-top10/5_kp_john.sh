@@ -7,13 +7,13 @@ function menu_john(){
 	clear
 	figlet john
     num1 0 "Kali-tools-top10"
-    num5 5 "john"
-    num1 10 "Cracking_with_a_wordlist"
-    num2 10 "Attempt_to_crack_hash_file" " using_previously_cracked_passwords"
-    num3 10 "Show_cracked_passwords"
-    num4 10 "Attempt_to_crack_hash_using_incremental_mode" " (May_take_a_long_time)"
-    num5 10 "Manual"
-    num9 10 "Back"
+    num5 3 "john"
+    num1 6 "Cracking_with_a_wordlist"
+    num2 6 "Attempt_to_crack_hash_file" " using_previously_cracked_passwords"
+    num3 6 "Show_cracked_passwords"
+    num4 6 "Attempt_to_crack_hash_using_incremental_mode" " (May_take_a_long_time)"
+    num5 6 "Manual"
+    num9 6 "Back"
 	read -n 1 -s NUM
     case $NUM in
     1)

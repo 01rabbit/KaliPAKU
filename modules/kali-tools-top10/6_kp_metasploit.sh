@@ -2,17 +2,17 @@
 
 source kp.conf
 source $MODULES_PATH/misc_module.sh
-source $TOOL_PATH/32_kp_msfpc.sh
+source $ATTACK_PATH/32_kp_msfpc.sh
 
 function menu_metasploit(){
 	clear
 	figlet Metasploit
     num1 0 " Kali-tools-top10"
-    num1 5 " metasploit-framework"
-    num1 10 " Normal_Boot"
-    num2 10 " Create_Multi_handler" " (windows/meterpreter/reverse_tcp)"
-    num3 10 " Create_Payload" " (msfpc)"
-    num9 10 " Back"
+    num1 3 " metasploit-framework"
+    num1 6 " Normal_Boot"
+    num2 6 " Create_Multi_handler" " (windows/meterpreter/reverse_tcp)"
+    num3 6 " Create_Payload" " (msfpc)"
+    num9 6 " Back"
 	read -n 1 -s NUM
     echo ""
     case $NUM in

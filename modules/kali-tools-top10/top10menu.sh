@@ -19,13 +19,13 @@ function kalitoolstop10_menu1(){
 	clear
 	figlet kali-tools-top10
     num1 0 "Kali-tools-top10"
-    num1 5 "wifite(aircrack-ng)"
-    num2 5 "burpsuite"
-    num3 5 "crackmapexec(SMB)"
-    num4 5 "hydra"
-    num5 5 "john"
-    num0 5 "Next"
-	num9 5 "Main"
+    num1 3 "wifite(aircrack-ng)"
+    num2 3 "burpsuite"
+    num3 3 "crackmapexec(SMB)"
+    num4 3 "hydra"
+    num5 3 "john"
+    num0 3 "Next"
+	num9 3 "Main"
 	printf "${NC}"
 	read -n 1 -s NUM
 	case $NUM in
@@ -60,13 +60,13 @@ function kalitoolstop10_menu2(){
 	clear
 	figlet kali-tools-top10
     num1 0 "Kali-tools-top10"
-    num1 5 "metasploit-framework"
-    num2 5 "nmap"
-    num3 5 "responder"
-    num4 5 "sqlmap"
-    num5 5 "wireshark(tshark)"
-    num0 5 "Back"
-	num9 5 "Main"
+    num1 3 "metasploit-framework"
+    num2 3 "nmap"
+    num3 3 "responder"
+    num4 3 "sqlmap"
+    num5 3 "wireshark(tshark)"
+    num0 3 "Back"
+	num9 3 "Main"
     read -n 1 -s NUM
 	case $NUM in
 	1)

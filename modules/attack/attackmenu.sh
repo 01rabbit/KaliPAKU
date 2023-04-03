@@ -12,12 +12,12 @@ function menu_attack(){
     clear
     figlet Attack
     num3 0 " Attack"
-    num1 5 " Exploit" " (Metasploit)"
-    num2 5 " Social-Engineering" " (setoolkit)"
-    num3 5 " Brute-force" " (crackmapexec)"
-    num4 5 " Payload_Creator" " (msfpc)"
-    num5 5 " Search Exploit" " (searchsploit)"
-    num9 5 " Main"
+    num1 3 " Exploit" " (Metasploit)"
+    num2 3 " Social-Engineering" " (setoolkit)"
+    num3 3 " Brute-force" " (crackmapexec)"
+    num4 3 " Payload_Creator" " (msfpc)"
+    num5 3 " Search Exploit" " (searchsploit)"
+    num9 3 " Main"
     read -n 1 -s n
     case $n in
     1)

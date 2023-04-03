@@ -7,9 +7,9 @@ function menu_vulncheck(){
     clear
     figlet VulnCheck
     num2 0 " Tools"
-    num2 5 " VulnCheck"
-    num1 10 " Check"
-    num9 10 " Back"
+    num2 3 " VulnCheck"
+    num1 6 " Check"
+    num9 6 " Back"
     read -n 1 -s NUM
     case $NUM in
     1)
