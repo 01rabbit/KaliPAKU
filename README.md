@@ -108,6 +108,8 @@ Here is a partial cheat sheet of commands that can be called up in the KaliPAKU 
   4. [searchsploit](https://www.kali.org/tools/exploitdb/#searchsploit)
   5. [python-faraday](https://www.kali.org/tools/python-faraday)
   6. [Kali Undercover](https://www.kali.org/docs/introduction/kali-undercover/)
+  7. [gobuster](https://www.kali.org/tools/gobuster/)
+  8. [Netcat](https://www.kali.org/tools/netcat/)
 
 ### Added tools
 
