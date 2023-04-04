@@ -7,16 +7,18 @@ source $TOP10_PATH/6_kp_metasploit.sh
 source $ATTACK_PATH/31_kp_setoolkit.sh
 source $ATTACK_PATH/32_kp_msfpc.sh
 source $ATTACK_PATH/33_kp_searchsploit.sh
+source $ATTACK_PATH/34_kp_wifite.sh
 
 function menu_attack(){
     clear
     figlet Attack
-    num3 0 " Attack"
-    num1 3 " Exploit" " (Metasploit)"
-    num2 3 " Social-Engineering" " (setoolkit)"
-    num3 3 " Brute-force" " (crackmapexec)"
-    num4 3 " Payload_Creator" " (msfpc)"
-    num5 3 " Search Exploit" " (searchsploit)"
+    num3 0 "Attack"
+    num1 3 "Exploit" " (Metasploit)"
+    num2 3 "Social-Engineering" " (setoolkit)"
+    num3 3 "Brute-force" " (crackmapexec)"
+    num4 3 "Payload_Creator" " (msfpc)"
+    num5 3 "Search Exploit" " (searchsploit)"
+    num6 3 "Wi-Fi Attack" " (wifite)"
     num9 3 " Main"
     read -n 1 -s n
     case $n in
@@ -34,6 +36,9 @@ function menu_attack(){
         ;;
     5)
         menu_searchsploit
+        ;;
+    6)
+        menu_wifite
         ;;
     9)
         mainmenu

@@ -91,7 +91,7 @@ Here is a partial cheat sheet of commands that can be called up in the KaliPAKU 
 ### Installed on kali linux
 
 - kali-tools-top10
-  1. [wifite](https://www.kali.org/tools/wifite/)
+  1. [Aircrack-ng](https://www.kali.org/tools/aircrack-ng/#aircrack-ng)
   2. [burpsuite](https://www.kali.org/tools/burpsuite/)
   3. [crackmapexec](https://www.kali.org/tools/crackmapexec/)
   4. [hydra](https://www.kali.org/tools/hydra/)
@@ -102,14 +102,15 @@ Here is a partial cheat sheet of commands that can be called up in the KaliPAKU 
   9. [sqlmap](https://www.kali.org/tools/sqlmap/)
   10. [wireshark](https://www.kali.org/tools/wireshark/)
 - Other Kali tools
-  1. [tshark](https://www.kali.org/tools/wireshark/#tshark)
-  2. [set](https://www.kali.org/tools/set/#setoolkit)
+  1. [gobuster](https://www.kali.org/tools/gobuster/)
+  2. [Kali Undercover](https://www.kali.org/docs/introduction/kali-undercover/)
   3. [msfpc](https://www.kali.org/tools/msfpc/)
-  4. [searchsploit](https://www.kali.org/tools/exploitdb/#searchsploit)
+  4. [Netcat](https://www.kali.org/tools/netcat/)
   5. [python-faraday](https://www.kali.org/tools/python-faraday)
-  6. [Kali Undercover](https://www.kali.org/docs/introduction/kali-undercover/)
-  7. [gobuster](https://www.kali.org/tools/gobuster/)
-  8. [Netcat](https://www.kali.org/tools/netcat/)
+  6. [searchsploit](https://www.kali.org/tools/exploitdb/#searchsploit)
+  7. [set](https://www.kali.org/tools/set/#setoolkit)
+  8. [tshark](https://www.kali.org/tools/wireshark/#tshark)
+  9. [wifite](https://www.kali.org/tools/wifite/)
 
 ### Added tools
 
@@ -166,7 +167,7 @@ Use Faraday to effectively use the reconnaissance information collected in Demo1
 
 ## Presentation
 
-- February 12th,2023: [SECCON 2022 ](https://www.seccon.jp/2022/ep230211.html)
+- February 12th,2023: [SECCON 2022](https://www.seccon.jp/2022/ep230211.html)
 
 ## Contributors
 

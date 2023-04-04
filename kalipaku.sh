@@ -88,6 +88,12 @@ else
         "cs"|"cheat"|"cheatsheet"|4936)
             more $ASSIST_PATH/cheatsheet.txt
             ;;
+        "h"|"H"|"help"|"HELP"|"Help")
+            figlet Usage
+            printf "  If you want to display the KaliPAKU menu, enter ${YELLOW}k${NC} or ${YELLOW}kp${NC} or ${YELLOW}karipaku${NC} or ${YELLOW}menu${NC} or the Magic Number ${YELLOW}4649${NC}, open the menu.\n"
+            printf "  If you want to exit, type ${YELLOW}q${NC} or ${YELLOW}quit${NC} or ${YELLOW}exit${NC} or the Magic Number ${YELLOW}3470${NC}.\n"
+            echo ""
+            ;;
         "exit"|"q"|"quit"|3470)
             figlet See you!
             sleep 1

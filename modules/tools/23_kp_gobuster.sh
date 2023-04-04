@@ -74,7 +74,8 @@ function cmd_gobuster1(){
     printf "|  ${YELLOW}[2]/usr/share/dirb/wordlists/big.txt${NC} \n"
     printf "|  ${YELLOW}[3]/usr/share/dirbuster/wordlists/directory-list-2.3-small.txt${NC} \n"
     printf "|  ${YELLOW}[4]/usr/share/dirbuster/wordlists/directory-list-2.3-medium.txt${NC} \n"
-    read -p "> Select ${YELLOW}1${NC}-${YELLOW}4${NC}: " NUM
+    printf "> Select ${YELLOW}1${NC}-${YELLOW}4${NC}: "
+    read NUM
     case $NUM in
     1)
         WORDLIST="/usr/share/dirb/wordlists/common.txt"
@@ -131,7 +132,8 @@ function cmd_gobuster2(){
     printf "|  ${YELLOW}[2]/usr/share/dirb/wordlists/big.txt${NC} \n"
     printf "|  ${YELLOW}[3]/usr/share/dirbuster/wordlists/directory-list-2.3-small.txt${NC} \n"
     printf "|  ${YELLOW}[4]/usr/share/dirbuster/wordlists/directory-list-2.3-medium.txt${NC} \n"
-    read -p "> Select ${YELLOW}1${NC}-${YELLOW}4${NC}: " NUM
+    printf "> Select ${YELLOW}1${NC}-${YELLOW}4${NC}: "
+    read NUM
     case $NUM in
     1)
         WORDLIST="/usr/share/dirb/wordlists/common.txt"
@@ -189,7 +191,8 @@ function cmd_gobuster3(){
     printf "|  ${YELLOW}[2]/usr/share/dirb/wordlists/big.txt${NC} \n"
     printf "|  ${YELLOW}[3]/usr/share/dirbuster/wordlists/directory-list-2.3-small.txt${NC} \n"
     printf "|  ${YELLOW}[4]/usr/share/dirbuster/wordlists/directory-list-2.3-medium.txt${NC} \n"
-    read -p "> Select ${YELLOW}1${NC}-${YELLOW}4${NC}: " NUM
+    printf "> Select ${YELLOW}1${NC}-${YELLOW}4${NC}: "
+    read NUM
     case $NUM in
     1)
         WORDLIST="/usr/share/dirb/wordlists/common.txt"

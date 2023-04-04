@@ -1,7 +1,7 @@
 #!/bin/bash
 
 source kp.conf
-source $TOP10_PATH/1_kp_wifite.sh
+source $TOP10_PATH/1_kp_aircrack.sh
 source $TOP10_PATH/2_kp_burpsuite.sh
 source $TOP10_PATH/3_kp_crackmapexec.sh
 source $TOP10_PATH/4_kp_hydra.sh
@@ -19,7 +19,7 @@ function kalitoolstop10_menu1(){
 	clear
 	figlet kali-tools-top10
     num1 0 "Kali-tools-top10"
-    num1 3 "wifite(aircrack-ng)"
+    num1 3 "Aircrack-ng"
     num2 3 "burpsuite"
     num3 3 "crackmapexec(SMB)"
     num4 3 "hydra"
@@ -30,7 +30,7 @@ function kalitoolstop10_menu1(){
 	read -n 1 -s NUM
 	case $NUM in
 	1)
-		menu_wifite
+		menu_aircrack
 		;;
     2)
         menu_burpsuite

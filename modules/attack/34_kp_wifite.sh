@@ -5,9 +5,9 @@ source $MODULES_PATH/misc_module.sh
 
 function menu_wifite(){
 	clear
-	figlet wifite
-	num1 0 "Kali-tools-top10"
-	num1 3 "wifite"
+    figlet Attack
+    num3 0 "Attack"
+    num6 3 "Wi-Fi Attack" " (wifite)"
 	num1 6 "Execute"
 	num2 6 "Manual"
 	num9 6 "Back"
@@ -33,7 +33,7 @@ function cmd_wifite1(){
 	clear
 	figlet wifite
     cmd="wifite "
-    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${RED}[1]Kali-tools-top10${NC} > ${RED}[1]$cmd${NC} > ${RED}Execute${NC}\n"
+    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${YELLOW}[3]ATTACK${NC} > ${LIGHTBLUE}[6]$cmd${NC} > ${RED}[1]Execute${NC}\n"
     echo "|"
     printf "|${RED}  ########  Caution!  ########${NC}\n"
 	printf "|${RED}  Root plivileges are required.${NC}\n"
@@ -52,7 +52,7 @@ function cmd_wifite1(){
 		echo ""
 		if [ ! -z "$ANS" ];then
 			if [ $ANS = "2" ];then
-				show_number 111 "wifite Execute"
+				show_number 361 "wifite Execute"
 				tmux split-window -v -p 30
 				tmux send-keys "${cmd};read;exit" C-m
 				tmux select-pane -t "${TITLE}".0
@@ -69,10 +69,10 @@ function cmd_wifite1(){
 function cmd_wifite2(){
 	local cmd="" ANS=""
 	clear
-	show_number 112 "wifite Manual"
+	show_number 362 "wifite Manual"
 	figlet wifite
     cmd="wifite "
-    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${RED}[1]Kali-tools-top10${NC} > ${RED}[1]$cmd${NC} > ${GREEN}Manual${NC}\n"
+    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${YELLOW}[3]Attack${NC} > ${LIGHTBLUE}[6]$cmd${NC} > ${GREEN}[2]Manual${NC}\n"
     echo "|"
     printf "|${RED}  ########  Caution!  ########${NC}\n"
 	printf "|${RED}  Root plivileges are required.${NC}\n"

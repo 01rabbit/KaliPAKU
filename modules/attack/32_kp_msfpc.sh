@@ -6,10 +6,10 @@ source $MODULES_PATH/misc_module.sh
 function menu_msfpc(){
     clear
     figlet MSFPC
-    num3 0 " Attack"
-    num4 3 " MSFvenom_Payload_Creator" " (msfpc)"
-    num1 6 " Create_Payload"
-    num9 6 " Back"
+    num3 0 "Attack"
+    num4 3 "MSFvenom_Payload_Creator" " (msfpc)"
+    num1 6 "Create_Payload"
+    num9 6 "Back"
     read -n 1 -s NUM
     case $NUM in
     1)

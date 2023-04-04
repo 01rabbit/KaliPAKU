@@ -6,11 +6,11 @@ source $MODULES_PATH/misc_module.sh
 function menu_searchsploit(){
     clear
     figlet SearchSploit
-    num3 0 " Attack"
-    num5 3 " Search_Exploit" " (searchsploit)"
-    num1 6 " Search"
-    num2 6 " Automatic_Search" " (Miscellaneous_Automation)"
-    num9 6 " Back"
+    num3 0 "Attack"
+    num5 3 "Search_Exploit" " (searchsploit)"
+    num1 6 "Search"
+    num2 6 "Automatic_Search" " (Miscellaneous_Automation)"
+    num9 6 "Back"
     read -n 1 -s NUM
     case $NUM in
     1)
