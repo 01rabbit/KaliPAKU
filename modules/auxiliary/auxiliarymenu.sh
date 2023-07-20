@@ -8,7 +8,7 @@ source $AUXILIARY_PATH/53_kp_httpserver.sh
 
 function menu_auxiliary(){
     clear
-    figlet Auxiliary
+	header
     num5 0 "Auxiliary"
     num1 3 "kali-undercover"
     num2 3 "Netcat"

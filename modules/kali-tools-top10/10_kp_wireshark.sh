@@ -5,7 +5,7 @@ source $MODULES_PATH/misc_module.sh
 
 function menu_wireshark(){
 	clear
-	figlet wireshark
+	header
 	num1 0 "Kali-tools-top10"
 	num5 3 "wireshark(tshark)"
 	num1 6 "wireshark"
@@ -31,7 +31,7 @@ function cmd_wireshark(){
     clear
     show_number 1051 "wireshark(tshark) wireshark"
     cmd="wireshark"
-    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${RED}[1]Kali-tools-top10${NC} > ${PURPLE}[5]wireshark(tshark)${NC} > ${RED}[1]wireshark${NC}\n"
+    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${RED}[1]Kali-tools-top10${WHITE} > [5]wireshark(tshark) > [1]wireshark${NC}\n"
     printf "|${RED}  ####  Caution!  ####${NC}\n"
     printf "|${RED}  Wireshark ${WHITE}is a GUI application. It can't be displayed on a remote console.\n"
     printf "|  If you want to continue with CUI, you can choose ${RED}tshark.${NC}\n"
@@ -58,7 +58,7 @@ function cmd_tshark(){
     clear
     show_number 1052 "wireshark(tshark) tshark"
     cmd="tshark"
-    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${RED}[1]Kali-tools-top10${NC} > ${PURPLE}[5]wireshark(tshark)${NC} > ${GREEN}[2]tshark${NC}\n"
+    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${RED}[1]Kali-tools-top10${WHITE} > [5]wireshark(tshark) > [2]tshark${NC}\n"
     printf "+${BLUE}Capture interface${NC}:\n"
     printf "|  ${YELLOW}-i <interface>, --interface <interface>${NC}\n"
     printf "|                           name or idx of interface (def: first non-loopback)\n"

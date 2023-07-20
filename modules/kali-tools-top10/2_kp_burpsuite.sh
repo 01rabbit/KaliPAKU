@@ -5,7 +5,7 @@ source $MODULES_PATH/misc_module.sh
 
 function menu_burpsuite(){
 	clear
-	figlet Burpsuite
+	header
 	num1 0 "Kali-tools-top10"
 	num2 3 "burpsuite"
 	num1 6 "Execute"
@@ -29,7 +29,7 @@ function cmd_burpsuite(){
 	clear
 	figlet Burpsuite
     cmd="burpsuite"
-    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${RED}[1]Kali-tools-top10${NC} > ${GREEN}[2]$cmd${NC}\n"
+    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${RED}[1]Kali-tools-top10${WHITE} > [2]$cmd${NC}\n"
     echo "|"
     printf "|${RED}  ########  Caution!  ########${NC}\n"
     echo "|"

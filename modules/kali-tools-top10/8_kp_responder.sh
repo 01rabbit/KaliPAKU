@@ -5,7 +5,7 @@ source $MODULES_PATH/misc_module.sh
 
 function menu_responder(){
 	clear
-	figlet Responder
+	header
     num1 0 "Kali-tools-top10"
     num3 3 "responder"
     num1 6 "Basic_Usage"
@@ -44,7 +44,7 @@ function cmd_responder1(){
 	clear
 	figlet Responder
     cmd="responder"
-    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${RED}[1]Kali-tools-top10${NC} > ${YELLOW}[3]$cmd${NC} > ${RED}[1]Basic Usage${NC}\n"
+    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${RED}[1]Kali-tools-top10${WHITE} > [3]$cmd > [1]Basic Usage${NC}\n"
     printf "+${BLUE}Options${NC}:\n"
     printf "|  ${YELLOW}-I eth0, --interface=eth0${NC}\n"
     echo "|                  Network interface to use, you can use 'ALL' as a"
@@ -83,7 +83,7 @@ function cmd_responder2(){
 	clear
 	figlet Responder
     cmd="responder"
-    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${RED}[1]Kali-tools-top10${NC} > ${YELLOW}[3]$cmd${NC} > ${GREEN}[2]Analyze mode${NC}\n"
+    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${RED}[1]Kali-tools-top10${WHITE} > [3]$cmd > [2]Analyze mode${NC}\n"
     printf "+${BLUE}Options${NC}:\n"
     printf "|  ${YELLOW}-I eth0, --interface=eth0${NC}\n"
     echo "|                  Network interface to use, you can use 'ALL' as a"
@@ -121,7 +121,7 @@ function cmd_responder3(){
 	clear
 	figlet Responder
     cmd="responder"
-    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${RED}[1]Kali-tools-top10${NC} > ${YELLOW}[3]$cmd${NC} > ${YELLOW}[3]Poisoning${NC}\n"
+    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${RED}[1]Kali-tools-top10${WHITE} > [3]$cmd > [3]Poisoning${NC}\n"
     printf "+${BLUE}Options${NC}:\n"
     printf "|  ${YELLOW}-I eth0, --interface=eth0${NC}\n"
     echo "|                  Network interface to use, you can use 'ALL' as a"
@@ -156,7 +156,7 @@ function cmd_responder4(){
 	clear
 	figlet Responder
     cmd="responder"
-    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${RED}[1]Kali-tools-top10${NC} > ${YELLOW}[3]$cmd${NC} > ${BLUE}[4]WPAD${NC}\n"
+    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${RED}[1]Kali-tools-top10${WHITE} > [3]$cmd > [4]WPAD${NC}\n"
     printf "+${BLUE}Options${NC}:\n"
     printf "|  ${YELLOW}-I eth0, --interface=eth0${NC}\n"
     echo "|                        Network interface to use, you can use 'ALL' as a"
@@ -196,7 +196,7 @@ function cmd_responder5(){
 	clear
     show_number 1035 "responder Manual"
     cmd="responder"
-    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${RED}[1]Kali-tools-top10${NC} > ${YELLOW}[3]$cmd${NC} > ${PURPLE}[5]Manual${NC}\n"
+    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${RED}[1]Kali-tools-top10${WHITE} > [3]$cmd > [5]Manual${NC}\n"
     printf "+${BLUE}Options${NC}:\n"
     printf "|  ${YELLOW}-I eth0, --interface=eth0${NC}\n"
     echo "|                  Network interface to use, you can use 'ALL' as a"

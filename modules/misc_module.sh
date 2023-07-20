@@ -31,7 +31,7 @@ function banner(){
 
 function num0(){
     printf "${WHITE}%$1s  |  \n"
-    printf "${WHITE}%$1s  +-${WHITE}[0]%s\n" "" " $2 $3"
+    printf "${WHITE}%$1s  +-${WHITE}[0]%s${NC}\n" "" " $2 $3"
 }
 function num1(){
     printf "${WHITE}%$1s  |  \n"
@@ -83,4 +83,13 @@ function show_number()
 
 function main_banner() {
     figlet KaliPAKU
+}
+
+function header(){
+        TARGET=$(<"$T_FILE")
+        figlet KaliPAKU
+        echo "---------------------------------------"
+        echo "Pentest Skill Level Upper"
+        echo ""
+        echo "[+] Your Target: $TARGET"
 }

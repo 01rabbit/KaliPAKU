@@ -17,8 +17,8 @@ source $MODULES_PATH/misc_module.sh
 function kalitoolstop10_menu1(){
 	local NUM=""
 	clear
-	figlet kali-tools-top10
-    num1 0 "Kali-tools-top10"
+	header
+	num1 0 "Kali-tools-top10"
     num1 3 "Aircrack-ng"
     num2 3 "burpsuite"
     num3 3 "crackmapexec(SMB)"
@@ -58,7 +58,7 @@ function kalitoolstop10_menu1(){
 function kalitoolstop10_menu2(){
 	local NUM=""
 	clear
-	figlet kali-tools-top10
+	header
     num1 0 "Kali-tools-top10"
     num1 3 "metasploit-framework"
     num2 3 "nmap"

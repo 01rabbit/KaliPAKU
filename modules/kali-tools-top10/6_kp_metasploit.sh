@@ -6,7 +6,7 @@ source $ATTACK_PATH/32_kp_msfpc.sh
 
 function menu_metasploit(){
 	clear
-	figlet Metasploit
+	header
     num1 0 " Kali-tools-top10"
     num1 3 " metasploit-framework"
     num1 6 " Normal_Boot"
@@ -38,7 +38,7 @@ function cmd_metasploit1(){
 	clear
 	figlet Metasploit
     cmd="msfconsole"
-    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${RED}[1]Kali-tools-top10${NC} > ${RED}[1]metasploit-framework${NC} > ${RED}[1]Normal Boot${NC}\n"
+    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${RED}[1]Kali-tools-top10${WHITE} > [1]metasploit-framework > [1]Normal Boot${NC}\n"
     printf "+${BLUE}Options${NC}:\n"
     printf "|  ${YELLOW}-q, --quiet${NC}                      Do not print the banner on startup\n"
     printf "|  ${YELLOW}-r, --resource FILE${NC}              Execute the specified resource file (- for stdin)\n"
@@ -96,7 +96,7 @@ function cmd_metasploit2(){
 	clear
 	figlet Metasploit
     cmd="msfconsole"
-    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${RED}[1]Kali-tools-top10${NC} > ${RED}[1]metasploit-framework${NC} > ${GREEN}[2]Create Multi Handler${NC}\n"
+    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${RED}[1]Kali-tools-top10${WHITE} > [1]metasploit-framework > [2]Create Multi Handler${NC}\n"
     echo "> Create handler..."
     read -p "> Enter Local host <IP Address>: " LHOST
     echo "|"

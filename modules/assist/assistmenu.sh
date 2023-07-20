@@ -7,7 +7,7 @@ source $ASSIST_PATH/assist.sh
 
 function menu_assist(){
     clear
-    figlet Assist
+	header
     num6 0 "Assist"
     num1 5 "NIST SP 800-115"
     num2 5 "Cheatsheet"

@@ -5,7 +5,7 @@ source $MODULES_PATH/misc_module.sh
 
 function menu_crackmapexec(){
 	clear
-	figlet crackmapexec
+	header
     num1 0 "Kali-tools-top10"
     num3 3 "crackmapexec(SMB)"
     num1 6 "Target_format(Basic)"
@@ -48,7 +48,7 @@ function cmd_crackmapexec1(){
 	clear
 	figlet crackmapexec
     cmd="crackmapexec"
-    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${RED}[1]Kali-tools-top10${NC} > ${YELLOW}[3]$cmd${NC} > ${RED}[1]Target format(Basic)${NC}\n"
+    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${RED}[1]Kali-tools-top10${WHITE} > [3]$cmd${NC} > [1]Target format(Basic)${NC}\n"
     printf "+${BLUE}positional arguments${NC}:\n"
     printf "|  ${YELLOW}target${NC}      the target IP(s), range(s), CIDR(s), hostname(s), FQDN(s),\n"
     echo "|              file(s) containing a list of targets, NMap XML or .Nessus file(s)"
@@ -109,7 +109,7 @@ function cmd_crackmapexec2(){
 	clear
 	figlet crackmapexec
     cmd="crackmapexec"
-    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${RED}[1]Kali-tools-top10${NC} > ${YELLO}[3]$cmd${NC} > ${GREEN}[2]Null session${NC}\n"
+    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${RED}[1]Kali-tools-top10${WHITE} > [3]$cmd > [2]Null session${NC}\n"
     printf "+${BLUE}positional arguments${NC}:\n"
     printf "|  ${YELLOW}target${NC}      the target IP(s), range(s), CIDR(s), hostname(s), FQDN(s),\n"
     echo "|              file(s) containing a list of targets, NMap XML or .Nessus file(s)"
@@ -145,7 +145,7 @@ function cmd_crackmapexec3(){
 	clear
 	figlet crackmapexec
     cmd="crackmapexec"
-    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${RED}[1]Kali-tools-top10${NC} > ${YELLOW}[3]$cmd${NC} > ${YELLOW}[3]Connect to target using local account${NC}\n"
+    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${RED}[1]Kali-tools-top10${WHITE} > [3]$cmd > [3]Connect to target using local account${NC}\n"
     printf "+${BLUE}positional arguments${NC}:\n"
     printf "|  ${YELLOW}target${NC}      the target IP(s), range(s), CIDR(s), hostname(s), FQDN(s),\n"
     echo "|              file(s) containing a list of targets, NMap XML or .Nessus file(s)"
@@ -210,7 +210,7 @@ function cmd_crackmapexec4(){
 	clear
 	figlet crackmapexec
     cmd="crackmapexec "
-    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${RED}[1]Kali-tools-top10${NC} > ${YELLOW}[3]$cmd${NC} > ${BLUE}[4]Path the hash against a subnet${NC}\n"
+    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${RED}[1]Kali-tools-top10${WHITE} > [3]$cmd > [4]Path the hash against a subnet${NC}\n"
     printf "+${BLUE}positional arguments${NC}:\n"
     printf "|  ${YELLOW}target${NC}      the target IP(s), range(s), CIDR(s), hostname(s), FQDN(s),\n"
     echo "|              file(s) containing a list of targets, NMap XML or .Nessus file(s)"
@@ -287,7 +287,7 @@ function cmd_crackmapexec5(){
 	clear
 	figlet crackmapexec
     cmd="crackmapexec "
-    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${RED}[1]Kali-tools-top10${NC} > ${YELLOW}[3]crackmapexec${NC} > ${PURPLE}[5]Brutefocing & Password Spraying${NC}\n"
+    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${RED}[1]Kali-tools-top10${WHITE} > [3]crackmapexec > [5]Brutefocing & Password Spraying${NC}\n"
     printf "+${BLUE}positional arguments${NC}:\n"
     printf "|  ${YELLOW}target${NC}      the target IP(s), range(s), CIDR(s), hostname(s), FQDN(s),\n"
     echo "|              file(s) containing a list of targets, NMap XML or .Nessus file(s)"
@@ -362,7 +362,7 @@ function cmd_crackmapexec6(){
     local cmd="" 
 	clear
     show_number 136 "crackmapexec Manual"
-    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${RED}[1]Kali-tools-top10${NC} > ${YELLOW}[3]crackmapexec${NC} > ${LIGHTBLUE}[6]Manual${NC}\n"
+    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${RED}[1]Kali-tools-top10${WHITE} > [3]crackmapexec > [6]Manual${NC}\n"
     printf "+${BLUE}positional arguments${NC}:\n"
     printf "|  ${YELLOW}target${NC}      the target IP(s), range(s), CIDR(s), hostname(s), FQDN(s),\n"
     echo "|              file(s) containing a list of targets, NMap XML or .Nessus file(s)"

@@ -5,7 +5,7 @@ source $MODULES_PATH/misc_module.sh
 
 function menu_aircrack(){
 	clear
-	figlet Aircrack-ng
+	header
 	num1 0 "Kali-tools-top10"
 	num1 3 "Aircrack-ng"
 	num1 6 "Monitor Mode"
@@ -37,7 +37,7 @@ function menu_aircrack(){
 
 function menu_monitor(){
 	clear
-	figlet Aircrack-ng
+	header
 	num1 0 "Kali-tools-top10"
 	num1 3 "Aircrack-ng"
 	num1 6 "Monitor Mode"
@@ -62,7 +62,7 @@ function cmd_monitor1(){
 	clear
 	figlet Aircrack-ng
     cmd="airmon-ng"
-    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${RED}[1]Kali-tools-top10${NC} > ${RED}[1]Aircrack-ng${NC} > ${RED}[1]Monitor Mode${NC} > ${RED}[1]Stop${NC}\n"
+    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${RED}[1]Kali-tools-top10${WHITE} > [1]Aircrack-ng > [1]Monitor Mode${NC} > ${RED}[1]Stop${NC}\n"
     echo "|"
     echo "> Select Interface:"
     iwconfig | grep -oE '^[a-zA-Z0-9]+'
@@ -96,7 +96,7 @@ function cmd_monitor2(){
 	clear
 	figlet Aircrack-ng
     cmd="airmon-ng"
-    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${RED}[1]Kali-tools-top10${NC} > ${RED}[1]Aircrack-ng${NC} > ${RED}[1]Monitor Mode${NC} > ${GREEN}[2]Start${NC}\n"
+    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${RED}[1]Kali-tools-top10${WHITE} > [1]Aircrack-ng > [1]Monitor Mode${NC} > ${GREEN}[2]Start${NC}\n"
     echo "|"
     echo "> Select Interface:"
     iwconfig | grep -oE '^[a-zA-Z0-9]+'
@@ -130,7 +130,7 @@ function cmd_searchbssid(){
 	clear
 	figlet Aircrack-ng
     cmd="airodump-ng"
-    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${RED}[1]Kali-tools-top10${NC} > ${RED}[1]Aircrack-ng${NC} > ${GREEN}[2]Search BSSID${NC}\n"
+    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${RED}[1]Kali-tools-top10${WHITE} > [1]Aircrack-ng > [2]Search BSSID${NC}\n"
     echo "|"
     echo "> Select Interface:"
     iwconfig | grep -oE '^[a-zA-Z0-9]+'
@@ -170,7 +170,7 @@ function cmd_packetcapture(){
 	clear
 	figlet Aircrack-ng
     cmd="airodump-ng"
-    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${RED}[1]Kali-tools-top10${NC} > ${RED}[1]Aircrack-ng${NC} > ${YELLOW}[3]Packet Capture${NC}\n"
+    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${RED}[1]Kali-tools-top10${WHITE} > [1]Aircrack-ng > [3]Packet Capture${NC}\n"
     echo "|"
     echo "> Select Interface:"
     iwconfig | grep -oE '^[a-zA-Z0-9]+'

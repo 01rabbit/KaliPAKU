@@ -11,7 +11,7 @@ source $ATTACK_PATH/34_kp_wifite.sh
 
 function menu_attack(){
     clear
-    figlet Attack
+	header
     num3 0 "Attack"
     num1 3 "Exploit" " (Metasploit)"
     num2 3 "Social-Engineering" " (setoolkit)"

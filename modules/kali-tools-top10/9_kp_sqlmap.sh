@@ -5,7 +5,7 @@ source $MODULES_PATH/misc_module.sh
 
 function menu_sqlmap(){
 	clear
-	figlet sqlmap
+	header
     num1 0 "Kali-tools-top10"
     num4 3 "sqlmap"
     num1 6 "Enume_all_dbs"
@@ -44,7 +44,7 @@ function cmd_sqlmap1(){
 	clear
 	figlet sqlmap
     cmd="sqlmap"
-    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${RED}[1]Kali-tools-top10${NC} > ${BLUE}[4]$cmd${NC} > ${RED}[1]Enumerate all dbs${NC}\n"
+    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${RED}[1]Kali-tools-top10${WHITE} > [4]$cmd > [1]Enumerate all dbs${NC}\n"
     printf "+${BLUE}Options${NC}:\n"
     printf "|  ${YELLOW}-u URL, --url=URL${NC}   Target URL (e.g. \"http://www.site.com/vuln.php?id=1\")\n"
     read -p "> Enter Target URL: " URL
@@ -109,7 +109,7 @@ function cmd_sqlmap2(){
 	clear
 	figlet sqlmap
     cmd="sqlmap"
-    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${RED}[1]Kali-tools-top10${NC} > ${BLUE}[4]$cmd${NC} > ${GREEN}[2]Enumerate all tables${NC}\n"
+    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${RED}[1]Kali-tools-top10${WHITE} > [4]$cmd > [2]Enumerate all tables${NC}\n"
     printf "+${BLUE}Options${NC}:\n"
     printf "|  ${YELLOW}-u URL, --url=URL${NC}   Target URL (e.g. \"http://www.site.com/vuln.php?id=1\")\n"
     read -p "> Enter Target URL: " URL
@@ -178,7 +178,7 @@ function cmd_sqlmap3(){
 	clear
 	figlet sqlmap
     cmd="sqlmap"
-    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${RED}[1]Kali-tools-top10${NC} > ${BLUE}[4]$cmd${NC} > ${YELLOW}[3]Enume table columns${NC}\n"
+    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${RED}[1]Kali-tools-top10${WHITE} > [4]$cmd > [3]Enume table columns${NC}\n"
     printf "+${BLUE}Options${NC}:\n"
     printf "|  ${YELLOW}-u URL, --url=URL${NC}   Target URL (e.g. \"http://www.site.com/vuln.php?id=1\")\n"
     read -p "> Enter Target URL: " URL
@@ -250,7 +250,7 @@ function cmd_sqlmap4(){
 	clear
 	figlet sqlmap
     cmd="sqlmap"
-    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${RED}[1]Kali-tools-top10${NC} > ${BLUE}[4]$cmd${NC} > ${BLUE}[4]Table columns dump${NC}\n"
+    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${RED}[1]Kali-tools-top10${WHITE} > [4]$cmd > [4]Table columns dump${NC}\n"
     printf "+${BLUE}Options${NC}:\n"
     printf "|  ${YELLOW}-u URL, --url=URL${NC}   Target URL (e.g. \"http://www.site.com/vuln.php?id=1\")\n"
     read -p "> Enter Target URL: " URL
@@ -322,7 +322,7 @@ function cmd_sqlmap4(){
 function cmd_sqlmap6(){
 	clear
     show_number 1046 "sqlmap Manual"
-    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${RED}[1]Kali-tools-top10${NC} > ${BLUE}[4]sqlmap${NC} > ${LIGHTBLUE}[6]Manual${NC}\n"
+    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${RED}[1]Kali-tools-top10${WHITE} > [4]sqlmap > [6]Manual${NC}\n"
     printf "+${BLUE}Options${NC}:\n"
     printf "|  ${YELLOW}-u URL, --url=URL${NC}   Target URL (e.g. \"http://www.site.com/vuln.php?id=1\")\n"
     echo "|"

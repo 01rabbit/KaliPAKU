@@ -12,7 +12,8 @@ source $AUXILIARY_PATH/auxiliarymenu.sh
 function mainmenu(){
     while :; do
         clear
-        figlet KaliPAKU
+        header
+        num0 0 "Set Target  < Do this first"
         num1 0 "Kali-tools-top10"
         num2 0 "Tools"
         num3 0 "Attack"
@@ -22,6 +23,9 @@ function mainmenu(){
         num9 0 "Exit"
         read -n 1 -s NUM
         case $NUM in
+        0)
+            set_target
+            ;;
         1)
             kalitoolstop10_menu1
             ;;
@@ -50,6 +54,15 @@ function mainmenu(){
     clear
 }
 
+function set_target(){
+        clear
+        header
+        num0 0 "Set Target  < Do this first"
+        echo "    |"
+        read -p "    > Enter Target Host IP Address: " TARGET
+        echo $TARGET > $T_FILE
+
+}
 KP=$0
 
 # Rockyou Check
@@ -60,6 +73,13 @@ if [ ! -e $FILE ];then
     if [ -e "rockyou.txt.gz" ];then
         gunzip rockyou.txt.gz
     fi
+fi
+
+# Target
+T_FILE=".target"
+
+if [ ! -e $T_FILE ];then
+    echo "Unset" > $T_FILE
 fi
 
 if [ -z ${TMUX} ];then
@@ -95,6 +115,7 @@ else
             echo ""
             ;;
         "exit"|"q"|"quit"|3470)
+            rm ${T_FILE}
             figlet See you!
             sleep 1
             tmux kill-session -t ${TITLE}

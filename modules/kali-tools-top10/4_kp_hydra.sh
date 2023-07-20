@@ -5,7 +5,7 @@ source $MODULES_PATH/misc_module.sh
 
 function menu_hydra(){
 	clear
-	figlet hydra
+	header
     num1 0 "Kali-tools-top10"
     num4 3 "hydra"
     num1 6 "Dictionary_Attack"
@@ -36,7 +36,7 @@ function cmd_hydra1(){
     clear
     figlet hydra
     cmd="hydra"
-    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${RED}[1]Kali-tools-top10${NC} > ${BLUE}[4]$cmd${NC} > ${RED}[1]Dictionary Attack${NC}\n"
+    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${RED}[1]Kali-tools-top10${WHITE} > [4]$cmd > [1]Dictionary Attack${NC}\n"
 	printf "+${BLUE}Options${NC}:\n"
     printf "|  ${YELLOW}-l LOGIN or -L FILE${NC}     login with LOGIN name, or load several logins from FILE\n"
     read -p "> Enter Username: " USERNAME
@@ -106,7 +106,7 @@ function cmd_hydra2(){
     clear
     figlet hydra
     cmd="hydra "
-    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${RED}[1]Kali-tools-top10${NC} > ${BLUE}[4]$cmd${NC} > ${GREEN}[2]Password Spray Attack${NC}\n"
+    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${RED}[1]Kali-tools-top10${WHITE} > [4]$cmd > [2]Password Spray Attack${NC}\n"
     printf "+${BLUE}Options:${NC}\n"
     printf "|  ${YELLOW}-l LOGIN or -L FILE${NC}     login with LOGIN name, or load several logins from FILE\n"
     read -p "> Enter the path to the username file: " USERNAME
@@ -170,7 +170,7 @@ function cmd_hydra3(){
     show_number 143 "hydra Manual"
     figlet hydra
     cmd="hydra "
-    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${RED}[1]Kali-tools-top10${NC} > ${BLUE}[4]$cmd${NC} > ${YELLOW}[3]Manual${NC}\n"
+    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${RED}[1]Kali-tools-top10${WHITE} > [4]$cmd > [3]Manual${NC}\n"
     printf "+${BLUE}Options:${NC}\n"
     printf "|  ${YELLOW}-l LOGIN or -L FILE${NC}     login with LOGIN name, or load several logins from FILE\n"
     printf "|  ${YELLOW}-R${NC}        restore a previous aborted/crashed session\n"
