@@ -27,7 +27,7 @@ function cmd_undercover(){
     clear
 	figlet Undercover
     cmd="kali-undercover "
-    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${PURPLE}[5]Auxiliary${NC} > ${RED}[1]$cmd${NC} > ${RED}[1]Execute${NC}\n"
+    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${PURPLE}[5]Auxiliary${WHITE} > [1]$cmd > [1]Execute${NC}\n"
     echo "|"
     printf "|${RED}  ########  Caution!  ########${NC}\n"
     echo "|  This is a tool to hide the appearance."

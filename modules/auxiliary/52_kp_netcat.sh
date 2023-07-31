@@ -4,7 +4,7 @@ source $MODULES_PATH/misc_module.sh
 
 function menu_netcat(){
 	clear
-	figlet Netcat
+	header
 	num5 0 "Auxiliary"
 	num2 3 "Netcat"
 	num1 6 "Connect"
@@ -42,7 +42,7 @@ function menu_netcat(){
 function cmd_netcat1(){
     clear
     figlet Netcat
-    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${PURPLE}[5]Auxiliary${NC} > ${GREEN}[2]Netcat${NC} > ${RED}[1]Connect${NC}\n"
+    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${PURPLE}[5]Auxiliary${WHITE} > [2]Netcat > [1]Connect${NC}\n"
     printf "+${BLUE}Options${NC}:\n"
     printf "|  ${YELLOW}-v${NC}:            verbose [use twice to be more verbose]\n"
     read -p "> Enter Target IP: " TARGET
@@ -75,7 +75,7 @@ function cmd_netcat1(){
 function cmd_netcat2(){
     clear
     figlet Netcat
-    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${PURPLE}[5]Auxiliary${NC} > ${GREEN}[2]Netcat${NC} > ${GREEN}[2]Reverse Connect${NC}\n"
+    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${PURPLE}[5]Auxiliary${WHITE} > [2]Netcat > [2]Reverse Connect${NC}\n"
     printf "+${BLUE}Options${NC}:\n"
     printf "|  ${YELLOW}-l      ${NC}:            listen mode, for inbound connects\n"
     printf "|  ${YELLOW}-n      ${NC}:            numeric-only IP addresses, no DNS\n"
@@ -109,7 +109,7 @@ function cmd_netcat2(){
 function cmd_netcat3(){
     clear
     figlet Netcat
-    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${PURPLE}[5]Auxiliary${NC} > ${GREEN}[2]Netcat${NC} > ${YELLOW}[3]Send File${NC}\n"
+    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${PURPLE}[5]Auxiliary${WHITE} > [2]Netcat > [3]Send File${NC}\n"
     printf "+${BLUE}Options${NC}:\n"
     printf "|  ${YELLOW}-v${NC}:            verbose [use twice to be more verbose]\n"
     read -p "> Enter Target IP: " TARGET
@@ -163,7 +163,7 @@ function cmd_netcat3(){
 function cmd_netcat4(){
     clear
     figlet Netcat
-    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${PURPLE}[5]Auxiliary${NC} > ${GREEN}[2]Netcat${NC} > ${BLUE}[4]Receiving File${NC}\n"
+    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${PURPLE}[5]Auxiliary${WHITE} > [2]Netcat > [4]Receiving File${NC}\n"
     printf "+${BLUE}Options${NC}:\n"
     printf "|  ${YELLOW}-l      ${NC}:            listen mode, for inbound connects\n"
     printf "|  ${YELLOW}-n      ${NC}:            numeric-only IP addresses, no DNS\n"
@@ -200,7 +200,7 @@ function cmd_netcat5(){
     clear
     show_number 525 "Netcat Manual"
     cmd="nc"
-    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${PURPLE}[5]Auxiliary${NC} > ${GREEN}[2]Netcat${NC} > ${PURPLE}[5]Manual${NC}\n"
+    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${PURPLE}[5]Auxiliary${WHITE} > [2]Netcat > [5]Manual${NC}\n"
     printf "+${BLUE}Options${NC}:\n"
     printf "|  ${YELLOW}-c shell commands ${NC}:            as \`-e'; use /bin/sh to exec [dangerous!!]\n"
     printf "|  ${YELLOW}-e filename       ${NC}:            program to exec after connect [dangerous!!]\n"

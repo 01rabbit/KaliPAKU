@@ -5,7 +5,7 @@ source $MODULES_PATH/misc_module.sh
 
 function menu_msfpc(){
     clear
-    figlet MSFPC
+	header
     num3 0 "Attack"
     num4 3 "MSFvenom_Payload_Creator" " (msfpc)"
     num1 6 "Create_Payload"
@@ -28,7 +28,7 @@ function cmd_msfpc(){
     clear
     figlet MSFPC
     cmd="msfpc"
-    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${YELLOW}[3]Attack${NC} > ${BLUE}[4]msfpc${NC} > ${RED}[1]create${NC}\n"
+    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${YELLOW}[3]Attack${WHITE} > [4]msfpc > [1]create${NC}\n"
     echo "|"
     printf "> Use which ${YELLOW}Type${NC}?:\n"
     printf "+${BLUE}Types${NC}:\n"

@@ -5,7 +5,7 @@ source $MODULES_PATH/misc_module.sh
 
 function menu_gobuster() {
     clear
-    figlet gobuster
+	header
     num2 0 "Tools"
     num3 3 "gobuster"
     num1 6 "Install"
@@ -36,7 +36,7 @@ function menu_gobuster() {
 function install_gobuster() {
     clear
     figlet gobuster
-    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${GREEN}[2]Tools${NC} > ${YELLOW}[3]gobuster${NC} > ${RED}[1]Install${NC}\n"
+    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${GREEN}[2]Tools${WHITE} > [3]gobuster > [1]Install${NC}\n"
     echo ">Install gobuster. Are you ready?"
     num1 0 "No"
     num2 0 "Yes"
@@ -58,17 +58,7 @@ function install_gobuster() {
     fi
 }
 
-function cmd_gobuster1(){
-    clear
-    figlet gobuster
-    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${GREEN}[2]Tools${NC} > ${YELLOW}[3]gobuster${NC} > ${GREEN}[2]Directory Search${NC}\n"
-    printf "+${BLUE}Available Commands:${NC}:\n"
-    printf "|  ${YELLOW}dir${NC}:                               Uses directory/file enumeration mode\n"
-    printf "+${BLUE}Flags:${NC}:\n"
-    printf "|  ${YELLOW}-u, --url string${NC}:                  The target URL\n"
-    printf "|  ${YELLOW}-w, --wordlist string${NC}:             Path to the wordlist\n"
-    read -p "> Enter Target URL: " TARGET
-    echo "|"
+function select_wordlist(){
     echo "> Select Wordlist"
     printf "|  ${YELLOW}[1]/usr/share/dirb/wordlists/common.txt${NC} \n"
     printf "|  ${YELLOW}[2]/usr/share/dirb/wordlists/big.txt${NC} \n"
@@ -93,6 +83,22 @@ function cmd_gobuster1(){
         WORDLIST="/usr/share/dirb/wordlists/common.txt"
         ;;
     esac
+}
+
+function cmd_gobuster1(){
+    clear
+    figlet gobuster
+    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${GREEN}[2]Tools${WHITE} > [3]gobuster > [2]Directory Search${NC}\n"
+    printf "+${BLUE}Available Commands:${NC}:\n"
+    printf "|  ${YELLOW}dir${NC}:                               Uses directory/file enumeration mode\n"
+    printf "+${BLUE}Flags:${NC}:\n"
+    printf "|  ${YELLOW}-u, --url string${NC}:                  The target URL\n"
+    printf "|  ${YELLOW}-w, --wordlist string${NC}:             Path to the wordlist\n"
+    read -p "> Enter Target URL: " TARGET
+    echo "|"
+
+    select_wordlist
+
     echo "|"
     cmd="gobuster dir -u $TARGET -w $WORDLIST"
     printf "+${BLUE}usage${NC}: gobuster dir ${WHITE}[flags] ${NC}\n"
@@ -118,7 +124,7 @@ function cmd_gobuster1(){
 function cmd_gobuster2(){
     clear
     figlet gobuster
-    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${GREEN}[2]Tools${NC} > ${YELLOW}[3]gobuster${NC} > ${YELLOW}[3]Extension Search${NC}\n"
+    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${GREEN}[2]Tools${WHITE} > [3]gobuster > [3]Extension Search${NC}\n"
     printf "+${BLUE}Available Commands:${NC}:\n"
     printf "|  ${YELLOW}dir${NC}:                               Uses directory/file enumeration mode\n"
     printf "+${BLUE}Flags:${NC}:\n"
@@ -127,30 +133,9 @@ function cmd_gobuster2(){
     printf "|  ${YELLOW}-x, --extensions string${NC}:           File extension(s) to search for\n"
     read -p "> Enter Target URL: " TARGET
     echo "|"
-    echo "> Select Wordlist"
-    printf "|  ${YELLOW}[1]/usr/share/dirb/wordlists/common.txt${NC} \n"
-    printf "|  ${YELLOW}[2]/usr/share/dirb/wordlists/big.txt${NC} \n"
-    printf "|  ${YELLOW}[3]/usr/share/dirbuster/wordlists/directory-list-2.3-small.txt${NC} \n"
-    printf "|  ${YELLOW}[4]/usr/share/dirbuster/wordlists/directory-list-2.3-medium.txt${NC} \n"
-    printf "> Select ${YELLOW}1${NC}-${YELLOW}4${NC}: "
-    read NUM
-    case $NUM in
-    1)
-        WORDLIST="/usr/share/dirb/wordlists/common.txt"
-        ;;
-    2)
-        WORDLIST="/usr/share/dirb/wordlists/big.txt"
-        ;;
-    3)
-        WORDLIST="/usr/share/dirbuster/wordlists/directory-list-2.3-small.txt"
-        ;;
-    4)
-        WORDLIST="/usr/share/dirbuster/wordlists/directory-list-2.3-medium.txt"
-        ;;
-    *)
-        WORDLIST="/usr/share/dirb/wordlists/common.txt"
-        ;;
-    esac
+
+    select_wordlist
+
     echo "|"
     read -p "> Enter the extension. If multiple extensions are specified, separate them with commas:" EXTENSION
     cmd="gobuster dir -u $TARGET -w $WORDLIST -x $EXTENSION"
@@ -177,7 +162,7 @@ function cmd_gobuster2(){
 function cmd_gobuster3(){
     clear
     figlet gobuster
-    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${GREEN}[2]Tools${NC} > ${YELLOW}[3]gobuster${NC} > ${BLUE}[4]Filtering Status Codes${NC}\n"
+    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${GREEN}[2]Tools${WHITE} > [3]gobuster > [4]Filtering Status Codes${NC}\n"
     printf "+${BLUE}Available Commands:${NC}:\n"
     printf "|  ${YELLOW}dir${NC}:                               Uses directory/file enumeration mode\n"
     printf "+${BLUE}Flags:${NC}:\n"
@@ -187,29 +172,9 @@ function cmd_gobuster3(){
     read -p "> Enter Target URL: " TARGET
     echo "|"
     echo "> Select Wordlist"
-    printf "|  ${YELLOW}[1]/usr/share/dirb/wordlists/common.txt${NC} \n"
-    printf "|  ${YELLOW}[2]/usr/share/dirb/wordlists/big.txt${NC} \n"
-    printf "|  ${YELLOW}[3]/usr/share/dirbuster/wordlists/directory-list-2.3-small.txt${NC} \n"
-    printf "|  ${YELLOW}[4]/usr/share/dirbuster/wordlists/directory-list-2.3-medium.txt${NC} \n"
-    printf "> Select ${YELLOW}1${NC}-${YELLOW}4${NC}: "
-    read NUM
-    case $NUM in
-    1)
-        WORDLIST="/usr/share/dirb/wordlists/common.txt"
-        ;;
-    2)
-        WORDLIST="/usr/share/dirb/wordlists/big.txt"
-        ;;
-    3)
-        WORDLIST="/usr/share/dirbuster/wordlists/directory-list-2.3-small.txt"
-        ;;
-    4)
-        WORDLIST="/usr/share/dirbuster/wordlists/directory-list-2.3-medium.txt"
-        ;;
-    *)
-        WORDLIST="/usr/share/dirb/wordlists/common.txt"
-        ;;
-    esac
+
+    select_wordlist
+
     echo "|"
     read -p "> Enter the status code. See above.:" STATUSCODE
     cmd="gobuster dir -u $TARGET -w $WORDLIST -s $STATUSCODE"
@@ -237,7 +202,7 @@ function cmd_gobuster4(){
     clear
     cmd="gobuster"
     show_number 235 "gobuster Manual"
-    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${GREEN}[2]Tools${NC} > ${YELLOW}[3]gobuster${NC} > ${PURPLE}[5]Manual${NC}\n"
+    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${GREEN}[2]Tools${WHITE} > [3]gobuster > [5]Manual${NC}\n"
     printf "+${BLUE}Available Commands:${NC}:\n"
     printf "|  ${YELLOW}dir${NC}:                               Uses directory/file enumeration mode\n"
     printf "+${BLUE}Flags:${NC}:\n"
@@ -246,10 +211,10 @@ function cmd_gobuster4(){
     printf "|  ${YELLOW}-x, --extensions string${NC}:           File extension(s) to search for\n"
     printf "|  ${YELLOW}-s, --status-codes string${NC}:         Positive status codes (will be overwritten with status-codes-blacklist if set). Can also handle ranges like 200,300-400,404.\n"
     printf "+ ${BLUE}Wordlist:${NC}:\n"
-    printf "|  ${YELLOW}[1]/usr/share/dirb/wordlists/common.txt${NC} \n"
-    printf "|  ${YELLOW}[2]/usr/share/dirb/wordlists/big.txt${NC} \n"
-    printf "|  ${YELLOW}[3]/usr/share/dirbuster/wordlists/directory-list-2.3-small.txt${NC} \n"
-    printf "|  ${YELLOW}[4]/usr/share/dirbuster/wordlists/directory-list-2.3-medium.txt${NC} \n"
+    printf "|  ${YELLOW}/usr/share/dirb/wordlists/common.txt${NC} \n"
+    printf "|  ${YELLOW}/usr/share/dirb/wordlists/big.txt${NC} \n"
+    printf "|  ${YELLOW}/usr/share/dirbuster/wordlists/directory-list-2.3-small.txt${NC} \n"
+    printf "|  ${YELLOW}/usr/share/dirbuster/wordlists/directory-list-2.3-medium.txt${NC} \n"
     printf "+${BLUE}usage${NC}: gobuster dir ${WHITE}[flags] ${NC}\n"
     read -e -p "└─Command > " cmd
     eval $cmd

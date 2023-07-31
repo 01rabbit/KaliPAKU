@@ -9,9 +9,9 @@ function menu_assist(){
     clear
 	header
     num6 0 "Assist"
-    num1 5 "NIST SP 800-115"
-    num2 5 "Cheatsheet"
-    num9 5 "Main"
+    num1 3 "NIST SP 800-115"
+    num2 3 "Cheatsheet"
+    num9 3 "Main"
     read -n 1 -s NUM
 	case $NUM in
 	1) 

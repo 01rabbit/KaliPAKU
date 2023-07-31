@@ -5,7 +5,7 @@ source $MODULES_PATH/misc_module.sh
 
 function menu_results(){
     clear
-    figlet Reports
+	header
     num4 0 "Reports"
     num1 3 "results"
     num1 6 "Show Result"
@@ -28,7 +28,7 @@ function cmd_results(){
     show_number 411 "Check Results"
     BASE=`pwd`
     cd result
-    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${BLUE}[4]Reports${NC} > ${RED}[1]results${NC} > ${RED}[1]Show Result${NC}\n"
+    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${BLUE}[4]Reports${WHITE} > [1]results > [1]Show Result${NC}\n"
     echo "|"
     while :;do
         PS3="└─Please Select one > "

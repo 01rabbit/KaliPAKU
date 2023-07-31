@@ -44,7 +44,7 @@ function menu_crackmapexec(){
 }
 
 function cmd_crackmapexec1(){
-    local cmd="" TARGET="" ANS="" NUM=""
+    local cmd="" ANS="" NUM=""
 	clear
 	figlet crackmapexec
     cmd="crackmapexec"
@@ -52,7 +52,6 @@ function cmd_crackmapexec1(){
     printf "+${BLUE}positional arguments${NC}:\n"
     printf "|  ${YELLOW}target${NC}      the target IP(s), range(s), CIDR(s), hostname(s), FQDN(s),\n"
     echo "|              file(s) containing a list of targets, NMap XML or .Nessus file(s)"
-    read -e -p "> Enter target IP address: " TARGET
     echo "|"
     echo "> Use which Service?"
     num1 0 "smb"
@@ -105,7 +104,7 @@ function cmd_crackmapexec1(){
 }
 
 function cmd_crackmapexec2(){
-    local cmd="" TARGET="" ANS=""
+    local cmd="" ANS=""
 	clear
 	figlet crackmapexec
     cmd="crackmapexec"
@@ -113,7 +112,6 @@ function cmd_crackmapexec2(){
     printf "+${BLUE}positional arguments${NC}:\n"
     printf "|  ${YELLOW}target${NC}      the target IP(s), range(s), CIDR(s), hostname(s), FQDN(s),\n"
     echo "|              file(s) containing a list of targets, NMap XML or .Nessus file(s)"
-    read -e -p "> Enter target IP address: " TARGET
     echo "|"
     SERVICE="smb"
     printf "+${BLUE}usage${NC}: crackmapexec smb [target ...] -u "" up ""\n"
@@ -141,7 +139,7 @@ function cmd_crackmapexec2(){
 }
 
 function cmd_crackmapexec3(){
-    local cmd="" TARGET="" USERNAME="" PASSWORD="" ANS=""
+    local cmd="" USERNAME="" PASSWORD="" ANS=""
 	clear
 	figlet crackmapexec
     cmd="crackmapexec"
@@ -149,7 +147,6 @@ function cmd_crackmapexec3(){
     printf "+${BLUE}positional arguments${NC}:\n"
     printf "|  ${YELLOW}target${NC}      the target IP(s), range(s), CIDR(s), hostname(s), FQDN(s),\n"
     echo "|              file(s) containing a list of targets, NMap XML or .Nessus file(s)"
-    read -e -p "> Enter target IP address: " TARGET
     echo "|"
     echo "> Use which Service?"
     num1 0 "smb"
@@ -206,7 +203,7 @@ function cmd_crackmapexec3(){
 }
 
 function cmd_crackmapexec4(){
-    local cmd="" TARGET="" USERNAME="" HASH="" AUTH="" ANS=""
+    local cmd="" USERNAME="" HASH="" AUTH="" ANS=""
 	clear
 	figlet crackmapexec
     cmd="crackmapexec "
@@ -214,7 +211,6 @@ function cmd_crackmapexec4(){
     printf "+${BLUE}positional arguments${NC}:\n"
     printf "|  ${YELLOW}target${NC}      the target IP(s), range(s), CIDR(s), hostname(s), FQDN(s),\n"
     echo "|              file(s) containing a list of targets, NMap XML or .Nessus file(s)"
-    read -e -p "> Enter target IP address: " TARGET
     echo "|"
     echo "> Use which Service?"
     num1 0 "smb"
@@ -283,7 +279,7 @@ function cmd_crackmapexec4(){
 }
 
 function cmd_crackmapexec5(){
-    local cmd="" TARGET="" USERNAME="" PASSWORD="" HASH="" ANS=""
+    local cmd="" USERNAME="" PASSWORD="" HASH="" ANS=""
 	clear
 	figlet crackmapexec
     cmd="crackmapexec "
@@ -291,7 +287,6 @@ function cmd_crackmapexec5(){
     printf "+${BLUE}positional arguments${NC}:\n"
     printf "|  ${YELLOW}target${NC}      the target IP(s), range(s), CIDR(s), hostname(s), FQDN(s),\n"
     echo "|              file(s) containing a list of targets, NMap XML or .Nessus file(s)"
-    read -e -p "> Enter target IP address: " TARGET
     echo "|"
     echo "> Use which Service?"
     num1 0 "smb"

@@ -40,21 +40,20 @@ function menu_sqlmap(){
 
 }
 
-function cmd_sqlmap1(){
-	clear
-	figlet sqlmap
-    cmd="sqlmap"
-    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${RED}[1]Kali-tools-top10${WHITE} > [4]$cmd > [1]Enumerate all dbs${NC}\n"
+function enter_target(){
     printf "+${BLUE}Options${NC}:\n"
     printf "|  ${YELLOW}-u URL, --url=URL${NC}   Target URL (e.g. \"http://www.site.com/vuln.php?id=1\")\n"
     read -p "> Enter Target URL: " URL
-    echo "|"
+}
+
+function enter_cookie(){
     printf "+${BLUE}Request${NC}:\n"
     echo "|  These options can be used to specify how to connect to the target URL"
     printf "|  ${YELLOW}--cookie=DATA${NC}         HTTP Cookie header value (e.g. \"PHPSESSID=a8d127e..\")\n"
     read -p "> Enter Cookie: " Cookie
-    echo "|"
-    cmd="${cmd} -u \"$URL\" --cookie=\"${Cookie}\"" 
+}
+
+function enter_detection(){
     printf "+${BLUE}Detection${NC}:\n"
     echo "|  These options can be used to customize the detection phase"
     printf "|  ${YELLOW}--level=LEVEL${NC}       Level of tests to perform (1-5, default 1)\n"
@@ -73,6 +72,35 @@ function cmd_sqlmap1(){
     else
         cmd+=" --risk=1"
     fi
+}
+
+function enter_dbname(){
+    printf "|  ${YELLOW}-D DB${NC}               DBMS database to enumerate\n"
+    read -p "> Enter Database Name: " DATABASE_NAME
+}
+
+function enter_tblname(){
+    printf "|  ${YELLOW}-T TBL${NC}              DBMS database table(s) to enumerate\n"
+    read -p "Enter Tables: " TABLE_NAME
+}
+
+function cmd_sqlmap1(){
+	clear
+	figlet sqlmap
+    cmd="sqlmap"
+    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${RED}[1]Kali-tools-top10${WHITE} > [0]Next > [4]$cmd > [1]Enumerate all dbs${NC}\n"
+    
+    enter_target
+    
+    echo "|"
+    
+    enter_cookie
+    
+    echo "|"
+    cmd="${cmd} -u \"$URL\" --cookie=\"${Cookie}\"" 
+
+    enter_detection
+
     echo "|"
     printf "+${BLUE}Enumeration${NC}:\n"
     echo "|  These options can be used to enumerate the back-end database"
@@ -109,41 +137,25 @@ function cmd_sqlmap2(){
 	clear
 	figlet sqlmap
     cmd="sqlmap"
-    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${RED}[1]Kali-tools-top10${WHITE} > [4]$cmd > [2]Enumerate all tables${NC}\n"
-    printf "+${BLUE}Options${NC}:\n"
-    printf "|  ${YELLOW}-u URL, --url=URL${NC}   Target URL (e.g. \"http://www.site.com/vuln.php?id=1\")\n"
-    read -p "> Enter Target URL: " URL
+    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${RED}[1]Kali-tools-top10${WHITE} > [0]Next > [4]$cmd > [2]Enumerate all tables${NC}\n"
+    
+    enter_target
+    
     echo "|"
-    printf "+${BLUE}Request${NC}:\n"
-    echo "|  These options can be used to specify how to connect to the target URL"
-    printf "|  ${YELLOW}--cookie=DATA${NC}         HTTP Cookie header value (e.g. \"PHPSESSID=a8d127e..\")\n"
-    read -p "> Enter Cookie: " Cookie
+    
+    enter_cookie
+    
     echo "|"
     cmd="${cmd} -u \"$URL\" --cookie=\"${Cookie}\"" 
-    printf "+${BLUE}Detection${NC}:\n"
-    echo "|  These options can be used to customize the detection phase"
-    printf "|  ${YELLOW}--level=LEVEL${NC}       Level of tests to perform (1-5, default 1)\n"
-    echo "|"
-    read -p "> Enter Level(1-5, default 1): " LEVEL
-    if [ ! -z $LEVEL ] && [ $LEVEL -le 5 ];then
-        cmd+=" --level=\"$LEVEL\""
-    else
-        cmd+=" --level=1"
-    fi
-    echo "|"
-    printf "|  ${YELLOW}--risk=RISK${NC}         Risk of tests to perform (1-3, default 1)\n"
-    read -p "> Enter Risk(1-3, default 1): " RISK
-    if [ ! -z $RISK ] && [ $RISK -le 3 ];then
-        cmd+=" --risk=\"$RISK\""
-    else
-        cmd+=" --risk=1"
-    fi
+
+    enter_detection
+    
     echo "|"
     printf "+${BLUE}Enumeration${NC}:\n"
     echo "|  These options can be used to enumerate the back-end database"
     echo "|  management system information, structure and data contained in the tables"
-    printf "|  ${YELLOW}-D DB${NC}               DBMS database to enumerate\n"
-    read -p "> Enter Database Name: " DATABASE_NAME
+    
+    enter_dbname
     cmd+=" -D \"$DATABASE_NAME\""
     echo "|"
     printf "|  ${YELLOW}--tables${NC}            Enumerate DBMS database tables\n"
@@ -178,45 +190,29 @@ function cmd_sqlmap3(){
 	clear
 	figlet sqlmap
     cmd="sqlmap"
-    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${RED}[1]Kali-tools-top10${WHITE} > [4]$cmd > [3]Enume table columns${NC}\n"
-    printf "+${BLUE}Options${NC}:\n"
-    printf "|  ${YELLOW}-u URL, --url=URL${NC}   Target URL (e.g. \"http://www.site.com/vuln.php?id=1\")\n"
-    read -p "> Enter Target URL: " URL
+    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${RED}[1]Kali-tools-top10${WHITE} > [0]Next > [4]$cmd > [3]Enume table columns${NC}\n"
+    
+    enter_target
+    
     echo "|"
-    printf "+${BLUE}Request${NC}:\n"
-    echo "|  These options can be used to specify how to connect to the target URL"
-    printf "|  ${YELLOW}--cookie=DATA${NC}         HTTP Cookie header value (e.g. \"PHPSESSID=a8d127e..\")\n"
-    read -p "> Enter Cookie: " Cookie
+    
+    enter_cookie
+    
     echo "|"
     cmd="${cmd} -u \"$URL\" --cookie=\"${Cookie}\"" 
-    printf "+${BLUE}Detection${NC}:\n"
-    echo "|  These options can be used to customize the detection phase"
-    printf "|  ${YELLOW}--level=LEVEL${NC}       Level of tests to perform (1-5, default 1)\n"
-    echo "|"
-    read -p "> Enter Level(1-5, default 1): " LEVEL
-    if [ ! -z $LEVEL ] && [ $LEVEL -le 5 ];then
-        cmd+=" --level=\"$LEVEL\""
-    else
-        cmd+=" --level=1"
-    fi
-    echo "|"
-    printf "|  ${YELLOW}--risk=RISK${NC}         Risk of tests to perform (1-3, default 1)\n"
-    read -p "> Enter Risk(1-3, default 1): " RISK
-    if [ ! -z $RISK ] && [ $RISK -le 3 ];then
-        cmd+=" --risk=\"$RISK\""
-    else
-        cmd+=" --risk=1"
-    fi
+
+    enter_detection
+    
     echo "|"
     printf "+${BLUE}Enumeration${NC}:\n"
     echo "|  These options can be used to enumerate the back-end database"
     echo "|  management system information, structure and data contained in the tables"
-    printf "|  ${YELLOW}-D DB${NC}               DBMS database to enumerate\n"
-    read -p "> Enter Database Name: " DATABASE_NAME
+    
+    enter_dbname
     cmd+=" -D \"$DATABASE_NAME\""
     echo "|"
-    printf "|  ${YELLOW}-T TBL${NC}              DBMS database table(s) to enumerate\n"
-    read -p "Enter Tables: " TABLE_NAME
+
+    enter_tblname
     cmd+=" -T \"$TABLE_NAME\""
     echo "|"
     printf "|  ${YELLOW}--columns${NC}              Enumerate DBMS database table columns\n"
@@ -250,45 +246,29 @@ function cmd_sqlmap4(){
 	clear
 	figlet sqlmap
     cmd="sqlmap"
-    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${RED}[1]Kali-tools-top10${WHITE} > [4]$cmd > [4]Table columns dump${NC}\n"
-    printf "+${BLUE}Options${NC}:\n"
-    printf "|  ${YELLOW}-u URL, --url=URL${NC}   Target URL (e.g. \"http://www.site.com/vuln.php?id=1\")\n"
-    read -p "> Enter Target URL: " URL
+    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${RED}[1]Kali-tools-top10${WHITE} > [0]Next > [4]$cmd > [4]Table columns dump${NC}\n"
+    
+    enter_target
+    
     echo "|"
-    printf "+${BLUE}Request${NC}:\n"
-    echo "|  These options can be used to specify how to connect to the target URL"
-    printf "|  ${YELLOW}--cookie=DATA${NC}         HTTP Cookie header value (e.g. \"PHPSESSID=a8d127e..\")\n"
-    read -p "> Enter Cookie: " Cookie
+    
+    enter_cookie
+    
     echo "|"
     cmd="${cmd} -u \"$URL\" --cookie=\"${Cookie}\"" 
-    printf "+${BLUE}Detection${NC}:\n"
-    echo "|  These options can be used to customize the detection phase"
-    printf "|  ${YELLOW}--level=LEVEL${NC}       Level of tests to perform (1-5, default 1)\n"
-    echo "|"
-    read -p "> Enter Level(1-5, default 1): " LEVEL
-    if [ ! -z $LEVEL ] && [ $LEVEL -le 5 ];then
-        cmd+=" --level=\"$LEVEL\""
-    else
-        cmd+=" --level=1"
-    fi
-    echo "|"
-    printf "|  ${YELLOW}--risk=RISK${NC}         Risk of tests to perform (1-3, default 1)\n"
-    read -p "> Enter Risk(1-3, default 1): " RISK
-    if [ ! -z $RISK ] && [ $RISK -le 3 ];then
-        cmd+=" --risk=\"$RISK\""
-    else
-        cmd+=" --risk=1"
-    fi
+
+    enter_detection
+    
     echo "|"
     printf "+${BLUE}Enumeration${NC}:\n"
     echo "|  These options can be used to enumerate the back-end database"
     echo "|  management system information, structure and data contained in the tables"
-    printf "|  ${YELLOW}-D DB${NC}               DBMS database to enumerate\n"
-    read -p "> Enter Database Name: " DATABASE_NAME
+    
+    enter_dbname
     cmd+=" -D $DATABASE_NAME"
     echo "|"
-    printf "|  ${YELLOW}-T TBL${NC}              DBMS database table(s) to enumerate\n"
-    read -p "Enter Tables: " TABLE_NAME
+
+    enter_tblname
     cmd+=" -T $TABLE_NAME"
     echo "|"
     printf "|  ${YELLOW}-C COL${NC}              DBMS database table column(s) to enumerate\n"
@@ -322,7 +302,7 @@ function cmd_sqlmap4(){
 function cmd_sqlmap6(){
 	clear
     show_number 1046 "sqlmap Manual"
-    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${RED}[1]Kali-tools-top10${WHITE} > [4]sqlmap > [6]Manual${NC}\n"
+    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${RED}[1]Kali-tools-top10${WHITE} > [0]Next > [4]sqlmap > [6]Manual${NC}\n"
     printf "+${BLUE}Options${NC}:\n"
     printf "|  ${YELLOW}-u URL, --url=URL${NC}   Target URL (e.g. \"http://www.site.com/vuln.php?id=1\")\n"
     echo "|"

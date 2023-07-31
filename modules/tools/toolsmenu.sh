@@ -9,7 +9,7 @@ source $TOOL_PATH/23_kp_gobuster.sh
 
 function menu_tools(){
     clear
-    figlet Tools
+	header
     num2 0 "Tools"
     num1 3 "AutoScan(nmapAutomator)"
     num2 3 "VulnCheck"

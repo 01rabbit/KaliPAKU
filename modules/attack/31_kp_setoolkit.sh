@@ -5,7 +5,7 @@ source $MODULES_PATH/misc_module.sh
 
 function menu_setoolkit(){
     clear
-    figlet setoolkit
+	header
     num3 0 "Attack"
     num2 3 "Social-Engineering" "(setoolkit)"
     num1 6 "Website_Attack_Vectors" "(Credential_Harvester_Attack)"
@@ -27,7 +27,7 @@ function cmd_setoolkit(){
     clear
     figlet setoolkit
     BASE=`pwd`
-    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${YELLOW}[3]Attack${NC} > ${GREEN}[2]Social-Engineering${NC} > ${RED}[1]Website_Attack_Vectors${NC}\n"
+    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${YELLOW}[3]Attack${WHITE} > [2]Social-Engineering > [1]Website_Attack_Vectors${NC}\n"
     echo "|"
     printf "|${RED}  ########  Caution!  ########${NC}\n"
     echo "|"

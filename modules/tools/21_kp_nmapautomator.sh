@@ -5,7 +5,7 @@ source $MODULES_PATH/misc_module.sh
 
 function menu_nmapautomator(){
     clear
-    figlet nmap Automator
+	header
     num2 0 "Tools"
     num1 3 "nmapAutomator"
     num1 6 "Install"
@@ -31,7 +31,7 @@ function install_nmapautomator(){
     clear
     figlet nmap Automator
     cd $TOOL_PATH
-    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${GREEN}[2]Tools${NC} > ${RED}[1]nmapAutomator${NC} > ${RED}[1]Install${NC}\n"
+    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${GREEN}[2]Tools${WHITE} > [1]nmapAutomator > [1]Install${NC}\n"
     echo "> You ready?"
     num1 0 "No"
     num2 0 "Yes"
@@ -77,7 +77,7 @@ function cmd_nmapautomator(){
     TOOL="nmap Autoscan"
     clear
     figlet nmap Automator
-    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${GREEN}[2]Tools${NC} > ${RED}[1]nmapAutomator${NC} > ${GREEN}[2]Scan${NC}\n"
+    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${GREEN}[2]Tools${WHITE} > [1]nmapAutomator > [2]Scan${NC}\n"
     if [ ! -e $AUTOSCAN_PATH/nmapAutomator.sh ];then
         printf "|${RED}  ####  Caution!  ####${NC}\n"
         printf "|${WHITE}  nmapAutomator.sh is not installed. Stop work.${NC}\n"
@@ -143,7 +143,6 @@ function cmd_nmapautomator(){
         esac
         printf "\n"
         cmd="$AUTOSCAN_PATH/nmapAutomator.sh -t $OPTION"
-        read -e -p "> Input Target: " TARGET
         echo "|"
         cmd="$cmd -H $TARGET -o result/$TARGET"
         echo "└─Command > $cmd"

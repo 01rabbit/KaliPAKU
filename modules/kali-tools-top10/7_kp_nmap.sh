@@ -32,7 +32,7 @@ function cmd_nmap1(){
     clear
 	figlet Nmap
     cmd="nmap"
-    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${RED}[1]Kali-tools-top10${WHITE} > [0] Next > [2]nmap > $[1]Ping Scan${NC}\n"
+    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${RED}[1]Kali-tools-top10${WHITE} > [2]nmap > $[1]Ping Scan${NC}\n"
     printf "+${BLUE}Options${NC}:\n"
     printf "|  ${YELLOW}-sn${NC}:            Ping Scan - disable port scan\n"
     printf "|  ${YELLOW}-oA <basename>${NC}: Output in the three major formats at once\n"
@@ -68,7 +68,7 @@ function cmd_nmap2(){
     clear
 	figlet Nmap
     cmd="nmap"
-    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${RED}[1]Kali-tools-top10${WHITE} > [0] Next > [2]nmap > [2]IntenseScan${NC}\n"
+    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${RED}[1]Kali-tools-top10${WHITE} > [0]Next > [2]nmap > [2]IntenseScan${NC}\n"
     printf "+${BLUE}Options${NC}:\n"
     printf "|  ${YELLOW}-Pn${NC}:            Treat all hosts as online -- skip host discovery\n"
     printf "|  ${YELLOW}-p <port ranges>${NC}: Only scan specified ports\n"
@@ -126,7 +126,7 @@ function cmd_nmap3(){
     clear
 	figlet Nmap
     cmd="nmap"
-    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${RED}[1]Kali-tools-top10${WHITE} > [0] Next > [2]nmap > [3]IntenseScan_UDP${NC}\n"
+    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${RED}[1]Kali-tools-top10${WHITE} > [0]Next > [2]nmap > [3]IntenseScan_UDP${NC}\n"
     printf "+${BLUE}Options${NC}:\n"
     printf "|  ${YELLOW}-Pn${NC}:            Treat all hosts as online -- skip host discovery\n"
     printf "|  ${YELLOW}-p <port ranges>${NC}: Only scan specified ports\n"
@@ -184,7 +184,7 @@ function cmd_nmap4(){
     clear
 	figlet Nmap
     cmd="nmap"
-    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${RED}[1]Kali-tools-top10${WHITE} > [0] Next > [2]nmap > [4]IntenseScan_all_TCP${NC}\n"
+    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${RED}[1]Kali-tools-top10${WHITE} > [0]Next > [2]nmap > [4]IntenseScan_all_TCP${NC}\n"
     printf "+${BLUE}Options${NC}:\n"
     printf "|  ${YELLOW}-Pn${NC}:            Treat all hosts as online -- skip host discovery\n"
     printf "|  ${YELLOW}-p <port ranges>${NC}: Only scan specified ports\n"
@@ -241,7 +241,7 @@ function cmd_nmap5(){
     clear
 	figlet Nmap
     cmd="nmap"
-    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${RED}[1]Kali-tools-top10${WHITE} > [0] Next > [2]nmap > [5]Vuln Scan${NC}\n"
+    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${RED}[1]Kali-tools-top10${WHITE} > [0]Next > [2]nmap > [5]Vuln Scan${NC}\n"
     printf "+${BLUE}Options${NC}:\n"
     printf "|  ${YELLOW}-Pn${NC}:                    Treat all hosts as online -- skip host discovery\n"
     printf "|  ${YELLOW}-p <port ranges>${NC}: Only scan specified ports\n"
@@ -298,7 +298,7 @@ function cmd_nmap6(){
     clear
     show_number 1026 "nmap Manual"
     cmd="nmap"
-    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${RED}[1]Kali-tools-top10${WHITE} > [0] Next > [2]nmap > [6]Manual${NC}\n"
+    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${RED}[1]Kali-tools-top10${WHITE} > [0]Next > [2]nmap > [6]Manual${NC}\n"
     printf "+${BLUE}Options${NC}:\n"
     printf "|  ${YELLOW}-sn${NC}:            Ping Scan - disable port scan\n"
     printf "|  ${YELLOW}-Pn${NC}:            Treat all hosts as online -- skip host discovery\n"

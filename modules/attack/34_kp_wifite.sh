@@ -5,7 +5,7 @@ source $MODULES_PATH/misc_module.sh
 
 function menu_wifite(){
 	clear
-    figlet Attack
+	header
     num3 0 "Attack"
     num6 3 "Wi-Fi Attack" " (wifite)"
 	num1 6 "Execute"
@@ -33,7 +33,7 @@ function cmd_wifite1(){
 	clear
 	figlet wifite
     cmd="wifite "
-    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${YELLOW}[3]ATTACK${NC} > ${LIGHTBLUE}[6]$cmd${NC} > ${RED}[1]Execute${NC}\n"
+    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${YELLOW}[3]Attack${WHITE} > [6]wifite > [1]Execute${NC}\n"
     echo "|"
     printf "|${RED}  ########  Caution!  ########${NC}\n"
 	printf "|${RED}  Root plivileges are required.${NC}\n"
@@ -72,7 +72,7 @@ function cmd_wifite2(){
 	show_number 362 "wifite Manual"
 	figlet wifite
     cmd="wifite "
-    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${YELLOW}[3]Attack${NC} > ${LIGHTBLUE}[6]$cmd${NC} > ${GREEN}[2]Manual${NC}\n"
+    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${YELLOW}[3]Attack${WHITE} > [6]wifite > [2]Manual${NC}\n"
     echo "|"
     printf "|${RED}  ########  Caution!  ########${NC}\n"
 	printf "|${RED}  Root plivileges are required.${NC}\n"

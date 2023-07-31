@@ -5,7 +5,7 @@ source $MODULES_PATH/misc_module.sh
 
 function menu_vulncheck(){
     clear
-    figlet VulnCheck
+	header
     num2 0 " Tools"
     num2 3 " VulnCheck"
     num1 6 " Check"
@@ -27,7 +27,7 @@ function menu_vulncheck(){
 function cmd_vulncheck(){
     clear
     figlet Check Vulns
-    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${GREEN}[2]Tools${NC} > ${GREEN}[2]VulnCheck${NC} > ${RED}[1]Check${NC}\n"
+    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${GREEN}[2]Tools${WHITE} > [2]VulnCheck > [1]Check${NC}\n"
     printf "+${RED}Command${NC}:\n"
     printf "|  ${WHITE}vuln.sh${NC}  Auther:${WHITE}01rabbit${NC}\n"
     echo "|"

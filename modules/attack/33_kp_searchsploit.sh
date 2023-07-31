@@ -5,7 +5,7 @@ source $MODULES_PATH/misc_module.sh
 
 function menu_searchsploit(){
     clear
-    figlet SearchSploit
+	header
     num3 0 "Attack"
     num5 3 "Search_Exploit" " (searchsploit)"
     num1 6 "Search"
@@ -31,7 +31,7 @@ function cmd_search(){
     clear
     figlet SearchSploit
     cmd="searchsploit"
-    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USER}@${HOSTNAME}${NC}:${YELLOW}[3]Attack${NC} > ${PURPLE}[5]Search_Exploit${NC} > ${RED}[1]Search${NC}\n"
+    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USER}@${HOSTNAME}${NC}:${YELLOW}[3]Attack${WHITE} > [5]Search_Exploit > [1]Search${NC}\n"
     printf "+${BLUE}Options${NC}:\n"
     printf "|  ${YELLOW}-t${NC}, ${YELLOW}--title${NC}    [Term]      Search JUST the exploit title (Default is title AND the file's path)\n"
     echo "|"
@@ -106,7 +106,7 @@ function cmd_autosearch(){
     clear
     figlet SearchSploit
     cmd="searchsploit"
-    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USER}@${HOSTNAME}${NC}:${YELLOW}[3]Attack${NC} > ${PURPLE}[5]Search_Exploit${NC} > ${GREEN}[2]AutoSearch${NC}\n"
+    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USER}@${HOSTNAME}${NC}:${YELLOW}[3]Attack${WHITE} > [5]Search_Exploit > [2]AutoSearch${NC}\n"
     printf "+${BLUE}Options${NC}:\n"
     printf "|  ${YELLOW}--nmap${NC}     [file.xml]  Checks all results in Nmap's XML output with service version\n"
     echo "|"

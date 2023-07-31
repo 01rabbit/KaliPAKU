@@ -5,7 +5,7 @@ source $MODULES_PATH/misc_module.sh
 
 function menu_httpserver(){
     clear
-	figlet Python HTTP Server
+	header
 	num5 0 "Auxiliary"
 	num3 3 "Python HTTP Server"
 	num1 6 "Execute"
@@ -26,7 +26,7 @@ function menu_httpserver(){
 function cmd_httpserver(){
     clear
 	figlet Python HTTP Server
-    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${PURPLE}[5]Auxiliary${NC} > ${YELLOW}[3]Python HTTP Server${NC} > ${RED}[1]Execute${NC}\n"
+    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${PURPLE}[5]Auxiliary${WHITE} > [3]Python HTTP Server > [1]Execute${NC}\n"
     printf "+${BLUE}positional arguments${NC}:\n"
     printf "|  ${YELLOW}port${NC}:                                  specify alternate port (default: 8000)\n"
     echo "|"

@@ -5,7 +5,7 @@ source $MODULES_PATH/misc_module.sh
 
 function menu_faraday(){
     clear
-    figlet Faraday
+	header
     num4 0 "Reports"
     num2 3 "Faraday"
     num1 6 "Start Faraday"
@@ -40,7 +40,7 @@ function cmd_faraday1(){
     clear
 	figlet Faraday
     cmd="sudo systemctl start faraday.service"
-    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${BLUE}[4]Reports${NC} > ${GREEN}[2]Faraday${NC} > ${RED}[1]Start Faraday${NC}\n"
+    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${BLUE}[4]Reports${WHITE} > [2]Faraday > [1]Start Faraday${NC}\n"
     printf "|  Start Faraday service.\n"
     echo "|"
     echo "└─Command > $cmd"
@@ -68,7 +68,7 @@ function cmd_faraday2(){
     clear
 	figlet Faraday
     cmd="sudo systemctl stop faraday.service"
-    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${BLUE}[4]Reports${NC} > ${GREEN}[2]Faraday${NC} > ${GREEN}[2]Stop Faraday${NC}\n"
+    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${BLUE}[4]Reports${WHITE} > [2]Faraday > [2]Stop Faraday${NC}\n"
     printf "|  Stop Faraday service.\n"
     echo "|"
     echo "└─Command > $cmd"
@@ -96,7 +96,7 @@ function cmd_faraday3(){
     clear
 	figlet Faraday
     cmd="faraday"
-    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${BLUE}[4]Reports${NC} > ${GREEN}[2]Faraday${NC} > ${YELLOW}[3]Open Faraday(Web)${NC}\n"
+    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${BLUE}[4]Reports${WHITE} > [2]Faraday > [3]Open Faraday(Web)${NC}\n"
     printf "|${RED}  ####  Caution!  ####${NC}\n"
     printf "|${RED}  Faraday ${WHITE}is a Web application. It can't be displayed on a remote console.\n"
     printf "|  If you want to continue with CUI, you can choose ${RED}faraday-cli.${NC}\n"
@@ -124,7 +124,7 @@ function cmd_faraday3(){
 
 function menu_faraday-cli(){
     clear
-    figlet Faraday
+	header
     num4 0 "Reports"
     num2 3 "Faraday"
     num4 6 "faraday-cli"
@@ -165,9 +165,9 @@ function menu_faraday-cli(){
 
 function cmd_faraday-cli1(){
     clear
-    figlet Faraday
+    figlet Faraday-Cli
     cmd="faraday-cli"
-    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${BLUE}[4]Reports${NC} > ${GREEN}[2]Faraday${NC} > ${BLUE}[4]faraday-cli${NC} > ${RED}[1]auth${NC}\n"
+    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${BLUE}[4]Reports${WHITE} > [2]Faraday > [4]faraday-cli > [1]auth${NC}\n"
     printf "+${BLUE}Core${NC}\n"
     printf "|  ----------------------------------------------------------------------------------------------------\n"
     printf "|  auth                  Authenticate with a faraday server                                              \n"
@@ -178,9 +178,15 @@ function cmd_faraday-cli1(){
         TARGET="http://127.0.0.1:5985"
     fi
     echo "|"
-    read -e -p "> Enter your username: " USER
+    read -e -p "> Enter your username (default)$FARADAY_USER : " USER
+    if [ ! -n "$USER" ];then
+        USER=$FARADAY_USER
+    fi
     echo "|"
-    read -e -p "> Enter your password.: " PASSWORD
+    read -e -p "> Enter your password (default)$FARADAY_PASS : " PASSWORD
+    if [ ! -n "$PASSWORD" ];then
+        PASSWORD=$FARADAY_PASS
+    fi
     echo "|"
     cmd="$cmd auth -f $TARGET -u $USER -p $PASSWORD"
     echo "└─Command > $cmd"
@@ -205,9 +211,9 @@ function cmd_faraday-cli1(){
 
 function cmd_faraday-cli2(){
     clear
-    figlet Faraday
+    figlet Faraday-Cli
     cmd="faraday-cli"
-    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${BLUE}[4]Reports${NC} > ${GREEN}[2]Faraday${NC} > ${BLUE}[4]faraday-cli${NC} > ${GREEN}[2]workspace${NC}\n"
+    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${BLUE}[4]Reports${WHITE} > [2]Faraday > [4]faraday-cli > [2]workspace${NC}\n"
     printf "+${BLUE}Objects${NC}\n"
     printf "|  ----------------------------------------------------------------------------------------------------\n"
     printf "|  workspace             workspace actions                                                               \n"
@@ -284,15 +290,13 @@ function cmd_faraday-cli2(){
     else
         :
     fi
-
-
 }
 
 function cmd_faraday-cli3(){
     clear
-    figlet Faraday
+    figlet Faraday-Cli
     cmd="faraday-cli"
-    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${BLUE}[4]Reports${NC} > ${GREEN}[2]Faraday${NC} > ${BLUE}[4]faraday-cli${NC} > ${YELLOW}[3]List${NC}\n"
+    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${BLUE}[4]Reports${WHITE} > [2]Faraday > [4]faraday-cli > [3]List${NC}\n"
     printf "+${BLUE}Objects${NC}\n"
     printf "|  ----------------------------------------------------------------------------------------------------\n"
     printf "|  host                  host actions                                                                    \n"
@@ -355,9 +359,9 @@ function cmd_faraday-cli3(){
 
 function cmd_faraday-cli4(){
     clear
-    figlet Faraday
+    figlet Faraday-Cli
     cmd="faraday-cli"
-    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${BLUE}[4]Reports${NC} > ${GREEN}[2]Faraday${NC} > ${BLUE}[4]faraday-cli${NC} > ${BLUE}[4]Import${NC}\n"
+    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${BLUE}[4]Reports${WHITE} > [2]Faraday > [4]faraday-cli > [4]Import${NC}\n"
     printf "+${BLUE}Objects${NC}\n"
     printf "|  ----------------------------------------------------------------------------------------------------\n"
     printf "|  tool                  tool actions                                                                    \n"
@@ -415,9 +419,9 @@ function cmd_faraday-cli4(){
 
 function cmd_faraday-cli6(){
     clear
-    figlet Faraday
+    figlet Faraday-Cli
     cmd="faraday-cli"
-    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${BLUE}[4]Reports${NC} > ${GREEN}[2]Faraday${NC} > ${BLUE}[4]faraday-cli${NC} > ${LIGHTBLUE}[6]Stats${NC}\n"
+    printf "┌─(${PURPLE}$TITLE${NC})${RED}${USERNAME}@${HOSTNAME}${NC}:${BLUE}[4]Reports${WHITE} > [2]Faraday > [4]faraday-cli > [6]Stats${NC}\n"
     printf "+${BLUE}Stats${NC}\n"
     printf "|  ----------------------------------------------------------------------------------------------------\n"
     printf "|  stats                 Different statistics about the information on Faraday   \n"
